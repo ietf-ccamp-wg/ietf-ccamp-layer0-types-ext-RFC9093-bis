@@ -1,6 +1,13 @@
 # ietf-ccamp-layer0-types-v2
 CCAMP WG repository for ietf-ccamp-layer0-types-v2.
-This is the working area for the [IETF CCAMP WG](https://datatracker.ietf.org/wg/ccamp/documents/) ietf-ccamp-layer0-types-v2, which is the revision 2 [ietf-ccamp-layer0-types](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-layer0-types) 
+This is the working area for the [IETF CCAMP WG](https://datatracker.ietf.org/wg/ccamp/documents/) ietf-ccamp-layer0-types-v2, which is the revision 2 [ietf-ccamp-layer0-types](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-layer0-types).
+
+**Note**: an Internet-Draft for ietf-ccamp-layer0-types-v2 is still pending.
+
+## Branches
+* **carry-over-ietf-ccamp-layer0-types**: this temporary branch is used for the material that was removed from ietf-layer0-types when it's scope was reduced to spectrum management only.
+* **branch-2** (still to be created): (description TBA)
+Material from the two branches above will ber merged into ietf-ccamp-layer0-types-v2.yang based on conscious desicions .
 
 ## Contributing
 
