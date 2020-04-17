@@ -6,8 +6,9 @@ This is the working area for the [IETF CCAMP WG](https://datatracker.ietf.org/wg
 
 ## Branches
 * **carry-over-ietf-ccamp-layer0-types**: this temporary branch is used for the material that was removed from ietf-layer0-types when it's scope was reduced to spectrum management only.
-* **branch-2** (still to be created): (description TBA)
-Material from the two branches above will ber merged into ietf-ccamp-layer0-types-v2.yang based on conscious desicions .
+* **transponder-model-types**: this temporary branch will be used for developing type defs and groupings that are used in various YANG models that include optical transponders (e.g.: [draft-ietf-ccamp-dwdm-if-param-yang](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-dwdm-if-param-yang), [draft-ietf-ccamp-optical-impairment-topology-yang](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-optical-impairment-topology-yang), etc.) 
+
+Material from the two branches above will ber merged into ietf-ccamp-layer0-types-v2.yang (to be created) on the master branch.
 
 ## Contributing
 
