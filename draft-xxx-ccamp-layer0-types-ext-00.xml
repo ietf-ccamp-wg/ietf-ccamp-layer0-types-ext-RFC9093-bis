@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- This template is for creating an Internet Draft using xml2rfc,
+    which is available here: http://xml.resource.org. -->
+<!DOCTYPE rfc SYSTEM "rfc2629-xhtml.ent" [
+<!ENTITY I-D.ietf-teas-yang-te-topo SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-teas-yang-te-topo.xml">
+<!ENTITY I-D.ietf-ccamp-wson-yang SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-wson-yang.xml">
+<!ENTITY I-D.ietf-ccamp-layer0-types SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-layer0-types.xml">
+<!ENTITY I-D.ietf-ccamp-dwdm-if-param-yang SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-dwdm-if-param-yang.xml">
+]>
+
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<!-- used by XSLT processors -->
+<!-- For a complete list and description of processing instructions (PIs), 
+    please see http://xml.resource.org/authoring/README.html. -->
+<rfc
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      category="std"
+      docName="draft-xxx-ccamp-layer0-types-ext-00"
+      ipr="trust200902"
+      obsoletes=""
+      updates="draft-ietf-ccamp-layer0-types"
+      submissionType="IETF"
+      xml:lang="en"
+      tocInclude="true"
+      tocDepth="4"
+      symRefs="true"
+      sortRefs="true"
+      version="3">
+  <!-- xml2rfc v2v3 conversion 2.38.1 -->
+  <!-- category values: std, bcp, info, exp, and historic
+    ipr values: trust200902, noModificationTrust200902, noDerivativesTrust200902,
+       or pre5378Trust200902
+    you can add the attributes updates="NNNN" and obsoletes="NNNN" 
+    they will automatically be output with "(if approved)" -->
+
+<!-- ***** FRONT MATTER ***** -->
+
+<front>
+  <title abbrev="Layer 0 Types - Revision 2">A YANG Data Model for Layer 0 Types - Revision 2</title>
+  <seriesInfo name="Internet-Draft" value="draft-xxx-ccamp-layer0-types-ext-00"/>
+  <!-- add 'role="editor"' below for the editors if appropriate -->
+
+  <!-- Another author who claims to be an editor -->
+
+  <author fullname="Dieter Beller" initials="D." role="editor" surname="Beller">
+    <organization>Nokia</organization>
+    <address>
+      <email>Dieter.Beller@nokia.com</email>
+    </address>
+
+  </author>
+    <author fullname="" initials="H." role="editor" surname="Zheng">
+    <organization>Huawei</organization>
+    <address>
+      <email>ZhengHaomian@huawei.com</email>
+    </address>
+  </author>
+  
+  <date year="2020" month="April" day="20"/>
+   
+   <!-- Meta-data Declarations -->
+
+  <area>Routing</area>
+  <workgroup>CCAMP</workgroup>
+  <keyword>WDM Networks</keyword>
+  <!-- Keywords will be incorporated into HTML output
+       files in a meta tag but they have no effect on text or nroff
+       output. If you submit your draft to the RFC Editor, the
+       keywords will be used for the search engine. -->
+
+  <abstract>
+    <t>
+      The YANG module ietf-layer0-types-ext updates ietf-layer0-types
+      <xref target="I-D.ietf-ccamp-layer0-types"/>, which has been reduced in
+      scope prior to publication to only cover spectrum management related
+      aspects required for ietf-wson-topology
+      <xref target="I-D.ietf-ccamp-wson-yang"/>.
+    </t>
+     
+    <t>
+      To be completed
+    </t>
+      
+  </abstract>
+</front>
+  
+<middle>
+  <section anchor="Intro" numbered="true" toc="default">
+    <name>Introduction</name>
+    <t>To be added.</t>
+    <section numbered="true" toc="default">
+      <name>Requirements Language</name>
+      <t>
+        The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+        "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+        document are to be interpreted as described in
+        <xref target="RFC2119" format="default">RFC 2119</xref>.</t>
+    </section>
+    
+    <section anchor="Terminology" numbered="true" toc="default">
+      <name>Terminology</name>
+    
+    </section>
+  </section>
+    
+  <section anchor="BodyText" numbered="true" toc="default">
+    <name>Section 2</name>
+    <t>
+      This is the body of the I-D.
+    </t>
+    <t>
+      [Editor's note: There is still stuff from the xml template that needs to be removed]
+    </t>
+    
+  </section>
+    
+  <section anchor="Sect-x" numbered="true" toc="default">
+    <name>Layer0 Types Revision 2 YANG CODE</name>
+    
+    <t>
+      [Editor's note: YANG code below has to be updated before submission!]
+    </t>
+  
+    <figure><artwork><![CDATA[
+  <CODE BEGINS>
+    YANG code TBA
+  <CODE ENDS>
+  ]]></artwork>
+
+    </figure>
+  </section>
+  
+  <section anchor="Acknowledgements" numbered="true" toc="default">
+    <name>Acknowledgements</name>
+    <t>
+      To be added if any.
+    </t>
+  </section>
+  
+  <!-- Possibly a 'Contributors' section ... -->
+  
+  <section anchor="IANA" numbered="true" toc="default">
+    <name>IANA Considerations</name>
+    <t>This memo includes no request to IANA.</t>
+    <t>All drafts are required to have an IANA considerations section (see
+   <xref target="RFC5226" format="default">Guidelines for Writing an IANA Considerations Section in RFCs</xref> for a guide). If the draft does not require IANA to do
+   anything, the section contains an explicit statement that this is the
+   case (as above). If there are no requirements for IANA, the section will
+   be removed during conversion into an RFC by the RFC Editor.</t>
+  </section>
+  
+  <section anchor="Security" numbered="true" toc="default">
+    <name>Security Considerations</name>
+    <t>All drafts are required to have a security considerations section.
+   See <xref target="RFC3552" format="default">RFC 3552</xref> for a guide.</t>
+  </section>
+  
+</middle>
+
+  <!--  *****BACK MATTER ***** -->
+
+<back>
+    <!-- References split into informative and normative -->
+
+   <!-- There are 2 ways to insert reference entries from the citation libraries:
+    1. define an ENTITY at the top, and use "ampersand character"RFC2629; here (as shown)
+    2. simply use a PI "less than character"?rfc include="reference.RFC.2119.xml"?> here
+       (for I-Ds: include="reference.I-D.narten-iana-considerations-rfc2434bis.xml")
+
+    Both are cited textually in the same manner: by using xref elements.
+    If you use the PI option, xml2rfc will, by default, try to find included files in the same
+    directory as the including file. You can also define the XML_LIBRARY environment variable
+    with a value containing a set of directories to search.  These can be either in the local
+    filing system or remote ones accessed by http (http://domain/dir/... ).-->
+
+  <references>
+  <name>References</name>
+    <references>
+      <name>Normative References</name>
+
+        &I-D.ietf-teas-yang-te-topo;
+        &I-D.ietf-ccamp-wson-yang;
+        &I-D.ietf-ccamp-layer0-types;
+        &I-D.ietf-ccamp-dwdm-if-param-yang;
+
+       <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+      <reference anchor="RFC2119" target="https://www.rfc-editor.org/info/rfc2119" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
+        <front>
+          <title>Key words for use in RFCs to Indicate Requirement Levels</title>
+          <seriesInfo name="DOI" value="10.17487/RFC2119"/>
+          <seriesInfo name="RFC" value="2119"/>
+          <seriesInfo name="BCP" value="14"/>
+          <author initials="S." surname="Bradner" fullname="S. Bradner">
+            <organization/>
+          </author>
+          <date year="1997" month="March"/>
+          <abstract>
+          <t>
+            In many standards track documents several words are used to signify the requirements in the specification.  These words are often capitalized. This document defines these words as they should be interpreted in IETF documents.  This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.
+          </t>
+          </abstract>
+        </front>
+      </reference>
+     
+      <reference anchor="min_ref">
+     
+      <!-- the following is the minimum to make xml2rfc happy -->
+
+        <front>
+        <title>Minimal Reference</title>
+        <author initials="authInitials" surname="authSurName">
+          <organization/>
+        </author>
+        <date year="2006"/>
+        </front>
+      </reference>
+    </references>
+  
+    <references>
+      <name>Informative References</name>
+     
+      <!-- Here we use entities that we defined at the beginning. -->
+
+      <reference anchor="RFC2629" target="https://www.rfc-editor.org/info/rfc2629" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2629.xml">
+        <front>
+          <title>Writing I-Ds and RFCs using XML</title>
+          <seriesInfo name="DOI" value="10.17487/RFC2629"/>
+          <seriesInfo name="RFC" value="2629"/>
+          <author initials="M." surname="Rose" fullname="M. Rose">
+            <organization/>
+          </author>
+          <date year="1999" month="June"/>
+          <abstract>
+            <t>This memo presents a technique for using XML (Extensible Markup Language) as a source format for documents in the Internet-Drafts (I-Ds) and Request for Comments (RFC) series.  This memo provides information for the Internet community.</t>
+          </abstract>
+        </front>
+      </reference>
+        
+      <reference anchor="RFC3552" target="https://www.rfc-editor.org/info/rfc3552" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.3552.xml">
+        <front>
+          <title>Guidelines for Writing RFC Text on Security Considerations</title>
+          <seriesInfo name="DOI" value="10.17487/RFC3552"/>
+          <seriesInfo name="RFC" value="3552"/>
+          <seriesInfo name="BCP" value="72"/>
+          <author initials="E." surname="Rescorla" fullname="E. Rescorla">
+            <organization/>
+          </author>
+          <author initials="B." surname="Korver" fullname="B. Korver">
+            <organization/>
+          </author>
+          <date year="2003" month="July"/>
+          <abstract>
+            <t>
+              All RFCs are required to have a Security Considerations section. Historically, such sections have been relatively weak.  This document provides guidelines to RFC authors on how to write a good Security Considerations section.   This document specifies an Internet Best Current Practices for the Internet Community, and requests discussion and suggestions for improvements.
+            </t>
+          </abstract>
+        </front>
+      </reference>
+      
+      <reference anchor="RFC5226" target="https://www.rfc-editor.org/info/rfc5226" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5226.xml">
+        <front>
+          <title>Guidelines for Writing an IANA Considerations Section in RFCs</title>
+          <seriesInfo name="DOI" value="10.17487/RFC5226"/>
+          <seriesInfo name="RFC" value="5226"/>
+          <author initials="T." surname="Narten" fullname="T. Narten">
+            <organization/>
+          </author>
+          <author initials="H." surname="Alvestrand" fullname="H. Alvestrand">
+            <organization/>
+          </author>
+          <date year="2008" month="May"/>
+          <abstract>
+            <t>
+              Many protocols make use of identifiers consisting of constants and other well-known values.  Even after a protocol has been defined and deployment has begun, new values may need to be assigned (e.g., for a new option type in DHCP, or a new encryption or authentication transform for IPsec).  To ensure that such quantities have consistent values and interpretations across all implementations, their assignment must be administered by a central authority.  For IETF protocols, that role is provided by the Internet Assigned Numbers Authority (IANA).
+            </t>
+            <t>
+              In order for IANA to manage a given namespace prudently, it needs guidelines describing the conditions under which new values can be assigned or when modifications to existing values can be made.  If IANA is expected to play a role in the management of a namespace, IANA must be given clear and concise instructions describing that role.  This document discusses issues that should be considered in formulating a policy for assigning values to a namespace and provides guidelines for authors on the specific text that must be included in documents that place demands on IANA.
+            </t>
+            <t>
+              This document obsoletes RFC 2434.  This document specifies an Internet Best  Current Practices for the Internet Community, and requests discussion and  suggestions for improvements.
+            </t>
+          </abstract>
+        </front>
+      </reference>
+      
+      <!-- A reference written by by an organization not a person. -->
+
+      <reference anchor="DOMINATION" target="http://www.example.com/dominator.html">
+        <front>
+          <title>Ultimate Plan for Taking Over the World</title>
+          <author>
+            <organization>Mad Dominators, Inc.</organization>
+          </author>
+          <date year="1984"/>
+        </front>
+      </reference>
+    </references>
+  </references>
+  
+  <section anchor="app-additional" numbered="true" toc="default">
+    <name>Additional Stuff</name>
+    <t>This becomes an Appendix.</t>
+  </section>
+
+</back>
+</rfc>
