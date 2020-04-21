@@ -1,6 +1,6 @@
 # ietf-layer0-types-ext
 CCAMP WG repository for ietf-layer0-types-ext.
-This is the working area for the [IETF CCAMP WG](https://datatracker.ietf.org/wg/ccamp/documents/) ietf-layer0-types-ext YANG module, which is the starting point for revision 2 of [ietf-layer0-types](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-layer0-types). When the initial version of the YANG module ietf-layer0-types will have been published as RFC, ietf-ccamp-layer0-types-ext will be renamed to ietf-ccamp-layer0-types.
+This is the working area for the [IETF CCAMP WG](https://datatracker.ietf.org/wg/ccamp/documents/) ietf-layer0-types-ext YANG module, which is the starting point for revision 2 of [ietf-layer0-types](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-layer0-types). When the initial version of the YANG module ietf-layer0-types will have been published as RFC, ietf-layer0-types-ext will be renamed to ietf-layer0-types.
 
 **Note**: an Internet-Draft for ietf-layer0-types-ext is still pending.
 
