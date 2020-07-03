@@ -108,8 +108,8 @@ module ietf-layer0-types-ext {
   }
   identity reed-solomon {
     base FEC;
-      description
-  "Reed-Solomon error correction";
+    description
+      "Reed-Solomon error correction";
   }
   identity hamming-code {
     base FEC;
