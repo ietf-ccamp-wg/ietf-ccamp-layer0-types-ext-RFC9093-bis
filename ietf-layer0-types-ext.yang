@@ -69,6 +69,7 @@ module ietf-layer0-types-ext {
       "DP-QPSK (Dual Polarization Quadrature
        Phase Shift Keying) modulation";
   }
+
   identity QAM8 {
     base modulation;
     description
@@ -314,13 +315,13 @@ module ietf-layer0-types-ext {
            units dB ;
            description "Polarization dependent loss";
     }
-    leaf-list available-modulation-types {
+    leaf available-modulation-type {
       type identityref {
       base modulation;
       }
       config false;
     description
-      "List of modulation types the tranceiver can support";
+      "Modulation type the specific tranceiver in the list can support";
     }
     leaf  osnr-margin {
       type int32;
@@ -350,12 +351,12 @@ module ietf-layer0-types-ext {
          per second in a digitally 
          modulated signal or a line code";
     }
-    leaf-list available-FEC-types {
+    leaf available-FEC-type {
       type identityref {
       base FEC;
       }
       config false;
-      description "List determining all the available FEC";
+      description "Available FEC";
     }
     leaf FEC-code-rate {
       type decimal64 {
@@ -389,7 +390,7 @@ module ietf-layer0-types-ext {
       type layer0-types:frequency-thz;
       config false;
       description
-        "his parameter indicates the actual configured transmitter
+        "This parameter indicates the actual configured transmitter
          frequency ";
     }
 
