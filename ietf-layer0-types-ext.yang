@@ -113,8 +113,8 @@ module ietf-layer0-types-ext {
   }
   identity hamming-code {
     base FEC;
-      description
-  "Hamming Code error correction";
+    description
+      "Hamming Code error correction";
   }
   identity golay {
     base FEC;
