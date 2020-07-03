@@ -103,7 +103,7 @@ module ietf-layer0-types-ext {
 
   identity FEC {
     description
-      "Enumeration that defines the type of
+      "Base Identity the type of
        Forward Error Correction";
   }
   identity reed-solomon {
