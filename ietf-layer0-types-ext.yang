@@ -53,7 +53,7 @@ module ietf-layer0-types-ext {
 
 // identity
 
-    identity modulation {
+  identity modulation {
     description "base identity for modulation type";
   }
 
