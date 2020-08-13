@@ -145,7 +145,6 @@ module ietf-layer0-types-ext {
     base line-coding;
     description
       "ITU-T G.698.2-201811 section 7 table 8-3/8-5 "   
-
   }
 
   identity line-coding-NRZ-OTU2 {
