@@ -279,7 +279,7 @@ module ietf-layer0-types-ext {
       config false;
       description "Bit rate/line coding of optical tributary signal"
       reference 
-        "ITU-T G.698.2 section 7"
+        "ITU-T G.698.2 section 7.1.2"
     }
     leaf max-polarization-mode-dispersion {
       type decimal64 {
