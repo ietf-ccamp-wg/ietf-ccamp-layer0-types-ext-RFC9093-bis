@@ -272,7 +272,7 @@ module ietf-layer0-types-ext {
     modes of an optical tranceiver";
 
 
-    leaf linecoding-bitrate {
+    leaf line-coding-bitrate {
       type identyref {
         base line-coding;
       }
