@@ -211,8 +211,9 @@ module ietf-layer0-types-ext {
     leaf max-central-frequency {
       type layer0-types:frequency-thz;
       config false;
-      description "This parameter indicates the minimum frequency
-                   for this template";
+      description
+        "This parameter indicates the maximum frequency
+         for this transceiver.";
     }
 
     transmitter-tunability-grid {
