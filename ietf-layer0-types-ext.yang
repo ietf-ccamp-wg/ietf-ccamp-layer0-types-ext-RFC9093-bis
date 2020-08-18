@@ -75,26 +75,31 @@ module ietf-layer0-types-ext {
     description
       "8QAM (8-State Quadrature Amplitude Modulation) modulation";
   }
+
   identity QAM16 {
     base modulation;
     description
       "QAM16 (Quadrature Amplitude Modulation)";
   }
+
   identity DP-QAM8 {
     base modulation;
     description
       "DP-QAM8 (Dual Polarization Quadrature Amplitude Modulation)";
   }
+
   identity DC-DP-QAM8 {
     base modulation;
     description
     "DC DP-QAM8 (Dual Polarization Quadrature Amplitude Modulation)";
   }
+
   identity DP-QAM16 {
     base modulation;
     description
       "DP-QAM16 (Dual Polarization Quadrature Amplitude Modulation)";
   }
+
   identity DC-DP-QAM16 {
     base modulation;
     description
@@ -107,16 +112,19 @@ module ietf-layer0-types-ext {
       "Base Identity the type of
        Forward Error Correction";
   }
+
   identity reed-solomon {
     base FEC;
     description
       "Reed-Solomon error correction";
   }
+
   identity hamming-code {
     base FEC;
     description
       "Hamming Code error correction";
   }
+
   identity golay {
     base FEC;
       description "Golay error correction";
@@ -188,86 +196,41 @@ module ietf-layer0-types-ext {
       reference
         "RFC6205: Generalized Labels for
         Lambda-Switch-Capable (LSC) Label Switching Routers";
-    }
+  }
+  typedef frequency-ghz {
+      type decimal64 {
+        fraction-digits 3;
+      }
+      units GHz;
+      description
+        "The DWDM frequency in GHz, e.g., 193112.500";
+      reference
+        "RFC6205: Generalized Labels for
+        Lambda-Switch-Capable (LSC) Label Switching Routers";
+  }    
 
 // GROUPINGS  
 
-/* This grouping represent the list of capabilities attributes not under operational-mode */
 
+ /* supported inverse multiplexing capabilities such as max. OTSiG:OTSi cardinality 
+ It is a transponder attribute not tranceiver*/
 
-  grouping common-tranceiver-capabilities {
-    description "Capability of an optical tranceiver";
-
- 
-/* transmitter tuning range (f_tx-min, f_tx-max) */
-
-    leaf min-central-frequency {
-      type layer0-types:frequency-thz;
-      config false;
-      description
-        "This parameter indicates the minimum frequency for
-         this transceiver.";
-    }
-    leaf max-central-frequency {
-      type layer0-types:frequency-thz;
-      config false;
-      description
-        "This parameter indicates the maximum frequency
-         for this transceiver.";
-    }
-
-    transmitter-tunability-grid {
-      type identityref {
-        base l0-types:flexi-ch-spc-type
-      }
-    }
-
-/* supported transmitter power range [p_tx-min, p_tx_max] */
-
-    leaf min-channel-output-power {
-      type dbm-t;
-      config false;
-      description "The minimum output power of this interface";
-    }
-    leaf max-channel-output-power {
-      type dbm-t;
-      config false;
-      description "The maximum output power of this interface";
-    }
-
- /* supported receiver power range [p_rx-min, p_rx_max] */   
-     leaf min-channel-input-power {
-      type dbm-t;
-      config false;
-      description "The minimum input power of this interface";
-    }
-    leaf max-channel-input-power {
-      type dbm-t;
-      config false;
-      description "The maximum input power of this interface";
-    }
-
-    leaf max-total-rx-optical-power {
-      type dbm-t;
-      config false;
-      description "Maximum rx optical power";
-    }
-
- /* supported inverse multiplexing capabilities such as max. OTSiG:OTSi cardinality */
-
-    leaf multiplexing-cap {
+/*    leaf multiplexing-cap {
       type uint32;
     config false;
       description "supported inverse multiplexing capabilities
        such as max. OTSiG:OTSi cardinality";
-    }
+    }  */
 
-  } // grouping for supported attributes out of mode
+  
 
 
-/* This grouping represent the list of attributes related to operational-mode */
+/* This grouping represent the list of attributes related to */
+/* optical impairment limits for each operational mode */
+/*(min OSNR, max PMD, max CD, max PDL, Q-factor limit, etc.)*/
+/* It can be utilized also in case of "explicit-mode" */
 
-  grouping common-tranceiver-capabilities-bymode {
+  grouping common-tranceiver-capabilities-organizational-mode {
     description "Attributes capabilities related to operational 
     modes of an optical tranceiver";
 
@@ -375,11 +338,79 @@ module ietf-layer0-types-ext {
         "Threshold on the BER, for which FEC 
          is able to correct errors";
     }
+  } // end grouping of attributes capabilities related to operational mode    
 
-  } // end grouping of attributes capabilities related to operational mode
+  grouping common-tranceiver-capabilities-organizational-explicit {
+    description "Common capability in case of operational mode 
+    and explicit mode. 
+    These attributes are supported separately in 
+    case of application codes";
+
+/* transmitter tuning range (f_tx-min, f_tx-max) */
+
+    leaf min-central-frequency {
+      type layer0-types:frequency-thz;
+      config false;
+      description
+        "This parameter indicates the minimum frequency for
+         this transceiver.";
+    }
+    leaf max-central-frequency {
+      type layer0-types:frequency-thz;
+      config false;
+      description
+        "This parameter indicates the maximum frequency
+         for this transceiver.";
+    }
+
+/* transmitter-tunability-grid */
+
+    leaf minimum-channel-spacing {
+      type frequency-ghz;
+      config false;
+      description
+        "This paramenter represents the minumum difference in frequency
+        between two adjacent channels (ref. G.698.2 sec.7.1.1).
+        This free value is to permit OTSi's central frequency not to
+        stay on the G.694.1 grid.";
+    } 
+
+/* supported transmitter power range [p_tx-min, p_tx_max] */
+
+    leaf min-channel-output-power {
+      type dbm-t;
+      config false;
+      description "The minimum output power of this interface";
+    }
+    leaf max-channel-output-power {
+      type dbm-t;
+      config false;
+      description "The maximum output power of this interface";
+    } 
+
+/* supported receiver power range [p_rx-min, p_rx_max] */ 
+
+     leaf min-channel-input-power {
+      type dbm-t;
+      config false;
+      description "The minimum input power of this interface";
+    }
+    leaf max-channel-input-power {
+      type dbm-t;
+      config false;
+      description "The maximum input power of this interface";
+    }
+
+    leaf max-total-rx-optical-power {
+      type dbm-t;
+      config false;
+      description "Maximum rx optical power";
+    }      
+
+  } // end grouping of attributes capabilities related to operational mode and explicit mode
 
 /* This grouping represent the list of configured parameters */
-/* values independet of operational mode */
+/* values independent of operational mode */
 
   grouping common-tranceiver-configured-param {
     description "Capability of an optical tranceiver";
@@ -411,134 +442,6 @@ module ietf-layer0-types-ext {
     }
 
   } // grouping for configured attributes out of mode
-
-
-/* This grouping represent the list of parameters values linked to operational-mode  */ 
-
-  grouping common-tranceiver-configured-param-bymode {
-    description "Attributes capabilities related to operational 
-    modes of an optical tranceiver";
-
-
-    leaf linecoding-bitrate-config {
-      type identyref {
-        base line-coding;
-      }
-      config false;
-      description "Bit rate/line coding of optical tributary signal"
-      reference 
-        "ITU-T G.698.2 section 7"
-    }
-    leaf polarization-mode-dispersion-value {
-      type decimal64 {
-      fraction-digits 2;
-      range "0..max";
-      }
-      units "ps";
-      config false;
-      description "Accumulated polarization mode dispersion value
-        on the receiver";
-    }
-    leaf chromatic-dispersion-value {
-      type decimal64 {
-      fraction-digits 2;
-      range "0..max";
-      }
-      units "ps/nm";
-      mandatory true;
-      config false;
-      description "Accumulated chromatic dispersion value
-        on the receiver";
-    }
-    leaf max-diff-group-delay  {
-           type int32;
-           config false;
-           description "Differential group delay value;
-    }
-    leaf polarization-dependent-loss-value {
-           type decimal64 {
-             fraction-digits 2;
-           }
-           units dB ;
-           description "Polarization dependent loss value";
-    }
-    leaf configured-modulation-type {
-      type identityref {
-      base modulation;
-      }
-      config false;
-    description
-      "Configured modulation types for this OTSi";
-    }
-    leaf  osnr-margin {
-      type int32;
-      units "dB";
-      config false;
-      description "OSNR margin to FEC threshold";
-    }
-    leaf  q-margin {
-      type int32;
-      units "dB";
-      config false;
-      description "Q-Factor margin to FEC threshold";
-    }
-    leaf  cur-osnr {
-      type int32;
-      units "dB";
-      config false;
-      description "OSNR margin to FEC threshold";
-    }
-    leaf  cur-q-factor {
-      type int32;
-      units "dB";
-      config false;
-      description "Q-Factor of the interface";
-    }
-    
-    leaf configured-baud-rate {
-      type uint32;
-        units Bd;
-      config false;
-      description
-        "Configured baud-rate. 
-         Baud-rate is the unit for
-         symbol rate or modulation rate 
-         in symbols per second or
-         pulses per second. 
-         It is the number of distinct symbol
-         changes (signal events) made to the 
-         transmission medium
-         per second in a digitally 
-         modulated signal or a line code";
-    }
-    leaf configured-FEC-types {
-      type identityref {
-      base FEC;
-      }
-      config false;
-      description "FEC type configured";
-    }
-    leaf FEC-code-rate {
-      type decimal64 {
-      fraction-digits 8;
-      range "0..max";
-      }
-      config false;
-      description "FEC-code-rate";
-    }
-    leaf FEC-threshold {
-      type decimal64 {
-      fraction-digits 8;
-      range "0..max";
-      }
-      config false;
-    description
-        "Threshold on the BER, for which FEC 
-         is able to correct errors";
-    }
-
-  } // end grouping of configured attributes per OTSi related to operational mode 
-
 
 
 } // end of module
