@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2020-04-21" {
+  revision "2020-09-21" {
     description
       "Initial Version";
     reference
@@ -222,7 +222,44 @@ module ietf-layer0-types-ext {
        such as max. OTSiG:OTSi cardinality";
     }  */
 
-  
+  grouping cd-pmd-penalty {
+    description "entries of table; triplet chromatic
+    dispersion, polarization mode dispersion and
+    associated penalty";
+
+    leaf chromatic-dispersion {
+      type decimal64 {
+      fraction-digits 2;
+      range "0..max";
+      }
+      units "ps/nm";
+      mandatory true;
+      config false;
+      description "chromatic dispersion";
+      }
+
+    leaf polarization-mode-dispersion {
+      type decimal64 {
+      fraction-digits 2;
+      range "0..max";
+      }
+      units "ps";
+      mandatory true;
+      config false;
+      description "Polarization mode dispersion";
+      }
+
+    leaf penalty {
+      type decimal64 {
+      fraction-digits 2;
+      range "0..max";
+      }
+      units "dB";
+      mandatory true;
+      config false;
+      description "Associated penalty on the receiver";    }
+
+  }  
 
 
 /* This grouping represent the list of attributes related to */
@@ -264,6 +301,14 @@ module ietf-layer0-types-ext {
       description "Maximum acceptable accumulated chromatic dispersion
         on the receiver";
     }
+    list chromatic-and-polarization-dispersion-penalty {
+      description
+          "Optional penalty associated with a given accumulated CD and PMD.
+          This list of triplet cd, pmd, penalty can be used to sample 
+          the function penalty = f(CD, PMD).";
+      config false;
+      uses cd-pmd-penalty ;
+     }
     leaf max-diff-group-delay  {
            type int32;
            config false;
@@ -275,7 +320,7 @@ module ietf-layer0-types-ext {
              fraction-digits 2;
            }
            units dB ;
-           description "Polarization dependent loss";
+           description "Maximum acceptable accumulate polarization dependent loss";
     }
     leaf available-modulation-type {
       type identityref {
@@ -285,24 +330,28 @@ module ietf-layer0-types-ext {
     description
       "Modulation type the specific tranceiver in the list can support";
     }
-    leaf  osnr-margin {
+    leaf  min-OSNR {
       type int32;
       units "dB";
       config false;
-      description "OSNR margin to FEC threshold";
+      description "OSNR margin to FEC threshold:
+      if received OSNR at minimum Rx-power is lower than MIN-OSNR,
+      an increased level of bit-errors post-FEC need 
+      to be expected.";
     }
-    leaf  q-margin {
+    leaf  min-Q-factor {
       type int32;
       units "dB";
       config false;
       description "Q-Factor margin to FEC threshold";
     }
-    leaf-list available-baud-rates {
+    leaf available-baud-rate {
       type uint32;
         units Bd;
       config false;
       description
-        "list of available baud-rates. 
+        "Baud-rate the specific tranceiver in 
+        the list can support.
          Baud-rate is the unit for
          symbol rate or modulation rate 
          in symbols per second or
@@ -340,7 +389,7 @@ module ietf-layer0-types-ext {
     }
   } // end grouping of attributes capabilities related to operational mode    
 
-  grouping common-tranceiver-capabilities-organizational-explicit {
+  grouping common-transceiver-capabilities-organizational-explicit {
     description "Common capability in case of operational mode 
     and explicit mode. 
     These attributes are supported separately in 
@@ -412,11 +461,11 @@ module ietf-layer0-types-ext {
 /* This grouping represent the list of configured parameters */
 /* values independent of operational mode */
 
-  grouping common-tranceiver-configured-param {
-    description "Capability of an optical tranceiver";
+  grouping common-transceiver-configured-param {
+    description "Capability of an optical transceiver";
 
 
-    leaf transmit-frequency {
+    leaf central-frequency {
       type layer0-types:frequency-thz;
       config false;
       description
