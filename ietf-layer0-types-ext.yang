@@ -585,10 +585,11 @@ module ietf-layer0-types-ext {
       description "The maximum input power of this interface";
     }
 
-    leaf max-total-rx-optical-power {
+    leaf max-total-input-power {
       type dbm-t;
       config false;
-      description "Maximum rx optical power";
+      description "Maximum rx optical power for
+      all the channels";
     }      
 
   } // grouping common-organizational-explicit-mode
