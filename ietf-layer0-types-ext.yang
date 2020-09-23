@@ -1,6 +1,6 @@
 module ietf-layer0-types-ext {
   namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types-ext";
-  prefix "layer0-types-ext";
+  prefix "l0-types-ext";
 
   organization
     "IETF CCAMP Working Group";
@@ -44,12 +44,6 @@ module ietf-layer0-types-ext {
     reference
       "RFC XXXX: A YANG Data Model for Layer 0 Types - Revision 2";
   }
-
-/* This file only contains the YANG file header for the module ietf-layer0-types-ext
-   that is going to be developed. This module will be renamed prior to publication
-   and will update ietf-layer0-types.
-   
-   The typedefs and groupings will be added here. */
 
 // identity
 
@@ -136,32 +130,31 @@ module ietf-layer0-types-ext {
     description
       "base line-coding class";
     reference 
-      "ITU-T G.698.2-201811 section 7"   
+      "ITU-T G.698.2-201811 section 7";
   }  
 
   identity line-coding-NRZ-2p5G {
     base line-coding;
     description 
-      "ITU-T G.698.2-201811 section 7 table 8-1 "   
+      "ITU-T G.698.2-201811 section 7 table 8-1";
   }
 
   identity line-coding-NRZ-OTU1 {
     base line-coding;
     description
-      "ITU-T G.698.2-201811 section 7 table 8-2 "   
+      "ITU-T G.698.2-201811 section 7 table 8-2";
   }
 
   identity line-coding-NRZ-10G {
     base line-coding;
     description
-      "ITU-T G.698.2-201811 section 7 table 8-3/8-5 "   
+      "ITU-T G.698.2-201811 section 7 table 8-3/8-5";
   }
 
   identity line-coding-NRZ-OTU2 {
     base line-coding;
     description
-      "ITU-T G.698.2-201811 section 7 table 8-4/8-6 "   
-
+      "ITU-T G.698.2-201811 section 7 table 8-4/8-6";
   }
 
 // typedefs                
@@ -169,13 +162,11 @@ module ietf-layer0-types-ext {
   typedef operational-mode {
     type string;
     description
-      "Vendor-specific mode that guarantees 
+      "Organization/vendor specific mode that guarantees 
       interoperability.";
-    
+    reference "ITU-T G.698.2 (11/2018)";
   }
 
-// temporary defined here for disalignment with 
-//ietf-layer0-types module
   typedef standard-mode {
     type string;
     description
@@ -186,6 +177,16 @@ module ietf-layer0-types-ext {
        are conformant
        to the ITU-T recomendation";
     reference "ITU-T G.698.2 (11/2018)";
+  }
+
+  typedef organization-identifier {
+    type string;
+    description
+      "vendor/organization identifier that uses a private mode
+      out of already defined in G.698.2 ITU-T application-code";
+    reference
+      "RFC7581: Routing and Wavelength Assignment Information
+       Encoding for Wavelength Switched Optical Networks";
   }
 
   typedef frequency-thz {
@@ -211,18 +212,144 @@ module ietf-layer0-types-ext {
         Lambda-Switch-Capable (LSC) Label Switching Routers";
   }    
 
+  typedef dbm-t {
+    type int32;
+    units ".01dbm";
+    description
+      "Amplifiers and Transceivers Power in dBm.";
+  }
+
 // GROUPINGS  
 
+ /* supported inverse multiplexing capabilities such as
+    max. OTSiG:OTSi cardinality
+    It is a transponder attribute not transceiver
+  */
 
- /* supported inverse multiplexing capabilities such as max. OTSiG:OTSi cardinality 
- It is a transponder attribute not tranceiver*/
-
-/*    leaf multiplexing-cap {
+ /*    leaf multiplexing-cap {
       type uint32;
     config false;
       description "supported inverse multiplexing capabilities
        such as max. OTSiG:OTSi cardinality";
-    }  */
+    }
+  */
+
+  grouping transceiver-capabilities {
+    description
+      "This grouping is intended to be use for reporting the
+       capabilities of a transceiver.";
+
+    container supported-modes {
+      description
+        "Transceiver's supported modes.";
+      list supported-mode {
+        key "mode-id";
+        config false;
+        description "list of supported transceiver's modes.";
+        leaf mode-id {
+          type string { 
+            length "1..255";
+          }
+          description "ID for the supported transceiver's mode.";
+        }
+        choice mode {
+          mandatory true;
+          description
+            "Indicates whether the transceiver's mode is a standard
+             mode, an organizational mode or an explicit mode.";
+          case G.698.2 {
+            uses standard-mode;
+          }
+          case organizational-mode {
+            container organizational-mode {
+              description
+                "The set of attributes for an organizational mode";
+              uses organizational-mode;
+              uses common-organizational-explicit-mode;
+            }  // container organizational-mode
+          }
+          case explicit-mode {
+            container explicit-mode {
+              container supported-modes {
+                description
+                  "Container for all the standard and organizational
+                   modes supported by the transceiver's explicit
+                   mode.";
+                leaf-list supported-application-codes {
+                  type leafref {
+                    path "../../mode-id";
+                  }
+                  must "../../../supported-mode[mode-id=current()]/"
+                     + "standard-mode" {
+                    description
+                      "The pointer is only for application codes
+                       supported by transceiver.";
+                  }
+                  description
+                    "List of pointers to the application codes
+                     supported by the transceiver's explicit mode.";
+                }
+                leaf-list supported-organizational-modes {
+                  type leafref {
+                    path "../../mode-id";
+                  }
+                  must "../../../supported-mode[mode-id=current()]/"
+                     + "operational-mode" {
+                    description
+                      "The pointer is only for organizational modes
+                       supported by transceiver.";
+                  }
+                  description
+                    "List of pointers to the organizational modes
+                     supported by the transceiver's explicit mode.";
+                }
+              }  // container supported-modes
+              uses common-explicit-mode;
+              uses common-organizational-explicit-mode;
+            }  // container explicit-mode
+          } // end of case explicit-mode
+        } // end of choice
+      }  // list supported-modes
+    }  // container supported-modes
+  }  // grouping transceiver-capabilities
+
+  grouping standard-mode {
+    description
+      "ITU-T G.698.2 standard mode that guarantees interoperability.
+       It must be an string with the following format:
+       B-DScW-ytz(v) where all these attributes are conformant
+       to the ITU-T recomendation";
+
+    leaf standard-mode {
+      type standard-mode;
+      config false;
+      description
+        "G.698.2 standard mode";
+    }
+  }
+
+  grouping organizational-mode {
+    description
+      "Transponder operational mode supported by organizations or
+       vendor";
+
+    leaf operational-mode {
+      type operational-mode;
+      config false;
+      description
+        "configured organization- or vendor-specific
+         application identifiers (AI) supported by the transponder";
+    }
+
+    leaf organization-identifier {
+      type organization-identifier;
+      config false;
+      description
+      "organization identifier that uses organizational
+         mode";
+
+    }
+  }
 
   grouping cd-pmd-penalty {
     description "entries of table; triplet chromatic
@@ -231,36 +358,36 @@ module ietf-layer0-types-ext {
 
     leaf chromatic-dispersion {
       type decimal64 {
-      fraction-digits 2;
-      range "0..max";
+        fraction-digits 2;
+        range "0..max";
       }
       units "ps/nm";
-      mandatory true;
       config false;
+      mandatory true;
       description "chromatic dispersion";
-      }
+    }
 
     leaf polarization-mode-dispersion {
       type decimal64 {
-      fraction-digits 2;
-      range "0..max";
+        fraction-digits 2;
+        range "0..max";
       }
       units "ps";
-      mandatory true;
       config false;
+      mandatory true;
       description "Polarization mode dispersion";
-      }
+    }
 
     leaf penalty {
       type decimal64 {
-      fraction-digits 2;
-      range "0..max";
+        fraction-digits 2;
+        range "0..max";
       }
       units "dB";
-      mandatory true;
       config false;
-      description "Associated penalty on the receiver";    }
-
+      mandatory true;
+      description "Associated penalty on the receiver";
+    }
   }  
 
 
@@ -269,48 +396,51 @@ module ietf-layer0-types-ext {
 /*(min OSNR, max PMD, max CD, max PDL, Q-factor limit, etc.)*/
 /* It can be utilized also in case of "explicit-mode" */
 
-  grouping common-transceiver-capabilities-organizational-mode {
+  grouping common-explicit-mode {
     description "Attributes capabilities related to operational 
-    modes of an optical tranceiver";
+    modes of an optical transceiver";
 
 
     leaf line-coding-bitrate {
-      type identyref {
+      type identityref {
         base line-coding;
       }
       config false;
-      description "Bit rate/line coding of optical tributary signal"
+      description "Bit rate/line coding of optical tributary signal";
       reference 
-        "ITU-T G.698.2 section 7.1.2"
+        "ITU-T G.698.2 section 7.1.2";
     }
     leaf max-polarization-mode-dispersion {
       type decimal64 {
-      fraction-digits 2;
-      range "0..max";
+        fraction-digits 2;
+        range "0..max";
       }
       units "ps";
       config false;
-      description "Maximum acceptable accumulated polarization mode dispersion
-        on the receiver";
+      description
+        "Maximum acceptable accumulated polarization mode
+         dispersion on the receiver";
     }
     leaf max-chromatic-dispersion {
       type decimal64 {
-      fraction-digits 2;
-      range "0..max";
+        fraction-digits 2;
+        range "0..max";
       }
       units "ps/nm";
       config false;
-      description "Maximum acceptable accumulated chromatic dispersion
-        on the receiver";
+      description
+        "Maximum acceptable accumulated chromatic dispersion
+         on the receiver";
     }
     list chromatic-and-polarization-dispersion-penalty {
-      description
-          "Optional penalty associated with a given accumulated CD and PMD.
-          This list of triplet cd, pmd, penalty can be used to sample 
-          the function penalty = f(CD, PMD).";
       config false;
+      description
+        "Optional penalty associated with a given accumulated
+         CD and PMD.
+         This list of triplet cd, pmd, penalty can be used to
+         sample the function penalty = f(CD, PMD).";
       uses cd-pmd-penalty ;
-     }
+    }
     leaf max-diff-group-delay  {
            type int32;
            config false;
@@ -318,19 +448,21 @@ module ietf-layer0-types-ext {
                         for this lane";
     }
     leaf max-polarization-dependent-loss {
-           type decimal64 {
-             fraction-digits 2;
-           }
-           units dB ;
-           description "Maximum acceptable accumulate polarization dependent loss";
+      type decimal64 {
+        fraction-digits 2;
+      }
+      units dB ;
+      description
+        "Maximum acceptable accumulate polarization dependent loss";
     }
     leaf available-modulation-type {
       type identityref {
       base modulation;
       }
       config false;
-    description
-      "Modulation type the specific tranceiver in the list can support";
+      description
+        "Modulation type the specific transceiver in the list
+         can support";
     }
     leaf  min-OSNR {
       type int32;
@@ -352,7 +484,7 @@ module ietf-layer0-types-ext {
         units Bd;
       config false;
       description
-        "Baud-rate the specific tranceiver in 
+        "Baud-rate the specific transceiver in 
         the list can support.
          Baud-rate is the unit for
          symbol rate or modulation rate 
@@ -389,9 +521,9 @@ module ietf-layer0-types-ext {
         "Threshold on the BER, for which FEC 
          is able to correct errors";
     }
-  } // end grouping of attributes capabilities related to operational mode    
+  } // grouping common-explicit-mode    
 
-  grouping common-transceiver-capabilities-organizational-explicit {
+  grouping common-organizational-explicit-mode {
     description "Common capability in case of operational mode 
     and explicit mode. 
     These attributes are supported separately in 
@@ -400,14 +532,14 @@ module ietf-layer0-types-ext {
 /* transmitter tuning range (f_tx-min, f_tx-max) */
 
     leaf min-central-frequency {
-      type layer0-types:frequency-thz;
+      type frequency-thz;
       config false;
       description
         "This parameter indicates the minimum frequency for
          this transceiver.";
     }
     leaf max-central-frequency {
-      type layer0-types:frequency-thz;
+      type frequency-thz;
       config false;
       description
         "This parameter indicates the maximum frequency
@@ -420,10 +552,11 @@ module ietf-layer0-types-ext {
       type frequency-ghz;
       config false;
       description
-        "This paramenter represents the minumum difference in frequency
-        between two adjacent channels (ref. G.698.2 sec.7.1.1).
-        This free value is to permit OTSi's central frequency not to
-        stay on the G.694.1 grid.";
+        "This paramenter represents the minumum difference in
+         frequency between two adjacent channels
+         (ref. G.698.2 sec.7.1.1).
+         This free value is to permit OTSi's central frequency not
+         to stay on the G.694.1 grid.";
     } 
 
 /* supported transmitter power range [p_tx-min, p_tx_max] */
@@ -458,7 +591,7 @@ module ietf-layer0-types-ext {
       description "Maximum rx optical power";
     }      
 
-  } // end grouping of attributes capabilities related to operational mode and explicit mode
+  } // grouping common-organizational-explicit-mode
 
 /* This grouping represent the list of configured parameters */
 /* values independent of operational mode */
@@ -466,9 +599,8 @@ module ietf-layer0-types-ext {
   grouping common-transceiver-configured-param {
     description "Capability of an optical transceiver";
 
-
     leaf central-frequency {
-      type layer0-types:frequency-thz;
+      type frequency-thz;
       config false;
       description
         "This parameter indicates the actual configured transmitter
