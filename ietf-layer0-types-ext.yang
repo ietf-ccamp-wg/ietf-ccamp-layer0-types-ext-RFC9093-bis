@@ -468,16 +468,17 @@ module ietf-layer0-types-ext {
       type int32;
       units "dB";
       config false;
-      description "OSNR margin to FEC threshold:
+      description "min OSNR measured over 12.5 GHz
+      resolution bandwidth:
       if received OSNR at minimum Rx-power is lower than MIN-OSNR,
-      an increased level of bit-errors post-FEC need 
+      an increased level of bit-errors post-FEC needs 
       to be expected.";
     }
     leaf  min-Q-factor {
       type int32;
       units "dB";
       config false;
-      description "Q-Factor margin to FEC threshold";
+      description "min Qfactor at FEC threshold";
     }
     leaf available-baud-rate {
       type uint32;
