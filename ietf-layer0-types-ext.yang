@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2020-09-23" {
+  revision "2020-10-16" {
     description
       "Initial Version";
     reference
@@ -219,6 +219,16 @@ module ietf-layer0-types-ext {
       "Amplifiers and Transceivers Power in dBm.";
   }
 
+  typedef snr {
+    type decimal64 {
+      fraction-digits 2;
+    }
+    units "dB@0.1nm";
+    description
+    "(Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth";
+  }
+        
+
 // GROUPINGS  
 
  /* supported inverse multiplexing capabilities such as
@@ -270,6 +280,8 @@ module ietf-layer0-types-ext {
           }
           case explicit-mode {
             container explicit-mode {
+               description
+                 "The set of attributes for an explicit mode";
               container supported-modes {
                 description
                   "Container for all the standard and organizational
@@ -392,13 +404,13 @@ module ietf-layer0-types-ext {
 
 
 /* This grouping represent the list of attributes related to */
-/* optical impairment limits for each operational mode */
+/* optical impairment limits for explicit mode */
 /*(min OSNR, max PMD, max CD, max PDL, Q-factor limit, etc.)*/
-/* It can be utilized also in case of "explicit-mode" */
+/* In case of standard and operational mode the attributes are implicit*/
 
   grouping common-explicit-mode {
-    description "Attributes capabilities related to operational 
-    modes of an optical transceiver";
+    description "Attributes capabilities related to 
+    explicit mode of an optical transceiver";
 
 
     leaf line-coding-bitrate {
@@ -464,15 +476,20 @@ module ietf-layer0-types-ext {
         "Modulation type the specific transceiver in the list
          can support";
     }
-    leaf  min-OSNR {
-      type int32;
-      units "dB";
+    leaf OTSi-carrier-bandwidth {
+      type frequency-ghz;
       config false;
-      description "min OSNR measured over 12.5 GHz
+      description
+        "Carrier bandwidth occupancy";
+    } 
+    leaf  min-OSNR {
+      type snr;
+      config false;
+      description "min OSNR measured over 0.1 nm 
       resolution bandwidth:
       if received OSNR at minimum Rx-power is lower than MIN-OSNR,
       an increased level of bit-errors post-FEC needs 
-      to be expected.";
+      to be expected."; // change resolution BW from 12.5 GHz to 0.1 nm 
     }
     leaf  min-Q-factor {
       type int32;
@@ -525,8 +542,8 @@ module ietf-layer0-types-ext {
   } // grouping common-explicit-mode    
 
   grouping common-organizational-explicit-mode {
-    description "Common capability in case of operational mode 
-    and explicit mode. 
+    description "Common capability attributes limit range 
+    in case of operational mode and explicit mode. 
     These attributes are supported separately in 
     case of application codes";
 
@@ -562,12 +579,12 @@ module ietf-layer0-types-ext {
 
 /* supported transmitter power range [p_tx-min, p_tx_max] */
 
-    leaf min-channel-output-power {
+    leaf tx-channel-power-min {
       type dbm-t;
       config false;
       description "The minimum output power of this interface";
     }
-    leaf max-channel-output-power {
+    leaf tx-channel-power-max {
       type dbm-t;
       config false;
       description "The maximum output power of this interface";
@@ -575,18 +592,18 @@ module ietf-layer0-types-ext {
 
 /* supported receiver power range [p_rx-min, p_rx_max] */ 
 
-     leaf min-channel-input-power {
+     leaf rx-channel-power-min {
       type dbm-t;
       config false;
       description "The minimum input power of this interface";
     }
-    leaf max-channel-input-power {
+    leaf rx-channel-power-max {
       type dbm-t;
       config false;
       description "The maximum input power of this interface";
     }
 
-    leaf max-total-input-power {
+    leaf rx-total-power-max {
       type dbm-t;
       config false;
       description "Maximum rx optical power for
@@ -601,29 +618,29 @@ module ietf-layer0-types-ext {
   grouping common-transceiver-configured-param {
     description "Capability of an optical transceiver";
 
-    leaf central-frequency {
-      type frequency-thz;
-      config false;
-      description
-        "This parameter indicates the actual configured transmitter
-         frequency ";
+    leaf OTSi-carrier-frequency { 
+        type frequency-thz;
+         description
+           "OTSi carrier frequency, equivalent to the
+           actual configured transmitter frequency";
     }
+    
 
-    leaf channel-output-power {
+    leaf tx-channel-power {
         type dbm-t;
-        description "Current transmit power";
+        description "The current channel transmit power";
     }
 
-    leaf channel-input-power {
-        type dbm-t;
-        config false;
-        description "The current OTSi input power ";
-    }
-
-    leaf total-input-power {
+    leaf rx-channel-power {
         type dbm-t;
         config false;
-        description "Current total receive power";
+        description "The current channel received power ";
+    }
+
+    leaf rx-total-power {
+        type dbm-t;
+        config false;
+        description "Current total received power";
     }
 
   } // grouping for configured attributes out of mode
