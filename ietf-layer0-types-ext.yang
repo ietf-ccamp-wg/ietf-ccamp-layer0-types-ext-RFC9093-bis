@@ -25,7 +25,7 @@ module ietf-layer0-types-ext {
   description
     "Description to be added!!!
     
-     Copyright (c) 2020 IETF Trust and the persons identified
+     Copyright (c) 2021 IETF Trust and the persons identified
      as authors of the code.  All rights reserved.
      
      Redistribution and use in source and binary forms, with
@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2020-10-16" {
+  revision "2021-02-04" {
     description
       "Initial Version";
     reference
@@ -155,6 +155,170 @@ module ietf-layer0-types-ext {
     base line-coding;
     description
       "ITU-T G.698.2-201811 section 7 table 8-4/8-6";
+  }
+
+  identity wavelength-assignment {
+    description
+      "Wavelength selection base";
+    reference
+      "RFC6163:Framework for GMPLS and Path Computation Element 
+      (PCE) Control of Wavelength Switched Optical Networks (WSONs)";
+  }
+
+  identity unspecified-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "No method specified";
+  }
+
+  identity first-fit-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "All the available wavelengths are numbered,
+       and this WA (Wavelength Assignment) method chooses
+       the available wavelength with the lowest index";
+  }
+
+  identity random-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "This WA method chooses an available
+       wavelength randomly";
+  }
+
+  identity least-loaded-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "This WA method selects the wavelength that
+       has the largest residual capacity on the most loaded
+       link along the route (in multi-fiber networks)";
+  }
+
+  identity term-type {
+    description
+      "Termination type";
+    reference
+      "ITU-T G.709: Interfaces for the Optical Transport Network";
+  }
+
+  identity term-phys {
+    base term-type;
+    description
+      "Physical layer termination";
+  }
+
+  identity term-otu {
+    base term-type;
+    description
+      "OTU (Optical Transport Unit) termination";
+  }
+
+  identity term-odu {
+    base term-type;
+    description
+      "ODU (Optical Data Unit) termination";
+  }
+
+  identity term-opu {
+    base term-type;
+    description
+      "OPU (Optical Payload Unit) termination";
+  }
+
+  identity layer0-bandwidth-type {
+    description
+      "Bandwidth type carried by a single wavelength channel";
+    reference
+      "ITU-T G.709: Interfaces for the Optical Transport Network";
+  }
+
+  identity bw-otu1 {
+    base layer0-bandwidth-type;
+    description
+      "OTU1 (2.66G)";
+  }
+
+  identity bw-otu1e {
+    base layer0-bandwidth-type;
+    description
+      "OTU1e (11.04G)";
+  }
+
+  identity bw-otu1f {
+    base layer0-bandwidth-type;
+    description
+      "OTU1f (11.27G)";
+  }
+
+  identity bw-otu2 {
+    base layer0-bandwidth-type;
+    description
+      "OTU2 (10.70G)";
+  }
+
+  identity bw-otu2e {
+    base layer0-bandwidth-type;
+    description
+      "OTU2e (11.09G)";
+  }
+
+  identity bw-otu2f {
+    base layer0-bandwidth-type;
+    description
+      "OTU2f (11.31G)";
+  }
+
+  identity bw-otu3 {
+    base layer0-bandwidth-type;
+    description
+      "OTU3 (43.01G)";
+  }
+
+  identity bw-otu3e1 {
+    base layer0-bandwidth-type;
+    description
+      "OTU3e1 (44.57G)";
+  }
+
+  identity bw-otu3e2 {
+    base layer0-bandwidth-type;
+    description
+      "OTU3e2 (44.58G)";
+  }
+
+  identity bw-otu4 {
+    base layer0-bandwidth-type;
+    description
+      "OTU4 (111.80G)";
+  }
+
+  identity bw-otucn {
+    base layer0-bandwidth-type;
+    description
+      "OTUCn (beyond 100G)";
+  }
+
+  identity fec-type {
+    description
+      "FEC (Forward Error Correction) type";
+    reference
+      "ITU-T G.709: Interfaces for the Optical Transport Network";
+  }
+
+  identity g-fec {
+    base fec-type;
+    description
+      "G-FEC (Generic-FEC)";
+  }
+  identity e-fec {
+    base fec-type;
+    description
+      "E-FEC (Enhanced-FEC)";
+  }
+  identity no-fec {
+    base fec-type;
+    description
+      "No FEC";
   }
 
 // typedefs                
