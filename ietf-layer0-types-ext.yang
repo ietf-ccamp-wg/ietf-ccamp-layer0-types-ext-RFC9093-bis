@@ -227,7 +227,7 @@ module ietf-layer0-types-ext {
     description
     "(Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth";
   }
-        
+
 
 // GROUPINGS  
 
@@ -289,13 +289,14 @@ module ietf-layer0-types-ext {
                    mode.";
                 leaf-list supported-application-codes {
                   type leafref {
-                    path "../../mode-id";
+                    path "../../../mode-id";
                   }
-                  must "../../../supported-mode[mode-id=current()]/"
+                  must "../../../../"
+                     + "supported-mode[mode-id=current()]/"
                      + "standard-mode" {
                     description
                       "The pointer is only for application codes
-                       supported by transceiver.";
+                       supported by transceiver."; 
                   }
                   description
                     "List of pointers to the application codes
@@ -303,10 +304,11 @@ module ietf-layer0-types-ext {
                 }
                 leaf-list supported-organizational-modes {
                   type leafref {
-                    path "../../mode-id";
+                    path "../../../mode-id";
                   }
-                  must "../../../supported-mode[mode-id=current()]/"
-                     + "operational-mode" {
+                  must "../../../../"
+                     + "supported-mode[mode-id=current()]/"
+                     + "organizational-mode" {
                     description
                       "The pointer is only for organizational modes
                        supported by transceiver.";
