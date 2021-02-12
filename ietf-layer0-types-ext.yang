@@ -38,14 +38,16 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-02-04" {
+  revision "2021-02-12" {
     description
       "Initial Version";
     reference
       "RFC XXXX: A YANG Data Model for Layer 0 Types - Revision 2";
   }
 
-// identity
+/*
+ * Identities
+ */
 
   identity modulation {
     description "base identity for modulation type";
@@ -103,26 +105,42 @@ module ietf-layer0-types-ext {
        Amplitude Modulation)";
   } 
 
-  identity FEC {
+  identity fec-type {
     description
-      "Base Identity the type of
-       Forward Error Correction";
+      "Base identity from which specific FEC
+      (Forward Error Correction) type identities are derived.";
+  }
+
+  identity g-fec {
+    base fec-type;
+    description
+      "G-FEC (Generic-FEC)";
+  }
+  identity e-fec {
+    base fec-type;
+    description
+      "E-FEC (Enhanced-FEC)";
+  }
+  identity no-fec {
+    base fec-type;
+    description
+      "No FEC";
   }
 
   identity reed-solomon {
-    base FEC;
+    base fec-type;
     description
       "Reed-Solomon error correction";
   }
 
   identity hamming-code {
-    base FEC;
+    base fec-type;
     description
       "Hamming Code error correction";
   }
 
   identity golay {
-    base FEC;
+    base fec-type;
       description "Golay error correction";
   } 
 
@@ -225,103 +243,82 @@ module ietf-layer0-types-ext {
       "OPU (Optical Payload Unit) termination";
   }
 
-  identity layer0-bandwidth-type {
+  identity otu-type {
     description
-      "Bandwidth type carried by a single wavelength channel";
+      "Base identity from which specific OTU identities are derived";
     reference
       "ITU-T G.709: Interfaces for the Optical Transport Network";
   }
 
-  identity bw-otu1 {
-    base layer0-bandwidth-type;
+  identity OTU1 {
+    base otu-type;
     description
-      "OTU1 (2.66G)";
+      "OTU1 (2.66 Gb/s)";
   }
 
-  identity bw-otu1e {
-    base layer0-bandwidth-type;
+  identity OTU1e {
+    base otu-type;
     description
-      "OTU1e (11.04G)";
+      "OTU1e (11.04 Gb/s)";
   }
 
-  identity bw-otu1f {
-    base layer0-bandwidth-type;
+  identity OTU1f {
+    base otu-type;
     description
-      "OTU1f (11.27G)";
+      "OTU1f (11.27 Gb/s)";
   }
 
-  identity bw-otu2 {
-    base layer0-bandwidth-type;
+  identity OTU2 {
+    base otu-type;
     description
-      "OTU2 (10.70G)";
+      "OTU2 (10.70 Gb/s)";
   }
 
-  identity bw-otu2e {
-    base layer0-bandwidth-type;
+  identity OTU2e {
+    base otu-type;
     description
-      "OTU2e (11.09G)";
+      "OTU2e (11.09 Gb/s)";
   }
 
-  identity bw-otu2f {
-    base layer0-bandwidth-type;
+  identity OTU2f {
+    base otu-type;
     description
       "OTU2f (11.31G)";
   }
 
-  identity bw-otu3 {
-    base layer0-bandwidth-type;
+  identity OTU3 {
+    base otu-type;
     description
-      "OTU3 (43.01G)";
+      "OTU3 (43.01 Gb/s)";
   }
 
-  identity bw-otu3e1 {
-    base layer0-bandwidth-type;
+  identity OTU3e1 {
+    base otu-type;
     description
-      "OTU3e1 (44.57G)";
+      "OTU3e1 (44.57 Gb/s)";
   }
 
-  identity bw-otu3e2 {
-    base layer0-bandwidth-type;
+  identity OTU3e2 {
+    base otu-type;
     description
-      "OTU3e2 (44.58G)";
+      "OTU3e2 (44.58 Gb/s)";
   }
 
-  identity bw-otu4 {
-    base layer0-bandwidth-type;
+  identity OTU4 {
+    base otu-type;
     description
-      "OTU4 (111.80G)";
+      "OTU4 (111.80 Gb/s)";
   }
 
-  identity bw-otucn {
-    base layer0-bandwidth-type;
+  identity OTUCn {
+    base otu-type;
     description
-      "OTUCn (beyond 100G)";
+      "OTUCn (n x 105.25 Gb/s)";
   }
 
-  identity fec-type {
-    description
-      "FEC (Forward Error Correction) type";
-    reference
-      "ITU-T G.709: Interfaces for the Optical Transport Network";
-  }
-
-  identity g-fec {
-    base fec-type;
-    description
-      "G-FEC (Generic-FEC)";
-  }
-  identity e-fec {
-    base fec-type;
-    description
-      "E-FEC (Enhanced-FEC)";
-  }
-  identity no-fec {
-    base fec-type;
-    description
-      "No FEC";
-  }
-
-// typedefs                
+/*
+ * Typedefs
+ */
 
   typedef operational-mode {
     type string;
@@ -389,11 +386,14 @@ module ietf-layer0-types-ext {
     }
     units "dB@0.1nm";
     description
-    "(Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth";
+      "(Optical) Signal to Noise Ratio measured over 0.1 nm
+      resolution bandwidth";
   }
         
 
-// GROUPINGS  
+/*
+ * Groupings
+ */
 
  /* supported inverse multiplexing capabilities such as
     max. OTSiG:OTSi cardinality
@@ -453,9 +453,10 @@ module ietf-layer0-types-ext {
                    mode.";
                 leaf-list supported-application-codes {
                   type leafref {
-                    path "../../mode-id";
+                    path "../../../mode-id";
                   }
-                  must "../../../supported-mode[mode-id=current()]/"
+                  must "../../../../"
+                     + "supported-mode[mode-id=current()]/"
                      + "standard-mode" {
                     description
                       "The pointer is only for application codes
@@ -467,10 +468,11 @@ module ietf-layer0-types-ext {
                 }
                 leaf-list supported-organizational-modes {
                   type leafref {
-                    path "../../mode-id";
+                    path "../../../mode-id";
                   }
-                  must "../../../supported-mode[mode-id=current()]/"
-                     + "operational-mode" {
+                  must "../../../../"
+                     + "supported-mode[mode-id=current()]/"
+                     + "organizational-mode" {
                     description
                       "The pointer is only for organizational modes
                        supported by transceiver.";
@@ -567,10 +569,13 @@ module ietf-layer0-types-ext {
   }  
 
 
-/* This grouping represent the list of attributes related to */
-/* optical impairment limits for explicit mode */
-/*(min OSNR, max PMD, max CD, max PDL, Q-factor limit, etc.)*/
-/* In case of standard and operational mode the attributes are implicit*/
+/* 
+ * This grouping represent the list of attributes related to
+ * optical impairment limits for explicit mode
+ * (min OSNR, max PMD, max CD, max PDL, Q-factor limit, etc.)
+ * In case of standard and operational mode the attributes are
+ * implicit
+ */
 
   grouping common-explicit-mode {
     description "Attributes capabilities related to 
@@ -653,7 +658,8 @@ module ietf-layer0-types-ext {
       resolution bandwidth:
       if received OSNR at minimum Rx-power is lower than MIN-OSNR,
       an increased level of bit-errors post-FEC needs 
-      to be expected."; // change resolution BW from 12.5 GHz to 0.1 nm 
+      to be expected.";
+      // change resolution BW from 12.5 GHz to 0.1 nm
     }
     leaf  min-Q-factor {
       type int32;
@@ -678,28 +684,28 @@ module ietf-layer0-types-ext {
          per second in a digitally 
          modulated signal or a line code";
     }
-    leaf available-FEC-type {
+    leaf available-fec-type {
       type identityref {
-      base FEC;
+        base fec-type;
       }
       config false;
       description "Available FEC";
     }
-    leaf FEC-code-rate {
+    leaf fec-code-rate {
       type decimal64 {
-      fraction-digits 8;
-      range "0..max";
+        fraction-digits 8;
+        range "0..max";
       }
       config false;
       description "FEC-code-rate";
     }
-    leaf FEC-threshold {
+    leaf fec-threshold {
       type decimal64 {
-      fraction-digits 8;
-      range "0..max";
+        fraction-digits 8;
+        range "0..max";
       }
       config false;
-    description
+      description
         "Threshold on the BER, for which FEC 
          is able to correct errors";
     }
@@ -809,5 +815,39 @@ module ietf-layer0-types-ext {
 
   } // grouping for configured attributes out of mode
 
+  grouping l0-tunnel-attributes {
+    description
+      "Parameters for Layer0 (WSON or Flexi-Grid) Tunnels.";
+    leaf fec-type {
+      type identityref {
+        base fec-type;
+      }
+      description
+        "FEC type.";
+    }
+    leaf termination-type {
+      type identityref {
+        base term-type;
+      }
+      description
+        "Termination type.";
+    }
+    leaf bit-stuffing {
+      type boolean;
+      description
+        "Bit stuffing enabled/disabled.";
+    }
+  }
 
-} // end of module
+  grouping l0-path-constraints {
+    description
+      "Global named path constraints configuration
+       grouping for Layer0 (WSON or Flexi-Grid) paths.";
+    leaf wavelength-assignment {
+      type identityref {
+        base wavelength-assignment;
+      }
+      description "Wavelength Allocation Method";
+    }
+  }
+}
