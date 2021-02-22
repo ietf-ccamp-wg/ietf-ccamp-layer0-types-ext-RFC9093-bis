@@ -1094,13 +1094,19 @@ module ietf-layer0-types-ext {
   <section title="Contributors" anchor="contribs">
   
   <?rfc needLines="5" ?>
-  <t>Enrico Griseri<br/>Nokia</t>
-  <t>Email: Enrico.Griseri@nokia.com<br/><br/></t>
+  <t>Gabriele Galimberti<br/>Cisco</t>
+  <t>Email: ggalimbe@cisco.com<br/><br/></t>
   
   
   <?rfc needLines="5" ?>
-  <t>Gabriele Galimberti<br/>Cisco</t>
-  <t>Email: ggalimbe@cisco.com<br/><br/></t>
+  <t>Enrico Griseri<br/>Nokia</t>
+  <t>Email: Enrico.Griseri@nokia.com<br/><br/></t>
+
+  
+    <?rfc needLines="5" ?>
+  <t>Aihua Guo<br/>Futurewei</t>
+  <t>Email: aihuaguo@futurewei.com<br/><br/></t>
+
 
   </section>
 

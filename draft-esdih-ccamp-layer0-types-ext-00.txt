@@ -80,7 +80,7 @@ Table of Contents
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  22
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  22
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .  22
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  23
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .  24
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  24
 
 1.  Introduction
@@ -1189,16 +1189,22 @@ Internet-Draft         Layer 0 Types - Revision 2          February 2021
 
 5.  Contributors
 
+   Gabriele Galimberti
+   Cisco
+
+   Email: ggalimbe@cisco.com
+
+
    Enrico Griseri
    Nokia
 
    Email: Enrico.Griseri@nokia.com
 
 
-   Gabriele Galimberti
-   Cisco
+   Aihua Guo
+   Futurewei
 
-   Email: ggalimbe@cisco.com
+   Email: aihuaguo@futurewei.com
 
 
 6.  IANA Considerations
@@ -1221,12 +1227,6 @@ Internet-Draft         Layer 0 Types - Revision 2          February 2021
 
 8.1.  Normative References
 
-   [I-D.ietf-ccamp-dwdm-if-param-yang]
-              Galimberti, G., Kunze, R., Burk, A., Hiremagalur, D., and
-              G. Grammel, "A YANG model to manage the optical interface
-              parameters for an external transponder in a WDM network",
-              Work in Progress, Internet-Draft, draft-ietf-ccamp-dwdm-
-
 
 
 Beller, et al.           Expires 26 August 2021                [Page 22]
@@ -1234,6 +1234,11 @@ Beller, et al.           Expires 26 August 2021                [Page 22]
 Internet-Draft         Layer 0 Types - Revision 2          February 2021
 
 
+   [I-D.ietf-ccamp-dwdm-if-param-yang]
+              Galimberti, G., Kunze, R., Burk, A., Hiremagalur, D., and
+              G. Grammel, "A YANG model to manage the optical interface
+              parameters for an external transponder in a WDM network",
+              Work in Progress, Internet-Draft, draft-ietf-ccamp-dwdm-
               if-param-yang-05, 18 November 2020,
               <https://tools.ietf.org/html/draft-ietf-ccamp-dwdm-if-
               param-yang-05>.
@@ -1275,13 +1280,8 @@ Internet-Draft         Layer 0 Types - Revision 2          February 2021
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/info/rfc7950>.
 
-   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
-              O. Gonzalez de Dios, "YANG Data Model for Traffic
-              Engineering (TE) Topologies", RFC 8795,
-              DOI 10.17487/RFC8795, August 2020,
-              <https://www.rfc-editor.org/info/rfc8795>.
 
-8.2.  Informative References
+
 
 
 
@@ -1289,6 +1289,14 @@ Beller, et al.           Expires 26 August 2021                [Page 23]
 
 Internet-Draft         Layer 0 Types - Revision 2          February 2021
 
+
+   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
+              O. Gonzalez de Dios, "YANG Data Model for Traffic
+              Engineering (TE) Topologies", RFC 8795,
+              DOI 10.17487/RFC8795, August 2020,
+              <https://www.rfc-editor.org/info/rfc8795>.
+
+8.2.  Informative References
 
    [RFC2629]  Rose, M., "Writing I-Ds and RFCs using XML", RFC 2629,
               DOI 10.17487/RFC2629, June 1999,
@@ -1330,6 +1338,14 @@ Authors' Addresses
    Email: Italo.Busi@huawei.com
 
 
+
+
+
+Beller, et al.           Expires 26 August 2021                [Page 24]
+
+Internet-Draft         Layer 0 Types - Revision 2          February 2021
+
+
    Esther Le Rouzic
    Orange
 
@@ -1341,4 +1357,44 @@ Authors' Addresses
 
 
 
-Beller, et al.           Expires 26 August 2021                [Page 24]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Beller, et al.           Expires 26 August 2021                [Page 25]
