@@ -22,9 +22,10 @@ Abstract
    in the YANG data modeling language, which are used in several YANG
    modules for wavelength Division multiplexing (WDM) transport
    networks.  The YANG module ietf-layer0-types-ext updates ietf-
-   layer0-types [I-D.ietf-ccamp-layer0-types], which has been reduced in
-   scope prior to publication to only cover spectrum management related
-   aspects required for ietf-wson-topology [I-D.ietf-ccamp-wson-yang].
+   layer0-types defined in draft-ietf-ccamp-layer0-types, which has been
+   reduced in scope prior to publication to only cover spectrum
+   management related aspects required for the YANG module ietf-wson-
+   topology defined in draft-ietf-ccamp-wson-yang.
 
    To be completed
 
@@ -49,7 +50,6 @@ Copyright Notice
 
    Copyright (c) 2021 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
-
 
 
 
@@ -80,7 +80,7 @@ Table of Contents
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  22
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  22
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .  22
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  24
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .  23
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  24
 
 1.  Introduction
@@ -1234,15 +1234,6 @@ Beller, et al.           Expires 26 August 2021                [Page 22]
 Internet-Draft         Layer 0 Types - Revision 2          February 2021
 
 
-   [I-D.ietf-ccamp-dwdm-if-param-yang]
-              Galimberti, G., Kunze, R., Burk, A., Hiremagalur, D., and
-              G. Grammel, "A YANG model to manage the optical interface
-              parameters for an external transponder in a WDM network",
-              Work in Progress, Internet-Draft, draft-ietf-ccamp-dwdm-
-              if-param-yang-05, 18 November 2020,
-              <https://tools.ietf.org/html/draft-ietf-ccamp-dwdm-if-
-              param-yang-05>.
-
    [I-D.ietf-ccamp-layer0-types]
               Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
               YANG Data Model for Layer 0 Types", Work in Progress,
@@ -1280,8 +1271,17 @@ Internet-Draft         Layer 0 Types - Revision 2          February 2021
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/info/rfc7950>.
 
+   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
+              O. Gonzalez de Dios, "YANG Data Model for Traffic
+              Engineering (TE) Topologies", RFC 8795,
+              DOI 10.17487/RFC8795, August 2020,
+              <https://www.rfc-editor.org/info/rfc8795>.
 
+8.2.  Informative References
 
+   [I-D.ietf-ccamp-dwdm-if-param-yang]
+              Galimberti, G., Kunze, R., Burk, A., Hiremagalur, D., and
+              G. Grammel, "A YANG model to manage the optical interface
 
 
 
@@ -1290,13 +1290,11 @@ Beller, et al.           Expires 26 August 2021                [Page 23]
 Internet-Draft         Layer 0 Types - Revision 2          February 2021
 
 
-   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
-              O. Gonzalez de Dios, "YANG Data Model for Traffic
-              Engineering (TE) Topologies", RFC 8795,
-              DOI 10.17487/RFC8795, August 2020,
-              <https://www.rfc-editor.org/info/rfc8795>.
-
-8.2.  Informative References
+              parameters for an external transponder in a WDM network",
+              Work in Progress, Internet-Draft, draft-ietf-ccamp-dwdm-
+              if-param-yang-05, 18 November 2020,
+              <https://tools.ietf.org/html/draft-ietf-ccamp-dwdm-if-
+              param-yang-05>.
 
    [RFC2629]  Rose, M., "Writing I-Ds and RFCs using XML", RFC 2629,
               DOI 10.17487/RFC2629, June 1999,
@@ -1336,6 +1334,8 @@ Authors' Addresses
    Huawei
 
    Email: Italo.Busi@huawei.com
+
+
 
 
 

@@ -98,11 +98,11 @@
       This document defines a collection of common data types and groupings
       in the YANG data modeling language, which are used in several YANG
       modules for wavelength Division multiplexing (WDM) transport networks.
-      The YANG module ietf-layer0-types-ext updates ietf-layer0-types
-      <xref target="I-D.ietf-ccamp-layer0-types"/>, which has been reduced in
-      scope prior to publication to only cover spectrum management related
-      aspects required for ietf-wson-topology
-      <xref target="I-D.ietf-ccamp-wson-yang"/>.
+      The YANG module ietf-layer0-types-ext updates ietf-layer0-types defined
+      in draft-ietf-ccamp-layer0-types, which has been reduced in scope prior
+      to publication to only cover spectrum  management related aspects
+      required for the YANG module ietf-wson-topology defined in
+      draft-ietf-ccamp-wson-yang.
     </t>
      
     <t>
@@ -1150,15 +1150,14 @@ module ietf-layer0-types-ext {
     <references>
       <name>Normative References</name>
 
-        &RFC6241;
-        &RFC7950;
-        &RFC8795;
-        &I-D.ietf-ccamp-optical-impairment-topology-yang;
-        &I-D.ietf-ccamp-wson-yang;
-        &I-D.ietf-ccamp-layer0-types;
-        &I-D.ietf-ccamp-dwdm-if-param-yang;
+      &RFC6241;
+      &RFC7950;
+      &RFC8795;
+      &I-D.ietf-ccamp-optical-impairment-topology-yang;
+      &I-D.ietf-ccamp-wson-yang;
+      &I-D.ietf-ccamp-layer0-types;
 
-       <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+      <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
       <reference anchor="RFC2119" target="https://www.rfc-editor.org/info/rfc2119" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
         <front>
           <title>Key words for use in RFCs to Indicate Requirement Levels</title>
@@ -1194,6 +1193,8 @@ module ietf-layer0-types-ext {
       <name>Informative References</name>
      
       <!-- Here we use entities that we defined at the beginning. -->
+      
+      &I-D.ietf-ccamp-dwdm-if-param-yang;
 
       <reference anchor="RFC2629" target="https://www.rfc-editor.org/info/rfc2629" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2629.xml">
         <front>
