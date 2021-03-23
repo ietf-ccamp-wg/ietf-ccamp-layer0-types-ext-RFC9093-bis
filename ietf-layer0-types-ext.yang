@@ -568,6 +568,31 @@ module ietf-layer0-types-ext {
     }
   }  
 
+  grouping pdl-penalty {
+    description "entries of table; pair of values
+    polarization dependent loss and
+    associated penalty";
+
+    leaf max-polarization-dependent-loss {
+      type decimal64 {
+        fraction-digits 2;
+      }
+      units dB ;
+      description
+        "Maximum acceptable accumulate polarization dependent loss";
+    }
+
+    leaf penalty {
+      type decimal64 {
+        fraction-digits 2;
+        range "0..max";
+      }
+      units "dB";
+      config false;
+      mandatory true;
+      description "Associated penalty on the receiver";
+    }
+  }
 
 /* 
  * This grouping represent the list of attributes related to
@@ -591,6 +616,7 @@ module ietf-layer0-types-ext {
       reference 
         "ITU-T G.698.2 section 7.1.2";
     }
+
     leaf max-polarization-mode-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -602,6 +628,7 @@ module ietf-layer0-types-ext {
         "Maximum acceptable accumulated polarization mode
          dispersion on the receiver";
     }
+
     leaf max-chromatic-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -613,6 +640,7 @@ module ietf-layer0-types-ext {
         "Maximum acceptable accumulated chromatic dispersion
          on the receiver";
     }
+
     list chromatic-and-polarization-dispersion-penalty {
       config false;
       description
@@ -622,20 +650,24 @@ module ietf-layer0-types-ext {
          sample the function penalty = f(CD, PMD).";
       uses cd-pmd-penalty ;
     }
+
     leaf max-diff-group-delay  {
            type int32;
            config false;
            description "Maximum Differential group delay of this mode
                         for this lane";
     }
-    leaf max-polarization-dependent-loss {
-      type decimal64 {
-        fraction-digits 2;
-      }
-      units dB ;
+
+    list max-polarization-dependent-loss-penalty {
+      config false;
       description
-        "Maximum acceptable accumulate polarization dependent loss";
+        "Optional penalty associated with the maximum acceptable 
+        accumulated polarization dependent loss.
+         This list of pair pdl and penalty can be used to
+         sample the function penalty = f(pdl).";
+      uses pdl-penalty ;
     }
+
     leaf available-modulation-type {
       type identityref {
       base modulation;
@@ -649,8 +681,14 @@ module ietf-layer0-types-ext {
       type frequency-ghz;
       config false;
       description
-        "Carrier bandwidth occupancy";
+        "Carrier bandwidth occupancy.
+         The required bandwidth can be given 
+         by the transceiver vendor or
+         can be function of the following parameters:
+         baudrate, nyquist-spacing, roll-off and 
+         cross-talk penalty";
     } 
+
     leaf  min-OSNR {
       type snr;
       config false;
@@ -661,12 +699,14 @@ module ietf-layer0-types-ext {
       to be expected.";
       // change resolution BW from 12.5 GHz to 0.1 nm
     }
+
     leaf  min-Q-factor {
       type int32;
       units "dB";
       config false;
       description "min Qfactor at FEC threshold";
     }
+
     leaf available-baud-rate {
       type uint32;
         units Bd;
@@ -684,6 +724,38 @@ module ietf-layer0-types-ext {
          per second in a digitally 
          modulated signal or a line code";
     }
+
+    leaf nyquist-spacing-factor {
+      type decimal64 {
+        fraction-digits 4;
+        range "0..max";
+      }  
+      config false;
+      description 
+        "1.x factor to multiply the baud rate
+         for Nyquist shaped signal";
+    }
+
+    leaf roll-off {
+      type decimal64 {
+        fraction-digits 4;
+        range "0..max";
+      }
+      config false;
+      description 
+        "the roll-off factor (beta with values from 0 to 1) 
+        identifies how the real signal shape exceed 
+        the baud rate. If=0 it is exactly matching 
+        the baud rate.If=1 the signal exceeds the 
+        50% of the baud rate at each side.";             
+    }
+
+    leaf xtalk-penalty  {
+      type int32;
+      config false;
+      description "";
+    } 
+
     leaf available-fec-type {
       type identityref {
         base fec-type;
@@ -691,6 +763,7 @@ module ietf-layer0-types-ext {
       config false;
       description "Available FEC";
     }
+
     leaf fec-code-rate {
       type decimal64 {
         fraction-digits 8;
@@ -699,6 +772,7 @@ module ietf-layer0-types-ext {
       config false;
       description "FEC-code-rate";
     }
+
     leaf fec-threshold {
       type decimal64 {
         fraction-digits 8;
