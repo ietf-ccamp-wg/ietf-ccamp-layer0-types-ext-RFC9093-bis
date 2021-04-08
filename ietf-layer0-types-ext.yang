@@ -569,24 +569,23 @@ module ietf-layer0-types-ext {
   }  
 
   grouping pdl-penalty {
-    description "entries of table; pair of values
-    polarization dependent loss and
-    associated penalty";
+    description
+      "entries of table; pair of values polarization dependent loss
+      and associated penalty";
 
     leaf max-polarization-dependent-loss {
       type decimal64 {
         fraction-digits 2;
       }
-      units dB ;
+      units "dB";
+      config false;
+      mandatory true;
       description
         "Maximum acceptable accumulate polarization dependent loss";
     }
 
     leaf penalty {
-      type decimal64 {
-        fraction-digits 2;
-        range "0..max";
-      }
+      type uint8;
       units "dB";
       config false;
       mandatory true;
@@ -728,7 +727,7 @@ module ietf-layer0-types-ext {
     leaf nyquist-spacing-factor {
       type decimal64 {
         fraction-digits 4;
-        range "0..max";
+        range "1..2";
       }  
       config false;
       description 
@@ -739,7 +738,7 @@ module ietf-layer0-types-ext {
     leaf roll-off {
       type decimal64 {
         fraction-digits 4;
-        range "0..max";
+        range "0..1";
       }
       config false;
       description 
