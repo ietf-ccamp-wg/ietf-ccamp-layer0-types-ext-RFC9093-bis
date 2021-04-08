@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-02-12" {
+  revision "2021-04-08" {
     description
       "Initial Version";
     reference
@@ -316,6 +316,24 @@ module ietf-layer0-types-ext {
       "OTUCn (n x 105.25 Gb/s)";
   }
 
+  identity type-power-mode {
+    description
+      "power equalization mode used within the 
+       OMS and its elements";
+  }
+
+  identity power-spectral-density {
+    base type-power-mode;
+    description
+      "all elements must use power spectral density (W/Hz)";
+  }
+
+  identity channel-power {
+    base type-power-mode;
+    description
+      "all elements must use power (dBm)";
+  }
+
 /*
  * Typedefs
  */
@@ -390,6 +408,31 @@ module ietf-layer0-types-ext {
       resolution bandwidth";
   }
 
+  typedef fiber-type {
+    type enumeration {
+      enum G.652 {
+      description "G.652 Standard Singlemode Fiber";                 
+      }
+      enum G.654 {
+        description "G.654 Cutoff Shifted Fiber";
+      }
+      enum G.653 {
+        description "G.653 Dispersion Shifted Fiber";
+      }
+      enum G.655 {
+        description "G.655 Non-Zero Dispersion Shifted Fiber";
+      }
+      enum G.656 {
+        description "G.656 Non-Zero Dispersion for Wideband
+               Optical Transport";
+      }
+      enum G.657 {
+        description "G.657 Bend-Insensitive Fiber";
+      }
+    }
+    description
+      "ITU-T based fiber-types";
+  }
 
 /*
  * Groupings
@@ -921,6 +964,25 @@ module ietf-layer0-types-ext {
         base wavelength-assignment;
       }
       description "Wavelength Allocation Method";
+    }
+  }
+
+  grouping frequency-range {
+    description
+      "The parameters that define a frequency range.";
+    leaf lower-frequency {
+      type frequency-thz;
+      mandatory true;
+      description
+        "The lower frequency boundary of the
+        frequency range.";
+    }
+    leaf upper-frequency {
+      type frequency-thz;
+      mandatory true;
+      description
+        "The upper frequency boundary of the
+        frequency range.";
     }
   }
 }
