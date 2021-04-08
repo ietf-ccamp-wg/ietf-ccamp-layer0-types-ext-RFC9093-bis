@@ -663,7 +663,7 @@ module ietf-layer0-types-ext {
         "Optional penalty associated with the maximum acceptable 
         accumulated polarization dependent loss.
          This list of pair pdl and penalty can be used to
-         sample the function penalty = f(pdl).";
+         sample the function pdl = f(penalty).";
       uses pdl-penalty ;
     }
 
