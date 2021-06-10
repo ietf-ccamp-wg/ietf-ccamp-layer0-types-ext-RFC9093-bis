@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-04-08" {
+  revision "2021-06-10" {
     description
       "Initial Version";
     reference
@@ -328,7 +328,7 @@ module ietf-layer0-types-ext {
       "all elements must use power spectral density (W/Hz)";
   }
 
-  identity channel-power {
+  identity carrier-power {
     base type-power-mode;
     description
       "all elements must use power (dBm)";
@@ -979,6 +979,11 @@ module ietf-layer0-types-ext {
     }
     leaf upper-frequency {
       type frequency-thz;
+      must '. > ../lower-frequency' {
+        error-message
+          "The upper frequency must be greater than the lower
+          frequency.";
+      }
       mandatory true;
       description
         "The upper frequency boundary of the
