@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-06-10" {
+  revision "2021-07-05" {
     description
       "Initial Version";
     reference
@@ -719,7 +719,7 @@ module ietf-layer0-types-ext {
         "Modulation type the specific transceiver in the list
          can support";
     }
-    leaf OTSi-carrier-bandwidth {
+    leaf otsi-carrier-bandwidth {
       type frequency-ghz;
       config false;
       description
@@ -904,7 +904,7 @@ module ietf-layer0-types-ext {
   grouping common-transceiver-configured-param {
     description "Capability of an optical transceiver";
 
-    leaf OTSi-carrier-frequency { 
+    leaf otsi-carrier-frequency { 
         type frequency-thz;
          description
            "OTSi carrier frequency, equivalent to the
