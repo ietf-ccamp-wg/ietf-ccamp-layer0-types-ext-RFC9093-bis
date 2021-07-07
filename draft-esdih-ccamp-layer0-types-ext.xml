@@ -19,7 +19,7 @@
 <rfc
       xmlns:xi="http://www.w3.org/2001/XInclude"
       category="std"
-      docName="draft-esdih-ccamp-layer0-types-ext-00"
+      docName="draft-esdih-ccamp-layer0-types-ext-01"
       ipr="trust200902"
       obsoletes=""
       updates="draft-ietf-ccamp-layer0-types"
@@ -41,7 +41,7 @@
 
 <front>
   <title abbrev="Layer 0 Types - Revision 2">A YANG Data Model for Layer 0 Types - Revision 2</title>
-  <seriesInfo name="Internet-Draft" value="draft-esdih-ccamp-layer0-types-ext-00"/>
+  <seriesInfo name="Internet-Draft" value="draft-esdih-ccamp-layer0-types-ext-01"/>
   <!-- add 'role="editor"' below for the editors if appropriate -->
 
   <!-- Another author who claims to be an editor -->
@@ -81,7 +81,7 @@
     </address>
   </author>
   
-  <date year="2021" month="February" day="22"/>
+  <date year="2021" month="July" day="12"/>
    
    <!-- Meta-data Declarations -->
 
@@ -219,7 +219,7 @@
     </t>
     
     <t>
-      [Editor's note: YANG code below has to be updated before submitting a new revision!]
+      [Editor's note: YANG code below always has to be updated before submitting a new revision!]
     </t>
   
     <figure><artwork><![CDATA[
@@ -264,7 +264,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-02-12" {
+  revision "2021-07-05" {
     description
       "Initial Version";
     reference
@@ -542,6 +542,24 @@ module ietf-layer0-types-ext {
       "OTUCn (n x 105.25 Gb/s)";
   }
 
+  identity type-power-mode {
+    description
+      "power equalization mode used within the 
+       OMS and its elements";
+  }
+
+  identity power-spectral-density {
+    base type-power-mode;
+    description
+      "all elements must use power spectral density (W/Hz)";
+  }
+
+  identity carrier-power {
+    base type-power-mode;
+    description
+      "all elements must use power (dBm)";
+  }
+
 /*
  * Typedefs
  */
@@ -616,6 +634,31 @@ module ietf-layer0-types-ext {
       resolution bandwidth";
   }
 
+  typedef fiber-type {
+    type enumeration {
+      enum G.652 {
+      description "G.652 Standard Singlemode Fiber";                 
+      }
+      enum G.654 {
+        description "G.654 Cutoff Shifted Fiber";
+      }
+      enum G.653 {
+        description "G.653 Dispersion Shifted Fiber";
+      }
+      enum G.655 {
+        description "G.655 Non-Zero Dispersion Shifted Fiber";
+      }
+      enum G.656 {
+        description "G.656 Non-Zero Dispersion for Wideband
+               Optical Transport";
+      }
+      enum G.657 {
+        description "G.657 Bend-Insensitive Fiber";
+      }
+    }
+    description
+      "ITU-T based fiber-types";
+  }
 
 /*
  * Groupings
@@ -794,6 +837,30 @@ module ietf-layer0-types-ext {
     }
   }  
 
+  grouping pdl-penalty {
+    description
+      "entries of table; pair of values polarization dependent loss
+      and associated penalty";
+
+    leaf max-polarization-dependent-loss {
+      type decimal64 {
+        fraction-digits 2;
+      }
+      units "dB";
+      config false;
+      mandatory true;
+      description
+        "Maximum acceptable accumulate polarization dependent loss";
+    }
+
+    leaf penalty {
+      type uint8;
+      units "dB";
+      config false;
+      mandatory true;
+      description "Associated penalty on the receiver";
+    }
+  }
 
 /* 
  * This grouping represent the list of attributes related to
@@ -817,6 +884,7 @@ module ietf-layer0-types-ext {
       reference 
         "ITU-T G.698.2 section 7.1.2";
     }
+
     leaf max-polarization-mode-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -828,6 +896,7 @@ module ietf-layer0-types-ext {
         "Maximum acceptable accumulated polarization mode
          dispersion on the receiver";
     }
+
     leaf max-chromatic-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -839,6 +908,7 @@ module ietf-layer0-types-ext {
         "Maximum acceptable accumulated chromatic dispersion
          on the receiver";
     }
+
     list chromatic-and-polarization-dispersion-penalty {
       config false;
       description
@@ -848,20 +918,24 @@ module ietf-layer0-types-ext {
          sample the function penalty = f(CD, PMD).";
       uses cd-pmd-penalty ;
     }
+
     leaf max-diff-group-delay  {
            type int32;
            config false;
            description "Maximum Differential group delay of this mode
                         for this lane";
     }
-    leaf max-polarization-dependent-loss {
-      type decimal64 {
-        fraction-digits 2;
-      }
-      units dB ;
+
+    list max-polarization-dependent-loss-penalty {
+      config false;
       description
-        "Maximum acceptable accumulate polarization dependent loss";
+        "Optional penalty associated with the maximum acceptable 
+        accumulated polarization dependent loss.
+         This list of pair pdl and penalty can be used to
+         sample the function pdl = f(penalty).";
+      uses pdl-penalty ;
     }
+
     leaf available-modulation-type {
       type identityref {
       base modulation;
@@ -871,12 +945,18 @@ module ietf-layer0-types-ext {
         "Modulation type the specific transceiver in the list
          can support";
     }
-    leaf OTSi-carrier-bandwidth {
+    leaf otsi-carrier-bandwidth {
       type frequency-ghz;
       config false;
       description
-        "Carrier bandwidth occupancy";
+        "Carrier bandwidth occupancy.
+         The required bandwidth can be given 
+         by the transceiver vendor or
+         can be function of the following parameters:
+         baudrate, nyquist-spacing, roll-off and 
+         cross-talk penalty";
     } 
+
     leaf  min-OSNR {
       type snr;
       config false;
@@ -887,12 +967,14 @@ module ietf-layer0-types-ext {
       to be expected.";
       // change resolution BW from 12.5 GHz to 0.1 nm
     }
+
     leaf  min-Q-factor {
       type int32;
       units "dB";
       config false;
       description "min Qfactor at FEC threshold";
     }
+
     leaf available-baud-rate {
       type uint32;
         units Bd;
@@ -910,6 +992,38 @@ module ietf-layer0-types-ext {
          per second in a digitally 
          modulated signal or a line code";
     }
+
+    leaf nyquist-spacing-factor {
+      type decimal64 {
+        fraction-digits 4;
+        range "1..2";
+      }  
+      config false;
+      description 
+        "1.x factor to multiply the baud rate
+         for Nyquist shaped signal";
+    }
+
+    leaf roll-off {
+      type decimal64 {
+        fraction-digits 4;
+        range "0..1";
+      }
+      config false;
+      description 
+        "the roll-off factor (beta with values from 0 to 1) 
+        identifies how the real signal shape exceed 
+        the baud rate. If=0 it is exactly matching 
+        the baud rate.If=1 the signal exceeds the 
+        50% of the baud rate at each side.";             
+    }
+
+    leaf xtalk-penalty  {
+      type int32;
+      config false;
+      description "";
+    } 
+
     leaf available-fec-type {
       type identityref {
         base fec-type;
@@ -917,6 +1031,7 @@ module ietf-layer0-types-ext {
       config false;
       description "Available FEC";
     }
+
     leaf fec-code-rate {
       type decimal64 {
         fraction-digits 8;
@@ -925,6 +1040,7 @@ module ietf-layer0-types-ext {
       config false;
       description "FEC-code-rate";
     }
+
     leaf fec-threshold {
       type decimal64 {
         fraction-digits 8;
@@ -1014,7 +1130,7 @@ module ietf-layer0-types-ext {
   grouping common-transceiver-configured-param {
     description "Capability of an optical transceiver";
 
-    leaf OTSi-carrier-frequency { 
+    leaf otsi-carrier-frequency { 
         type frequency-thz;
          description
            "OTSi carrier frequency, equivalent to the
@@ -1076,11 +1192,34 @@ module ietf-layer0-types-ext {
       description "Wavelength Allocation Method";
     }
   }
+
+  grouping frequency-range {
+    description
+      "The parameters that define a frequency range.";
+    leaf lower-frequency {
+      type frequency-thz;
+      mandatory true;
+      description
+        "The lower frequency boundary of the
+        frequency range.";
+    }
+    leaf upper-frequency {
+      type frequency-thz;
+      must '. > ../lower-frequency' {
+        error-message
+          "The upper frequency must be greater than the lower
+          frequency.";
+      }
+      mandatory true;
+      description
+        "The upper frequency boundary of the
+        frequency range.";
+    }
+  }
 }
 <CODE ENDS>
-  ]]></artwork>
-
-    </figure>
+ ]]>
+    </artwork></figure>
   </section>
   
   <section anchor="Acknowledgements" numbered="true" toc="default">
