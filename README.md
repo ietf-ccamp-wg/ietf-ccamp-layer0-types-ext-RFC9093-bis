@@ -3,7 +3,6 @@ CCAMP WG repository for ietf-layer0-types-ext.
 This is the working area for the [IETF CCAMP WG](https://datatracker.ietf.org/wg/ccamp/documents/) ietf-layer0-types-ext YANG module, which is the starting point for revision 2 of [ietf-layer0-types](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-layer0-types). When the initial version of the YANG module ietf-layer0-types will have been published as RFC, ietf-layer0-types-ext will be renamed to ietf-layer0-types.
 
 **Note**: draft-esdih-ccamp-layer0-types-ext-00 is intended to be submitted on Mon, Feb 22, 2021
-
 ## Branches
 * **carry-over-ietf-layer0-types**: this temporary branch is used for the material that was removed from ietf-layer0-types when it's scope was reduced to spectrum management only.
 * **transponder-model-types**: this temporary branch will be used for developing type defs and groupings that are used in various YANG models that include optical transponders (e.g.: [draft-ietf-ccamp-dwdm-if-param-yang](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-dwdm-if-param-yang), [draft-ietf-ccamp-optical-impairment-topology-yang](https://github.com/ietf-ccamp-wg/draft-ietf-ccamp-optical-impairment-topology-yang), etc.) 
