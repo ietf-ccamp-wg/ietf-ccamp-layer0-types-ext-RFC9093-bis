@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-07-05" {
+  revision "2021-10-18" {
     description
       "Initial Version";
     reference
@@ -561,14 +561,12 @@ module ietf-layer0-types-ext {
         "configured organization- or vendor-specific
          application identifiers (AI) supported by the transponder";
     }
-
     leaf organization-identifier {
       type organization-identifier;
       config false;
       description
       "organization identifier that uses organizational
          mode";
-
     }
   }
 
@@ -587,7 +585,6 @@ module ietf-layer0-types-ext {
       mandatory true;
       description "chromatic dispersion";
     }
-
     leaf polarization-mode-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -598,7 +595,6 @@ module ietf-layer0-types-ext {
       mandatory true;
       description "Polarization mode dispersion";
     }
-
     leaf penalty {
       type decimal64 {
         fraction-digits 2;
@@ -626,7 +622,6 @@ module ietf-layer0-types-ext {
       description
         "Maximum acceptable accumulate polarization dependent loss";
     }
-
     leaf penalty {
       type uint8;
       units "dB";
@@ -648,7 +643,6 @@ module ietf-layer0-types-ext {
     description "Attributes capabilities related to 
     explicit mode of an optical transceiver";
 
-
     leaf line-coding-bitrate {
       type identityref {
         base line-coding;
@@ -658,7 +652,6 @@ module ietf-layer0-types-ext {
       reference 
         "ITU-T G.698.2 section 7.1.2";
     }
-
     leaf max-polarization-mode-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -670,7 +663,6 @@ module ietf-layer0-types-ext {
         "Maximum acceptable accumulated polarization mode
          dispersion on the receiver";
     }
-
     leaf max-chromatic-dispersion {
       type decimal64 {
         fraction-digits 2;
@@ -682,7 +674,6 @@ module ietf-layer0-types-ext {
         "Maximum acceptable accumulated chromatic dispersion
          on the receiver";
     }
-
     list chromatic-and-polarization-dispersion-penalty {
       config false;
       description
@@ -692,14 +683,12 @@ module ietf-layer0-types-ext {
          sample the function penalty = f(CD, PMD).";
       uses cd-pmd-penalty ;
     }
-
     leaf max-diff-group-delay  {
            type int32;
            config false;
            description "Maximum Differential group delay of this mode
                         for this lane";
     }
-
     list max-polarization-dependent-loss-penalty {
       config false;
       description
@@ -709,7 +698,6 @@ module ietf-layer0-types-ext {
          sample the function pdl = f(penalty).";
       uses pdl-penalty ;
     }
-
     leaf available-modulation-type {
       type identityref {
       base modulation;
@@ -719,18 +707,6 @@ module ietf-layer0-types-ext {
         "Modulation type the specific transceiver in the list
          can support";
     }
-    leaf otsi-carrier-bandwidth {
-      type frequency-ghz;
-      config false;
-      description
-        "Carrier bandwidth occupancy.
-         The required bandwidth can be given 
-         by the transceiver vendor or
-         can be function of the following parameters:
-         baudrate, nyquist-spacing, roll-off and 
-         cross-talk penalty";
-    } 
-
     leaf  min-OSNR {
       type snr;
       config false;
@@ -741,17 +717,15 @@ module ietf-layer0-types-ext {
       to be expected.";
       // change resolution BW from 12.5 GHz to 0.1 nm
     }
-
     leaf  min-Q-factor {
       type int32;
       units "dB";
       config false;
       description "min Qfactor at FEC threshold";
     }
-
     leaf available-baud-rate {
       type uint32;
-        units Bd;
+      units Bd;
       config false;
       description
         "Baud-rate the specific transceiver in 
@@ -766,18 +740,6 @@ module ietf-layer0-types-ext {
          per second in a digitally 
          modulated signal or a line code";
     }
-
-    leaf nyquist-spacing-factor {
-      type decimal64 {
-        fraction-digits 4;
-        range "1..2";
-      }  
-      config false;
-      description 
-        "1.x factor to multiply the baud rate
-         for Nyquist shaped signal";
-    }
-
     leaf roll-off {
       type decimal64 {
         fraction-digits 4;
@@ -791,13 +753,21 @@ module ietf-layer0-types-ext {
         the baud rate.If=1 the signal exceeds the 
         50% of the baud rate at each side.";             
     }
-
-    leaf xtalk-penalty  {
-      type int32;
+    leaf min-carrier-spacing {
+      type frequency-ghz;
       config false;
-      description "";
-    } 
+      description
+        "This attribute specifies the minimum nominal difference
+        between the carrier frequencies of two homogeneous OTSis
+        (which have the same optical characteristics but the central
+        frequencies) such that if they are placed next to each other
+        the interference due to spectrum overlap between them can be
+        considered negligible.
 
+        In case of heterogeneous OTSi it is up to path computation
+        engine to determine the minimum distance between the carrier
+        frequency of the two adjacent OTSi.";
+    }
     leaf available-fec-type {
       type identityref {
         base fec-type;
@@ -805,7 +775,6 @@ module ietf-layer0-types-ext {
       config false;
       description "Available FEC";
     }
-
     leaf fec-code-rate {
       type decimal64 {
         fraction-digits 8;
@@ -814,7 +783,6 @@ module ietf-layer0-types-ext {
       config false;
       description "FEC-code-rate";
     }
-
     leaf fec-threshold {
       type decimal64 {
         fraction-digits 8;
@@ -839,28 +807,26 @@ module ietf-layer0-types-ext {
       type frequency-thz;
       config false;
       description
-        "This parameter indicates the minimum frequency for
-         this transceiver.";
+        "This parameter indicates the minimum frequency for the
+        transmitter tuning range.";
     }
     leaf max-central-frequency {
       type frequency-thz;
       config false;
       description
-        "This parameter indicates the maximum frequency
-         for this transceiver.";
+        "This parameter indicates the maximum frequency for the
+        transmitter tuning range.";
     }
 
 /* transmitter-tunability-grid */
 
-    leaf minimum-channel-spacing {
+    leaf central-frequency-step {
       type frequency-ghz;
       config false;
       description
-        "This paramenter represents the minumum difference in
-         frequency between two adjacent channels
-         (ref. G.698.2 sec.7.1.1).
-         This free value is to permit OTSi's central frequency not
-         to stay on the G.694.1 grid.";
+        "This parameter indicates the transmitter tunability grid as
+        the distance between two adjacent carrier frequencies of
+        the transmitter tuning range.";
     } 
 
 /* supported transmitter power range [p_tx-min, p_tx_max] */
@@ -910,25 +876,20 @@ module ietf-layer0-types-ext {
            "OTSi carrier frequency, equivalent to the
            actual configured transmitter frequency";
     }
-    
-
     leaf tx-channel-power {
         type dbm-t;
         description "The current channel transmit power";
     }
-
     leaf rx-channel-power {
         type dbm-t;
         config false;
         description "The current channel received power ";
     }
-
     leaf rx-total-power {
         type dbm-t;
         config false;
         description "Current total received power";
     }
-
   } // grouping for configured attributes out of mode
 
   grouping l0-tunnel-attributes {
