@@ -5,10 +5,10 @@
 <!ENTITY RFC6241 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6241.xml">
 <!ENTITY RFC7950 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.7950.xml">
 <!ENTITY RFC8795 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.8795.xml">
+<!ENTITY RFC9093 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9093.xml">
+<!ENTITY RFC9094 SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.9094.xml">
 <!ENTITY I-D.ietf-teas-yang-te-topo SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-teas-yang-te-topo.xml">
 <!ENTITY I-D.ietf-ccamp-optical-impairment-topology-yang SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-optical-impairment-topology-yang.xml">
-<!ENTITY I-D.ietf-ccamp-wson-yang SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-wson-yang.xml">
-<!ENTITY I-D.ietf-ccamp-layer0-types SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-layer0-types.xml">
 <!ENTITY I-D.ietf-ccamp-dwdm-if-param-yang SYSTEM "https://xml2rfc.ietf.org/public/rfc/bibxml3/reference.I-D.ietf-ccamp-dwdm-if-param-yang.xml">
 ]>
 
@@ -22,7 +22,7 @@
       docName="draft-ietf-ccamp-layer0-types-ext-01"
       ipr="trust200902"
       obsoletes=""
-      updates="draft-ietf-ccamp-layer0-types"
+      updates="RFC9093"
       submissionType="IETF"
       xml:lang="en"
       tocInclude="true"
@@ -99,10 +99,10 @@
       in the YANG data modeling language, which are used in several YANG
       modules for wavelength Division multiplexing (WDM) transport networks.
       The YANG module ietf-layer0-types-ext updates ietf-layer0-types defined
-      in draft-ietf-ccamp-layer0-types, which has been reduced in scope prior
-      to publication to only cover spectrum  management related aspects
-      required for the YANG module ietf-wson-topology defined in
-      draft-ietf-ccamp-wson-yang.
+      in <xref target="RFC9093" format="default"/>, which has been reduced in
+      scope prior to publication to only cover spectrum  management related
+      aspects required for the YANG module ietf-wson-topology defined in
+      <xref target="RFC9094" format="default"/>.
     </t>
      
     <t>
@@ -225,7 +225,7 @@
     <!-- Paste latest YANG code revision below!!! -->  
 
     <figure><artwork><![CDATA[
-<CODE BEGINS>
+<CODE BEGINS> file "ietf-layer0-types-ext@2021-10-18.yang"
 module ietf-layer0-types-ext {
   namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types-ext";
   prefix "l0-types-ext";
@@ -1255,9 +1255,10 @@ module ietf-layer0-types-ext {
       &RFC6241;
       &RFC7950;
       &RFC8795;
+      &RFC9093;
+      &RFC9094;
       &I-D.ietf-ccamp-optical-impairment-topology-yang;
-      &I-D.ietf-ccamp-wson-yang;
-      &I-D.ietf-ccamp-layer0-types;
+
 
       <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
       <reference anchor="RFC2119" target="https://www.rfc-editor.org/info/rfc2119" xml:base="https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">

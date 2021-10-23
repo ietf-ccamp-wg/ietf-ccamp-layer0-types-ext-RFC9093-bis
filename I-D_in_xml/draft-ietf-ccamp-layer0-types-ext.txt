@@ -4,10 +4,10 @@
 
 CCAMP                                                     D. Beller, Ed.
 Internet-Draft                                           S. Belotti, Ed.
-Updates: draft-ietf-ccamp-layer0-types (if                         Nokia
-         approved)                                              H. Zheng
-Intended status: Standards Track                                 I. Busi
-Expires: 28 April 2022                                            Huawei
+Updates: RFC9093 (if approved)                                     Nokia
+Intended status: Standards Track                                H. Zheng
+Expires: 28 April 2022                                           I. Busi
+                                                                  Huawei
                                                             E. Le Rouzic
                                                                   Orange
                                                          25 October 2021
@@ -22,10 +22,10 @@ Abstract
    in the YANG data modeling language, which are used in several YANG
    modules for wavelength Division multiplexing (WDM) transport
    networks.  The YANG module ietf-layer0-types-ext updates ietf-
-   layer0-types defined in draft-ietf-ccamp-layer0-types, which has been
-   reduced in scope prior to publication to only cover spectrum
-   management related aspects required for the YANG module ietf-wson-
-   topology defined in draft-ietf-ccamp-wson-yang.
+   layer0-types defined in [RFC9093], which has been reduced in scope
+   prior to publication to only cover spectrum management related
+   aspects required for the YANG module ietf-wson-topology defined in
+   [RFC9094].
 
    To be completed
 
@@ -80,7 +80,7 @@ Table of Contents
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  25
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  25
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .  25
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  26
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .  25
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  26
 
 1.  Introduction
@@ -183,7 +183,7 @@ Internet-Draft         Layer 0 Types - Revision 2           October 2021
    [Editor's note: YANG code below always has to be updated before
    submitting a new revision!]
 
-   <CODE BEGINS>
+   <CODE BEGINS> file "ietf-layer0-types-ext@2021-10-18.yang"
    module ietf-layer0-types-ext {
      namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types-ext";
      prefix "l0-types-ext";
@@ -1355,13 +1355,6 @@ Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 8.1.  Normative References
 
-   [I-D.ietf-ccamp-layer0-types]
-              Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
-              YANG Data Model for Layer 0 Types", Work in Progress,
-              Internet-Draft, draft-ietf-ccamp-layer0-types-09, 29
-              December 2020, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ccamp-layer0-types-09>.
-
    [I-D.ietf-ccamp-optical-impairment-topology-yang]
               Lee, Y., Rouzic, E. L., Lopez, V., Galimberti, G., and D.
               Beller, "A YANG Data Model for Optical Impairment-aware
@@ -1369,14 +1362,6 @@ Internet-Draft         Layer 0 Types - Revision 2           October 2021
               ccamp-optical-impairment-topology-yang-07, 8 July 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
               optical-impairment-topology-yang-07>.
-
-   [I-D.ietf-ccamp-wson-yang]
-              Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
-              YANG Data Model for Wavelength Switched Optical Networks
-              (WSONs)", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-wson-yang-28, 29 December 2020,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              wson-yang-28>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -1392,8 +1377,23 @@ Internet-Draft         Layer 0 Types - Revision 2           October 2021
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/info/rfc7950>.
 
+   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
+              O. Gonzalez de Dios, "YANG Data Model for Traffic
+              Engineering (TE) Topologies", RFC 8795,
+              DOI 10.17487/RFC8795, August 2020,
+              <https://www.rfc-editor.org/info/rfc8795>.
 
+   [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
+              YANG Data Model for Layer 0 Types", RFC 9093,
+              DOI 10.17487/RFC9093, August 2021,
+              <https://www.rfc-editor.org/info/rfc9093>.
 
+   [RFC9094]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
+              YANG Data Model for Wavelength Switched Optical Networks
+              (WSONs)", RFC 9094, DOI 10.17487/RFC9094, August 2021,
+              <https://www.rfc-editor.org/info/rfc9094>.
+
+8.2.  Informative References
 
 
 
@@ -1401,14 +1401,6 @@ Beller, et al.            Expires 28 April 2022                [Page 25]
 
 Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
-
-   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
-              O. Gonzalez de Dios, "YANG Data Model for Traffic
-              Engineering (TE) Topologies", RFC 8795,
-              DOI 10.17487/RFC8795, August 2020,
-              <https://www.rfc-editor.org/info/rfc8795>.
-
-8.2.  Informative References
 
    [I-D.ietf-ccamp-dwdm-if-param-yang]
               Galimberti, G., Kunze, R., Burk, A., Hiremagalur, D., and
@@ -1450,14 +1442,6 @@ Authors' Addresses
    Haomian Zheng
    Huawei
 
-
-
-
-Beller, et al.            Expires 28 April 2022                [Page 26]
-
-Internet-Draft         Layer 0 Types - Revision 2           October 2021
-
-
    Email: ZhengHaomian@huawei.com
 
 
@@ -1467,10 +1451,26 @@ Internet-Draft         Layer 0 Types - Revision 2           October 2021
    Email: Italo.Busi@huawei.com
 
 
+
+
+Beller, et al.            Expires 28 April 2022                [Page 26]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
    Esther Le Rouzic
    Orange
 
    Email: esther.lerouzic@orange.com
+
+
+
+
+
+
+
+
+
 
 
 
