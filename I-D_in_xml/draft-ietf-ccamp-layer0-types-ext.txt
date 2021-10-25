@@ -4,17 +4,17 @@
 
 CCAMP                                                     D. Beller, Ed.
 Internet-Draft                                           S. Belotti, Ed.
-Updates: draft-ietf-ccamp-layer0-types (if                         Nokia
-         approved)                                              H. Zheng
-Intended status: Standards Track                                 I. Busi
-Expires: 5 February 2022                                          Huawei
+Updates: RFC9093 (if approved)                                     Nokia
+Intended status: Standards Track                                H. Zheng
+Expires: 28 April 2022                                           I. Busi
+                                                                  Huawei
                                                             E. Le Rouzic
                                                                   Orange
-                                                           4 August 2021
+                                                         25 October 2021
 
 
             A YANG Data Model for Layer 0 Types - Revision 2
-                  draft-ietf-ccamp-layer0-types-ext-00
+                  draft-ietf-ccamp-layer0-types-ext-01
 
 Abstract
 
@@ -22,10 +22,10 @@ Abstract
    in the YANG data modeling language, which are used in several YANG
    modules for wavelength Division multiplexing (WDM) transport
    networks.  The YANG module ietf-layer0-types-ext updates ietf-
-   layer0-types defined in draft-ietf-ccamp-layer0-types, which has been
-   reduced in scope prior to publication to only cover spectrum
-   management related aspects required for the YANG module ietf-wson-
-   topology defined in draft-ietf-ccamp-wson-yang.
+   layer0-types defined in [RFC9093], which has been reduced in scope
+   prior to publication to only cover spectrum management related
+   aspects required for the YANG module ietf-wson-topology defined in
+   [RFC9094].
 
    To be completed
 
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 February 2022.
+   This Internet-Draft will expire on 28 April 2022.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 1]
+Beller, et al.            Expires 28 April 2022                 [Page 1]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -74,14 +74,14 @@ Table of Contents
      1.2.  Terminology . . . . . . . . . . . . . . . . . . . . . . .   3
    2.  Extensions for the Layer 0 Types Module . . . . . . . . . . .   3
    3.  Layer0 Types Revision 2 YANG CODE . . . . . . . . . . . . . .   4
-   4.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  25
-   5.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  25
-   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  25
+   4.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  24
+   5.  Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  24
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  24
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  25
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  25
      8.1.  Normative References  . . . . . . . . . . . . . . . . . .  25
-     8.2.  Informative References  . . . . . . . . . . . . . . . . .  26
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  27
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .  25
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  26
 
 1.  Introduction
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 2]
+Beller, et al.            Expires 28 April 2022                 [Page 2]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
 1.2.  Terminology
@@ -165,9 +165,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 3]
+Beller, et al.            Expires 28 April 2022                 [Page 3]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
    [Editor's note: There is still stuff from the xml template that needs
@@ -183,7 +183,7 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
    [Editor's note: YANG code below always has to be updated before
    submitting a new revision!]
 
-   <CODE BEGINS>
+   <CODE BEGINS> file "ietf-layer0-types-ext@2021-10-18.yang"
    module ietf-layer0-types-ext {
      namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types-ext";
      prefix "l0-types-ext";
@@ -221,9 +221,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 4]
+Beller, et al.            Expires 28 April 2022                 [Page 4]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
         Legal Provisions Relating to IETF Documents
@@ -232,7 +232,7 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
         This version of this YANG module is part of RFC XXXX; see
         the RFC itself for full legal notices.";
 
-     revision "2021-07-05" {
+     revision "2021-10-18" {
        description
          "Initial Version";
        reference
@@ -277,9 +277,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 5]
+Beller, et al.            Expires 28 April 2022                 [Page 5]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
        description
@@ -333,9 +333,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 6]
+Beller, et al.            Expires 28 April 2022                 [Page 6]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
        base fec-type;
@@ -389,9 +389,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 7]
+Beller, et al.            Expires 28 April 2022                 [Page 7]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
        description
@@ -445,9 +445,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 8]
+Beller, et al.            Expires 28 April 2022                 [Page 8]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
      identity term-otu {
@@ -501,9 +501,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022                [Page 9]
+Beller, et al.            Expires 28 April 2022                 [Page 9]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
      identity OTU2e {
@@ -557,9 +557,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022               [Page 10]
+Beller, et al.            Expires 28 April 2022                [Page 10]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
      identity power-spectral-density {
@@ -613,9 +613,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022               [Page 11]
+Beller, et al.            Expires 28 April 2022                [Page 11]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
            fraction-digits 6;
@@ -669,9 +669,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022               [Page 12]
+Beller, et al.            Expires 28 April 2022                [Page 12]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
          }
@@ -725,9 +725,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022               [Page 13]
+Beller, et al.            Expires 28 April 2022                [Page 13]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
              }
@@ -781,9 +781,9 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022               [Page 14]
+Beller, et al.            Expires 28 April 2022                [Page 14]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
                         + "supported-mode[mode-id=current()]/"
@@ -833,22 +833,20 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
            "configured organization- or vendor-specific
             application identifiers (AI) supported by the transponder";
        }
-
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 15]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
        leaf organization-identifier {
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 15]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
          type organization-identifier;
          config false;
          description
          "organization identifier that uses organizational
             mode";
-
        }
      }
 
@@ -867,7 +865,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          mandatory true;
          description "chromatic dispersion";
        }
-
        leaf polarization-mode-dispersion {
          type decimal64 {
            fraction-digits 2;
@@ -878,7 +875,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          mandatory true;
          description "Polarization mode dispersion";
        }
-
        leaf penalty {
          type decimal64 {
            fraction-digits 2;
@@ -891,16 +887,17 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
        }
      }
 
-
-
-Beller, et al.           Expires 5 February 2022               [Page 16]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
      grouping pdl-penalty {
        description
          "entries of table; pair of values polarization dependent loss
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 16]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
          and associated penalty";
 
        leaf max-polarization-dependent-loss {
@@ -913,7 +910,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          description
            "Maximum acceptable accumulate polarization dependent loss";
        }
-
        leaf penalty {
          type uint8;
          units "dB";
@@ -935,7 +931,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
        description "Attributes capabilities related to
        explicit mode of an optical transceiver";
 
-
        leaf line-coding-bitrate {
          type identityref {
            base line-coding;
@@ -945,27 +940,25 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          reference
            "ITU-T G.698.2 section 7.1.2";
        }
-
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 17]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
        leaf max-polarization-mode-dispersion {
          type decimal64 {
            fraction-digits 2;
            range "0..max";
          }
          units "ps";
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 17]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
          config false;
          description
            "Maximum acceptable accumulated polarization mode
             dispersion on the receiver";
        }
-
        leaf max-chromatic-dispersion {
          type decimal64 {
            fraction-digits 2;
@@ -977,7 +970,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
            "Maximum acceptable accumulated chromatic dispersion
             on the receiver";
        }
-
        list chromatic-and-polarization-dispersion-penalty {
          config false;
          description
@@ -987,14 +979,12 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
             sample the function penalty = f(CD, PMD).";
          uses cd-pmd-penalty ;
        }
-
        leaf max-diff-group-delay  {
               type int32;
               config false;
               description "Maximum Differential group delay of this mode
                            for this lane";
        }
-
        list max-polarization-dependent-loss-penalty {
          config false;
          description
@@ -1002,17 +992,8 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
            accumulated polarization dependent loss.
             This list of pair pdl and penalty can be used to
             sample the function pdl = f(penalty).";
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 18]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
          uses pdl-penalty ;
        }
-
        leaf available-modulation-type {
          type identityref {
          base modulation;
@@ -1021,19 +1002,15 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          description
            "Modulation type the specific transceiver in the list
             can support";
-       }
-       leaf otsi-carrier-bandwidth {
-         type frequency-ghz;
-         config false;
-         description
-           "Carrier bandwidth occupancy.
-            The required bandwidth can be given
-            by the transceiver vendor or
-            can be function of the following parameters:
-            baudrate, nyquist-spacing, roll-off and
-            cross-talk penalty";
-       }
 
+
+
+Beller, et al.            Expires 28 April 2022                [Page 18]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
+       }
        leaf  min-OSNR {
          type snr;
          config false;
@@ -1044,28 +1021,18 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          to be expected.";
          // change resolution BW from 12.5 GHz to 0.1 nm
        }
-
        leaf  min-Q-factor {
          type int32;
          units "dB";
          config false;
          description "min Qfactor at FEC threshold";
        }
-
        leaf available-baud-rate {
          type uint32;
-           units Bd;
+         units Bd;
          config false;
          description
            "Baud-rate the specific transceiver in
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 19]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
            the list can support.
             Baud-rate is the unit for
             symbol rate or modulation rate
@@ -1077,18 +1044,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
             per second in a digitally
             modulated signal or a line code";
        }
-
-       leaf nyquist-spacing-factor {
-         type decimal64 {
-           fraction-digits 4;
-           range "1..2";
-         }
-         config false;
-         description
-           "1.x factor to multiply the baud rate
-            for Nyquist shaped signal";
-       }
-
        leaf roll-off {
          type decimal64 {
            fraction-digits 4;
@@ -1102,29 +1057,36 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
            the baud rate.If=1 the signal exceeds the
            50% of the baud rate at each side.";
        }
+       leaf min-carrier-spacing {
 
-       leaf xtalk-penalty  {
-         type int32;
+
+
+Beller, et al.            Expires 28 April 2022                [Page 19]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
+         type frequency-ghz;
          config false;
-         description "";
-       }
+         description
+           "This attribute specifies the minimum nominal difference
+           between the carrier frequencies of two homogeneous OTSis
+           (which have the same optical characteristics but the central
+           frequencies) such that if they are placed next to each other
+           the interference due to spectrum overlap between them can be
+           considered negligible.
 
+           In case of heterogeneous OTSi it is up to path computation
+           engine to determine the minimum distance between the carrier
+           frequency of the two adjacent OTSi.";
+       }
        leaf available-fec-type {
          type identityref {
            base fec-type;
          }
          config false;
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 20]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
          description "Available FEC";
        }
-
        leaf fec-code-rate {
          type decimal64 {
            fraction-digits 8;
@@ -1133,7 +1095,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          config false;
          description "FEC-code-rate";
        }
-
        leaf fec-threshold {
          type decimal64 {
            fraction-digits 8;
@@ -1154,39 +1115,37 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
    /* transmitter tuning range (f_tx-min, f_tx-max) */
 
+
+
+Beller, et al.            Expires 28 April 2022                [Page 20]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
        leaf min-central-frequency {
          type frequency-thz;
          config false;
          description
-           "This parameter indicates the minimum frequency for
-            this transceiver.";
+           "This parameter indicates the minimum frequency for the
+           transmitter tuning range.";
        }
        leaf max-central-frequency {
          type frequency-thz;
          config false;
          description
-           "This parameter indicates the maximum frequency
-            for this transceiver.";
+           "This parameter indicates the maximum frequency for the
+           transmitter tuning range.";
        }
 
    /* transmitter-tunability-grid */
 
-
-
-Beller, et al.           Expires 5 February 2022               [Page 21]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
-       leaf minimum-channel-spacing {
+       leaf central-frequency-step {
          type frequency-ghz;
          config false;
          description
-           "This paramenter represents the minumum difference in
-            frequency between two adjacent channels
-            (ref. G.698.2 sec.7.1.1).
-            This free value is to permit OTSi's central frequency not
-            to stay on the G.694.1 grid.";
+           "This parameter indicates the transmitter tunability grid as
+           the distance between two adjacent carrier frequencies of
+           the transmitter tuning range.";
        }
 
    /* supported transmitter power range [p_tx-min, p_tx_max] */
@@ -1211,6 +1170,14 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
        }
        leaf rx-channel-power-max {
          type dbm-t;
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 21]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
          config false;
          description "The maximum input power of this interface";
        }
@@ -1227,13 +1194,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
    /* This grouping represent the list of configured parameters */
    /* values independent of operational mode */
 
-
-
-Beller, et al.           Expires 5 February 2022               [Page 22]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
      grouping common-transceiver-configured-param {
        description "Capability of an optical transceiver";
 
@@ -1243,25 +1203,20 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
               "OTSi carrier frequency, equivalent to the
               actual configured transmitter frequency";
        }
-
-
        leaf tx-channel-power {
            type dbm-t;
            description "The current channel transmit power";
        }
-
        leaf rx-channel-power {
            type dbm-t;
            config false;
            description "The current channel received power ";
        }
-
        leaf rx-total-power {
            type dbm-t;
            config false;
            description "Current total received power";
        }
-
      } // grouping for configured attributes out of mode
 
      grouping l0-tunnel-attributes {
@@ -1271,6 +1226,14 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          type identityref {
            base fec-type;
          }
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 22]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
          description
            "FEC type.";
        }
@@ -1282,14 +1245,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
            "Termination type.";
        }
        leaf bit-stuffing {
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 23]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
          type boolean;
          description
            "Bit stuffing enabled/disabled.";
@@ -1327,6 +1282,14 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
          }
          mandatory true;
          description
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 23]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
            "The upper frequency boundary of the
            frequency range.";
        }
@@ -1336,15 +1299,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
                                   Figure 1
-
-
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 24]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
 
 4.  Acknowledgements
 
@@ -1381,6 +1335,17 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
    case (as above).  If there are no requirements for IANA, the section
    will be removed during conversion into an RFC by the RFC Editor.
 
+
+
+
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 24]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
+
 7.  Security Considerations
 
    All drafts are required to have a security considerations section.
@@ -1390,25 +1355,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 8.1.  Normative References
 
-
-
-
-
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 25]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
-   [I-D.ietf-ccamp-layer0-types]
-              Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
-              YANG Data Model for Layer 0 Types", Work in Progress,
-              Internet-Draft, draft-ietf-ccamp-layer0-types-09, 29
-              December 2020, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ccamp-layer0-types-09>.
-
    [I-D.ietf-ccamp-optical-impairment-topology-yang]
               Lee, Y., Rouzic, E. L., Lopez, V., Galimberti, G., and D.
               Beller, "A YANG Data Model for Optical Impairment-aware
@@ -1416,14 +1362,6 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
               ccamp-optical-impairment-topology-yang-07, 8 July 2021,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
               optical-impairment-topology-yang-07>.
-
-   [I-D.ietf-ccamp-wson-yang]
-              Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
-              YANG Data Model for WSON (Wavelength Switched Optical
-              Networks)", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-wson-yang-28, 29 December 2020,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              wson-yang-28>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -1445,19 +1383,28 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
               DOI 10.17487/RFC8795, August 2020,
               <https://www.rfc-editor.org/info/rfc8795>.
 
+   [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
+              YANG Data Model for Layer 0 Types", RFC 9093,
+              DOI 10.17487/RFC9093, August 2021,
+              <https://www.rfc-editor.org/info/rfc9093>.
+
+   [RFC9094]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
+              YANG Data Model for Wavelength Switched Optical Networks
+              (WSONs)", RFC 9094, DOI 10.17487/RFC9094, August 2021,
+              <https://www.rfc-editor.org/info/rfc9094>.
+
 8.2.  Informative References
+
+
+
+Beller, et al.            Expires 28 April 2022                [Page 25]
+
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
+
 
    [I-D.ietf-ccamp-dwdm-if-param-yang]
               Galimberti, G., Kunze, R., Burk, A., Hiremagalur, D., and
               G. Grammel, "A YANG model to manage the optical interface
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 26]
-
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
-
-
               parameters for an external transponder in a WDM network",
               Work in Progress, Internet-Draft, draft-ietf-ccamp-dwdm-
               if-param-yang-06, 12 July 2021,
@@ -1506,12 +1453,9 @@ Authors' Addresses
 
 
 
-
-
-
-Beller, et al.           Expires 5 February 2022               [Page 27]
+Beller, et al.            Expires 28 April 2022                [Page 26]
 
-Internet-Draft         Layer 0 Types - Revision 2            August 2021
+Internet-Draft         Layer 0 Types - Revision 2           October 2021
 
 
    Esther Le Rouzic
@@ -1565,4 +1509,4 @@ Internet-Draft         Layer 0 Types - Revision 2            August 2021
 
 
 
-Beller, et al.           Expires 5 February 2022               [Page 28]
+Beller, et al.            Expires 28 April 2022                [Page 27]
