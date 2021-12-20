@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-10-18" {
+  revision "2021-12-20" {
     description
       "Initial Version";
     reference
@@ -914,12 +914,6 @@ module ietf-layer0-types-ext {
       description
         "Bit stuffing enabled/disabled.";
     }
-  }
-
-  grouping l0-path-constraints {
-    description
-      "Global named path constraints configuration
-       grouping for Layer0 (WSON or Flexi-Grid) paths.";
     leaf wavelength-assignment {
       type identityref {
         base wavelength-assignment;
