@@ -25,7 +25,7 @@ module ietf-layer0-types-ext {
   description
     "Description to be added!!!
     
-     Copyright (c) 2021 IETF Trust and the persons identified
+     Copyright (c) 2022 IETF Trust and the persons identified
      as authors of the code.  All rights reserved.
      
      Redistribution and use in source and binary forms, with
@@ -38,7 +38,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2021-12-20" {
+  revision "2022-01-21" {
     description
       "Initial Version";
     reference
@@ -181,12 +181,6 @@ module ietf-layer0-types-ext {
     reference
       "RFC6163:Framework for GMPLS and Path Computation Element 
       (PCE) Control of Wavelength Switched Optical Networks (WSONs)";
-  }
-
-  identity unspecified-wavelength-assignment {
-    base wavelength-assignment;
-    description
-      "No method specified";
   }
 
   identity first-fit-wavelength-assignment {
@@ -451,9 +445,75 @@ module ietf-layer0-types-ext {
     }
   */
 
+  grouping transceiver-mode {
+    description
+      "This grouping is intended to be used for reporting the
+       information of a transceiver's mode.";
+    choice mode {
+      mandatory true;
+      description
+        "Indicates whether the transceiver's mode is a standard
+          mode, an organizational mode or an explicit mode.";
+      case G.698.2 {
+        uses standard-mode;
+      }
+      case organizational-mode {
+        container organizational-mode {
+          description
+            "The set of attributes for an organizational mode";
+          uses organizational-mode;
+          uses common-organizational-explicit-mode;
+        }  // container organizational-mode
+      }
+      case explicit-mode {
+        container explicit-mode {
+            description
+              "The set of attributes for an explicit mode";
+          container supported-modes {
+            description
+              "Container for all the standard and organizational
+                modes supported by the transceiver's explicit
+                mode.";
+            leaf-list supported-application-codes {
+              type leafref {
+                path "../../../mode-id";
+              }
+              must "../../../../"
+                  + "supported-mode[mode-id=current()]/"
+                  + "standard-mode" {
+                description
+                  "The pointer is only for application codes
+                    supported by transceiver."; 
+              }
+              description
+                "List of pointers to the application codes
+                  supported by the transceiver's explicit mode.";
+            }
+            leaf-list supported-organizational-modes {
+              type leafref {
+                path "../../../mode-id";
+              }
+              must "../../../../"
+                  + "supported-mode[mode-id=current()]/"
+                  + "organizational-mode" {
+                description
+                  "The pointer is only for organizational modes
+                    supported by transceiver.";
+              }
+              description
+                "List of pointers to the organizational modes
+                  supported by the transceiver's explicit mode.";
+            }
+          }  // container supported-modes
+          uses common-explicit-mode;
+          uses common-organizational-explicit-mode;
+        }  // container explicit-mode
+      } // end of case explicit-mode
+    } // end of choice
+  }
   grouping transceiver-capabilities {
     description
-      "This grouping is intended to be use for reporting the
+      "This grouping is intended to be used for reporting the
        capabilities of a transceiver.";
 
     container supported-modes {
@@ -469,67 +529,7 @@ module ietf-layer0-types-ext {
           }
           description "ID for the supported transceiver's mode.";
         }
-        choice mode {
-          mandatory true;
-          description
-            "Indicates whether the transceiver's mode is a standard
-             mode, an organizational mode or an explicit mode.";
-          case G.698.2 {
-            uses standard-mode;
-          }
-          case organizational-mode {
-            container organizational-mode {
-              description
-                "The set of attributes for an organizational mode";
-              uses organizational-mode;
-              uses common-organizational-explicit-mode;
-            }  // container organizational-mode
-          }
-          case explicit-mode {
-            container explicit-mode {
-               description
-                 "The set of attributes for an explicit mode";
-              container supported-modes {
-                description
-                  "Container for all the standard and organizational
-                   modes supported by the transceiver's explicit
-                   mode.";
-                leaf-list supported-application-codes {
-                  type leafref {
-                    path "../../../mode-id";
-                  }
-                  must "../../../../"
-                     + "supported-mode[mode-id=current()]/"
-                     + "standard-mode" {
-                    description
-                      "The pointer is only for application codes
-                       supported by transceiver."; 
-                  }
-                  description
-                    "List of pointers to the application codes
-                     supported by the transceiver's explicit mode.";
-                }
-                leaf-list supported-organizational-modes {
-                  type leafref {
-                    path "../../../mode-id";
-                  }
-                  must "../../../../"
-                     + "supported-mode[mode-id=current()]/"
-                     + "organizational-mode" {
-                    description
-                      "The pointer is only for organizational modes
-                       supported by transceiver.";
-                  }
-                  description
-                    "List of pointers to the organizational modes
-                     supported by the transceiver's explicit mode.";
-                }
-              }  // container supported-modes
-              uses common-explicit-mode;
-              uses common-organizational-explicit-mode;
-            }  // container explicit-mode
-          } // end of case explicit-mode
-        } // end of choice
+        uses transceiver-mode;
       }  // list supported-modes
     }  // container supported-modes
   }  // grouping transceiver-capabilities
