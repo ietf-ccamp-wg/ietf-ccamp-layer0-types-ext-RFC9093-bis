@@ -6,7 +6,7 @@ CCAMP Working Group                                             H. Zheng
 Internet-Draft                                                    Huawei
 Obsoletes: RFC9093 (if approved)                                  Y. Lee
 Intended status: Standards Track                                 Samsung
-Expires: 21 August 2022                                           A. Guo
+Expires: 26 August 2022                                           A. Guo
                                                   Futurewei Technologies
                                                                 V. Lopez
                                                                    Nokia
@@ -19,7 +19,7 @@ Expires: 21 August 2022                                           A. Guo
                                                                   Huawei
                                                             E. Le Rouzic
                                                                   Orange
-                                                        17 February 2022
+                                                        22 February 2022
 
 
                   A YANG Data Model for Layer 0 Types
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 1]
+Zheng, et al.            Expires 26 August 2022                 [Page 1]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
-   This Internet-Draft will expire on 21 August 2022.
+   This Internet-Draft will expire on 26 August 2022.
 
 Copyright Notice
 
@@ -87,7 +87,7 @@ Table of Contents
    6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  26
      6.1.  Normative References  . . . . . . . . . . . . . . . . . .  26
      6.2.  Informative References  . . . . . . . . . . . . . . . . .  28
-   Acknowledgements  . . . . . . . . . . . . . . . . . . . . . . . .  29
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  29
    Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  29
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  30
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 2]
+Zheng, et al.            Expires 26 August 2022                 [Page 2]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -165,7 +165,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 3]
+Zheng, et al.            Expires 26 August 2022                 [Page 3]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -221,7 +221,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 4]
+Zheng, et al.            Expires 26 August 2022                 [Page 4]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -277,7 +277,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 5]
+Zheng, et al.            Expires 26 August 2022                 [Page 5]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -333,7 +333,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 6]
+Zheng, et al.            Expires 26 August 2022                 [Page 6]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -389,7 +389,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 7]
+Zheng, et al.            Expires 26 August 2022                 [Page 7]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -445,7 +445,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 8]
+Zheng, et al.            Expires 26 August 2022                 [Page 8]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -501,7 +501,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                 [Page 9]
+Zheng, et al.            Expires 26 August 2022                 [Page 9]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -557,7 +557,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 10]
+Zheng, et al.            Expires 26 August 2022                [Page 10]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -613,7 +613,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 11]
+Zheng, et al.            Expires 26 August 2022                [Page 11]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -669,7 +669,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 12]
+Zheng, et al.            Expires 26 August 2022                [Page 12]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -725,7 +725,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 13]
+Zheng, et al.            Expires 26 August 2022                [Page 13]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -781,7 +781,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 14]
+Zheng, et al.            Expires 26 August 2022                [Page 14]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -837,7 +837,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 15]
+Zheng, et al.            Expires 26 August 2022                [Page 15]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -893,7 +893,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 16]
+Zheng, et al.            Expires 26 August 2022                [Page 16]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -949,7 +949,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 17]
+Zheng, et al.            Expires 26 August 2022                [Page 17]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1005,7 +1005,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 18]
+Zheng, et al.            Expires 26 August 2022                [Page 18]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1061,7 +1061,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 19]
+Zheng, et al.            Expires 26 August 2022                [Page 19]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1117,7 +1117,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 20]
+Zheng, et al.            Expires 26 August 2022                [Page 20]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1173,7 +1173,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 21]
+Zheng, et al.            Expires 26 August 2022                [Page 21]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1229,7 +1229,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 22]
+Zheng, et al.            Expires 26 August 2022                [Page 22]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1285,7 +1285,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 23]
+Zheng, et al.            Expires 26 August 2022                [Page 23]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1341,7 +1341,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 24]
+Zheng, et al.            Expires 26 August 2022                [Page 24]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1397,7 +1397,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 25]
+Zheng, et al.            Expires 26 August 2022                [Page 25]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1453,7 +1453,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 26]
+Zheng, et al.            Expires 26 August 2022                [Page 26]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1509,7 +1509,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 27]
+Zheng, et al.            Expires 26 August 2022                [Page 27]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1565,7 +1565,7 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 28]
+Zheng, et al.            Expires 26 August 2022                [Page 28]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1605,11 +1605,13 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
               RFC 7581, DOI 10.17487/RFC7581, June 2015,
               <https://www.rfc-editor.org/info/rfc7581>.
 
-Acknowledgements
+Acknowledgments
 
    The authors and the working group give their sincere thanks to Robert
    Wilton for the YANG doctor review and Tom Petch for his comments
    during the model and document development.
+
+   This document was prepared using kramdown.
 
 Contributors
 
@@ -1619,9 +1621,7 @@ Contributors
 
 
 
-
-
-Zheng, et al.            Expires 21 August 2022                [Page 29]
+Zheng, et al.            Expires 26 August 2022                [Page 29]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1677,7 +1677,7 @@ Authors' Addresses
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 30]
+Zheng, et al.            Expires 26 August 2022                [Page 30]
 
 Internet-Draft           Yang for Layer 0 Types            February 2022
 
@@ -1733,4 +1733,4 @@ Internet-Draft           Yang for Layer 0 Types            February 2022
 
 
 
-Zheng, et al.            Expires 21 August 2022                [Page 31]
+Zheng, et al.            Expires 26 August 2022                [Page 31]

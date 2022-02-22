@@ -330,8 +330,10 @@ Please replace XXXX with the RFC number assigned to this document.
 
 {: numbered="false"}
 
-# Acknowledgements
+# Acknowledgments
 
    The authors and the working group give their sincere thanks to Robert
    Wilton for the YANG doctor review and Tom Petch for his comments
    during the model and document development.
+
+   This document was prepared using kramdown.
