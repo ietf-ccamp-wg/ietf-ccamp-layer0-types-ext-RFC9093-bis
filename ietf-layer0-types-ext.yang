@@ -1,4 +1,6 @@
 module ietf-layer0-types-ext {
+  yang-version 1.1;
+
   namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types-ext";
   prefix "l0-types-ext";
 
