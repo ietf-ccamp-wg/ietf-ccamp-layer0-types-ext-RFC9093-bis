@@ -444,7 +444,7 @@ module ietf-layer0-types-ext {
       fraction-digits 2;
     }
     description
-      "A decimal64 value with two digits."
+      "A decimal64 value with two digits.";
   }
 
   typedef decimal-2-digits-or-null {
@@ -454,7 +454,7 @@ module ietf-layer0-types-ext {
     }
     description
       "A decimal64 value with two digits, when the value is know or
-      an empty value when the value is not known."
+      an empty value when the value is not known.";
   }
 
   typedef power-in-db {
@@ -666,11 +666,11 @@ module ietf-layer0-types-ext {
     }
     leaf penalty {
       type union {
-        type empty;
         type decimal64 {
           fraction-digits 2;
           range "0..max";
         }
+        type empty;
       }
       units "dB";
       config false;
@@ -1034,6 +1034,34 @@ module ietf-layer0-types-ext {
       description
         "The upper frequency boundary of the
         frequency range.";
+    }
+  }
+
+  grouping l0-path-constraints {
+    description
+      "Common attribute for Layer 0 path constraints to be used by
+      Layer 0 computation.";
+    leaf gsnr-margin {
+      type snr {
+        range 0..max;
+      }
+      default 0;
+      description
+        "An additional margin to be added to the OSNR-min of the
+        transceiver when checking the estimated received Generalized
+        SNR (GSNR).";
+    }
+  }
+
+  grouping l0-path-properties {
+    description
+      "Common attribute for reporting the Layer 0 computed path
+      properties.";
+    leaf estimated-gsnr {
+      type snr;
+      config false;
+      description
+        "The estimate received GSNR for the computed path.";
     }
   }
 }
