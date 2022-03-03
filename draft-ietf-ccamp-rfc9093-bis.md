@@ -140,6 +140,11 @@ informative:
    network configuration aspect) for Layer 0 optical networks in
    model(s) defined outside of this document.
 
+   This document adds new type definitions to the YANG modules and
+   obsoletes {{?RFC9093}}.  For further details, see the revision
+   statements of the YANG module in {{yang-code}} or the summary in
+   {{changes-bis}}.
+
 ## Requirements Language
 
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
@@ -327,6 +332,12 @@ Please replace XXXX with the RFC number assigned to this document.
 \[Editors' Note] Check the IANA considerations in other bis documents
 
 --- back
+
+{: #changes-bis}
+
+# Changes from RFC 9093
+
+To be added in a future revision of this draft.
 
 {: numbered="false"}
 
