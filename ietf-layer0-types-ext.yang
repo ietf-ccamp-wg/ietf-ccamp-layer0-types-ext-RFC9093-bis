@@ -1,4 +1,6 @@
 module ietf-layer0-types-ext {
+  yang-version 1.1;
+
   namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types-ext";
   prefix "l0-types-ext";
 
@@ -38,7 +40,7 @@ module ietf-layer0-types-ext {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
       
-  revision "2022-01-21" {
+  revision "2022-03-03" {
     description
       "Initial Version";
     reference
@@ -402,6 +404,17 @@ module ietf-layer0-types-ext {
       resolution bandwidth";
   }
 
+  typedef snr-or-null {
+    type union {
+      type snr;
+      type empty;
+    }
+    description
+      "(Optical) Signal to Noise Ratio measured over 0.1 nm
+      resolution bandwidth, when known, or an empty value when
+      unknown.";
+  }
+
   typedef fiber-type {
     type enumeration {
       enum G.652 {
@@ -426,6 +439,58 @@ module ietf-layer0-types-ext {
     }
     description
       "ITU-T based fiber-types";
+  }
+
+  typedef decimal-2-digits {
+    type decimal64 {
+      fraction-digits 2;
+    }
+    description
+      "A decimal64 value with two digits.";
+  }
+
+  typedef decimal-2-digits-or-null {
+    type union {
+      type decimal-2-digits;
+      type empty;
+    }
+    description
+      "A decimal64 value with two digits, when the value is know or
+      an empty value when the value is not known.";
+  }
+
+  typedef power-in-db {
+    type decimal-2-digits;
+    units dB;
+    description
+      "The power in dB.";
+  }
+
+  typedef power-in-db-or-null {
+    type union {
+      type power-in-db;
+      type empty;
+    }
+    description
+      "The power in dB, when it is known or an empty value when the
+      power is not known.";
+  }
+
+  typedef power-in-dbm {
+    type decimal-2-digits;
+    units dBm;
+    description
+      "The power in dBm.";
+  }
+
+  typedef power-in-dbm-or-null {
+    type union {
+      type power-in-dbm;
+      type empty;
+    }
+    description
+      "The power in dBm, when it is known or an empty value when the
+      power is not known.";
   }
 
 /*
@@ -576,9 +641,12 @@ module ietf-layer0-types-ext {
     associated penalty";
 
     leaf chromatic-dispersion {
-      type decimal64 {
-        fraction-digits 2;
-        range "0..max";
+      type union {
+        type decimal64 {
+          fraction-digits 2;
+          range "0..max";
+        }
+        type empty;
       }
       units "ps/nm";
       config false;
@@ -586,9 +654,12 @@ module ietf-layer0-types-ext {
       description "chromatic dispersion";
     }
     leaf polarization-mode-dispersion {
-      type decimal64 {
-        fraction-digits 2;
-        range "0..max";
+      type union {
+        type decimal64 {
+          fraction-digits 2;
+          range "0..max";
+        }
+        type empty;
       }
       units "ps";
       config false;
@@ -596,9 +667,12 @@ module ietf-layer0-types-ext {
       description "Polarization mode dispersion";
     }
     leaf penalty {
-      type decimal64 {
-        fraction-digits 2;
-        range "0..max";
+      type union {
+        type decimal64 {
+          fraction-digits 2;
+          range "0..max";
+        }
+        type empty;
       }
       units "dB";
       config false;
@@ -613,17 +687,17 @@ module ietf-layer0-types-ext {
       and associated penalty";
 
     leaf max-polarization-dependent-loss {
-      type decimal64 {
-        fraction-digits 2;
-      }
-      units "dB";
+      type power-in-db-or-null;
       config false;
       mandatory true;
       description
         "Maximum acceptable accumulate polarization dependent loss";
     }
     leaf penalty {
-      type uint8;
+      type union {
+        type uint8;
+        type empty;
+      }
       units "dB";
       config false;
       mandatory true;
@@ -648,9 +722,18 @@ module ietf-layer0-types-ext {
         base line-coding;
       }
       config false;
-      description "Bit rate/line coding of optical tributary signal";
+      description
+        "Bit rate/line coding of the optical tributary signal.";
       reference 
         "ITU-T G.698.2 section 7.1.2";
+    }
+    leaf bitrate {
+      type uint16;
+      units "Gbit/sec";
+      config false;
+      description
+        "The gross bitrate (e.g., 100, 200) of the optical tributary
+        signal.";
     }
     leaf max-polarization-mode-dispersion {
       type decimal64 {
@@ -684,10 +767,10 @@ module ietf-layer0-types-ext {
       uses cd-pmd-penalty ;
     }
     leaf max-diff-group-delay  {
-           type int32;
-           config false;
-           description "Maximum Differential group delay of this mode
-                        for this lane";
+      type int32;
+      config false;
+      description "Maximum Differential group delay of this mode
+                  for this lane";
     }
     list max-polarization-dependent-loss-penalty {
       config false;
@@ -700,7 +783,7 @@ module ietf-layer0-types-ext {
     }
     leaf available-modulation-type {
       type identityref {
-      base modulation;
+        base modulation;
       }
       config false;
       description
@@ -861,7 +944,6 @@ module ietf-layer0-types-ext {
       description "Maximum rx optical power for
       all the channels";
     }      
-
   } // grouping common-organizational-explicit-mode
 
 /* This grouping represent the list of configured parameters */
@@ -870,25 +952,37 @@ module ietf-layer0-types-ext {
   grouping common-transceiver-configured-param {
     description "Capability of an optical transceiver";
 
-    leaf otsi-carrier-frequency { 
+    leaf otsi-carrier-frequency {
+      type union {
         type frequency-thz;
-         description
-           "OTSi carrier frequency, equivalent to the
-           actual configured transmitter frequency";
+        type empty;
+      }
+      description
+        "OTSi carrier frequency, equivalent to the
+        actual configured transmitter frequency";
     }
     leaf tx-channel-power {
+      type union {
         type dbm-t;
-        description "The current channel transmit power";
+        type empty;
+      }
+      description "The current channel transmit power";
     }
     leaf rx-channel-power {
+      type union {
         type dbm-t;
-        config false;
-        description "The current channel received power ";
+        type empty;
+      }
+      config false;
+      description "The current channel received power ";
     }
     leaf rx-total-power {
+      type union {
         type dbm-t;
-        config false;
-        description "Current total received power";
+        type empty;
+      }
+      config false;
+      description "Current total received power";
     }
   } // grouping for configured attributes out of mode
 
@@ -943,6 +1037,34 @@ module ietf-layer0-types-ext {
       description
         "The upper frequency boundary of the
         frequency range.";
+    }
+  }
+
+  grouping l0-path-constraints {
+    description
+      "Common attribute for Layer 0 path constraints to be used by
+      Layer 0 computation.";
+    leaf gsnr-margin {
+      type snr {
+        range 0..max;
+      }
+      default 0;
+      description
+        "An additional margin to be added to the OSNR-min of the
+        transceiver when checking the estimated received Generalized
+        SNR (GSNR).";
+    }
+  }
+
+  grouping l0-path-properties {
+    description
+      "Common attribute for reporting the Layer 0 computed path
+      properties.";
+    leaf estimated-gsnr {
+      type snr;
+      config false;
+      description
+        "The estimate received GSNR for the computed path.";
     }
   }
 }
