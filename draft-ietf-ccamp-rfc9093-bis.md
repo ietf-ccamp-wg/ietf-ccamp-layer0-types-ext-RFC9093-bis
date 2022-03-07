@@ -5,7 +5,7 @@ title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
 docname: draft-ietf-ccamp-rfc9093-bis-00
-obsoletes: RFC9093
+obsoletes: 9093
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
@@ -144,12 +144,6 @@ informative:
    obsoletes {{?RFC9093}}.  For further details, see the revision
    statements of the YANG module in {{yang-code}} or the summary in
    {{changes-bis}}.
-
-## Requirements Language
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-   document are to be interpreted as described in RFC 2119 {{!RFC2119}}.
 
 ## Terminology and Notations
 
