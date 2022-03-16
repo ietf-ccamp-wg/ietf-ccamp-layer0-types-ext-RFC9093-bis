@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-00
+docname: draft-ietf-ccamp-rfc9093-bis-01
 obsoletes: 9093
 workgroup: CCAMP Working Group
 category: std
@@ -65,6 +65,14 @@ contributor:
     name: Ricard Vilalta
     org: CTTC
     email: ricard.vilalta@cttc.es
+  -
+    name: Gabriele Galimberti
+    org: Cisco
+    email: ggalimbe@cisco.com
+  -
+    name: Enrico Griseri
+    org: Nokia
+    email: Enrico.Griseri@nokia.com
 
 normative:
   ITU-T_G.698.2:
