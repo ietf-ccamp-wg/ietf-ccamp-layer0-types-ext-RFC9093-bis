@@ -1221,7 +1221,7 @@ module ietf-layer0-types {
 
     leaf penalty-value {
       type union {
-        type uint8;
+        type decimal64;
         type empty;
       }
       units "dB";
@@ -1289,9 +1289,9 @@ module ietf-layer0-types {
       config false;
       description
         "Optional penalty associated with a given accumulated
-         CD and PMD.
-         This list of triplet cd, pmd, penalty can be used to
-         sample the function penalty = f(CD, PMD).";
+         chromatic dispersion (CD) value.
+         This list of pair cd and penalty can be used to
+         sample the function penalty = f(CD).";
       leaf chromatic-dispersion {
         type union {
           type decimal64 {
@@ -1303,7 +1303,7 @@ module ietf-layer0-types {
         units "ps/nm";
         config false;
         mandatory true;
-        description "chromatic dispersion";
+        description "Chromatic dispersion";
       }
       uses penalty-value;
     }
@@ -1311,9 +1311,9 @@ module ietf-layer0-types {
       config false;
       description
         "Optional penalty associated with a given accumulated
-         CD and PMD.
-         This list of triplet cd, pmd, penalty can be used to
-         sample the function penalty = f(CD, PMD).";
+         polarization mode dispersion(PMD) value.
+         This list of pair pmd and penalty can be used to
+         sample the function penalty = f(PMD).";
       leaf polarization-mode-dispersion {
         type union {
           type decimal64 {
@@ -1347,7 +1347,7 @@ module ietf-layer0-types {
         config false;
         mandatory true;
         description
-          "Maximum acceptable accumulate polarization dependent
+          "Maximum acceptable accumulated polarization dependent
           loss.";
       }
       uses penalty-value;
