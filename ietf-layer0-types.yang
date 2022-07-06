@@ -55,7 +55,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2022-06-29 {
+  revision 2022-07-06 {
     description
       "To be updated";
     reference
@@ -1221,7 +1221,10 @@ module ietf-layer0-types {
 
     leaf penalty-value {
       type union {
-        type decimal64;
+        type decimal64 {
+          fraction-digits 2;
+          range "0..max";
+        }
         type empty;
       }
       units "dB";
