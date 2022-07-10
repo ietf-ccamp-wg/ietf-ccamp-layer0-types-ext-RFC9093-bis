@@ -6,6 +6,7 @@ title: A YANG Data Model for Layer 0 Types
 abbrev: Yang for Layer 0 Types
 docname: draft-ietf-ccamp-rfc9093-bis-01
 obsoletes: 9093
+submissiontype: IETF
 workgroup: CCAMP Working Group
 category: std
 ipr: trust200902
@@ -169,7 +170,7 @@ informative:
    corresponding YANG imported modules.
 
 | Prefix       | YANG module                      | Reference
-| l0-types     | ietf-layer0-types                | RFCXXXX
+| l0-types     | ietf-layer0-types                | RFC XXXX
 {: #tab-prefixes title="Prefixes and corresponding YANG modules"}
 
 RFC Editor Note:
@@ -272,8 +273,8 @@ Please replace XXXX with the RFC number assigned to this document.
 # YANG Module for Layer 0 Types
 
 ~~~~
-<CODE BEGINS> file "ietf-layer0-types-ext@2022-01-21.yang"
-{::include ./ietf-layer0-types-ext.yang}
+<CODE BEGINS> file "ietf-layer0-types@2022-07-10.yang"
+{::include ./ietf-layer0-types.yang}
 <CODE ENDS>
 ~~~~
 

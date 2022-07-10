@@ -55,7 +55,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2022-07-06 {
+  revision 2022-07-10 {
     description
       "To be updated";
     reference
@@ -1551,20 +1551,6 @@ module ietf-layer0-types {
   grouping l0-tunnel-attributes {
     description
       "Parameters for Layer0 (WSON or Flexi-Grid) Tunnels.";
-    leaf fec-type {
-      type identityref {
-        base fec-type;
-      }
-      description
-        "FEC type.";
-    }
-    leaf termination-type {
-      type identityref {
-        base term-type;
-      }
-      description
-        "Termination type.";
-    }
     leaf bit-stuffing {
       type boolean;
       description
