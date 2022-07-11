@@ -163,6 +163,8 @@ informative:
    The YANG data model in this document conforms to the Network
    Management Datastore Architecture defined in {{!RFC8342}}.
 
+{::boilerplate bcp14}
+
 ## Prefix in Data Node Names
 
    In this document, names of data nodes and other data model objects
@@ -187,83 +189,100 @@ Please replace XXXX with the RFC number assigned to this document.
    networks.  The "ietf-layer0-types" module contains the following YANG
    reusable types and groupings:
 
-   l0-grid-type
-   : A base YANG identity for the grid type as defined in {{!RFC6163}} and
-      {{!RFC7698}}.
+   l0-grid-type:
 
-   dwdm-ch-spc-type
-   : A base YANG identity for the DWDM channel-spacing type as defined
-      in {{!RFC6205}}.
+   > A base YANG identity for the grid type as defined in {{!RFC6163}} and
+     {{!RFC7698}}.
 
-   cwdm-ch-spc-type
-   : A base YANG identity for the Coarse Wavelength Division
-      Multiplexing (CWDM) channel-spacing type as defined in {{!RFC6205}}.
+   dwdm-ch-spc-type:
 
-   wson-label-start-end
-   : The WSON label range was defined in {{!RFC6205}}, and the generic
-      topology model defines the label-start/label-end in {{!RFC8795}}.
-      This grouping shows the WSON-specific label-start and label-end
-      information.
+   > A base YANG identity for the DWDM channel-spacing type as defined
+     in {{!RFC6205}}.
 
-   wson-label-hop
-   : The WSON label range was defined in {{!RFC6205}}, and the generic
-      topology model defines the label-hop in {{!RFC8795}}.  This grouping
-      shows the WSON-specific label-hop information.
+   cwdm-ch-spc-type:
 
-   l0-label-range-info
-   : A YANG grouping that defines the Layer 0 label range information
-      applicable for WSON as defined in {{!RFC6205}}.  This grouping is
-      used in the flexi-grid DWDM by adding more flexi-grid-specific
-      parameters.
+   > A base YANG identity for the Coarse Wavelength Division
+     Multiplexing (CWDM) channel-spacing type as defined in {{!RFC6205}}.
 
-   wson-label-step
-   : A YANG grouping that defines label steps for WSON as defined in
-      {{!RFC8776}}.
+   wson-label-start-end:
 
-   flexi-grid-label-start-end
-   : The flexi-grid label range was defined in {{!RFC7698}}, and the
-      generic topology model defines the label-start/label-end in
-      {{!RFC8795}}.  This grouping shows the flexi-grid-specific label-
-      start and label-end information.
+   > The WSON label range was defined in {{!RFC6205}}, and the generic
+     topology model defines the label-start/label-end in {{!RFC8795}}.
+     This grouping shows the WSON-specific label-start and label-end
+     information.
 
-   flexi-grid-label-hop
-   : The flexi-grid label range was defined in {{!RFC7698}}, and the
-      generic topology model defines the label-hop in {{!RFC8795}}.  This
-      grouping shows the WSON-specific label-hop information.
+   wson-label-hop:
 
-   flexi-grid-label-range-info
-   : A YANG grouping that defines flexi-grid label range information as
-      defined in {{!RFC7698}} and {{!RFC8363}}.
+   > The WSON label range was defined in {{!RFC6205}}, and the generic
+     topology model defines the label-hop in {{!RFC8795}}.  This grouping
+     shows the WSON-specific label-hop information.
 
-   flexi-grid-label-step
-   : A YANG grouping that defines flexi-grid label steps as defined in
-      {{!RFC8776}}.
+   l0-label-range-info:
 
-   transceiver-capabilities
-   : a YANG grouping to define the transceiver capabilities (also called
+   > A YANG grouping that defines the Layer 0 label range information
+     applicable for WSON as defined in {{!RFC6205}}.  This grouping is
+     used in the flexi-grid DWDM by adding more flexi-grid-specific
+     parameters.
+
+   wson-label-step:
+
+   > A YANG grouping that defines label steps for WSON as defined in
+     {{!RFC8776}}.
+
+   flexi-grid-label-start-end:
+
+   > The flexi-grid label range was defined in {{!RFC7698}}, and the
+     generic topology model defines the label-start/label-end in
+     {{!RFC8795}}.  This grouping shows the flexi-grid-specific label-
+     start and label-end information.
+
+   flexi-grid-label-hop:
+
+   > The flexi-grid label range was defined in {{!RFC7698}}, and the
+     generic topology model defines the label-hop in {{!RFC8795}}.  This
+     grouping shows the WSON-specific label-hop information.
+
+   flexi-grid-label-range-info:
+
+   > A YANG grouping that defines flexi-grid label range information as
+     defined in {{!RFC7698}} and {{!RFC8363}}.
+
+   flexi-grid-label-step:
+
+   > A YANG grouping that defines flexi-grid label steps as defined in
+     {{!RFC8776}}.
+
+   transceiver-capabilities:
+
+   > a YANG grouping to define the transceiver capabilities (also called
    "modes") needed to determine optical signal compatibility.
 
-   standard-mode
-   : a YANG grouping for ITU-T G.698.2 standard mode that guarantees
+   standard-mode:
+
+   > a YANG grouping for ITU-T G.698.2 standard mode that guarantees
    interoperability.
 
-   organizational-mode
-   :a YANG grouping to define transponder operational mode supported by
+   organizational-mode:
+
+   > a YANG grouping to define transponder operational mode supported by
    organizations or vendors.
 
-   common-explicit-mode
-   : a YANG grouping to define the list of attributes related to optical
+   common-explicit-mode:
+
+   > a YANG grouping to define the list of attributes related to optical
    impairments limits in case of transceiver explicit mode.  This
    grouping should be the same used in
    {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
 
-   common-organizational-explicit-mode
-   : a YANG grouping to define the common capabilities attributes limit
+   common-organizational-explicit-mode:
+
+   > a YANG grouping to define the common capabilities attributes limit
    range in case of operational mode and explicit mode.  Also this
    grouping should be used in {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
 
-   cd-pmd-penalty
-   : a YANG grouping to define the triplet used as entries in the list
+   cd-pmd-penalty:
+   
+   > a YANG grouping to define the triplet used as entries in the list
    optional penalty associated with a given accumulated CD and PMD.
    This list of triplet cd, pmd, penalty can be used to sample the
    function penalty = f(CD, PMD).
@@ -273,7 +292,7 @@ Please replace XXXX with the RFC number assigned to this document.
 # YANG Module for Layer 0 Types
 
 ~~~~
-<CODE BEGINS> file "ietf-layer0-types@2022-07-10.yang"
+<CODE BEGINS> file "ietf-layer0-types@2022-07-11.yang"
 {::include ./ietf-layer0-types.yang}
 <CODE ENDS>
 ~~~~

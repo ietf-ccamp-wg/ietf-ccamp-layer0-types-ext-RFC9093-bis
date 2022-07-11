@@ -6,7 +6,7 @@ CCAMP Working Group                                             H. Zheng
 Internet-Draft                                                    Huawei
 Obsoletes: 9093 (if approved)                                     Y. Lee
 Intended status: Standards Track                                 Samsung
-Expires: 11 January 2023                                          A. Guo
+Expires: 12 January 2023                                          A. Guo
                                                   Futurewei Technologies
                                                                 V. Lopez
                                                                    Nokia
@@ -19,7 +19,7 @@ Expires: 11 January 2023                                          A. Guo
                                                                   Huawei
                                                             E. Le Rouzic
                                                                   Orange
-                                                            10 July 2022
+                                                            11 July 2022
 
 
                   A YANG Data Model for Layer 0 Types
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Zheng, et al.            Expires 11 January 2023                [Page 1]
+Zheng, et al.            Expires 12 January 2023                [Page 1]
 
 Internet-Draft           Yang for Layer 0 Types                July 2022
 
 
-   This Internet-Draft will expire on 11 January 2023.
+   This Internet-Draft will expire on 12 January 2023.
 
 Copyright Notice
 
@@ -80,16 +80,16 @@ Table of Contents
      1.1.  Terminology and Notations . . . . . . . . . . . . . . . .   3
      1.2.  Prefix in Data Node Names . . . . . . . . . . . . . . . .   3
    2.  Layer 0 Types Module Contents . . . . . . . . . . . . . . . .   4
-   3.  YANG Module for Layer 0 Types . . . . . . . . . . . . . . . .   5
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  39
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  40
-   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  40
-     6.1.  Normative References  . . . . . . . . . . . . . . . . . .  40
-     6.2.  Informative References  . . . . . . . . . . . . . . . . .  42
-   Appendix A.  Changes from RFC 9093  . . . . . . . . . . . . . . .  43
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  43
-   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  43
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  44
+   3.  YANG Module for Layer 0 Types . . . . . . . . . . . . . . . .   6
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  40
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  41
+   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  41
+     6.1.  Normative References  . . . . . . . . . . . . . . . . . .  41
+     6.2.  Informative References  . . . . . . . . . . . . . . . . .  43
+   Appendix A.  Changes from RFC 9093  . . . . . . . . . . . . . . .  44
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  44
+   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  44
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  45
 
 1.  Introduction
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Zheng, et al.            Expires 11 January 2023                [Page 2]
+Zheng, et al.            Expires 12 January 2023                [Page 2]
 
 Internet-Draft           Yang for Layer 0 Types                July 2022
 
@@ -151,6 +151,12 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
    The YANG data model in this document conforms to the Network
    Management Datastore Architecture defined in [RFC8342].
 
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
 1.2.  Prefix in Data Node Names
 
    In this document, names of data nodes and other data model objects
@@ -159,13 +165,7 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
 
 
-
-
-
-
-
-
-Zheng, et al.            Expires 11 January 2023                [Page 3]
+Zheng, et al.            Expires 12 January 2023                [Page 3]
 
 Internet-Draft           Yang for Layer 0 Types                July 2022
 
@@ -193,96 +193,123 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
    networks.  The "ietf-layer0-types" module contains the following YANG
    reusable types and groupings:
 
-   l0-grid-type  A base YANG identity for the grid type as defined in
-      [RFC6163] and [RFC7698].
+   l0-grid-type:
 
-   dwdm-ch-spc-type  A base YANG identity for the DWDM channel-spacing
-      type as defined in [RFC6205].
+      A base YANG identity for the grid type as defined in [RFC6163] and
+      [RFC7698].
 
-   cwdm-ch-spc-type  A base YANG identity for the Coarse Wavelength
-      Division Multiplexing (CWDM) channel-spacing type as defined in
-      [RFC6205].
+   dwdm-ch-spc-type:
 
-   wson-label-start-end  The WSON label range was defined in [RFC6205],
-      and the generic topology model defines the label-start/label-end
-      in [RFC8795].  This grouping shows the WSON-specific label-start
-      and label-end information.
+      A base YANG identity for the DWDM channel-spacing type as defined
+      in [RFC6205].
 
-   wson-label-hop  The WSON label range was defined in [RFC6205], and
-      the generic topology model defines the label-hop in [RFC8795].
-      This grouping shows the WSON-specific label-hop information.
+   cwdm-ch-spc-type:
 
-   l0-label-range-info  A YANG grouping that defines the Layer 0 label
-      range information applicable for WSON as defined in [RFC6205].
-      This grouping is used in the flexi-grid DWDM by adding more flexi-
-      grid-specific parameters.
+      A base YANG identity for the Coarse Wavelength Division
+      Multiplexing (CWDM) channel-spacing type as defined in [RFC6205].
 
-   wson-label-step  A YANG grouping that defines label steps for WSON as
+   wson-label-start-end:
+
+      The WSON label range was defined in [RFC6205], and the generic
+      topology model defines the label-start/label-end in [RFC8795].
+      This grouping shows the WSON-specific label-start and label-end
+      information.
+
+   wson-label-hop:
 
 
 
-Zheng, et al.            Expires 11 January 2023                [Page 4]
+
+
+Zheng, et al.            Expires 12 January 2023                [Page 4]
 
 Internet-Draft           Yang for Layer 0 Types                July 2022
 
 
-      defined in [RFC8776].
+      The WSON label range was defined in [RFC6205], and the generic
+      topology model defines the label-hop in [RFC8795].  This grouping
+      shows the WSON-specific label-hop information.
 
-   flexi-grid-label-start-end  The flexi-grid label range was defined in
-      [RFC7698], and the generic topology model defines the label-start/
-      label-end in [RFC8795].  This grouping shows the flexi-grid-
-      specific label- start and label-end information.
+   l0-label-range-info:
 
-   flexi-grid-label-hop  The flexi-grid label range was defined in
-      [RFC7698], and the generic topology model defines the label-hop in
-      [RFC8795].  This grouping shows the WSON-specific label-hop
-      information.
+      A YANG grouping that defines the Layer 0 label range information
+      applicable for WSON as defined in [RFC6205].  This grouping is
+      used in the flexi-grid DWDM by adding more flexi-grid-specific
+      parameters.
 
-   flexi-grid-label-range-info  A YANG grouping that defines flexi-grid
-      label range information as defined in [RFC7698] and [RFC8363].
+   wson-label-step:
 
-   flexi-grid-label-step  A YANG grouping that defines flexi-grid label
-      steps as defined in [RFC8776].
+      A YANG grouping that defines label steps for WSON as defined in
+      [RFC8776].
 
-   transceiver-capabilities  a YANG grouping to define the transceiver
-      capabilities (also called "modes") needed to determine optical
-      signal compatibility.
+   flexi-grid-label-start-end:
 
-   standard-mode  a YANG grouping for ITU-T G.698.2 standard mode that
-      guarantees interoperability.
+      The flexi-grid label range was defined in [RFC7698], and the
+      generic topology model defines the label-start/label-end in
+      [RFC8795].  This grouping shows the flexi-grid-specific label-
+      start and label-end information.
 
-   organizational-mode :a YANG grouping to define transponder
-   operational mode supported by organizations or vendors.
+   flexi-grid-label-hop:
 
-   common-explicit-mode  a YANG grouping to define the list of
-      attributes related to optical impairments limits in case of
-      transceiver explicit mode.  This grouping should be the same used
-      in [I-D.ietf-ccamp-dwdm-if-param-yang].
+      The flexi-grid label range was defined in [RFC7698], and the
+      generic topology model defines the label-hop in [RFC8795].  This
+      grouping shows the WSON-specific label-hop information.
 
-   common-organizational-explicit-mode  a YANG grouping to define the
-      common capabilities attributes limit range in case of operational
-      mode and explicit mode.  Also this grouping should be used in
+   flexi-grid-label-range-info:
+
+      A YANG grouping that defines flexi-grid label range information as
+      defined in [RFC7698] and [RFC8363].
+
+   flexi-grid-label-step:
+
+      A YANG grouping that defines flexi-grid label steps as defined in
+      [RFC8776].
+
+   transceiver-capabilities:
+
+      a YANG grouping to define the transceiver capabilities (also
+      called "modes") needed to determine optical signal compatibility.
+
+   standard-mode:
+
+      a YANG grouping for ITU-T G.698.2 standard mode that guarantees
+      interoperability.
+
+
+
+Zheng, et al.            Expires 12 January 2023                [Page 5]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
+   organizational-mode:
+
+      a YANG grouping to define transponder operational mode supported
+      by organizations or vendors.
+
+   common-explicit-mode:
+
+      a YANG grouping to define the list of attributes related to
+      optical impairments limits in case of transceiver explicit mode.
+      This grouping should be the same used in
       [I-D.ietf-ccamp-dwdm-if-param-yang].
 
-   cd-pmd-penalty  a YANG grouping to define the triplet used as entries
-      in the list optional penalty associated with a given accumulated
-      CD and PMD.  This list of triplet cd, pmd, penalty can be used to
-      sample the function penalty = f(CD, PMD).
+   common-organizational-explicit-mode:
+
+      a YANG grouping to define the common capabilities attributes limit
+      range in case of operational mode and explicit mode.  Also this
+      grouping should be used in [I-D.ietf-ccamp-dwdm-if-param-yang].
+
+   cd-pmd-penalty:
+
+      a YANG grouping to define the triplet used as entries in the list
+      optional penalty associated with a given accumulated CD and PMD.
+      This list of triplet cd, pmd, penalty can be used to sample the
+      function penalty = f(CD, PMD).
 
 3.  YANG Module for Layer 0 Types
 
-
-
-
-
-
-
-Zheng, et al.            Expires 11 January 2023                [Page 5]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
-   <CODE BEGINS> file "ietf-layer0-types@2022-07-10.yang"
+   <CODE BEGINS> file "ietf-layer0-types@2022-07-11.yang"
    module ietf-layer0-types {
      yang-version 1.1;
      namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types";
@@ -302,6 +329,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
         Editor: Aihua Guo
           <mailto:aihuaguo.ietf@gmail.com>
+
+
+
+
+Zheng, et al.            Expires 12 January 2023                [Page 6]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
         Editor: Victor Lopez
           <mailto:victor.lopez@nokia.com>
@@ -330,14 +365,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
         the RFC itself for full legal notices.
 
         The key words 'MUST', 'MUST NOT', 'REQUIRED', 'SHALL', 'SHALL
-
-
-
-Zheng, et al.            Expires 11 January 2023                [Page 6]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
         NOT', 'SHOULD', 'SHOULD NOT', 'RECOMMENDED', 'NOT RECOMMENDED',
         'MAY', and 'OPTIONAL' in this document are to be interpreted as
         described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
@@ -348,7 +375,7 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
    // replace the revision date with the module publication date
    // the format is (year-month-day)
-     revision 2022-07-10 {
+     revision 2022-07-11 {
        description
          "To be updated";
        reference
@@ -359,6 +386,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          "Initial version";
        reference
          "RFC 9093: A YANG Data Model for Layer 0 Types";
+
+
+
+Zheng, et al.            Expires 12 January 2023                [Page 7]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
      }
 
    /*
@@ -386,14 +421,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
           of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
           Networks,
           ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-
-
-
-Zheng, et al.            Expires 11 January 2023                [Page 7]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
           DWDM frequency grid";
      }
 
@@ -415,6 +442,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        reference
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
           Label Switching Routers,
+
+
+
+Zheng, et al.            Expires 12 January 2023                [Page 8]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
           ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
           CWDM wavelength grid";
      }
@@ -442,14 +477,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      identity dwdm-25ghz {
-
-
-
-Zheng, et al.            Expires 11 January 2023                [Page 8]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        base dwdm-ch-spc-type;
        description
          "25 GHz channel spacing";
@@ -471,6 +498,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
           ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
           DWDM frequency grid";
      }
+
+
+
+Zheng, et al.            Expires 12 January 2023                [Page 9]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      identity flexi-ch-spc-6p25ghz {
        base flexi-ch-spc-type;
@@ -499,13 +533,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
           CWDM wavelength grid";
      }
 
-
-
-Zheng, et al.            Expires 11 January 2023                [Page 9]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
      identity cwdm-20nm {
        base cwdm-ch-spc-type;
        description
@@ -527,6 +554,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        description
          "QPSK (Quadrature Phase Shift Keying) modulation";
      }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 10]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      identity DP-QPSK {
        base modulation;
@@ -555,13 +589,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          Quadrature Amplitude Modulation)";
      }
 
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 10]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
      identity QAM16 {
        base modulation;
        description
@@ -583,6 +610,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      identity QAM32 {
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 11]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
        base modulation;
        description
          "QAM32 (32 symbols Quadrature Amplitude Modulation)";
@@ -610,14 +645,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
      identity fec-type {
        description
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 11]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          "Base identity from which specific FEC
          (Forward Error Correction) type identities are derived.";
      }
@@ -639,6 +666,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      identity reed-solomon {
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 12]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
        base fec-type;
        description
          "Reed-Solomon error correction";
@@ -666,14 +701,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        base line-coding;
        description
          "ITU-T G.698.2-201811 section 7 table 8-1";
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 12]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
      }
 
      identity line-coding-NRZ-OTU1 {
@@ -695,6 +722,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      identity wavelength-assignment {
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 13]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
        description
          "Wavelength selection base";
        reference
@@ -722,14 +757,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        description
          "This WA method selects the wavelength that
           has the largest residual capacity on the most loaded
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 13]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
           link along the route (in multi-fiber networks)";
      }
 
@@ -751,6 +778,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        description
          "OTU (Optical Transport Unit) termination";
      }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 14]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      identity term-odu {
        base term-type;
@@ -778,14 +812,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      identity OTU1e {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 14]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        base otu-type;
        description
          "OTU1e (11.04 Gb/s)";
@@ -808,6 +834,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        description
          "OTU2e (11.09 Gb/s)";
      }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 15]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      identity OTU2f {
        base otu-type;
@@ -834,14 +867,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      identity OTU4 {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 15]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        base otu-type;
        description
          "OTU4 (111.80 Gb/s)";
@@ -864,6 +889,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        description
          "all elements must use power spectral density (W/Hz)";
      }
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 16]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      identity carrier-power {
        base type-power-mode;
@@ -890,14 +923,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        reference
          "RFC6205: Generalized Labels for Lambda-Switch-Capable (LSC)
           Label Switching Routers,
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 16]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
           ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
           DWDM frequency grid";
      }
@@ -920,6 +945,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
           ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
           CWDM wavelength grid";
      }
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 17]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      typedef flexi-n {
        type int16;
@@ -946,14 +979,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      }
 
      typedef flexi-m {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 17]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        type uint16;
        description
          "The given value 'M' is used to determine the slot width.
@@ -977,6 +1002,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          interoperability.";
    // RFC Ed.: replace YYYY with actual RFC number and remove
    // this note after draft-ietf-ccamp-optical-impairment-topology-yang
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 18]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
    // is published as an RFC
        reference
          "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
@@ -1002,14 +1035,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          out of already defined in G.698.2 ITU-T application-code";
        reference
          "RFC7581: Routing and Wavelength Assignment Information
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 18]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
           Encoding for Wavelength Switched Optical Networks";
      }
 
@@ -1033,6 +1058,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      typedef dbm-t {
        type int32;
        units ".01dbm";
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 19]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
        description
          "Amplifiers and Transceivers Power in dBm.";
      }
@@ -1058,14 +1091,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          unknown.";
      }
 
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 19]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
      typedef fiber-type {
        type enumeration {
          enum G.652 {
@@ -1089,6 +1114,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          }
        }
        description
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 20]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          "ITU-T based fiber-types";
      }
 
@@ -1114,14 +1147,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        type decimal-2-digits;
        units dB;
        description
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 20]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          "The power in dB.";
      }
 
@@ -1145,6 +1170,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
      typedef power-in-dbm-or-null {
        type union {
          type power-in-dbm;
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 21]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          type empty;
        }
        description
@@ -1170,14 +1203,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                description
                  "Valid only when grid type is DWDM.";
              }
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 21]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
              type l0-types:dwdm-n;
              description
                "The central frequency of DWDM.";
@@ -1201,6 +1226,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                 (LSC) Label Switching Routers";
            }
          }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 22]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
        }
        reference
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
@@ -1226,14 +1259,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                }
              }
              case super {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 22]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
                leaf-list subcarrier-dwdm-n {
                  type l0-types:dwdm-n;
                  description
@@ -1257,6 +1282,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                 (LSC) Label Switching Routers";
            }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 23]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          }
        }
        reference
@@ -1282,14 +1315,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          reference
            "RFC 4203: OSPF Extensions in Support of Generalized
             Multi-Protocol Label Switching (GMPLS)";
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 23]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        }
        reference
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
@@ -1313,6 +1338,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                base dwdm-ch-spc-type;
              }
              description
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 24]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
                "Label-step is the channel spacing (GHz), e.g., 100.000,
                 50.000, 25.000, or 12.500 GHz for DWDM.";
              reference
@@ -1338,14 +1371,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                 (LSC) Label Switching Routers";
            }
          }
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 24]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        }
        reference
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
@@ -1369,6 +1394,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
           of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
           Networks";
      }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 25]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      grouping flexi-grid-frequency-slot {
        description
@@ -1394,14 +1426,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          case single {
            uses flexi-grid-frequency-slot;
          }
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 25]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          case super {
            list subcarrier-flexi-n {
              key "flexi-n";
@@ -1426,6 +1450,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          description
            "flexi-grid definition";
          leaf slot-width-granularity {
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 26]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
            type identityref {
              base flexi-slot-width-granularity;
            }
@@ -1450,14 +1482,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
               Minimum slot width is calculated by:
                 Minimum slot width (GHz) =
                   min-slot-width-factor * slot-width-granularity.";
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 26]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
            reference
              "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
               Grid Dense Wavelength Division Multiplexing (DWDM)
@@ -1482,6 +1506,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                   max-slot-width-factor * slot-width-granularity
 
               If specified, maximum slot width must be greater than or
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 27]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
               equal to minimum slot width.  If not specified, maximum
               slot width is equal to minimum slot width.";
            reference
@@ -1506,14 +1538,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          reference
            "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
             Switch Capable (LSC) Label Switching Routers";
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 27]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        }
        leaf flexi-n-step {
          type uint8;
@@ -1538,6 +1562,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
     /* supported inverse multiplexing capabilities such as
        max. OTSiG:OTSi cardinality
        It is a transponder attribute not transceiver
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 28]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
      */
 
     /*    leaf multiplexing-cap {
@@ -1562,14 +1594,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          }
          case organizational-mode {
            container organizational-mode {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 28]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
              description
                "The set of attributes for an organizational mode";
              uses organizational-mode;
@@ -1594,6 +1618,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
                      + "standard-mode" {
                    description
                      "The pointer is only for application codes
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 29]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
                        supported by transceiver.";
                  }
                  description
@@ -1618,14 +1650,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
              }  // container supported-modes
              uses common-explicit-mode;
              uses common-organizational-explicit-mode;
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 29]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
            }  // container explicit-mode
          } // end of case explicit-mode
        } // end of choice
@@ -1650,6 +1674,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            }
            uses transceiver-mode;
          }  // list supported-modes
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 30]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
        }  // container supported-modes
      }  // grouping transceiver-capabilities
 
@@ -1674,14 +1706,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
           vendor";
 
        leaf operational-mode {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 30]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          type operational-mode;
          config false;
          description
@@ -1706,6 +1730,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          type union {
            type decimal64 {
              fraction-digits 2;
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 31]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
              range "0..max";
            }
            type empty;
@@ -1731,13 +1763,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        description "Attributes capabilities related to
        explicit mode of an optical transceiver";
 
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 31]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        leaf line-coding-bitrate {
          type identityref {
            base line-coding;
@@ -1761,6 +1786,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            fraction-digits 2;
            range "0..max";
          }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 32]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          units "ps";
          config false;
          description
@@ -1786,14 +1819,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
             This list of pair cd and penalty can be used to
             sample the function penalty = f(CD).";
          leaf chromatic-dispersion {
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 32]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
            type union {
              type decimal64 {
                fraction-digits 2;
@@ -1817,6 +1842,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
             sample the function penalty = f(PMD).";
          leaf polarization-mode-dispersion {
            type union {
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 33]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
              type decimal64 {
                fraction-digits 2;
                range "0..max";
@@ -1842,14 +1875,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            "Optional penalty associated with the maximum acceptable
            accumulated polarization dependent loss.
             This list of pair pdl and penalty can be used to
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 33]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
             sample the function pdl = f(penalty).";
          leaf max-polarization-dependent-loss {
            type power-in-db-or-null;
@@ -1870,9 +1895,17 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            "Modulation type the specific transceiver in the list
             can support";
        }
-       leaf  min-OSNR {
+       leaf min-OSNR {
          type snr;
          config false;
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 34]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          description "min OSNR measured over 0.1 nm
          resolution bandwidth:
          if received OSNR at minimum Rx-power is lower than MIN-OSNR,
@@ -1880,7 +1913,7 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          to be expected.";
          // change resolution BW from 12.5 GHz to 0.1 nm
        }
-       leaf  min-Q-factor {
+       leaf min-Q-factor {
          type int32;
          units "dB";
          config false;
@@ -1898,14 +1931,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
             in symbols per second or
             pulses per second.
             It is the number of distinct symbol
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 34]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
             changes (signal events) made to the
             transmission medium
             per second in a digitally
@@ -1929,6 +1954,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          config false;
          description
            "This attribute specifies the minimum nominal difference
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 35]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
            between the carrier frequencies of two homogeneous OTSis
            (which have the same optical characteristics but the central
            frequencies) such that if they are placed next to each other
@@ -1954,14 +1987,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          config false;
          description "FEC-code-rate";
        }
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 35]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
        leaf fec-threshold {
          type decimal64 {
            fraction-digits 8;
@@ -1985,6 +2010,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        leaf min-central-frequency {
          type frequency-thz;
          config false;
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 36]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          description
            "This parameter indicates the minimum frequency for the
            transmitter tuning range.";
@@ -2010,14 +2043,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        leaf tx-channel-power-min {
          type dbm-t;
          config false;
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 36]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          description "The minimum output power of this interface";
        }
        leaf tx-channel-power-max {
@@ -2041,6 +2066,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
        leaf rx-total-power-max {
          type dbm-t;
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 37]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          config false;
          description "Maximum rx optical power for
          all the channels";
@@ -2066,14 +2099,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            type empty;
          }
          config false;
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 37]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          description "The current channel received power ";
        }
        leaf rx-total-power {
@@ -2097,6 +2122,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
        leaf wavelength-assignment {
          type identityref {
            base wavelength-assignment;
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 38]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
          }
          description "Wavelength Allocation Method";
        }
@@ -2107,7 +2140,7 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
          "This grouping defines the lower and upper bounds of a
          frequency range (e.g., a band).
 
-         This grouping SHOULD not be used to define a frequency slot,
+         This grouping SHOULD NOT be used to define a frequency slot,
          which SHOULD be defined using the n and m values instead.";
        leaf lower-frequency {
          type frequency-thz;
@@ -2122,14 +2155,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            error-message
              "The upper frequency must be greater than the lower
              frequency.";
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 38]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
          }
          mandatory true;
          description
@@ -2153,6 +2178,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
            SNR (GSNR).";
        }
      }
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 39]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
      grouping l0-path-properties {
        description
@@ -2178,14 +2210,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
    is HTTPS, and the mandatory-to-implement secure transport is TLS
    [RFC8446].
 
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 39]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
    The Network Configuration Access Control Model (NACM) [RFC8341]
    provides the means to restrict access for particular NETCONF or
    RESTCONF users to a preconfigured subset of all available NETCONF or
@@ -2208,6 +2232,15 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
    The security considerations spelled out in the YANG 1.1 specification
    [RFC7950] apply for this document as well.
+
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 40]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
 5.  IANA Considerations
 
@@ -2232,21 +2265,16 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
 6.1.  Normative References
 
-
-
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 40]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
    [ITU-T_G.698.2]
               ITU-T Recommendation G.698.2, "Amplified multichannel
               dense wavelength division multiplexing applications with
               single channel optical interfaces", ITU-T G.698.2 ,
               November 2018.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/info/rfc2119>.
 
    [RFC4203]  Kompella, K., Ed. and Y. Rekhter, Ed., "OSPF Extensions in
               Support of Generalized Multi-Protocol Label Switching
@@ -2258,6 +2286,17 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
               Control of Wavelength Switched Optical Networks (WSONs)",
               RFC 6163, DOI 10.17487/RFC6163, April 2011,
               <https://www.rfc-editor.org/info/rfc6163>.
+
+
+
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 41]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
    [RFC6205]  Otani, T., Ed. and D. Li, Ed., "Generalized Labels for
               Lambda-Switch-Capable (LSC) Label Switching Routers",
@@ -2289,18 +2328,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/info/rfc7950>.
 
-
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 41]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/info/rfc8040>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [RFC8341]  Bierman, A. and M. Bjorklund, "Network Configuration
               Access Control Model", STD 91, RFC 8341,
@@ -2311,6 +2345,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
               and R. Wilton, "Network Management Datastore Architecture
               (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
               <https://www.rfc-editor.org/info/rfc8342>.
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 42]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
    [RFC8363]  Zhang, X., Zheng, H., Casellas, R., Gonzalez de Dios, O.,
               and D. Ceccarelli, "GMPLS OSPF-TE Extensions in Support of
@@ -2340,19 +2382,9 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
               G. Grammel, "A YANG model to manage the optical interface
               parameters for an external transponder in a WDM network",
               Work in Progress, Internet-Draft, draft-ietf-ccamp-dwdm-
-              if-param-yang-06, 12 July 2021,
+              if-param-yang-07, 11 July 2022,
               <https://www.ietf.org/archive/id/draft-ietf-ccamp-dwdm-if-
-              param-yang-06.txt>.
-
-
-
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 42]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
+              param-yang-07.txt>.
 
    [ITU-T_G.694.1]
               ITU-T Recommendation G.694.1, "Spectral grids for WDM
@@ -2367,6 +2399,16 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
               <https://www.rfc-editor.org/info/rfc3688>.
+
+
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 43]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
 
    [RFC7446]  Lee, Y., Ed., Bernstein, G., Ed., Li, D., and W. Imajuku,
               "Routing and Wavelength Assignment Information Model for
@@ -2404,12 +2446,6 @@ Contributors
    Email: dhruv.ietf@gmail.com
 
 
-
-Zheng, et al.            Expires 11 January 2023               [Page 43]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
    Bin Yeong Yoon
    ETRI
    Email: byyun@etri.re.kr
@@ -2422,6 +2458,14 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
    Gabriele Galimberti
    Cisco
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 44]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
+
+
    Email: ggalimbe@cisco.com
 
 
@@ -2457,15 +2501,6 @@ Authors' Addresses
    Email: d.king@lancaster.ac.uk
 
 
-
-
-
-
-Zheng, et al.            Expires 11 January 2023               [Page 44]
-
-Internet-Draft           Yang for Layer 0 Types                July 2022
-
-
    Dieter Beller
    Nokia
    Email: dieter.beller@nokia.com
@@ -2479,6 +2514,12 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
    Italo Busi
    Huawei
    Email: italo.busi@huawei.com
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 45]
+
+Internet-Draft           Yang for Layer 0 Types                July 2022
 
 
    Esther Le Rouzic
@@ -2517,4 +2558,19 @@ Internet-Draft           Yang for Layer 0 Types                July 2022
 
 
 
-Zheng, et al.            Expires 11 January 2023               [Page 45]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Zheng, et al.            Expires 12 January 2023               [Page 46]
