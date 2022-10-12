@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-01
+docname: draft-ietf-ccamp-rfc9093-bis-02
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group
@@ -133,35 +133,19 @@ informative:
    Wavelength Division Multiplexing (DWDM) networks {{!RFC7698}}
    {{ITU-T_G.694.1}}.
 
-\[Editors' Note]: This is the introduction from draft-ietf-ccamp-layer0-types-ext-01, to be reconciled with the introduction from RFC9093 above
-
-   YANG {{!RFC7950}} is a data modeling language used to model
-   configuration data, state data, Remote Procedure Calls, and
-   notifications for network management protocols such as NETCONF
-   {{!RFC6241}}.  The YANG language supports a small set of built-in data
-   types and provides mechanisms to derive other types from the built-in
-   types.
-
-   This document introduces a collection of common data types derived
-   from the built-in YANG data types.  The derived types and groupings
-   are designed to be the common types applicable for modeling Traffic
-   Engineering (TE) features as well as non-TE features (e.g., physical
-   network configuration aspect) for Layer 0 optical networks in
-   model(s) defined outside of this document.
-
    This document adds new type definitions to the YANG modules and
    obsoletes {{?RFC9093}}.  For further details, see the revision
    statements of the YANG module in {{yang-code}} or the summary in
    {{changes-bis}}.
+
+   The YANG data model in this document conforms to the Network
+   Management Datastore Architecture defined in {{!RFC8342}}.
 
 ## Terminology and Notations
 
    Refer to {{?RFC7446}} and {{?RFC7581}} for the key terms used in this
    document, and the terminology for describing YANG data models can be
    found in {{!RFC7950}}.
-
-   The YANG data model in this document conforms to the Network
-   Management Datastore Architecture defined in {{!RFC8342}}.
 
 {::boilerplate bcp14}
 
@@ -348,10 +332,10 @@ Please replace XXXX with the RFC number assigned to this document.
    Name:  ietf-layer0-types
    Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
    Prefix:  l0-types
-   Reference:  RFC 9093
+   Reference:  RFC XXX
 ~~~~
 
-\[Editors' Note] Check the IANA considerations in other bis documents
+RFC Editor Note: Please replace XXXX with the RFC number assigned to this document.
 
 --- back
 
