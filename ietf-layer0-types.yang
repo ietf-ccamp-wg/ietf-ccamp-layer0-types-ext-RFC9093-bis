@@ -6,24 +6,20 @@ module ietf-layer0-types {
   organization
     "IETF CCAMP Working Group";
   contact
-    "WG Web: <https://datatracker.ietf.org/wg/ccamp/>
+    "WG Web:  <https://datatracker.ietf.org/wg/ccamp/>
      WG List: <mailto:ccamp@ietf.org>
 
-     Editor: Haomian Zheng
-       <mailto:zhenghaomian@huawei.com>
+     Editor:  Dieter Beller
+              <mailto:Dieter.Beller@nokia.com>
 
-     Editor: Young Lee
-       <mailto:younglee.tx@gmail.com>
+     Editor:  Sergio Belotti
+              <mailto:Sergio.Belotti@nokia.com>
 
-     Editor: Aihua Guo
-       <mailto:aihuaguo.ietf@gmail.com>
+     Editor:  Italo Busi
+              <mailto:Italo.Busi@huawei.com>
 
-     Editor: Victor Lopez
-       <mailto:victor.lopez@nokia.com>
-
-     Editor: Daniel King
-       <mailto:d.king@lancaster.ac.uk>";
-
+     Editor:  Haomian Zheng
+              <mailto:zhenghaomian@huawei.com>";
   description
     "This module defines Optical Layer 0 types.  This module
      provides groupings that can be applicable to Layer 0

@@ -16,44 +16,47 @@ pi: [toc, sortrefs, symrefs, comments]
 
 author:
   -
-    name: Haomian Zheng
-    org: Huawei
-    email: zhenghaomian@huawei.com
-  -
-    name: Young Lee
-    org: Samsung
-    email: younglee.tx@gmail.com
-  -
-    name: Aihua Guo
-    org: Futurewei Technologies
-    email: aihuaguo.ietf@gmail.com
-  -
-    name: Victor Lopez
-    org: Nokia
-    email: victor.lopez@nokia.com
-  -
-    name: Daniel King
-    org: University of Lancaster
-    email: d.king@lancaster.ac.uk
-  -
-    name: Dieter Beller
-    org: Nokia
-    email: dieter.beller@nokia.com
-  -
     name: Sergio Belotti
     org: Nokia
+    role: editor
     email: sergio.belotti@nokia.com
   -
     name: Italo Busi
     org: Huawei
+    role: editor
     email: italo.busi@huawei.com
+  -
+    name: Dieter Beller
+    org: Nokia
+    role: editor
+    email: dieter.beller@nokia.com
+  -
+    name: Haomian Zheng
+    org: Huawei
+    email: zhenghaomian@huawei.com
   -
     name: Esther Le Rouzic
     ins: E. Le Rouzic
     org: Orange
     email: esther.lerouzic@orange.com
+  -
+    name: Aihua Guo
+    org: Futurewei Technologies
+    email: aihuaguo.ietf@gmail.com
+  -
+    name: Daniel King
+    org: University of Lancaster
+    email: d.king@lancaster.ac.uk
 
 contributor:
+  -
+    name: Gabriele Galimberti
+    org: Cisco
+    email: ggalimbe@cisco.com
+  -
+    name: Enrico Griseri
+    org: Nokia
+    email: Enrico.Griseri@nokia.com
   -
     name: Dhruv Dhody
     org: Huawei
@@ -67,13 +70,13 @@ contributor:
     org: CTTC
     email: ricard.vilalta@cttc.es
   -
-    name: Gabriele Galimberti
-    org: Cisco
-    email: ggalimbe@cisco.com
+    name: Young Lee
+    org: Samsung
+    email: younglee.tx@gmail.com
   -
-    name: Enrico Griseri
+    name: Victor Lopez
     org: Nokia
-    email: Enrico.Griseri@nokia.com
+    email: victor.lopez@nokia.com
 
 normative:
   ITU-T_G.698.2:
