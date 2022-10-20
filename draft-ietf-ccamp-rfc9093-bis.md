@@ -316,8 +316,7 @@ Please replace XXXX with the RFC number assigned to this document.
 
 # IANA Considerations
 
-   IANA has assigned new URIs from the "IETF XML Registry" {{?RFC3688}} as
-   follows:
+For the following URI in the "IETF XML Registry" {{?RFC3688}}, IANA has updated the reference field to refer to this document:
 
 ~~~~
    URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
@@ -325,14 +324,14 @@ Please replace XXXX with the RFC number assigned to this document.
    XML:  N/A; the requested URI is an XML namespace.
 ~~~~
 
-   This document registers the following YANG module in the "YANG Module
-   Names" registry {{!RFC7950}}.
+This document also adds an updated YANG module to the "YANG Module
+Names" registry {{!RFC7950}}:
 
 ~~~~
    Name:  ietf-layer0-types
    Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
    Prefix:  l0-types
-   Reference:  RFC XXX
+   Reference:  RFC XXXX
 ~~~~
 
 RFC Editor Note: Please replace XXXX with the RFC number assigned to this document.
