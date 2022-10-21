@@ -6,24 +6,20 @@ module ietf-layer0-types {
   organization
     "IETF CCAMP Working Group";
   contact
-    "WG Web: <https://datatracker.ietf.org/wg/ccamp/>
+    "WG Web:  <https://datatracker.ietf.org/wg/ccamp/>
      WG List: <mailto:ccamp@ietf.org>
 
-     Editor: Haomian Zheng
-       <mailto:zhenghaomian@huawei.com>
+     Editor:  Dieter Beller
+              <mailto:Dieter.Beller@nokia.com>
 
-     Editor: Young Lee
-       <mailto:younglee.tx@gmail.com>
+     Editor:  Sergio Belotti
+              <mailto:Sergio.Belotti@nokia.com>
 
-     Editor: Aihua Guo
-       <mailto:aihuaguo.ietf@gmail.com>
+     Editor:  Italo Busi
+              <mailto:Italo.Busi@huawei.com>
 
-     Editor: Victor Lopez
-       <mailto:victor.lopez@nokia.com>
-
-     Editor: Daniel King
-       <mailto:d.king@lancaster.ac.uk>";
-
+     Editor:  Haomian Zheng
+              <mailto:zhenghaomian@huawei.com>";
   description
     "This module defines Optical Layer 0 types.  This module
      provides groupings that can be applicable to Layer 0
@@ -55,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2022-07-11 {
+  revision 2022-10-20 {
     description
       "To be updated";
     reference
@@ -628,19 +624,19 @@ module ietf-layer0-types {
 
   typedef frequency-thz {
     type decimal64 {
-      fraction-digits 6;
+      fraction-digits 9;
     }
     units THz;
     description
-      "The DWDM frequency in THz, e.g., 193.112500";
+      "The DWDM frequency in THz, e.g., 193.112500000";
   }
   typedef frequency-ghz {
     type decimal64 {
-      fraction-digits 3;
+      fraction-digits 6;
     }
     units GHz;
     description
-      "The DWDM frequency in GHz, e.g., 193112.500";
+      "The DWDM frequency in GHz, e.g., 193112.500000";
   }    
 
   typedef dbm-t {
@@ -1247,7 +1243,6 @@ module ietf-layer0-types {
   grouping common-explicit-mode {
     description "Attributes capabilities related to 
     explicit mode of an optical transceiver";
-
     leaf line-coding-bitrate {
       type identityref {
         base line-coding;
@@ -1333,7 +1328,8 @@ module ietf-layer0-types {
       uses penalty-value;
     }
     leaf max-diff-group-delay  {
-      type int32;
+      type uint32;
+      units "ps";
       config false;
       description "Maximum Differential group delay of this mode
                   for this lane";
@@ -1449,6 +1445,58 @@ module ietf-layer0-types {
       description
         "Threshold on the BER, for which FEC 
          is able to correct errors";
+    }
+    leaf in-band-osnr {
+      type snr;
+      config false;
+      description
+        "The OSNR defined within the bandwidth of the transmit 
+        spectral excursion (i.e.,  between the nominal central 
+        frequency of the channel and the -3.0dB points of the 
+        transmitter spectrum furthest from the nominal central 
+        frequency) measured at reference point Ss.
+        
+        The in-band OSNR is referenced to an optical bandwidth of 
+        0.1nm @ 193.7 THz or 12.5 GHz.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+    }
+    leaf out-of-band-osnr {
+      type snr;
+      config false;
+      description
+        "The ratio of the peak transmitter power to the integrated 
+        power outside the transmitter spectral excursion.
+        
+        The spectral resolution of the measurement shall be better 
+        than the maximum spectral width of the peak.
+        
+        The out-of-band OSNR is referenced to an optical bandwidth 
+        of 0.1nm @ 193.7 THz or 12.5 GHz";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+    }
+    leaf tx-polarization-power-difference {
+      type power-in-db;
+      config false;
+      description
+        "The transmitter polarization dependent power difference 
+        defined as the power difference between X and Y 
+        polarizations";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+    }
+    leaf polarization-skew {
+      type decimal64 {
+        fraction-digits 2;
+      }
+      units "ps";
+      config false;
+      description
+        "The X-Y skew, included as a fixed value in the receiver 
+        polarization mode dispersion (PMD) tolerance limits.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
   } // grouping common-explicit-mode    
 
