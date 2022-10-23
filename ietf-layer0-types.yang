@@ -44,14 +44,17 @@ module ietf-layer0-types {
      NOT', 'SHOULD', 'SHOULD NOT', 'RECOMMENDED', 'NOT RECOMMENDED',
      'MAY', and 'OPTIONAL' in this document are to be interpreted as
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
-     they appear in all capitals, as shown here.";
+     they appear in all capitals, as shown here.
+
+     Copyright (c) 2022 IETF Trust and the persons identified as
+     authors of the code.  All rights reserved. ";
 
 // RFC Ed.: replace XXXX with actual RFC number and remove
 // this note
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2022-10-20 {
+  revision 2022-10-23 {
     description
       "To be updated";
     reference
@@ -1334,7 +1337,7 @@ module ietf-layer0-types {
       description "Maximum Differential group delay of this mode
                   for this lane";
     }
-    list max-polarization-dependent-loss-penalty {
+    list max-pol-dependent-loss-penalty {
       config false;
       description
         "Optional penalty associated with the maximum acceptable 
