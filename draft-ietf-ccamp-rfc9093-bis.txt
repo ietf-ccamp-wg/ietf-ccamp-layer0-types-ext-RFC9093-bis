@@ -20,7 +20,7 @@ Expires: 13 September 2023                                D. Beller, Ed.
 
 
                   A YANG Data Model for Layer 0 Types
-                    draft-ietf-ccamp-rfc9093-bis-04
+                    draft-ietf-ccamp-rfc9093-bis-05
 
 Abstract
 
