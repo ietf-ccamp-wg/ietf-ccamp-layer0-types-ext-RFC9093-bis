@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-03-07 {
+  revision 2023-05-15 {
     description
       "To be updated";
     reference
@@ -626,7 +626,7 @@ module ietf-layer0-types {
     type decimal64 {
       fraction-digits 9;
     }
-    units THz;
+    units "THz";
     description
       "The DWDM frequency in THz, e.g., 193.112500000";
   }
@@ -634,7 +634,7 @@ module ietf-layer0-types {
     type decimal64 {
       fraction-digits 6;
     }
-    units GHz;
+    units "GHz";
     description
       "The DWDM frequency in GHz, e.g., 193112.500000";
   }    
@@ -707,13 +707,13 @@ module ietf-layer0-types {
       type empty;
     }
     description
-      "A decimal64 value with two digits, when the value is know or
+      "A decimal64 value with two digits, when the value is known or
       an empty value when the value is not known.";
   }
 
   typedef power-in-db {
     type decimal-2-digits;
-    units dB;
+    units "dB";
     description
       "The power in dB.";
   }
@@ -730,7 +730,7 @@ module ietf-layer0-types {
 
   typedef power-in-dbm {
     type decimal-2-digits;
-    units dBm;
+    units "dBm";
     description
       "The power in dBm.";
   }
@@ -743,6 +743,42 @@ module ietf-layer0-types {
     description
       "The power in dBm, when it is known or an empty value when the
       power is not known.";
+  }
+
+  typedef decimal-5-digits {
+    type decimal64 {
+      fraction-digits 5;
+    }
+    description
+      "A decimal64 value with five digits.";
+  }
+
+  typedef decimal-5-digits-or-null {
+    type union {
+      type decimal-5-digits;
+      type empty;
+    }
+    description
+      "A decimal64 value with five digits, when the value is known 
+      or an empty value when the value is not known.";
+  }
+
+  typedef decimal-16-digits {
+    type decimal64 {
+      fraction-digits 16;
+    }
+    description
+      "A decimal64 value with sixteen digits.";
+  }
+
+  typedef decimal-16-digits-or-null {
+    type union {
+      type decimal-5-digits;
+      type empty;
+    }
+    description
+      "A decimal64 value with sixteen digits, when the value is 
+      known or an empty value when the value is not known.";
   }
 
 /*
@@ -1109,42 +1145,6 @@ module ietf-layer0-types {
         container explicit-mode {
             description
               "The set of attributes for an explicit mode";
-          container supported-modes {
-            description
-              "Container for all the standard and organizational
-                modes supported by the transceiver's explicit
-                mode.";
-            leaf-list supported-application-codes {
-              type leafref {
-                path "../../../mode-id";
-              }
-              must "../../../../"
-                  + "supported-mode[mode-id=current()]/"
-                  + "standard-mode" {
-                description
-                  "The pointer is only for application codes
-                    supported by transceiver."; 
-              }
-              description
-                "List of pointers to the application codes
-                  supported by the transceiver's explicit mode.";
-            }
-            leaf-list supported-organizational-modes {
-              type leafref {
-                path "../../../mode-id";
-              }
-              must "../../../../"
-                  + "supported-mode[mode-id=current()]/"
-                  + "organizational-mode" {
-                description
-                  "The pointer is only for organizational modes
-                    supported by transceiver.";
-              }
-              description
-                "List of pointers to the organizational modes
-                  supported by the transceiver's explicit mode.";
-            }
-          }  // container supported-modes
           uses common-explicit-mode;
           uses common-organizational-explicit-mode;
         }  // container explicit-mode
@@ -1174,7 +1174,48 @@ module ietf-layer0-types {
           }
           description "ID for the supported transceiver's mode.";
         }
-        uses transceiver-mode;
+        uses transceiver-mode {
+          augment "mode/explicit-mode/explicit-mode" {
+            description
+              "Augments the explicit mode.";
+            container supported-modes {
+              description
+                "Container for all the standard and organizational
+                  modes supported by the transceiver's explicit
+                  mode.";
+              leaf-list supported-application-codes {
+                type leafref {
+                  path "../../../mode-id";
+                }
+                must "../../../../"
+                    + "supported-mode[mode-id=current()]/"
+                    + "standard-mode" {
+                  description
+                    "The pointer is only for application codes
+                      supported by transceiver."; 
+                }
+                description
+                  "List of pointers to the application codes
+                    supported by the transceiver's explicit mode.";
+              }
+              leaf-list supported-organizational-modes {
+                type leafref {
+                  path "../../../mode-id";
+                }
+                must "../../../../"
+                    + "supported-mode[mode-id=current()]/"
+                    + "organizational-mode" {
+                  description
+                    "The pointer is only for organizational modes
+                      supported by transceiver.";
+                }
+                description
+                  "List of pointers to the organizational modes
+                    supported by the transceiver's explicit mode.";
+              }
+            }  // container supported-modes
+          }
+        }
       }  // list supported-modes
     }  // container supported-modes
   }  // grouping transceiver-capabilities
@@ -1232,8 +1273,9 @@ module ietf-layer0-types {
       config false;
       mandatory true;
       description
-        "OSNR penalty associated with the related optical
-        impairment at the receiver.";
+        "The OSNR penalty associated with the related optical 
+        impairment at the receiver, when the value is known or an 
+        empty value when the value is not known.";
     }
   }
 
@@ -1306,7 +1348,9 @@ module ietf-layer0-types {
         units "ps/nm";
         config false;
         mandatory true;
-        description "Chromatic dispersion";
+        description
+          "The Chromatic Dispersion, when the value is known or an 
+          empty value when the value is not known.";
       }
       uses penalty-value;
     }
@@ -1328,7 +1372,9 @@ module ietf-layer0-types {
         units "ps";
         config false;
         mandatory true;
-        description "Polarization mode dispersion";
+        description
+          "The Polarization Mode Dispersion, when the value is 
+          known or an empty value when the value is not known.";
       }
       uses penalty-value;
     }
@@ -1397,7 +1443,9 @@ module ietf-layer0-types {
         units "dBm";
         config false;
         mandatory true;
-        description "Received Power";
+        description
+          "The Received Power, when the value is known or an empty 
+          value when the value is not known.";
       }
       uses penalty-value;
     }
@@ -1409,7 +1457,7 @@ module ietf-layer0-types {
     }
     leaf available-baud-rate {
       type uint32;
-      units Bd;
+      units "Bd";
       config false;
       description
         "Baud-rate the specific transceiver in 
@@ -1607,7 +1655,12 @@ module ietf-layer0-types {
         type dbm-t;
         type empty;
       }
-      description "The current channel transmit power";
+      description
+        "The current channel transmit power, when the value is 
+        known or an empty value when the value is not known.
+        
+        The empty value MUST NOT be used when this attribute is 
+        configured.";
     }
     leaf rx-channel-power {
       type union {
@@ -1615,7 +1668,9 @@ module ietf-layer0-types {
         type empty;
       }
       config false;
-      description "The current channel received power ";
+      description
+        "The current channel received power, when the value is 
+        known or an empty value when the value is not known.";
     }
     leaf rx-total-power {
       type union {
@@ -1623,7 +1678,9 @@ module ietf-layer0-types {
         type empty;
       }
       config false;
-      description "Current total received power";
+      description
+        "The current total received power, when the value is known 
+        or an empty value when the value is not known.";
     }
   } // grouping for configured attributes out of mode
 
