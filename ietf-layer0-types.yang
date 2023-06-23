@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-05-15 {
+  revision 2023-06-23 {
     description
       "To be updated";
     reference
@@ -228,13 +228,6 @@ module ietf-layer0-types {
       Modulation)";
   }
 
-  identity DC-DP-QAM8 {
-    base modulation;
-    description
-      "DC DP-QAM8 (8 symbols Dual Carrier Dual Polarization
-      Quadrature Amplitude Modulation)";
-  }
-
   identity QAM16 {
     base modulation;
     description
@@ -246,13 +239,6 @@ module ietf-layer0-types {
     description
       "DP-QAM16 (16 symbols Dual Polarization Quadrature Amplitude 
        Modulation)";
-  }
-
-  identity DC-DP-QAM16 {
-    base modulation;
-    description
-      "DC DP-QAM16 (16 symbols Dual Carrier Dual Polarization
-      Quadrature Amplitude Modulation)";
   }
 
   identity QAM32 {
@@ -290,13 +276,21 @@ module ietf-layer0-types {
   identity g-fec {
     base fec-type;
     description
-      "G-FEC (Generic-FEC)";
+      "Generic Forward Error Correction (G-FEC).";
+    reference
+      "ITU-T G.975 v2.0 (10/2000): Forward error correction for 
+      submarine systems.";
   }
-  identity e-fec {
+
+  identity super-fec {
     base fec-type;
     description
-      "E-FEC (Enhanced-FEC)";
+      "Super Forward Error Correction (S-FEC).";
+    reference
+      "ITU-T G.975.1 v1.2 (07/2013): Forward error correction for 
+      high bit-rate DWDM submarine systems.";
   }
+
   identity no-fec {
     base fec-type;
     description
@@ -317,8 +311,50 @@ module ietf-layer0-types {
 
   identity golay {
     base fec-type;
-      description "Golay error correction";
-  } 
+    description "Golay error correction";
+  }
+
+  identity sc-fec {
+    base fec-type;
+    description
+      "Staircase Forward Error Correction (SC-FEC).";
+    reference
+      "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach 
+      interface.";
+  }
+
+  identity o-fec {
+    base fec-type;
+    description
+      "Open Forward Error Correction (O-FEC) which reuses the Bose, 
+      Chaudhuri and Hocquenghem (BCH) FEC.";
+    reference
+      "Clause 16.4.4 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+      long-reach interfaces;
+
+      Annex E of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+      long-reach interfaces.";
+  }
+
+  identity c-fec {
+    base fec-type;
+    description
+      "Concatenated FEC (C-FEC) that combines an outer Staircase 
+      Forward Error Correction (SC-FEC) code and an inner 
+      double-extended SD-FEC (128,119) Hamming code.
+      
+      More details are provided in clause 15/G.709.3 where it is 
+      called DSH instead of concatenated FEC.";
+    reference
+      "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach 
+      interface;
+      
+      Annex D of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+      long-reach interfaces;
+      
+      Clause 15 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+      long-reach interfaces.";
+  }
 
   identity line-coding {
     description
@@ -1124,7 +1160,11 @@ module ietf-layer0-types {
   grouping transceiver-mode {
     description
       "This grouping is intended to be used for reporting the
-       information of a transceiver's mode.";
+       information of a transceiver's mode.
+       
+       The compatible-modes container shall be augmented with the 
+       proper leafrefs when used: see for example the 
+       transceiver-capabilities grouping below.";
     choice mode {
       mandatory true;
       description
@@ -1143,10 +1183,16 @@ module ietf-layer0-types {
       }
       case explicit-mode {
         container explicit-mode {
-            description
-              "The set of attributes for an explicit mode";
+          description
+            "The set of attributes for an explicit mode";
           uses common-explicit-mode;
           uses common-organizational-explicit-mode;
+          container compatible-modes {
+            description
+              "Container for all the standard and organizational
+                modes supported by the transceiver's explicit
+                mode.";
+          }  // container compatible-modes
         }  // container explicit-mode
       } // end of case explicit-mode
     } // end of choice
@@ -1175,45 +1221,41 @@ module ietf-layer0-types {
           description "ID for the supported transceiver's mode.";
         }
         uses transceiver-mode {
-          augment "mode/explicit-mode/explicit-mode" {
+          augment "mode/explicit-mode/explicit-mode/"
+                + "compatible-modes" {
             description
-              "Augments the explicit mode.";
-            container supported-modes {
+              "Augments the compatible modes with the proper 
+              leafrefs.";
+            leaf-list supported-application-codes {
+              type leafref {
+                path "../../../mode-id";
+              }
+              must "../../../../"
+                  + "supported-mode[mode-id=current()]/"
+                  + "standard-mode" {
+                description
+                  "The pointer is only for application codes
+                    supported by transceiver."; 
+              }
               description
-                "Container for all the standard and organizational
-                  modes supported by the transceiver's explicit
-                  mode.";
-              leaf-list supported-application-codes {
-                type leafref {
-                  path "../../../mode-id";
-                }
-                must "../../../../"
-                    + "supported-mode[mode-id=current()]/"
-                    + "standard-mode" {
-                  description
-                    "The pointer is only for application codes
-                      supported by transceiver."; 
-                }
-                description
-                  "List of pointers to the application codes
-                    supported by the transceiver's explicit mode.";
+                "List of pointers to the application codes
+                  supported by the transceiver's explicit mode.";
+            }
+            leaf-list supported-organizational-modes {
+              type leafref {
+                path "../../../mode-id";
               }
-              leaf-list supported-organizational-modes {
-                type leafref {
-                  path "../../../mode-id";
-                }
-                must "../../../../"
-                    + "supported-mode[mode-id=current()]/"
-                    + "organizational-mode" {
-                  description
-                    "The pointer is only for organizational modes
-                      supported by transceiver.";
-                }
+              must "../../../../"
+                  + "supported-mode[mode-id=current()]/"
+                  + "organizational-mode" {
                 description
-                  "List of pointers to the organizational modes
-                    supported by the transceiver's explicit mode.";
+                  "The pointer is only for organizational modes
+                    supported by transceiver.";
               }
-            }  // container supported-modes
+              description
+                "List of pointers to the organizational modes
+                  supported by the transceiver's explicit mode.";
+            }
           }
         }
       }  // list supported-modes
@@ -1641,7 +1683,7 @@ module ietf-layer0-types {
       config false;
       description "Maximum rx optical power for
       all the channels";
-    }      
+    }
   } // grouping common-organizational-explicit-mode
 
 /* This grouping represent the list of configured parameters */
