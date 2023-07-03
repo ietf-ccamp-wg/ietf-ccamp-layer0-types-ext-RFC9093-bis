@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-06-23 {
+  revision 2023-07-03 {
     description
       "To be updated";
     reference
@@ -747,21 +747,21 @@ module ietf-layer0-types {
       an empty value when the value is not known.";
   }
 
-  typedef power-in-db {
+  typedef ratio-in-db {
     type decimal-2-digits;
     units "dB";
     description
-      "The power in dB.";
+      "The power gain/loss in dB.";
   }
 
-  typedef power-in-db-or-null {
+  typedef ratio-in-db-or-null {
     type union {
       type power-in-db;
       type empty;
     }
     description
-      "The power in dB, when it is known or an empty value when the
-      power is not known.";
+      "The power gain/loss in dB, when it is known or an empty 
+      value when the power gain/loss is not known.";
   }
 
   typedef power-in-dbm {
