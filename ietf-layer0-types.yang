@@ -1172,12 +1172,14 @@ module ietf-layer0-types {
           mode, an organizational mode or an explicit mode.";
       case G.698.2 {
         uses standard-mode;
+        uses common-standard-organizational-mode;
       }
       case organizational-mode {
         container organizational-mode {
           description
             "The set of attributes for an organizational mode";
           uses organizational-mode;
+          uses common-standard-organizational-mode;
           uses common-organizational-explicit-mode;
         }  // container organizational-mode
       }
@@ -1197,6 +1199,7 @@ module ietf-layer0-types {
       } // end of case explicit-mode
     } // end of choice
   }
+
   grouping transceiver-capabilities {
     description
       "This grouping is intended to be used for reporting the
@@ -1621,6 +1624,27 @@ module ietf-layer0-types {
     }
   } // grouping common-explicit-mode    
 
+  grouping common-standard-organizational-mode {
+    description
+      "Common attributes used by standard and organizational 
+      modes.";
+    
+    leaf-list line-coding-bitrate {
+      type identityref {
+        base line-coding;
+      }
+      config false;
+      description
+        "The list of the bit rate/line coding of the optical 
+        tributary signal supported by the transceiver.
+
+        Reporting this list is optional when the standard or 
+        organization mode supports only one bit rate/line coding.";
+      reference 
+        "ITU-T G.698.2 section 7.1.2";
+    }
+  } // grouping common-standard-organizational-mode
+
   grouping common-organizational-explicit-mode {
     description "Common capability attributes limit range 
     in case of operational mode and explicit mode. 
@@ -1628,7 +1652,6 @@ module ietf-layer0-types {
     case of application codes";
 
 /* transmitter tuning range (f_tx-min, f_tx-max) */
-
     leaf min-central-frequency {
       type frequency-thz;
       config false;
@@ -1692,6 +1715,19 @@ module ietf-layer0-types {
   grouping common-transceiver-configured-param {
     description "Capability of an optical transceiver";
 
+    leaf line-coding-bitrate {
+      type identityref {
+        base line-coding;
+      }
+      config false;
+      description
+        "Bit rate/line coding of the optical tributary signal.
+        
+        Reporting this attribute is optional when the configured 
+        mode supports only one bit rate/line coding.";
+      reference 
+        "ITU-T G.698.2 section 7.1.2";
+    }
     leaf tx-channel-power {
       type union {
         type dbm-t;
