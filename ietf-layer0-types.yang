@@ -358,34 +358,70 @@ module ietf-layer0-types {
 
   identity line-coding {
     description
-      "base line-coding class";
+      "Base identity to defined the bit rate/line coding of optical 
+      tributary signals.";
     reference 
-      "ITU-T G.698.2-201811 section 7";
+      "Section 7.1.2 of ITU-T G.698.2 v3.0 (11/2018).";
   }  
 
-  identity line-coding-NRZ-2p5G {
-    base line-coding;
-    description 
-      "ITU-T G.698.2-201811 section 7 table 8-1";
-  }
+    identity line-coding-NRZ-2p5G {
+      base line-coding;
+      description
+        "The non return to zero (NRZ) bit rate/line coding used by 
+        the optical tributary signal class NRZ 2.5G";
+      reference 
+        "Section 3.2.6 of ITU-T G.959.1 v8.0 (07/2018).";
+    }
 
-  identity line-coding-NRZ-OTU1 {
-    base line-coding;
-    description
-      "ITU-T G.698.2-201811 section 7 table 8-2";
-  }
+    identity line-coding-NRZ-OTU1 {
+      base line-coding;
+      description
+        "The non return to zero (NRZ) bit rate/line coding used by 
+        the Optical channel Transport Unit order 1 (OTU1) optical 
+        tributary signals";
+      reference 
+        "Section 7.2.1.2 of ITU-T G.959.1 v8.0 (07/2018).";
+    }
 
-  identity line-coding-NRZ-10G {
-    base line-coding;
-    description
-      "ITU-T G.698.2-201811 section 7 table 8-3/8-5";
-  }
+    identity line-coding-NRZ-10G {
+      description
+        "The non return to zero (NRZ) bit rate/line coding used by 
+        the optical tributary signal class NRZ 10G";
+      reference 
+        "Section 3.2.7 of ITU-T G.959.1 v8.0 (07/2018).";
+    }
 
-  identity line-coding-NRZ-OTU2 {
-    base line-coding;
-    description
-      "ITU-T G.698.2-201811 section 7 table 8-4/8-6";
-  }
+    identity line-coding-NRZ-OTU2 {
+      base line-coding;
+      description
+        "The non return to zero (NRZ) bit rate/line coding used by 
+        the Optical channel Transport Unit order 2 (OTU2) optical 
+        tributary signals";
+      reference 
+        "Section 7.2.1.2 of ITU-T G.959.1 v8.0 (07/2018).";
+    }
+
+    identity line-coding-OTL4.4-SC {
+      base line-coding;
+      description
+        "The bit rate/line coding used by optical tributary 
+        signals carrying a 100G Optical Transport Unit order 4 
+        (OTU4) with Staircase Forward Error Correction (SC FEC) 
+        from a group of four Optical Transport Lanes (OTL).";
+      reference 
+        "Section 3.2.1 of ITU-T G.698.2 v3.0 (11/2018).";
+    }
+
+    identity line-coding-FOIC1.4-SC {
+      base line-coding;
+      description
+        "The bit rate/line coding used by optical tributary signals 
+        carrying a FlexO Interface of order C1 with 4 lanes 
+        (FOIC1.1) with Staircase Forward Error Correction 
+        (SC FEC).";
+      reference 
+        "Section 3.2.1 of ITU-T G.698.2 v3.0 (11/2018).";
+    }
 
   identity wavelength-assignment {
     description
