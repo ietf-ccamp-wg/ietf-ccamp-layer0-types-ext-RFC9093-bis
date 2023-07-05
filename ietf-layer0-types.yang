@@ -1449,14 +1449,14 @@ module ietf-layer0-types {
         "Maximum acceptable accumulated chromatic dispersion
          on the receiver";
     }
-    list chromatic-dispersion-penalty {
+    list cd-penalty {
       config false;
       description
         "Optional penalty associated with a given accumulated
          chromatic dispersion (CD) value.
          This list of pair cd and penalty can be used to
          sample the function penalty = f(CD).";
-      leaf chromatic-dispersion {
+      leaf cd-value {
         type union {
           type decimal64 {
             fraction-digits 2;
@@ -1468,19 +1468,19 @@ module ietf-layer0-types {
         config false;
         mandatory true;
         description
-          "The Chromatic Dispersion, when the value is known or an 
-          empty value when the value is not known.";
+          "The Chromatic Dispersion (CD), when the value is known 
+          or an empty value when the value is not known.";
       }
       uses penalty-value;
     }
-    list polarization-dispersion-penalty {
+    list pmd-penalty {
       config false;
       description
         "Optional penalty associated with a given accumulated
          polarization mode dispersion(PMD) value.
          This list of pair pmd and penalty can be used to
          sample the function penalty = f(PMD).";
-      leaf polarization-mode-dispersion {
+      leaf pmd-value {
         type union {
           type decimal64 {
             fraction-digits 2;
@@ -1492,8 +1492,8 @@ module ietf-layer0-types {
         config false;
         mandatory true;
         description
-          "The Polarization Mode Dispersion, when the value is 
-          known or an empty value when the value is not known.";
+          "The Polarization Mode Dispersion (PMD), when the value 
+          is known or an empty value when the value is not known.";
       }
       uses penalty-value;
     }
@@ -1511,7 +1511,7 @@ module ietf-layer0-types {
         accumulated polarization dependent loss.
          This list of pair pdl and penalty can be used to
          sample the function pdl = f(penalty).";
-      leaf max-pdl {
+      leaf max-pdl-value {
         type loss-in-db-or-null;
         config false;
         mandatory true;
@@ -1554,7 +1554,7 @@ module ietf-layer0-types {
           lower than rx-ref-channel-power.
           This list of pair power and penalty can be used to
           sample the function penalty = f(rx-channel-power).";
-      leaf rx-channel-power {
+      leaf rx-channel-power-value {
         type union {
           type dbm-t;
           type empty;
