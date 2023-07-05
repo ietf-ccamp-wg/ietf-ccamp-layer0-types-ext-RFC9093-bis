@@ -576,6 +576,18 @@ module ietf-layer0-types {
       "all elements must use power (dBm)";
   }
 
+  identity operational-mode {
+    description
+      "Base identity to be used when defining organization/vendor 
+      specific modes";
+    reference
+      "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
+      Impairment-aware Topology.";
+  }
+// RFC Ed.: replace YYYY with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
 /*
  * Typedefs
  */
@@ -659,19 +671,6 @@ module ietf-layer0-types {
        DWDM frequency grid";
   }
 
-  typedef operational-mode {
-    type string;
-    description
-      "Organization/vendor specific mode that guarantees 
-      interoperability.";
-// RFC Ed.: replace YYYY with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-    reference
-      "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
-      Impairment-aware Topology.";
-  }
-
   typedef standard-mode {
     type string;
     description
@@ -690,9 +689,27 @@ module ietf-layer0-types {
       "vendor/organization identifier that uses a private mode
       out of already defined in G.698.2 ITU-T application-code";
     reference
-      "RFC7581: Routing and Wavelength Assignment Information
-       Encoding for Wavelength Switched Optical Networks";
+      "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
+      Impairment-aware Topology.";
   }
+// RFC Ed.: replace YYYY with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
+  typedef operational-mode {
+    type identityref {
+      base operational-mode;
+    }
+    description
+      "Organization/vendor specific mode that guarantees 
+      interoperability.";
+    reference
+      "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
+      Impairment-aware Topology.";
+  }
+// RFC Ed.: replace YYYY with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
 
   typedef frequency-thz {
     type decimal64 {
@@ -1353,7 +1370,7 @@ module ietf-layer0-types {
       type organization-identifier;
       config false;
       description
-      "organization identifier that uses organizational
+        "organization identifier that uses organizational
          mode";
     }
   }
