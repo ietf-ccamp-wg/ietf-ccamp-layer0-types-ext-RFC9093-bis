@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-07-03 {
+  revision 2023-07-05 {
     description
       "To be updated";
     reference
@@ -783,20 +783,41 @@ module ietf-layer0-types {
       an empty value when the value is not known.";
   }
 
-  typedef ratio-in-db {
-    type decimal-2-digits;
+  typedef gain-in-db {
+    type decimal-2-digits {
+      range "0..max";
+    }
     units "dB";
     description
-      "The power gain/loss in dB.";
+      "The power gain in dB.";
   }
 
-  typedef ratio-in-db-or-null {
+  typedef gain-in-db-or-null {
     type union {
-      type power-in-db;
+      type gain-in-db;
       type empty;
     }
     description
-      "The power gain/loss in dB, when it is known or an empty 
+      "The power gain in dB, when it is known or an empty 
+      value when the power gain/loss is not known.";
+  }
+
+  typedef loss-in-db {
+    type decimal-2-digits {
+      range "0..max";
+    }
+    units "dB";
+    description
+      "The power attenuation in dB.";
+  }
+
+  typedef loss-in-db-or-null {
+    type union {
+      type loss-in-db;
+      type empty;
+    }
+    description
+      "The power attenuation in dB, when it is known or an empty 
       value when the power gain/loss is not known.";
   }
 
@@ -1466,15 +1487,15 @@ module ietf-layer0-types {
       description "Maximum Differential group delay of this mode
                   for this lane";
     }
-    list max-pol-dependent-loss-penalty {
+    list max-pdl-penalty {
       config false;
       description
         "Optional penalty associated with the maximum acceptable 
         accumulated polarization dependent loss.
          This list of pair pdl and penalty can be used to
          sample the function pdl = f(penalty).";
-      leaf max-polarization-dependent-loss {
-        type power-in-db-or-null;
+      leaf max-pdl {
+        type loss-in-db-or-null;
         config false;
         mandatory true;
         description
@@ -1637,7 +1658,7 @@ module ietf-layer0-types {
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
     leaf tx-polarization-power-difference {
-      type power-in-db;
+      type power-in-dbm;
       config false;
       description
         "The transmitter polarization dependent power difference 
