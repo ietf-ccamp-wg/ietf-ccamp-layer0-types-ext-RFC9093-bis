@@ -1069,12 +1069,21 @@ module ietf-layer0-types {
       type l0-types:flexi-n;
       description
         "The given value 'N' is used to determine the nominal
-         central frequency.";
+        central frequency.
+
+        As described in section 3.1 of RFC 8363, the range of 
+        available nominal central frequencies are advertised for 
+        m=1, which means that for an available central frequency n, 
+        the frequency slot from central frequency n-1 to central 
+        frequency n+1 is available.";
     }
     reference
       "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks";
+      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+      Networks;
+      
+      RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid 
+      Dense Wavelength Division Multiplexing (DWDM) Networks";
   }
 
   grouping flexi-grid-frequency-slot {
@@ -1518,7 +1527,8 @@ module ietf-layer0-types {
     list pdl-penalty {
       config false;
       description
-        "Optional penalty associated with a given accumulated polarization dependent loss (PDL) value.
+        "Optional penalty associated with a given accumulated 
+        polarization dependent loss (PDL) value.
 
         This list of pair pdl and penalty values can be used to
         sample the function PDL = f(penalty).";

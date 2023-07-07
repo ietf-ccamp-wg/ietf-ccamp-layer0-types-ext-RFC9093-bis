@@ -214,14 +214,16 @@ Please replace XXXX with the RFC number assigned to this document.
    wson-label-step:
 
    > A YANG grouping that defines label steps for WSON as defined in
-     {{!RFC8776}}.
+     {{!I-D.ietf-teas-rfc8776-update}}.
 
    flexi-grid-label-start-end:
 
-   > The flexi-grid label range was defined in {{!RFC7698}}, and the
-     generic topology model defines the label-start/label-end in
-     {{!RFC8795}}.  This grouping shows the flexi-grid-specific label-
-     start and label-end information.
+  > The flexi-grid label range was defined in {{!RFC7698}}, and the
+  generic topology model defines the label-start/label-end in
+  {{!RFC8795}}.  This grouping shows the flexi-grid-specific label-
+  start and label-end information which is used to describe the range of available nominal central frequencies.
+
+  > As described in section 3.1 of {{!RFC8363}}, the range of available nominal central frequencies are advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
 
    flexi-grid-label-hop:
 
@@ -237,7 +239,7 @@ Please replace XXXX with the RFC number assigned to this document.
    flexi-grid-label-step:
 
    > A YANG grouping that defines flexi-grid label steps as defined in
-     {{!RFC8776}}.
+     {{!I-D.ietf-teas-rfc8776-update}}.
 
    transceiver-capabilities:
 
@@ -282,7 +284,7 @@ Please replace XXXX with the RFC number assigned to this document.
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-te-yang title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2023-03-07.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2023-07-07.yang"}
 
 
 # Security Considerations
