@@ -214,7 +214,7 @@ Please replace XXXX with the RFC number assigned to this document.
    wson-label-step:
 
    > A YANG grouping that defines label steps for WSON as defined in
-     {{!RFC8776}}.
+     {{!I-D.ietf-teas-rfc8776-update}}.
 
    flexi-grid-label-start-end:
 
@@ -239,7 +239,7 @@ Please replace XXXX with the RFC number assigned to this document.
    flexi-grid-label-step:
 
    > A YANG grouping that defines flexi-grid label steps as defined in
-     {{!RFC8776}}.
+     {{!I-D.ietf-teas-rfc8776-update}}.
 
    transceiver-capabilities:
 

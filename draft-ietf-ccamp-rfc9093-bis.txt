@@ -85,8 +85,8 @@ Table of Contents
      6.1.  Normative References  . . . . . . . . . . . . . . . . . .  47
      6.2.  Informative References  . . . . . . . . . . . . . . . . .  49
    Appendix A.  Changes from RFC 9093  . . . . . . . . . . . . . . .  50
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  51
-   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  51
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  50
+   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  50
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  51
 
 1.  Introduction
@@ -227,7 +227,7 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
 
 
       A YANG grouping that defines label steps for WSON as defined in
-      [RFC8776].
+      [I-D.ietf-teas-rfc8776-update].
 
    flexi-grid-label-start-end:
 
@@ -256,7 +256,7 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
    flexi-grid-label-step:
 
       A YANG grouping that defines flexi-grid label steps as defined in
-      [RFC8776].
+      [I-D.ietf-teas-rfc8776-update].
 
    transceiver-capabilities:
 
@@ -2617,13 +2617,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
 
 6.1.  Normative References
 
-   [ITU-T_G.698.2]
-              ITU-T Recommendation G.698.2, "Amplified multichannel
-              dense wavelength division multiplexing applications with
-              single channel optical interfaces", ITU-T G.698.2 ,
-              November 2018.
-
-
+   [I-D.ietf-teas-rfc8776-update]
+              Busi, I., Guo, A., Liu, X., Saad, T., Beeram, V. P., and
+              I. Bryskin, "Common YANG Data Types for Traffic
+              Engineering", Work in Progress, Internet-Draft, draft-
+              ietf-teas-rfc8776-update-04, 27 June 2023,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
+              rfc8776-update-04>.
 
 
 
@@ -2633,6 +2633,12 @@ Belotti, et al.          Expires 8 January 2024                [Page 47]
 
 Internet-Draft           Yang for Layer 0 Types                July 2023
 
+
+   [ITU-T_G.698.2]
+              ITU-T Recommendation G.698.2, "Amplified multichannel
+              dense wavelength division multiplexing applications with
+              single channel optical interfaces", ITU-T G.698.2 ,
+              November 2018.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -2676,12 +2682,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
               Label Switching Routers", RFC 7699, DOI 10.17487/RFC7699,
               November 2015, <https://www.rfc-editor.org/info/rfc7699>.
 
-   [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
-              RFC 7950, DOI 10.17487/RFC7950, August 2016,
-              <https://www.rfc-editor.org/info/rfc7950>.
-
-
-
 
 
 
@@ -2689,6 +2689,10 @@ Belotti, et al.          Expires 8 January 2024                [Page 48]
 
 Internet-Draft           Yang for Layer 0 Types                July 2023
 
+
+   [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
+              RFC 7950, DOI 10.17487/RFC7950, August 2016,
+              <https://www.rfc-editor.org/info/rfc7950>.
 
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
@@ -2718,11 +2722,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/info/rfc8446>.
 
-   [RFC8776]  Saad, T., Gandhi, R., Liu, X., Beeram, V., and I. Bryskin,
-              "Common YANG Data Types for Traffic Engineering",
-              RFC 8776, DOI 10.17487/RFC8776, June 2020,
-              <https://www.rfc-editor.org/info/rfc8776>.
-
    [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
               O. Gonzalez de Dios, "YANG Data Model for Traffic
               Engineering (TE) Topologies", RFC 8795,
@@ -2730,21 +2729,6 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
               <https://www.rfc-editor.org/info/rfc8795>.
 
 6.2.  Informative References
-
-
-
-
-
-
-
-
-
-
-
-Belotti, et al.          Expires 8 January 2024                [Page 49]
-
-Internet-Draft           Yang for Layer 0 Types                July 2023
-
 
    [I-D.ietf-ccamp-dwdm-if-param-yang]
               Galimberti, G., Kunze, R., Hiremagalur, D., and G.
@@ -2754,6 +2738,13 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
               if-param-yang-09, 13 March 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
               dwdm-if-param-yang-09>.
+
+
+
+Belotti, et al.          Expires 8 January 2024                [Page 49]
+
+Internet-Draft           Yang for Layer 0 Types                July 2023
+
 
    [ITU-T_G.694.1]
               ITU-T Recommendation G.694.1, "Spectral grids for WDM
@@ -2790,18 +2781,6 @@ Appendix A.  Changes from RFC 9093
 
    To be added in a future revision of this draft.
 
-
-
-
-
-
-
-
-Belotti, et al.          Expires 8 January 2024                [Page 50]
-
-Internet-Draft           Yang for Layer 0 Types                July 2023
-
-
 Acknowledgments
 
    The authors and the working group give their sincere thanks to Robert
@@ -2815,6 +2794,12 @@ Contributors
    Gabriele Galimberti
    Cisco
    Email: ggalimbe@cisco.com
+
+
+
+Belotti, et al.          Expires 8 January 2024                [Page 50]
+
+Internet-Draft           Yang for Layer 0 Types                July 2023
 
 
    Enrico Griseri
@@ -2849,15 +2834,6 @@ Contributors
 
 Authors' Addresses
 
-
-
-
-
-Belotti, et al.          Expires 8 January 2024                [Page 51]
-
-Internet-Draft           Yang for Layer 0 Types                July 2023
-
-
    Sergio Belotti (editor)
    Nokia
    Email: sergio.belotti@nokia.com
@@ -2871,6 +2847,15 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
    Dieter Beller (editor)
    Nokia
    Email: dieter.beller@nokia.com
+
+
+
+
+
+
+Belotti, et al.          Expires 8 January 2024                [Page 51]
+
+Internet-Draft           Yang for Layer 0 Types                July 2023
 
 
    Haomian Zheng
@@ -2891,6 +2876,21 @@ Internet-Draft           Yang for Layer 0 Types                July 2023
    Daniel King
    University of Lancaster
    Email: d.king@lancaster.ac.uk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
