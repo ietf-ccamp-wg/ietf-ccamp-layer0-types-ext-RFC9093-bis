@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-07-07 {
+  revision 2023-10-04 {
     description
       "To be updated";
     reference
@@ -727,13 +727,6 @@ module ietf-layer0-types {
     description
       "The DWDM frequency in GHz, e.g., 193112.500000";
   }    
-
-  typedef dbm-t {
-    type int32;
-    units ".01dbm";
-    description
-      "Amplifiers and Transceivers Power in dBm.";
-  }
 
   typedef snr {
     type decimal64 {
@@ -1562,7 +1555,7 @@ module ietf-layer0-types {
         level of bit-errors post-FEC needs to be expected";
     }
     leaf rx-ref-channel-power {
-      type dbm-t;
+      type power-in-dbm;
       config false;
       description
         "The channel power used as reference for defining penalties 
@@ -1576,10 +1569,7 @@ module ietf-layer0-types {
           This list of pair power and penalty can be used to
           sample the function penalty = f(rx-channel-power).";
       leaf rx-channel-power-value {
-        type union {
-          type dbm-t;
-          type empty;
-        }
+        type power-in-dbm-or-null;
         units "dBm";
         config false;
         mandatory true;
@@ -1774,12 +1764,12 @@ module ietf-layer0-types {
 /* supported transmitter power range [p_tx-min, p_tx_max] */
 
     leaf tx-channel-power-min {
-      type dbm-t;
+      type power-in-dbm;
       config false;
       description "The minimum output power of this interface";
     }
     leaf tx-channel-power-max {
-      type dbm-t;
+      type power-in-dbm;
       config false;
       description "The maximum output power of this interface";
     } 
@@ -1787,18 +1777,18 @@ module ietf-layer0-types {
 /* supported receiver power range [p_rx-min, p_rx_max] */ 
 
      leaf rx-channel-power-min {
-      type dbm-t;
+      type power-in-dbm;
       config false;
       description "The minimum input power of this interface";
     }
     leaf rx-channel-power-max {
-      type dbm-t;
+      type power-in-dbm;
       config false;
       description "The maximum input power of this interface";
     }
 
     leaf rx-total-power-max {
-      type dbm-t;
+      type power-in-dbm;
       config false;
       description "Maximum rx optical power for
       all the channels";
