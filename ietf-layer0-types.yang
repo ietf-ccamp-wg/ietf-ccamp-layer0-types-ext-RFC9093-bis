@@ -1104,12 +1104,28 @@ module ietf-layer0-types {
         uses flexi-grid-frequency-slot;
       }
       case super {
+        status deprecated;
         list subcarrier-flexi-n {
           key "flexi-n";
           uses flexi-grid-frequency-slot;
           description
             "List of subcarrier channels for flexi-grid super
              channel.";
+        }
+      }
+      case multi {
+        container frequency-slots {
+          description
+            "The top level container for the list of frequency 
+            slots used for flexi-grid super channel.";
+          list frequency-slot {
+            key "flexi-n";
+            min-elements 2;
+            uses flexi-grid-frequency-slot;
+            description
+              "List of frequency slots used for flexi-grid super 
+              channel.";
+          }
         }
       }
     }

@@ -35,10 +35,15 @@ module: ietf-layer0-types
        +--:(single)
        |  +-- flexi-n?              l0-types:flexi-n
        |  +-- flexi-m?              l0-types:flexi-m
-       +--:(super)
-          +-- subcarrier-flexi-n* [flexi-n]
-             +-- flexi-n?   l0-types:flexi-n
-             +-- flexi-m?   l0-types:flexi-m
+       x--:(super)
+       |  +-- subcarrier-flexi-n* [flexi-n]
+       |     +-- flexi-n?   l0-types:flexi-n
+       |     +-- flexi-m?   l0-types:flexi-m
+       +--:(multi)
+          +-- frequency-slots
+             +-- frequency-slot* [flexi-n]
+                +-- flexi-n?   l0-types:flexi-n
+                +-- flexi-m?   l0-types:flexi-m
   grouping flexi-grid-label-range-info:
     +-- grid-type?    identityref
     +-- priority?     uint8
