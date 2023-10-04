@@ -124,57 +124,77 @@ module ietf-layer0-types {
        DWDM frequency grid";
   }
 
-  identity dwdm-100ghz {
-    base dwdm-ch-spc-type;
-    description
-      "100 GHz channel spacing";
-  }
+    identity dwdm-100ghz {
+      base dwdm-ch-spc-type;
+      description
+        "100 GHz channel spacing";
+    }
 
-  identity dwdm-50ghz {
-    base dwdm-ch-spc-type;
-    description
-      "50 GHz channel spacing";
-  }
+    identity dwdm-50ghz {
+      base dwdm-ch-spc-type;
+      description
+        "50 GHz channel spacing";
+    }
 
-  identity dwdm-25ghz {
-    base dwdm-ch-spc-type;
-    description
-      "25 GHz channel spacing";
-  }
+    identity dwdm-25ghz {
+      base dwdm-ch-spc-type;
+      description
+        "25 GHz channel spacing";
+    }
 
-  identity dwdm-12p5ghz {
-    base dwdm-ch-spc-type;
-    description
-      "12.5 GHz channel spacing";
-  }
+    identity dwdm-12p5ghz {
+      base dwdm-ch-spc-type;
+      description
+        "12.5 GHz channel spacing";
+    }
 
   identity flexi-ch-spc-type {
+    status deprecated;
     description
       "Flexi-grid channel-spacing type";
     reference
       "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks,
-       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-       DWDM frequency grid";
+      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+      Networks,
+      ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+      DWDM frequency grid";
   }
 
-  identity flexi-ch-spc-6p25ghz {
-    base flexi-ch-spc-type;
+    identity flexi-ch-spc-6p25ghz {
+      base flexi-ch-spc-type;
+      status deprecated;
+      description
+        "6.25 GHz channel spacing";
+    }
+
+  identity flexi-ncfg-type {
     description
-      "6.25 GHz channel spacing";
+      "Flexi-grid Nominal Central Frequency Granularity (NCFG) 
+      type";
+    reference
+      "RFC 7698: Framework and Requirements for GMPLS-Based Control
+      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+      Networks,
+      ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+      DWDM frequency grid";
   }
+
+    identity flexi-ncfg-6p25ghz {
+      base flexi-ncfg-type;
+      description
+        "6.25 GHz Nominal Central Frequency Granularity (NCFG)";
+    }
 
   identity flexi-slot-width-granularity {
     description
       "Flexi-grid slot width granularity";
   }
 
-  identity flexi-swg-12p5ghz {
-    base flexi-slot-width-granularity;
-    description
-      "12.5 GHz slot width granularity";
-  }
+    identity flexi-swg-12p5ghz {
+      base flexi-slot-width-granularity;
+      description
+        "12.5 GHz slot width granularity";
+    }
 
   identity cwdm-ch-spc-type {
     description
@@ -309,8 +329,8 @@ module ietf-layer0-types {
     identity o-fec {
       base fec-type;
       description
-        "Open Forward Error Correction (O-FEC) which reuses the Bose, 
-        Chaudhuri and Hocquenghem (BCH) FEC.";
+        "Open Forward Error Correction (O-FEC) which reuses the 
+        Bose, Chaudhuri and Hocquenghem (BCH) FEC.";
       reference
         "Clause 16.4.4 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
         long-reach interfaces;
@@ -620,15 +640,12 @@ module ietf-layer0-types {
        frequency.
 
        The nominal central frequency, 'f', is defined by:
-         f = 193100.000 GHz + N x channel spacing (measured in GHz),
+         f = 193100.000 GHz + N x NCFG (measured in GHz),
 
        where 193100.000 GHz (193.100000 THz) is the ITU-T 'anchor
        frequency' for transmission over the DWDM grid, and where
-       'channel spacing' is defined by the flexi-ch-spc-type.
-
-       Note that the term 'channel spacing' can be substituted by the
-       term 'nominal central frequency granularity' defined in
-       clause 8 of ITU-T G.694.1.";
+       NCFG is defined by the flexi-ncfg-type, or by the deprecated 
+       flexi-ch-spc-type.";
     reference
       "RFC 7698: Framework and Requirements for GMPLS-Based Control
        of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
@@ -1176,6 +1193,19 @@ module ietf-layer0-types {
         base flexi-ch-spc-type;
       }
       default "flexi-ch-spc-6p25ghz";
+      status deprecated;
+      description
+        "Label-step is the nominal central frequency granularity
+         (GHz), e.g., 6.25 GHz.";
+      reference
+        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+         Switch Capable (LSC) Label Switching Routers";
+    }
+    leaf flexi-ncfg {
+      type identityref {
+        base flexi-ncfg-type;
+      }
+      default "flexi-ncfg-6p25ghz";
       description
         "Label-step is the nominal central frequency granularity
          (GHz), e.g., 6.25 GHz.";
