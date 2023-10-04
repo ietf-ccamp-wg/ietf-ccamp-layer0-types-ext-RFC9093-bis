@@ -273,88 +273,71 @@ module ietf-layer0-types {
       (Forward Error Correction) type identities are derived.";
   }
 
-  identity g-fec {
-    base fec-type;
-    description
-      "Generic Forward Error Correction (G-FEC).";
-    reference
-      "ITU-T G.975 v2.0 (10/2000): Forward error correction for 
-      submarine systems.";
-  }
+    identity g-fec {
+      base fec-type;
+      description
+        "Generic Forward Error Correction (G-FEC).";
+      reference
+        "ITU-T G.975 v2.0 (10/2000): Forward error correction for 
+        submarine systems.";
+    }
 
-  identity super-fec {
-    base fec-type;
-    description
-      "Super Forward Error Correction (S-FEC).";
-    reference
-      "ITU-T G.975.1 v1.2 (07/2013): Forward error correction for 
-      high bit-rate DWDM submarine systems.";
-  }
+    identity super-fec {
+      base fec-type;
+      description
+        "Super Forward Error Correction (S-FEC).";
+      reference
+        "ITU-T G.975.1 v1.2 (07/2013): Forward error correction for 
+        high bit-rate DWDM submarine systems.";
+    }
 
-  identity no-fec {
-    base fec-type;
-    description
-      "No FEC";
-  }
+    identity no-fec {
+      base fec-type;
+      description
+        "No FEC";
+    }
 
-  identity reed-solomon {
-    base fec-type;
-    description
-      "Reed-Solomon error correction";
-  }
+    identity sc-fec {
+      base fec-type;
+      description
+        "Staircase Forward Error Correction (SC-FEC).";
+      reference
+        "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach 
+        interface.";
+    }
 
-  identity hamming-code {
-    base fec-type;
-    description
-      "Hamming Code error correction";
-  }
+    identity o-fec {
+      base fec-type;
+      description
+        "Open Forward Error Correction (O-FEC) which reuses the Bose, 
+        Chaudhuri and Hocquenghem (BCH) FEC.";
+      reference
+        "Clause 16.4.4 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+        long-reach interfaces;
 
-  identity golay {
-    base fec-type;
-    description "Golay error correction";
-  }
+        Annex E of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+        long-reach interfaces.";
+    }
 
-  identity sc-fec {
-    base fec-type;
-    description
-      "Staircase Forward Error Correction (SC-FEC).";
-    reference
-      "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach 
-      interface.";
-  }
-
-  identity o-fec {
-    base fec-type;
-    description
-      "Open Forward Error Correction (O-FEC) which reuses the Bose, 
-      Chaudhuri and Hocquenghem (BCH) FEC.";
-    reference
-      "Clause 16.4.4 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
-      long-reach interfaces;
-
-      Annex E of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
-      long-reach interfaces.";
-  }
-
-  identity c-fec {
-    base fec-type;
-    description
-      "Concatenated FEC (C-FEC) that combines an outer Staircase 
-      Forward Error Correction (SC-FEC) code and an inner 
-      double-extended SD-FEC (128,119) Hamming code.
-      
-      More details are provided in clause 15/G.709.3 where it is 
-      called DSH instead of concatenated FEC.";
-    reference
-      "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach 
-      interface;
-      
-      Annex D of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
-      long-reach interfaces;
-      
-      Clause 15 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
-      long-reach interfaces.";
-  }
+    identity c-fec {
+      base fec-type;
+      description
+        "Concatenated FEC (C-FEC) that combines an outer Staircase 
+        Forward Error Correction (SC-FEC) code and an inner 
+        double-extended SD-FEC (128,119) Hamming code.
+        
+        More details are provided in clause 15/G.709.3 where it is 
+        called DSH instead of concatenated FEC.";
+      reference
+        "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach 
+        interface;
+        
+        Annex D of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+        long-reach interfaces;
+        
+        Clause 15 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN 
+        long-reach interfaces.";
+    }
 
   identity line-coding {
     description
