@@ -582,7 +582,11 @@ module ietf-layer0-types {
   identity operational-mode {
     description
       "Base identity to be used when defining organization/vendor 
-      specific modes";
+      specific modes.
+      
+      The format of the derived identities has to be defined by the 
+      organization which is responsible for defining the 
+      corresponding optical interface specification.";
     reference
       "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
       Impairment-aware Topology.";
@@ -674,13 +678,12 @@ module ietf-layer0-types {
   typedef standard-mode {
     type string;
     description
-      "ITU-T G.698.2 standard mode that guarantees 
-       interoperability.
-       It must be an string with the following format:
-       B-DScW-ytz(v) where all these attributes 
-       are conformant
-       to the ITU-T recomendation";
-    reference "ITU-T G.698.2 (11/2018)";
+      "Identifies an ITU-T G.698.2 standard application code.
+
+      It MUST be a string with a format that follows the 
+      nomenclature defined in section 5.3 of ITU-T G.698.2.";
+    reference
+      "ITU-T G.698.2 (11/2018)";
   }
 
   typedef organization-identifier {
@@ -701,8 +704,11 @@ module ietf-layer0-types {
       base operational-mode;
     }
     description
-      "Organization/vendor specific mode that guarantees 
-      interoperability.";
+      "Identifies an organization (e.g., vendor) specific mode.
+      
+      The format of these identities has to be defined by the 
+      organization which is responsible for defining the 
+      corresponding optical interface specification.";
     reference
       "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
       Impairment-aware Topology.";
