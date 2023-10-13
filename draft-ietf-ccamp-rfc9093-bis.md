@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-05
+docname: draft-ietf-ccamp-rfc9093-bis-06
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group
@@ -132,8 +132,8 @@ informative:
    network configuration aspects) for Layer 0 optical networks in
    model(s) defined outside of this document.  The applicability of
    Layer 0 types specified in this document includes Wavelength Switched
-   Optical Networks (WSONs) {{!RFC6163}} {{ITU-T_G.698.2}} and flexi-grid Dense
-   Wavelength Division Multiplexing (DWDM) networks {{!RFC7698}}
+   Optical Networks (WSONs) {{?RFC6163}} {{ITU-T_G.694.1}} and {{ITU-T_G.694.2}}, and flexi-grid Dense
+   Wavelength Division Multiplexing (DWDM) networks {{?RFC7698}}
    {{ITU-T_G.694.1}}.
 
    This document adds new type definitions to the YANG modules and
@@ -165,11 +165,9 @@ informative:
 RFC Editor Note:
 Please replace XXXX with the RFC number assigned to this document.
 
-   The YANG module "ietf-layer0-types" (defined in {{yang-code}}) references
-   {{!RFC4203}}, {{!RFC6163}}, {{!RFC6205}}, {{!RFC7698}}, {{!RFC7699}}, {{!RFC8363}},
-   {{ITU-T_G.694.1}}, and {{ITU-T_G.694.2}}.
+# Layer 0 Types Overview
 
-# Layer 0 Types Module Contents
+## Layer 0 Types Module Contents
 
    This document defines a YANG module for common Layer 0 types, ietf-
    layer0-types.  This module is used for WSON and flexi-grid DWDM
@@ -178,18 +176,51 @@ Please replace XXXX with the RFC number assigned to this document.
 
    l0-grid-type:
 
-   > A base YANG identity for the grid type as defined in {{!RFC6163}} and
-     {{!RFC7698}}.
+   > A base YANG identity for the grid type as defined in {{!RFC6205}} and
+     {{!RFC7699}}.
+
+   cwdm-ch-spc-type:
+
+   > A base YANG identity for the Coarse Wavelength Division
+     Multiplexing (CWDM) channel-spacing type as defined in {{!RFC6205}}.
 
    dwdm-ch-spc-type:
 
    > A base YANG identity for the DWDM channel-spacing type as defined
      in {{!RFC6205}}.
 
-   cwdm-ch-spc-type:
+   flexi-ncfg-type:
 
-   > A base YANG identity for the Coarse Wavelength Division
-     Multiplexing (CWDM) channel-spacing type as defined in {{!RFC6205}}.
+   > A base YANG identity for the DWDM flexi-grid Nominal Central Frequency Granularity (NCFG) 
+      type as defined in {{!RFC7699}}.
+
+   flexi-slot-width-granularity:
+
+   > TBD: add a description and a reference (also in YANG)
+
+   fec-type:
+
+   > TBD: add a description and the list of references defined in YANG
+
+   line-coding:
+
+   > TBD: add a description and the list of references defined in YANG
+
+   wavelength-assignment:
+
+   > TBD: add a description and the list of references defined in YANG
+
+   term-type:
+
+   > TBD: add a description and the list of references defined in YANG
+
+   otu-type:
+
+   > TBD: add a description and the list of references defined in YANG
+
+   operational-mode:
+
+   > TBD: add a description and the list of references defined in YANG
 
    wson-label-start-end:
 
@@ -207,7 +238,7 @@ Please replace XXXX with the RFC number assigned to this document.
    l0-label-range-info:
 
    > A YANG grouping that defines the Layer 0 label range information
-     applicable for WSON as defined in {{!RFC6205}}.  This grouping is
+     applicable for WSON as defined in {{!RFC6205}}. The label range info is defined per priority {{!RFC4203}}. This grouping is
      used in the flexi-grid DWDM by adding more flexi-grid-specific
      parameters.
 
@@ -218,7 +249,7 @@ Please replace XXXX with the RFC number assigned to this document.
 
    flexi-grid-label-start-end:
 
-  > The flexi-grid label range was defined in {{!RFC7698}}, and the
+  > The flexi-grid label range was defined in {{!RFC7699}}, and the
   generic topology model defines the label-start/label-end in
   {{!RFC8795}}.  This grouping shows the flexi-grid-specific label-
   start and label-end information which is used to describe the range of available nominal central frequencies.
@@ -227,14 +258,14 @@ Please replace XXXX with the RFC number assigned to this document.
 
    flexi-grid-label-hop:
 
-   > The flexi-grid label range was defined in {{!RFC7698}}, and the
+   > The flexi-grid label range was defined in {{!RFC8363}}, and the
      generic topology model defines the label-hop in {{!RFC8795}}.  This
      grouping shows the WSON-specific label-hop information.
 
    flexi-grid-label-range-info:
 
    > A YANG grouping that defines flexi-grid label range information as
-     defined in {{!RFC7698}} and {{!RFC8363}}.
+     defined in {{!RFC8363}}.
 
    flexi-grid-label-step:
 
@@ -248,8 +279,7 @@ Please replace XXXX with the RFC number assigned to this document.
 
    standard-mode:
 
-   > a YANG grouping for ITU-T G.698.2 standard mode that guarantees
-   interoperability.
+   > a YANG grouping for the standard modes defined in {{ITU-T_G.698.2}}.
 
    organizational-mode:
 
@@ -276,6 +306,8 @@ Please replace XXXX with the RFC number assigned to this document.
    This list of triplet cd, pmd, penalty can be used to sample the
    function penalty = f(CD, PMD).
 
+## WSON Label and Label Range
+
 {: #yang-code}
 
 # YANG Module for Layer 0 Types
@@ -284,7 +316,7 @@ Please replace XXXX with the RFC number assigned to this document.
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-te-yang title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2023-07-07.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2023-10-04.yang"}
 
 
 # Security Considerations

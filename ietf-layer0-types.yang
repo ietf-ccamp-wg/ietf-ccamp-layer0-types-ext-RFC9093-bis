@@ -72,47 +72,65 @@ module ietf-layer0-types {
     description
       "Layer 0 grid type";
     reference
-      "RFC 6163: Framework for GMPLS and Path Computation Element
-       (PCE) Control of Wavelength Switched Optical Networks (WSONs),
-       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-       DWDM frequency grid,
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable 
+      (LSC), Label Switching Routers,
+
        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
        CWDM wavelength grid";
   }
 
-  identity flexi-grid-dwdm {
-    base l0-grid-type;
-    description
-      "Flexi-grid";
-    reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks,
-       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-       DWDM frequency grid";
-  }
+    identity wson-grid-cwdm {
+      base l0-grid-type;
+      description
+        "CWDM grid";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+        Label Switching Routers,
 
-  identity wson-grid-dwdm {
-    base l0-grid-type;
-    description
-      "DWDM grid";
-    reference
-      "RFC 6163:Framework for GMPLS and Path Computation Element
-       (PCE) Control of Wavelength Switched Optical Networks (WSONs),
-       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-       DWDM frequency grid";
-  }
+        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
+        CWDM wavelength grid";
+    }
 
-  identity wson-grid-cwdm {
-    base l0-grid-type;
+    identity wson-grid-dwdm {
+      base l0-grid-type;
+      description
+        "DWDM grid";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable 
+        (LSC), Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
+    }
+
+    identity flexi-grid-dwdm {
+      base l0-grid-type;
+      description
+        "Flexi-grid";
+      reference
+        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+        Switch Capable (LSC) Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
+    }
+
+  identity cwdm-ch-spc-type {
     description
-      "CWDM grid";
+      "CWDM channel-spacing type";
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
        Label Switching Routers,
+       
        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
        CWDM wavelength grid";
   }
+
+    identity cwdm-20nm {
+      base cwdm-ch-spc-type;
+      description
+        "20nm channel spacing";
+    }
 
   identity dwdm-ch-spc-type {
     description
@@ -120,6 +138,7 @@ module ietf-layer0-types {
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
        Label Switching Routers,
+
        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
        DWDM frequency grid";
   }
@@ -152,12 +171,6 @@ module ietf-layer0-types {
     status deprecated;
     description
       "Flexi-grid channel-spacing type";
-    reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-      Networks,
-      ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-      DWDM frequency grid";
   }
 
     identity flexi-ch-spc-6p25ghz {
@@ -172,9 +185,9 @@ module ietf-layer0-types {
       "Flexi-grid Nominal Central Frequency Granularity (NCFG) 
       type";
     reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-      Networks,
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+      Switch Capable (LSC) Label Switching Routers,
+
       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
       DWDM frequency grid";
   }
@@ -196,96 +209,80 @@ module ietf-layer0-types {
         "12.5 GHz slot width granularity";
     }
 
-  identity cwdm-ch-spc-type {
-    description
-      "CWDM channel-spacing type";
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-       Label Switching Routers,
-       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-       CWDM wavelength grid";
-  }
-
-  identity cwdm-20nm {
-    base cwdm-ch-spc-type;
-    description
-      "20nm channel spacing";
-  }
-
   identity modulation {
     description "base identity for modulation type";
   }
 
-  identity DPSK {
-    base modulation;
-    description
-      "DPSK (Differential Phase Shift Keying) modulation";
-  }
+    identity DPSK {
+      base modulation;
+      description
+        "DPSK (Differential Phase Shift Keying) modulation";
+    }
 
-  identity QPSK {
-    base modulation;
-    description
-      "QPSK (Quadrature Phase Shift Keying) modulation";
-  }
+    identity QPSK {
+      base modulation;
+      description
+        "QPSK (Quadrature Phase Shift Keying) modulation";
+    }
 
-  identity DP-QPSK {
-    base modulation;
-    description
-      "DP-QPSK (Dual Polarization Quadrature
-       Phase Shift Keying) modulation";
-  }
+    identity DP-QPSK {
+      base modulation;
+      description
+        "DP-QPSK (Dual Polarization Quadrature
+        Phase Shift Keying) modulation";
+    }
 
-  identity QAM8 {
-    base modulation;
-    description
-      "8QAM (8 symbols Quadrature Amplitude Modulation)";
-  }
+    identity QAM8 {
+      base modulation;
+      description
+        "8QAM (8 symbols Quadrature Amplitude Modulation)";
+    }
 
-  identity DP-QAM8 {
-    base modulation;
-    description
-      "DP-QAM8 (8 symbols Dual Polarization Quadrature Amplitude
-      Modulation)";
-  }
+    identity DP-QAM8 {
+      base modulation;
+      description
+        "DP-QAM8 (8 symbols Dual Polarization Quadrature Amplitude
+        Modulation)";
+    }
 
-  identity QAM16 {
-    base modulation;
-    description
-      "QAM16 (16 symbols Quadrature Amplitude Modulation)";
-  }
+    identity QAM16 {
+      base modulation;
+      description
+        "QAM16 (16 symbols Quadrature Amplitude Modulation)";
+    }
 
-  identity DP-QAM16 {
-    base modulation;
-    description
-      "DP-QAM16 (16 symbols Dual Polarization Quadrature Amplitude 
-       Modulation)";
-  }
+    identity DP-QAM16 {
+      base modulation;
+      description
+        "DP-QAM16 (16 symbols Dual Polarization Quadrature Amplitude 
+        Modulation)";
+    }
 
-  identity QAM32 {
-    base modulation;
-    description
-      "QAM32 (32 symbols Quadrature Amplitude Modulation)";
-  }
+    identity QAM32 {
+      base modulation;
+      description
+        "QAM32 (32 symbols Quadrature Amplitude Modulation)";
+    }
 
-  identity DP-QAM32 {
-    base modulation;
-    description
-      "DP-QAM32 (32 symbols Dual Polarization Quadrature Amplitude
-      Modulation)";
-  }
+    identity DP-QAM32 {
+      base modulation;
+      description
+        "DP-QAM32 (32 symbols Dual Polarization Quadrature Amplitude
+        Modulation)";
+    }
 
-  identity QAM64 {
-    base modulation;
-    description
-      "QAM64 (64 symbols Quadrature Amplitude Modulation)";
-  }
+    identity QAM64 {
+      base modulation;
+      description
+        "QAM64 (64 symbols Quadrature Amplitude Modulation)";
+    }
 
-  identity DP-QAM64 {
-    base modulation;
-    description
-      "DP-QAM64 (64 symbols Dual Polarization Quadrature Amplitude
-      Modulation)";
-  }
+    identity DP-QAM64 {
+      base modulation;
+      description
+        "DP-QAM64 (64 symbols Dual Polarization Quadrature Amplitude
+        Modulation)";
+    }
 
   identity fec-type {
     description
@@ -430,32 +427,32 @@ module ietf-layer0-types {
     description
       "Wavelength selection base";
     reference
-      "RFC6163:Framework for GMPLS and Path Computation Element 
-      (PCE) Control of Wavelength Switched Optical Networks (WSONs)";
+      "RFC 7689: Signaling Extensions for Wavelength Switched 
+      Optical Networks";
   }
 
-  identity first-fit-wavelength-assignment {
-    base wavelength-assignment;
-    description
-      "All the available wavelengths are numbered,
-       and this WA (Wavelength Assignment) method chooses
-       the available wavelength with the lowest index";
-  }
+    identity first-fit-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "All the available wavelengths are numbered,
+        and this WA (Wavelength Assignment) method chooses
+        the available wavelength with the lowest index";
+    }
 
-  identity random-wavelength-assignment {
-    base wavelength-assignment;
-    description
-      "This WA method chooses an available
-       wavelength randomly";
-  }
+    identity random-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "This WA method chooses an available
+        wavelength randomly";
+    }
 
-  identity least-loaded-wavelength-assignment {
-    base wavelength-assignment;
-    description
-      "This WA method selects the wavelength that
-       has the largest residual capacity on the most loaded
-       link along the route (in multi-fiber networks)";
-  }
+    identity least-loaded-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "This WA method selects the wavelength that
+        has the largest residual capacity on the most loaded
+        link along the route (in multi-fiber networks)";
+    }
 
   identity term-type {
     description
@@ -464,29 +461,29 @@ module ietf-layer0-types {
       "ITU-T G.709: Interfaces for the Optical Transport Network";
   }
 
-  identity term-phys {
-    base term-type;
-    description
-      "Physical layer termination";
-  }
+    identity term-phys {
+      base term-type;
+      description
+        "Physical layer termination";
+    }
 
-  identity term-otu {
-    base term-type;
-    description
-      "OTU (Optical Transport Unit) termination";
-  }
+    identity term-otu {
+      base term-type;
+      description
+        "OTU (Optical Transport Unit) termination";
+    }
 
-  identity term-odu {
-    base term-type;
-    description
-      "ODU (Optical Data Unit) termination";
-  }
+    identity term-odu {
+      base term-type;
+      description
+        "ODU (Optical Data Unit) termination";
+    }
 
-  identity term-opu {
-    base term-type;
-    description
-      "OPU (Optical Payload Unit) termination";
-  }
+    identity term-opu {
+      base term-type;
+      description
+        "OPU (Optical Payload Unit) termination";
+    }
 
   identity otu-type {
     description
@@ -495,71 +492,71 @@ module ietf-layer0-types {
       "ITU-T G.709: Interfaces for the Optical Transport Network";
   }
 
-  identity OTU1 {
-    base otu-type;
-    description
-      "OTU1 (2.66 Gb/s)";
-  }
+    identity OTU1 {
+      base otu-type;
+      description
+        "OTU1 (2.66 Gb/s)";
+    }
 
-  identity OTU1e {
-    base otu-type;
-    description
-      "OTU1e (11.04 Gb/s)";
-  }
+    identity OTU1e {
+      base otu-type;
+      description
+        "OTU1e (11.04 Gb/s)";
+    }
 
-  identity OTU1f {
-    base otu-type;
-    description
-      "OTU1f (11.27 Gb/s)";
-  }
+    identity OTU1f {
+      base otu-type;
+      description
+        "OTU1f (11.27 Gb/s)";
+    }
 
-  identity OTU2 {
-    base otu-type;
-    description
-      "OTU2 (10.70 Gb/s)";
-  }
+    identity OTU2 {
+      base otu-type;
+      description
+        "OTU2 (10.70 Gb/s)";
+    }
 
-  identity OTU2e {
-    base otu-type;
-    description
-      "OTU2e (11.09 Gb/s)";
-  }
+    identity OTU2e {
+      base otu-type;
+      description
+        "OTU2e (11.09 Gb/s)";
+    }
 
-  identity OTU2f {
-    base otu-type;
-    description
-      "OTU2f (11.31G)";
-  }
+    identity OTU2f {
+      base otu-type;
+      description
+        "OTU2f (11.31G)";
+    }
 
-  identity OTU3 {
-    base otu-type;
-    description
-      "OTU3 (43.01 Gb/s)";
-  }
+    identity OTU3 {
+      base otu-type;
+      description
+        "OTU3 (43.01 Gb/s)";
+    }
 
-  identity OTU3e1 {
-    base otu-type;
-    description
-      "OTU3e1 (44.57 Gb/s)";
-  }
+    identity OTU3e1 {
+      base otu-type;
+      description
+        "OTU3e1 (44.57 Gb/s)";
+    }
 
-  identity OTU3e2 {
-    base otu-type;
-    description
-      "OTU3e2 (44.58 Gb/s)";
-  }
+    identity OTU3e2 {
+      base otu-type;
+      description
+        "OTU3e2 (44.58 Gb/s)";
+    }
 
-  identity OTU4 {
-    base otu-type;
-    description
-      "OTU4 (111.80 Gb/s)";
-  }
+    identity OTU4 {
+      base otu-type;
+      description
+        "OTU4 (111.80 Gb/s)";
+    }
 
-  identity OTUCn {
-    base otu-type;
-    description
-      "OTUCn (n x 105.25 Gb/s)";
-  }
+    identity OTUCn {
+      base otu-type;
+      description
+        "OTUCn (n x 105.25 Gb/s)";
+    }
 
   identity type-power-mode {
     description
@@ -567,17 +564,17 @@ module ietf-layer0-types {
        OMS and its elements";
   }
 
-  identity power-spectral-density {
-    base type-power-mode;
-    description
-      "all elements must use power spectral density (W/Hz)";
-  }
+    identity power-spectral-density {
+      base type-power-mode;
+      description
+        "all elements must use power spectral density (W/Hz)";
+    }
 
-  identity carrier-power {
-    base type-power-mode;
-    description
-      "all elements must use power (dBm)";
-  }
+    identity carrier-power {
+      base type-power-mode;
+      description
+        "all elements must use power (dBm)";
+    }
 
   identity operational-mode {
     description
@@ -614,6 +611,7 @@ module ietf-layer0-types {
     reference
       "RFC6205: Generalized Labels for Lambda-Switch-Capable (LSC)
        Label Switching Routers,
+
        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
        DWDM frequency grid";
   }
@@ -633,6 +631,7 @@ module ietf-layer0-types {
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
        Label Switching Routers,
+
        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
        CWDM wavelength grid";
   }
@@ -651,9 +650,9 @@ module ietf-layer0-types {
        NCFG is defined by the flexi-ncfg-type, or by the deprecated 
        flexi-ch-spc-type.";
     reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks,
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+      Switch Capable (LSC) Label Switching Routers,
+
        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
        DWDM frequency grid";
   }
@@ -668,9 +667,9 @@ module ietf-layer0-types {
 
        where SWG is defined by the flexi-slot-width-granularity.";
     reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks.
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+      Switch Capable (LSC) Label Switching Routers,
+
        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
        DWDM frequency grid";
   }
@@ -1056,6 +1055,7 @@ module ietf-layer0-types {
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
        Label Switching Routers,
+
        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
        CWDM wavelength grid";
   }
@@ -1077,9 +1077,8 @@ module ietf-layer0-types {
         frequency n+1 is available.";
     }
     reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-      Networks;
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+      Switch Capable (LSC) Label Switching Routers,
       
       RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid 
       Dense Wavelength Division Multiplexing (DWDM) Networks";
@@ -1095,9 +1094,8 @@ module ietf-layer0-types {
         "The given value 'M' is used to determine the slot width.";
     }
     reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks";
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+      Switch Capable (LSC) Label Switching Routers";
   }
 
   grouping flexi-grid-label-hop {
@@ -1136,9 +1134,8 @@ module ietf-layer0-types {
       }
     }
     reference
-      "RFC 7698: Framework and Requirements for GMPLS-Based Control
-       of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-       Networks";
+      "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid 
+      Dense Wavelength Division Multiplexing (DWDM) Networks";
   }
 
   grouping flexi-grid-label-range-info {
@@ -1157,9 +1154,9 @@ module ietf-layer0-types {
           "Minimum space between slot widths. Default is 12.500
            GHz.";
         reference
-          "RFC 7698: Framework and Requirements for GMPLS-Based
-           Control of Flexi-Grid Dense Wavelength Division
-           Multiplexing (DWDM) Networks";
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of 
+          Flexi-Grid Dense Wavelength Division Multiplexing (DWDM) 
+          Networks";
       }
       leaf min-slot-width-factor {
         type uint16 {
