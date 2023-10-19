@@ -1,5 +1,54 @@
 module: ietf-layer0-types
 
+  grouping wdm-label-start-end:
+    +-- (grid-type)?
+       +--:(fixed-dwdm)
+       |  +-- dwdm-n?    l0-types:dwdm-n
+       +--:(cwdm)
+       |  +-- cwdm-n?    l0-types:cwdm-n
+       +--:(flexi-grid)
+          +-- flexi-n?   l0-types:flexi-n
+  grouping wdm-label-step:
+    +-- (l0-grid-type)?
+       +--:(fixed-dwdm)
+       |  +-- wson-dwdm-channel-spacing?    identityref
+       +--:(cwdm)
+       |  +-- wson-cwdm-channel-spacing?    identityref
+       +--:(flexi-grid)
+          x-- flexi-grid-channel-spacing?   identityref
+          +-- flexi-ncfg?                   identityref
+          +-- flexi-n-step?                 uint8
+  grouping wdm-label-hop:
+    +-- (grid-type)?
+       +--:(fixed-dwdm)
+       |  +-- (fixed-single-or-super-channel)?
+       |     +--:(single)
+       |     |  +-- dwdm-n?               l0-types:dwdm-n
+       |     +--:(super)
+       |        +-- subcarrier-dwdm-n*    l0-types:dwdm-n
+       +--:(cwdm)
+       |  +-- cwdm-n?                     l0-types:cwdm-n
+       +--:(flexi-grid)
+          +-- (single-or-super-channel)?
+             +--:(single)
+             |  +-- flexi-n?              l0-types:flexi-n
+             |  +-- flexi-m?              l0-types:flexi-m
+             x--:(super)
+             |  +-- subcarrier-flexi-n* [flexi-n]
+             |     +-- flexi-n?   l0-types:flexi-n
+             |     +-- flexi-m?   l0-types:flexi-m
+             +--:(multi)
+                +-- frequency-slots
+                   +-- frequency-slot* [flexi-n]
+                      +-- flexi-n?   l0-types:flexi-n
+                      +-- flexi-m?   l0-types:flexi-m
+  grouping wdm-label-range-info:
+    +-- grid-type?    identityref
+    +-- priority?     uint8
+    +-- flexi-grid
+       +-- slot-width-granularity?   identityref
+       +-- min-slot-width-factor?    uint16
+       +-- max-slot-width-factor?    uint16
   grouping wson-label-start-end:
     +-- (grid-type)?
        +--:(dwdm)
@@ -61,7 +110,7 @@ module: ietf-layer0-types
        |  +--ro standard-mode?         standard-mode
        |  +--ro line-coding-bitrate*   identityref
        +--:(organizational-mode)
-       |  +-- organizational-mode
+       |  +--ro organizational-mode
        |     +--ro operational-mode?          operational-mode
        |     +--ro organization-identifier?   organization-identifier
        |     +--ro line-coding-bitrate*       identityref
@@ -109,9 +158,9 @@ module: ietf-layer0-types
              +--ro tx-polarization-power-difference?
              |       decimal-2-digits
              +--ro polarization-skew?                  decimal64
-             +--ro min-central-frequency?              frequency-thz
-             +--ro max-central-frequency?              frequency-thz
-             +--ro transceiver-tunability?             frequency-ghz
+             +-- min-central-frequency?              frequency-thz
+             +-- max-central-frequency?              frequency-thz
+             +-- transceiver-tunability?             frequency-ghz
              +--ro tx-channel-power-min?               power-in-dbm
              +--ro tx-channel-power-max?               power-in-dbm
              +--ro rx-channel-power-min?               power-in-dbm
@@ -251,10 +300,14 @@ module: ietf-layer0-types
     +--ro polarization-skew?                  decimal64
   grouping common-standard-organizational-mode:
     +--ro line-coding-bitrate*   identityref
+  grouping transmitter-tuning-range:
+    +-- min-central-frequency?    frequency-thz
+    +-- max-central-frequency?    frequency-thz
+    +-- transceiver-tunability?   frequency-ghz
   grouping common-organizational-explicit-mode:
-    +--ro min-central-frequency?    frequency-thz
-    +--ro max-central-frequency?    frequency-thz
-    +--ro transceiver-tunability?   frequency-ghz
+    +-- min-central-frequency?    frequency-thz
+    +-- max-central-frequency?    frequency-thz
+    +-- transceiver-tunability?   frequency-ghz
     +--ro tx-channel-power-min?     power-in-dbm
     +--ro tx-channel-power-max?     power-in-dbm
     +--ro rx-channel-power-min?     power-in-dbm
@@ -274,4 +327,6 @@ module: ietf-layer0-types
   grouping l0-path-constraints:
     +-- gsnr-margin?   snr
   grouping l0-path-properties:
-    +--ro estimated-gsnr?   snr
+    +--ro estimated-gsnr?          snr
+    +--ro estimated-eol-gsnr?      snr
+    +--ro estimated-lowest-gsnr?   snr
