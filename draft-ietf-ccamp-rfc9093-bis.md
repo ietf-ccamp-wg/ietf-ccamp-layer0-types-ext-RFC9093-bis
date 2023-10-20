@@ -276,29 +276,29 @@ Please replace XXXX with the RFC number assigned to this document.
 
   > A YANG grouping that combines the definition of label-start/label-end information
     that was defined separately in wson-label-start-end and flexi-grid-label-start-end,
-	to support optical network scenarios that contain both fixed- and flexi-grid
-	links.
+    to support optical network scenarios that contain both fixed- and flexi-grid
+    links.
 
    wdm-label-hop:
 
   > A YANG grouping that combines the definition of label hop information
     that was defined separately in wson-label-hop and flexi-grid-label-hop,
-	to support optical network scenarios that contain both fixed- and flexi-grid
-	links.
+    to support optical network scenarios that contain both fixed- and flexi-grid
+    links.
 
    wdm-label-range-info:
 
   > A YANG grouping that combines the definition of label range information
     that was defined separately in wson-label-range-info and flexi-grid-label-range-info,
-	to support optical network scenarios that contain both fixed- and flexi-grid
-	links.
+    to support optical network scenarios that contain both fixed- and flexi-grid
+    links.
 
    wdm-label-step:
 
   > A YANG grouping that combines the definition of label step information
     defined separately in wson-label-step and flexi-grid-label-step,
-	to support optical network scenarios that contain both fixed- and flexi-grid
-	links.
+    to support optical network scenarios that contain both fixed- and flexi-grid
+    links.
 
    transceiver-capabilities:
 
