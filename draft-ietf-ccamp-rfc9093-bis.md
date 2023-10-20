@@ -272,6 +272,34 @@ Please replace XXXX with the RFC number assigned to this document.
    > A YANG grouping that defines flexi-grid label steps as defined in
      {{!I-D.ietf-teas-rfc8776-update}}.
 
+   wdm-label-start-end:
+
+  > A YANG grouping that combines the definition of label-start/label-end information
+    that was defined separately in wson-label-start-end and flexi-grid-label-start-end,
+	to support optical network scenarios that contain both fixed- and flexi-grid
+	links.
+
+   wdm-label-hop:
+
+  > A YANG grouping that combines the definition of label hop information
+    that was defined separately in wson-label-hop and flexi-grid-label-hop,
+	to support optical network scenarios that contain both fixed- and flexi-grid
+	links.
+
+   wdm-label-range-info:
+
+  > A YANG grouping that combines the definition of label range information
+    that was defined separately in wson-label-range-info and flexi-grid-label-range-info,
+	to support optical network scenarios that contain both fixed- and flexi-grid
+	links.
+
+   wdm-label-step:
+
+  > A YANG grouping that combines the definition of label step information
+    defined separately in wson-label-step and flexi-grid-label-step,
+	to support optical network scenarios that contain both fixed- and flexi-grid
+	links.
+
    transceiver-capabilities:
 
    > a YANG grouping to define the transceiver capabilities (also called
@@ -292,6 +320,12 @@ Please replace XXXX with the RFC number assigned to this document.
    impairments limits in case of transceiver explicit mode.  This
    grouping should be the same used in
    {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
+
+   transmitter-tuning-range:
+
+   > a YANG grouping that defines the transmitter tuning range, which
+   includes the minimum and maximum tuning frequency, as well as the
+   frequency tuning steps.
 
    common-organizational-explicit-mode:
 
