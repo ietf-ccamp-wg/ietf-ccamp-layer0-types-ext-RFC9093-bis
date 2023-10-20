@@ -909,7 +909,8 @@ module ietf-layer0-types {
           }
           type l0-types:dwdm-n;
           description
-            "The central frequency of DWDM.";
+            "The given value 'N' is used to determine the
+             nominal central frequency.";
           reference
             "RFC 6205: Generalized Labels for Lambda-Switch-Capable
              (LSC) Label Switching Routers";
@@ -924,7 +925,8 @@ module ietf-layer0-types {
           }
           type l0-types:cwdm-n;
           description
-            "Channel wavelength computing input.";
+            "The given value 'N' is used to determine the nominal
+             central wavelength.";
           reference
             "RFC 6205: Generalized Labels for Lambda-Switch-Capable
              (LSC) Label Switching Routers";
@@ -1013,9 +1015,10 @@ module ietf-layer0-types {
                  nominal central frequency.";
             }
           }
-          case super {
+          case multi {
             leaf-list subcarrier-dwdm-n {
               type l0-types:dwdm-n;
+              min-elements 2;
               description
                 "The given values 'N' are used to determine the
                  nominal central frequency for each subcarrier
@@ -1518,6 +1521,7 @@ module ietf-layer0-types {
       }
       case explicit-mode {
         container explicit-mode {
+          config false;
           description
             "The set of attributes for an explicit mode";
           uses common-explicit-mode;

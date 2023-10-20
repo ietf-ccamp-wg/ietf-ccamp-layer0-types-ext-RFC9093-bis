@@ -24,7 +24,7 @@ module: ietf-layer0-types
        |  +-- (fixed-single-or-super-channel)?
        |     +--:(single)
        |     |  +-- dwdm-n?               l0-types:dwdm-n
-       |     +--:(super)
+       |     +--:(multi)
        |        +-- subcarrier-dwdm-n*    l0-types:dwdm-n
        +--:(cwdm)
        |  +-- cwdm-n?                     l0-types:cwdm-n
@@ -123,7 +123,7 @@ module: ietf-layer0-types
        |     +--ro rx-channel-power-max?      power-in-dbm
        |     +--ro rx-total-power-max?        power-in-dbm
        +--:(explicit-mode)
-          +-- explicit-mode
+          +--ro explicit-mode
              +--ro line-coding-bitrate?                identityref
              +--ro bitrate?                            uint16
              +--ro max-diff-group-delay?               uint32
@@ -158,15 +158,15 @@ module: ietf-layer0-types
              +--ro tx-polarization-power-difference?
              |       decimal-2-digits
              +--ro polarization-skew?                  decimal64
-             +-- min-central-frequency?              frequency-thz
-             +-- max-central-frequency?              frequency-thz
-             +-- transceiver-tunability?             frequency-ghz
+             +--ro min-central-frequency?              frequency-thz
+             +--ro max-central-frequency?              frequency-thz
+             +--ro transceiver-tunability?             frequency-ghz
              +--ro tx-channel-power-min?               power-in-dbm
              +--ro tx-channel-power-max?               power-in-dbm
              +--ro rx-channel-power-min?               power-in-dbm
              +--ro rx-channel-power-max?               power-in-dbm
              +--ro rx-total-power-max?                 power-in-dbm
-             +-- compatible-modes
+             +--ro compatible-modes
   grouping transceiver-capabilities:
     +-- supported-modes!
        +--ro supported-mode* [mode-id]
