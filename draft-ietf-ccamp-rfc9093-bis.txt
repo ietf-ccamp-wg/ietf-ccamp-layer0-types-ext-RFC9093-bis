@@ -6,7 +6,7 @@ CCAMP Working Group                                      S. Belotti, Ed.
 Internet-Draft                                                     Nokia
 Obsoletes: 9093 (if approved)                               I. Busi, Ed.
 Intended status: Standards Track                                  Huawei
-Expires: 23 April 2024                                    D. Beller, Ed.
+Expires: 24 April 2024                                    D. Beller, Ed.
                                                                    Nokia
                                                                 H. Zheng
                                                                   Huawei
@@ -16,7 +16,7 @@ Expires: 23 April 2024                                    D. Beller, Ed.
                                                   Futurewei Technologies
                                                                  D. King
                                                  University of Lancaster
-                                                         21 October 2023
+                                                         22 October 2023
 
 
                   A YANG Data Model for Layer 0 Types
@@ -48,12 +48,12 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 April 2024.
+   This Internet-Draft will expire on 24 April 2024.
 
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 1]
+Belotti, et al.           Expires 24 April 2024                 [Page 1]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 2]
+Belotti, et al.           Expires 24 April 2024                 [Page 2]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -165,7 +165,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 3]
+Belotti, et al.           Expires 24 April 2024                 [Page 3]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -221,7 +221,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 4]
+Belotti, et al.           Expires 24 April 2024                 [Page 4]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -277,7 +277,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 5]
+Belotti, et al.           Expires 24 April 2024                 [Page 5]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -333,7 +333,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 6]
+Belotti, et al.           Expires 24 April 2024                 [Page 6]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -389,7 +389,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 7]
+Belotti, et al.           Expires 24 April 2024                 [Page 7]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -445,7 +445,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 8]
+Belotti, et al.           Expires 24 April 2024                 [Page 8]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -501,7 +501,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                 [Page 9]
+Belotti, et al.           Expires 24 April 2024                 [Page 9]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -557,7 +557,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 10]
+Belotti, et al.           Expires 24 April 2024                [Page 10]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -613,7 +613,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 11]
+Belotti, et al.           Expires 24 April 2024                [Page 11]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -669,7 +669,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 12]
+Belotti, et al.           Expires 24 April 2024                [Page 12]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -725,7 +725,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 13]
+Belotti, et al.           Expires 24 April 2024                [Page 13]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -781,7 +781,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 14]
+Belotti, et al.           Expires 24 April 2024                [Page 14]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -837,7 +837,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 15]
+Belotti, et al.           Expires 24 April 2024                [Page 15]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -893,7 +893,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 16]
+Belotti, et al.           Expires 24 April 2024                [Page 16]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -949,7 +949,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 17]
+Belotti, et al.           Expires 24 April 2024                [Page 17]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1005,7 +1005,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 18]
+Belotti, et al.           Expires 24 April 2024                [Page 18]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1061,7 +1061,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 19]
+Belotti, et al.           Expires 24 April 2024                [Page 19]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1117,7 +1117,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 20]
+Belotti, et al.           Expires 24 April 2024                [Page 20]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1173,7 +1173,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 21]
+Belotti, et al.           Expires 24 April 2024                [Page 21]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1229,7 +1229,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 22]
+Belotti, et al.           Expires 24 April 2024                [Page 22]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1285,7 +1285,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 23]
+Belotti, et al.           Expires 24 April 2024                [Page 23]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1341,7 +1341,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 24]
+Belotti, et al.           Expires 24 April 2024                [Page 24]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1397,7 +1397,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 25]
+Belotti, et al.           Expires 24 April 2024                [Page 25]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1453,7 +1453,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 26]
+Belotti, et al.           Expires 24 April 2024                [Page 26]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1509,7 +1509,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 27]
+Belotti, et al.           Expires 24 April 2024                [Page 27]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1565,7 +1565,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 28]
+Belotti, et al.           Expires 24 April 2024                [Page 28]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1621,7 +1621,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 29]
+Belotti, et al.           Expires 24 April 2024                [Page 29]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1677,7 +1677,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 30]
+Belotti, et al.           Expires 24 April 2024                [Page 30]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1733,7 +1733,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 31]
+Belotti, et al.           Expires 24 April 2024                [Page 31]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1789,7 +1789,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 32]
+Belotti, et al.           Expires 24 April 2024                [Page 32]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1845,7 +1845,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 33]
+Belotti, et al.           Expires 24 April 2024                [Page 33]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1901,7 +1901,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 34]
+Belotti, et al.           Expires 24 April 2024                [Page 34]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -1957,7 +1957,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 35]
+Belotti, et al.           Expires 24 April 2024                [Page 35]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2013,7 +2013,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 36]
+Belotti, et al.           Expires 24 April 2024                [Page 36]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2069,7 +2069,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 37]
+Belotti, et al.           Expires 24 April 2024                [Page 37]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2125,7 +2125,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 38]
+Belotti, et al.           Expires 24 April 2024                [Page 38]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2181,7 +2181,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 39]
+Belotti, et al.           Expires 24 April 2024                [Page 39]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2237,7 +2237,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 40]
+Belotti, et al.           Expires 24 April 2024                [Page 40]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2293,7 +2293,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 41]
+Belotti, et al.           Expires 24 April 2024                [Page 41]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2349,7 +2349,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 42]
+Belotti, et al.           Expires 24 April 2024                [Page 42]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2405,7 +2405,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 43]
+Belotti, et al.           Expires 24 April 2024                [Page 43]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2461,7 +2461,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 44]
+Belotti, et al.           Expires 24 April 2024                [Page 44]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2517,7 +2517,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 45]
+Belotti, et al.           Expires 24 April 2024                [Page 45]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2573,7 +2573,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 46]
+Belotti, et al.           Expires 24 April 2024                [Page 46]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2629,7 +2629,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 47]
+Belotti, et al.           Expires 24 April 2024                [Page 47]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2685,7 +2685,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 48]
+Belotti, et al.           Expires 24 April 2024                [Page 48]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2741,7 +2741,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 49]
+Belotti, et al.           Expires 24 April 2024                [Page 49]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2797,7 +2797,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 50]
+Belotti, et al.           Expires 24 April 2024                [Page 50]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2853,7 +2853,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 51]
+Belotti, et al.           Expires 24 April 2024                [Page 51]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2909,7 +2909,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 52]
+Belotti, et al.           Expires 24 April 2024                [Page 52]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -2965,7 +2965,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 53]
+Belotti, et al.           Expires 24 April 2024                [Page 53]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -3021,7 +3021,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 54]
+Belotti, et al.           Expires 24 April 2024                [Page 54]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -3077,7 +3077,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 55]
+Belotti, et al.           Expires 24 April 2024                [Page 55]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -3133,7 +3133,7 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 56]
+Belotti, et al.           Expires 24 April 2024                [Page 56]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -3189,7 +3189,7 @@ Contributors
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 57]
+Belotti, et al.           Expires 24 April 2024                [Page 57]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -3245,7 +3245,7 @@ Authors' Addresses
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 58]
+Belotti, et al.           Expires 24 April 2024                [Page 58]
 
 Internet-Draft           Yang for Layer 0 Types             October 2023
 
@@ -3301,4 +3301,4 @@ Internet-Draft           Yang for Layer 0 Types             October 2023
 
 
 
-Belotti, et al.           Expires 23 April 2024                [Page 59]
+Belotti, et al.           Expires 24 April 2024                [Page 59]
