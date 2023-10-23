@@ -1055,7 +1055,8 @@ module ietf-layer0-types {
       "WDM label range related information";
     uses l0-label-range-info;
     container flexi-grid {
-      when '../grid-type = "flexi-grid-dwdm"' {
+      when "derived-from-or-self(../grid-type,
+	        \"flexi-grid-dwdm\")" {
         description
           "Applicable only when the grid type is flexi-grid-dwdm.";
       }

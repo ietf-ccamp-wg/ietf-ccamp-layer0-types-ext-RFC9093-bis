@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-06
+docname: draft-ietf-ccamp-rfc9093-bis-07
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group
@@ -165,9 +165,7 @@ informative:
 RFC Editor Note:
 Please replace XXXX with the RFC number assigned to this document.
 
-# Layer 0 Types Overview
-
-## Layer 0 Types Module Contents
+# Layer 0 Types Module Contents
 
    This document defines a YANG module for common Layer 0 types, ietf-
    layer0-types.  This module is used for WSON and flexi-grid DWDM
@@ -339,8 +337,6 @@ Please replace XXXX with the RFC number assigned to this document.
    optional penalty associated with a given accumulated CD and PMD.
    This list of triplet cd, pmd, penalty can be used to sample the
    function penalty = f(CD, PMD).
-
-## WSON Label and Label Range
 
 {: #yang-code}
 
