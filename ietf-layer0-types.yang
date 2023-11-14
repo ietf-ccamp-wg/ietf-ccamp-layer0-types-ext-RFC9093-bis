@@ -836,6 +836,23 @@ module ietf-layer0-types {
       value when the loss is not known.";
   }
 
+  typedef ratio-in-db {
+    type decimal-2-digit;
+    units "dB";
+    description
+      "The power difference in dB.";
+  }
+
+  typedef ratio-in-db-or-null {
+    type union {
+      type ratio-in-db;
+      type empty;
+    }
+    description
+      "The power difference in dB, when it is known or an empty 
+      value when the difference is not known.";
+  }
+
   typedef power-in-dbm {
     type decimal-2-digits;
     units "dBm";
@@ -871,22 +888,25 @@ module ietf-layer0-types {
       or an empty value when the value is not known.";
   }
 
-  typedef decimal-16-digits {
+  typedef power-spectral-density {
     type decimal64 {
       fraction-digits 16;
     }
+    units "W/Hz";
     description
-      "A decimal64 value with sixteen digits.";
+      "The power spectral density (PSD).
+      
+      Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
   }
 
-  typedef decimal-16-digits-or-null {
+  typedef power-spectral-density-or-null {
     type union {
-      type decimal-5-digits;
+      type power-spectral-density;
       type empty;
     }
     description
-      "A decimal64 value with sixteen digits, when the value is 
-      known or an empty value when the value is not known.";
+      "The power spectral density (PSD), when it is known or an
+      empty value when the PSD is not known.";
   }
 
 /*
