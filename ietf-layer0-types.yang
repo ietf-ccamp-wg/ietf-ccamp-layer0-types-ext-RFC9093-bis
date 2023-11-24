@@ -837,7 +837,7 @@ module ietf-layer0-types {
   }
 
   typedef ratio-in-db {
-    type decimal-2-digit;
+    type decimal-2-digits;
     units "dB";
     description
       "The power difference in dB.";
