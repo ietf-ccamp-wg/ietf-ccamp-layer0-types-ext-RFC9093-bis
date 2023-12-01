@@ -51,12 +51,13 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-10-04 {
+  revision 2023-12-01 {
     description
       "To be updated";
     reference
       "RFC XXXX: A YANG Data Model for Layer 0 Types";
   }
+
   revision 2021-08-13 {
     description
       "Initial version";
@@ -780,7 +781,7 @@ module ietf-layer0-types {
       "ITU-T based fiber-types";
   }
 
-  typedef decimal-2-digits {
+  typedef decimal-2 {
     type decimal64 {
       fraction-digits 2;
     }
@@ -788,9 +789,9 @@ module ietf-layer0-types {
       "A decimal64 value with two digits.";
   }
 
-  typedef decimal-2-digits-or-null {
+  typedef decimal-2-or-null {
     type union {
-      type decimal-2-digits;
+      type decimal-2;
       type empty;
     }
     description
@@ -798,8 +799,8 @@ module ietf-layer0-types {
       an empty value when the value is not known.";
   }
 
-  typedef gain-in-db {
-    type decimal-2-digits {
+  typedef power-gain {
+    type decimal-2 {
       range "0..max";
     }
     units "dB";
@@ -807,9 +808,9 @@ module ietf-layer0-types {
       "The gain in dB.";
   }
 
-  typedef gain-in-db-or-null {
+  typedef power-gain-or-null {
     type union {
-      type gain-in-db;
+      type power-gain;
       type empty;
     }
     description
@@ -817,8 +818,8 @@ module ietf-layer0-types {
       value when the power gain/loss is not known.";
   }
 
-  typedef loss-in-db {
-    type decimal-2-digits {
+  typedef power-loss {
+    type decimal-2 {
       range "0..max";
     }
     units "dB";
@@ -826,9 +827,9 @@ module ietf-layer0-types {
       "The power attenuation in dB.";
   }
 
-  typedef loss-in-db-or-null {
+  typedef power-loss-or-null {
     type union {
-      type loss-in-db;
+      type power-loss;
       type empty;
     }
     description
@@ -836,16 +837,16 @@ module ietf-layer0-types {
       value when the loss is not known.";
   }
 
-  typedef ratio-in-db {
-    type decimal-2-digits;
+  typedef power-ratio {
+    type decimal-2;
     units "dB";
     description
       "The power difference in dB.";
   }
 
-  typedef ratio-in-db-or-null {
+  typedef power-ratio-or-null {
     type union {
-      type ratio-in-db;
+      type power-ratio;
       type empty;
     }
     description
@@ -853,16 +854,16 @@ module ietf-layer0-types {
       value when the difference is not known.";
   }
 
-  typedef power-in-dbm {
-    type decimal-2-digits;
+  typedef power-dbm {
+    type decimal-2;
     units "dBm";
     description
       "The power in dBm.";
   }
 
-  typedef power-in-dbm-or-null {
+  typedef power-dbm-or-null {
     type union {
-      type power-in-dbm;
+      type power-dbm;
       type empty;
     }
     description
@@ -870,7 +871,7 @@ module ietf-layer0-types {
       power is not known.";
   }
 
-  typedef decimal-5-digits {
+  typedef decimal-5 {
     type decimal64 {
       fraction-digits 5;
     }
@@ -878,9 +879,9 @@ module ietf-layer0-types {
       "A decimal64 value with five digits.";
   }
 
-  typedef decimal-5-digits-or-null {
+  typedef decimal-5-or-null {
     type union {
-      type decimal-5-digits;
+      type decimal-5;
       type empty;
     }
     description
@@ -888,7 +889,7 @@ module ietf-layer0-types {
       or an empty value when the value is not known.";
   }
 
-  typedef power-spectral-density {
+  typedef psd {
     type decimal64 {
       fraction-digits 16;
     }
@@ -899,9 +900,9 @@ module ietf-layer0-types {
       Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
   }
 
-  typedef power-spectral-density-or-null {
+  typedef psd-or-null {
     type union {
-      type power-spectral-density;
+      type psd;
       type empty;
     }
     description
@@ -1792,7 +1793,7 @@ module ietf-layer0-types {
       uses penalty-value;
     }
     leaf max-polarization-dependant-loss {
-      type loss-in-db-or-null;
+      type power-loss-or-null;
       config false;
       mandatory true;
       description
@@ -1808,7 +1809,7 @@ module ietf-layer0-types {
         This list of pair pdl and penalty values can be used to
         sample the function PDL = f(penalty).";
       leaf pdl-value {
-        type loss-in-db-or-null;
+        type power-loss-or-null;
         config false;
         mandatory true;
         description
@@ -1837,7 +1838,7 @@ module ietf-layer0-types {
         level of bit-errors post-FEC needs to be expected";
     }
     leaf rx-ref-channel-power {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description
         "The channel power used as reference for defining penalties 
@@ -1851,7 +1852,7 @@ module ietf-layer0-types {
           This list of pair power and penalty can be used to
           sample the function penalty = f(rx-channel-power).";
       leaf rx-channel-power-value {
-        type power-in-dbm-or-null;
+        type power-dbm-or-null;
         units "dBm";
         config false;
         mandatory true;
@@ -1968,7 +1969,7 @@ module ietf-layer0-types {
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
     leaf tx-polarization-power-difference {
-      type decimal-2-digits;
+      type decimal-2;
       units "dB";
       config false;
       description
@@ -2050,12 +2051,12 @@ module ietf-layer0-types {
 /* supported transmitter power range [p_tx-min, p_tx_max] */
 
     leaf tx-channel-power-min {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The minimum output power of this interface";
     }
     leaf tx-channel-power-max {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The maximum output power of this interface";
     } 
@@ -2063,18 +2064,18 @@ module ietf-layer0-types {
 /* supported receiver power range [p_rx-min, p_rx_max] */ 
 
      leaf rx-channel-power-min {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The minimum input power of this interface";
     }
     leaf rx-channel-power-max {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The maximum input power of this interface";
     }
 
     leaf rx-total-power-max {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "Maximum rx optical power for
       all the channels";
@@ -2101,7 +2102,7 @@ module ietf-layer0-types {
         "ITU-T G.698.2 section 7.1.2";
     }
     leaf tx-channel-power {
-      type power-in-dbm-or-null;
+      type power-dbm-or-null;
       description
         "The current channel transmit power, when the value is 
         known or an empty value when the value is not known.
@@ -2110,14 +2111,14 @@ module ietf-layer0-types {
         configured.";
     }
     leaf rx-channel-power {
-      type power-in-dbm-or-null;
+      type power-dbm-or-null;
       config false;
       description
         "The current channel received power, when the value is 
         known or an empty value when the value is not known.";
     }
     leaf rx-total-power {
-      type power-in-dbm-or-null;
+      type power-dbm-or-null;
       config false;
       description
         "The current total received power, when the value is known 
