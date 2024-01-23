@@ -2212,7 +2212,7 @@ module ietf-layer0-types {
     description
       "Common attribute for Layer 0 path constraints to be used by
       Layer 0 computation.";
-    leaf gsnr-margin {
+    leaf gsnr-extra-margin {
       type snr {
         range 0..max;
       }
