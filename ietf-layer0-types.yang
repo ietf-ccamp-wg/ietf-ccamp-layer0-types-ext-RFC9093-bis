@@ -2130,11 +2130,10 @@ module ietf-layer0-types {
       type identityref {
         base line-coding;
       }
-      config false;
       description
         "Bit rate/line coding of the optical tributary signal.
         
-        Reporting this attribute is optional when the configured 
+        Support of this attribute is optional when the configured 
         mode supports only one bit rate/line coding.";
       reference 
         "ITU-T G.698.2 section 7.1.2";
