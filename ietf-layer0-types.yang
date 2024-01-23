@@ -27,7 +27,7 @@ module ietf-layer0-types {
      Division Multiplexing) and DWDM (Dense Wavelength Division
      Multiplexing)) and flexi-grid optical networks.
 
-     Copyright (c) 2023 IETF Trust and the persons identified
+     Copyright (c) 2024 IETF Trust and the persons identified
      as authors of the code.  All rights reserved.
 
      Redistribution and use in source and binary forms, with
@@ -51,12 +51,13 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-10-04 {
+  revision 2024-01-23 {
     description
       "To be updated";
     reference
       "RFC XXXX: A YANG Data Model for Layer 0 Types";
   }
+
   revision 2021-08-13 {
     description
       "Initial version";
@@ -130,6 +131,12 @@ module ietf-layer0-types {
       base cwdm-ch-spc-type;
       description
         "20nm channel spacing";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+        Label Switching Routers,
+        
+        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
+        CWDM wavelength grid";
     }
 
   identity dwdm-ch-spc-type {
@@ -147,24 +154,48 @@ module ietf-layer0-types {
       base dwdm-ch-spc-type;
       description
         "100 GHz channel spacing";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+        Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
     }
 
     identity dwdm-50ghz {
       base dwdm-ch-spc-type;
       description
         "50 GHz channel spacing";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+        Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
     }
 
     identity dwdm-25ghz {
       base dwdm-ch-spc-type;
       description
         "25 GHz channel spacing";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+        Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
     }
 
     identity dwdm-12p5ghz {
       base dwdm-ch-spc-type;
       description
         "12.5 GHz channel spacing";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+        Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
     }
 
   identity flexi-ch-spc-type {
@@ -196,17 +227,35 @@ module ietf-layer0-types {
       base flexi-ncfg-type;
       description
         "6.25 GHz Nominal Central Frequency Granularity (NCFG)";
+      reference
+        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+        Switch Capable (LSC) Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
     }
 
   identity flexi-slot-width-granularity {
     description
       "Flexi-grid slot width granularity";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+      Switch Capable (LSC) Label Switching Routers,
+
+      ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+      DWDM frequency grid";
   }
 
     identity flexi-swg-12p5ghz {
       base flexi-slot-width-granularity;
       description
         "12.5 GHz slot width granularity";
+      reference
+        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+        Switch Capable (LSC) Label Switching Routers,
+
+        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+        DWDM frequency grid";
     }
 
   identity modulation {
@@ -437,6 +486,9 @@ module ietf-layer0-types {
         "All the available wavelengths are numbered,
         and this WA (Wavelength Assignment) method chooses
         the available wavelength with the lowest index";
+      reference
+        "RFC 7689: Signaling Extensions for Wavelength Switched 
+        Optical Networks";
     }
 
     identity random-wavelength-assignment {
@@ -444,6 +496,9 @@ module ietf-layer0-types {
       description
         "This WA method chooses an available
         wavelength randomly";
+      reference
+        "RFC 7689: Signaling Extensions for Wavelength Switched 
+        Optical Networks";
     }
 
     identity least-loaded-wavelength-assignment {
@@ -452,6 +507,9 @@ module ietf-layer0-types {
         "This WA method selects the wavelength that
         has the largest residual capacity on the most loaded
         link along the route (in multi-fiber networks)";
+      reference
+        "RFC 7689: Signaling Extensions for Wavelength Switched 
+        Optical Networks";
     }
 
   identity term-type {
@@ -724,6 +782,7 @@ module ietf-layer0-types {
     description
       "The DWDM frequency in THz, e.g., 193.112500000";
   }
+
   typedef frequency-ghz {
     type decimal64 {
       fraction-digits 6;
@@ -757,10 +816,12 @@ module ietf-layer0-types {
   typedef fiber-type {
     type enumeration {
       enum G.652 {
-      description "G.652 Standard Singlemode Fiber";                 
+        description
+          "G.652 Standard Singlemode Fiber";                 
       }
       enum G.654 {
-        description "G.654 Cutoff Shifted Fiber";
+        description
+          "G.654 Cutoff Shifted Fiber";
       }
       enum G.653 {
         description "G.653 Dispersion Shifted Fiber";
@@ -769,18 +830,19 @@ module ietf-layer0-types {
         description "G.655 Non-Zero Dispersion Shifted Fiber";
       }
       enum G.656 {
-        description "G.656 Non-Zero Dispersion for Wideband
-               Optical Transport";
+        description
+          "G.656 Non-Zero Dispersion for Wideband Optical Transport";
       }
       enum G.657 {
-        description "G.657 Bend-Insensitive Fiber";
+        description
+          "G.657 Bend-Insensitive Fiber";
       }
     }
     description
       "ITU-T based fiber-types";
   }
 
-  typedef decimal-2-digits {
+  typedef decimal-2 {
     type decimal64 {
       fraction-digits 2;
     }
@@ -788,9 +850,9 @@ module ietf-layer0-types {
       "A decimal64 value with two digits.";
   }
 
-  typedef decimal-2-digits-or-null {
+  typedef decimal-2-or-null {
     type union {
-      type decimal-2-digits;
+      type decimal-2;
       type empty;
     }
     description
@@ -798,8 +860,8 @@ module ietf-layer0-types {
       an empty value when the value is not known.";
   }
 
-  typedef gain-in-db {
-    type decimal-2-digits {
+  typedef power-gain {
+    type decimal-2 {
       range "0..max";
     }
     units "dB";
@@ -807,9 +869,9 @@ module ietf-layer0-types {
       "The gain in dB.";
   }
 
-  typedef gain-in-db-or-null {
+  typedef power-gain-or-null {
     type union {
-      type gain-in-db;
+      type power-gain;
       type empty;
     }
     description
@@ -817,8 +879,8 @@ module ietf-layer0-types {
       value when the power gain/loss is not known.";
   }
 
-  typedef loss-in-db {
-    type decimal-2-digits {
+  typedef power-loss {
+    type decimal-2 {
       range "0..max";
     }
     units "dB";
@@ -826,9 +888,9 @@ module ietf-layer0-types {
       "The power attenuation in dB.";
   }
 
-  typedef loss-in-db-or-null {
+  typedef power-loss-or-null {
     type union {
-      type loss-in-db;
+      type power-loss;
       type empty;
     }
     description
@@ -836,16 +898,33 @@ module ietf-layer0-types {
       value when the loss is not known.";
   }
 
-  typedef power-in-dbm {
-    type decimal-2-digits;
+  typedef power-ratio {
+    type decimal-2;
+    units "dB";
+    description
+      "The power difference in dB.";
+  }
+
+  typedef power-ratio-or-null {
+    type union {
+      type power-ratio;
+      type empty;
+    }
+    description
+      "The power difference in dB, when it is known or an empty 
+      value when the difference is not known.";
+  }
+
+  typedef power-dbm {
+    type decimal-2;
     units "dBm";
     description
       "The power in dBm.";
   }
 
-  typedef power-in-dbm-or-null {
+  typedef power-dbm-or-null {
     type union {
-      type power-in-dbm;
+      type power-dbm;
       type empty;
     }
     description
@@ -853,7 +932,7 @@ module ietf-layer0-types {
       power is not known.";
   }
 
-  typedef decimal-5-digits {
+  typedef decimal-5 {
     type decimal64 {
       fraction-digits 5;
     }
@@ -861,9 +940,9 @@ module ietf-layer0-types {
       "A decimal64 value with five digits.";
   }
 
-  typedef decimal-5-digits-or-null {
+  typedef decimal-5-or-null {
     type union {
-      type decimal-5-digits;
+      type decimal-5;
       type empty;
     }
     description
@@ -871,27 +950,31 @@ module ietf-layer0-types {
       or an empty value when the value is not known.";
   }
 
-  typedef decimal-16-digits {
+  typedef psd {
     type decimal64 {
       fraction-digits 16;
     }
+    units "W/Hz";
     description
-      "A decimal64 value with sixteen digits.";
+      "The power spectral density (PSD).
+      
+      Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
   }
 
-  typedef decimal-16-digits-or-null {
+  typedef psd-or-null {
     type union {
-      type decimal-5-digits;
+      type psd;
       type empty;
     }
     description
-      "A decimal64 value with sixteen digits, when the value is 
-      known or an empty value when the value is not known.";
+      "The power spectral density (PSD), when it is known or an
+      empty value when the PSD is not known.";
   }
 
 /*
  * Groupings
  */
+
   grouping wdm-label-start-end {
     description
       "The WDM label-start or label-end used to specify DWDM and
@@ -1024,8 +1107,8 @@ module ietf-layer0-types {
                  nominal central frequency for each subcarrier
                  channel.";
               reference
-                "ITU-T Recommendation G.694.1: Spectral grids for
-                 WDM applications: DWDM frequency grid";
+                "ITU-T G.694.1 (10/2020): Spectral grids for WDM
+                applications: DWDM frequency grid";
             }
           }
         }
@@ -1056,7 +1139,7 @@ module ietf-layer0-types {
     uses l0-label-range-info;
     container flexi-grid {
       when "derived-from-or-self(../grid-type,
-	        \"flexi-grid-dwdm\")" {
+          \"flexi-grid-dwdm\")" {
         description
           "Applicable only when the grid type is flexi-grid-dwdm.";
       }
@@ -1092,7 +1175,6 @@ module ietf-layer0-types {
            Grid Dense Wavelength Division Multiplexing (DWDM)
            Networks";
       }
-
       leaf max-slot-width-factor {
         type uint16 {
           range "1..max";
@@ -1190,8 +1272,8 @@ module ietf-layer0-types {
                  nominal central frequency for each subcarrier
                  channel.";
               reference
-                "ITU-T Recommendation G.694.1: Spectral grids for
-                 WDM applications: DWDM frequency grid";
+                "ITU-T G.694.1 (10/2020): Spectral grids for WDM
+                applications: DWDM frequency grid";
             }
           }
         }
@@ -1403,7 +1485,6 @@ module ietf-layer0-types {
            Grid Dense Wavelength Division Multiplexing (DWDM)
            Networks";
       }
-
       leaf max-slot-width-factor {
         type uint16 {
           range "1..max";
@@ -1480,19 +1561,6 @@ module ietf-layer0-types {
     }
   }
 
- /* supported inverse multiplexing capabilities such as
-    max. OTSiG:OTSi cardinality
-    It is a transponder attribute not transceiver
-  */
-
- /*    leaf multiplexing-cap {
-      type uint32;
-    config false;
-      description "supported inverse multiplexing capabilities
-       such as max. OTSiG:OTSi cardinality";
-    }
-  */
-
   grouping transceiver-mode {
     description
       "This grouping is intended to be used for reporting the
@@ -1509,6 +1577,7 @@ module ietf-layer0-types {
       case G.698.2 {
         uses standard-mode;
         uses common-standard-organizational-mode;
+        uses common-all-modes;
       }
       case organizational-mode {
         container organizational-mode {
@@ -1517,7 +1586,7 @@ module ietf-layer0-types {
             "The set of attributes for an organizational mode";
           uses organizational-mode;
           uses common-standard-organizational-mode;
-          uses common-organizational-explicit-mode;
+          uses common-all-modes;
         }  // container organizational-mode
       }
       case explicit-mode {
@@ -1526,7 +1595,7 @@ module ietf-layer0-types {
           description
             "The set of attributes for an explicit mode";
           uses common-explicit-mode;
-          uses common-organizational-explicit-mode;
+          uses common-all-modes;
           container compatible-modes {
             description
               "Container for all the standard and organizational
@@ -1576,7 +1645,7 @@ module ietf-layer0-types {
                   + "standard-mode" {
                 description
                   "The pointer is only for application codes
-                    supported by transceiver."; 
+                  supported by transceiver."; 
               }
               description
                 "List of pointers to the application codes
@@ -1662,17 +1731,17 @@ module ietf-layer0-types {
     }
   }
 
-/* 
- * This grouping represent the list of attributes related to
- * optical impairment limits for explicit mode
- * (min OSNR, max PMD, max CD, max PDL, Q-factor limit, etc.)
- * In case of standard and operational mode the attributes are
- * implicit
- */
-
   grouping common-explicit-mode {
-    description "Attributes capabilities related to 
-    explicit mode of an optical transceiver";
+    description
+      "Attributes capabilities related to explicit transceiver's
+      mode.
+      
+      This grouping also contains the list of attributes related to
+      optical impairment limits for explicit mode (min OSNR, max PMD,
+      max CD, max PDL, Q-factor limit, etc.).
+
+      In case of standard and operational mode the attributes are
+      implicit.";
     leaf line-coding-bitrate {
       type identityref {
         base line-coding;
@@ -1772,7 +1841,7 @@ module ietf-layer0-types {
       uses penalty-value;
     }
     leaf max-polarization-dependant-loss {
-      type loss-in-db-or-null;
+      type power-loss-or-null;
       config false;
       mandatory true;
       description
@@ -1788,7 +1857,7 @@ module ietf-layer0-types {
         This list of pair pdl and penalty values can be used to
         sample the function PDL = f(penalty).";
       leaf pdl-value {
-        type loss-in-db-or-null;
+        type power-loss-or-null;
         config false;
         mandatory true;
         description
@@ -1817,7 +1886,7 @@ module ietf-layer0-types {
         level of bit-errors post-FEC needs to be expected";
     }
     leaf rx-ref-channel-power {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description
         "The channel power used as reference for defining penalties 
@@ -1831,7 +1900,7 @@ module ietf-layer0-types {
           This list of pair power and penalty can be used to
           sample the function penalty = f(rx-channel-power).";
       leaf rx-channel-power-value {
-        type power-in-dbm-or-null;
+        type power-dbm-or-null;
         units "dBm";
         config false;
         mandatory true;
@@ -1948,8 +2017,7 @@ module ietf-layer0-types {
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
     leaf tx-polarization-power-difference {
-      type decimal-2-digits;
-      units "dB";
+      type power-ratio;
       config false;
       description
         "The transmitter polarization dependent power difference 
@@ -1975,7 +2043,7 @@ module ietf-layer0-types {
   grouping common-standard-organizational-mode {
     description
       "Common attributes used by standard and organizational 
-      modes.";
+      transceiver's modes.";
     
     leaf-list line-coding-bitrate {
       type identityref {
@@ -2018,54 +2086,45 @@ module ietf-layer0-types {
     } 
   } // grouping transmitter-tuning-range
 
-  grouping common-organizational-explicit-mode {
-    description "Common capability attributes limit range 
-    in case of operational mode and explicit mode. 
-    These attributes are supported separately in 
-    case of application codes";
+  grouping common-all-modes {
+    description
+      "Common attributes used by all transceiver's modes.";
 
-/* transmitter tuning range (f_tx-min, f_tx-max) */
     uses transmitter-tuning-range;
-
-/* supported transmitter power range [p_tx-min, p_tx_max] */
-
     leaf tx-channel-power-min {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The minimum output power of this interface";
     }
     leaf tx-channel-power-max {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The maximum output power of this interface";
     } 
-
-/* supported receiver power range [p_rx-min, p_rx_max] */ 
-
-     leaf rx-channel-power-min {
-      type power-in-dbm;
+    leaf rx-channel-power-min {
+      type power-dbm;
       config false;
       description "The minimum input power of this interface";
     }
     leaf rx-channel-power-max {
-      type power-in-dbm;
+      type power-dbm;
       config false;
       description "The maximum input power of this interface";
     }
-
     leaf rx-total-power-max {
-      type power-in-dbm;
+      type power-dbm;
       config false;
-      description "Maximum rx optical power for
-      all the channels";
+      description
+        "Maximum rx optical power for all the channels.
+        
+        It is applicable only to multi-channel modes.";
     }
-  } // grouping common-organizational-explicit-mode
-
-/* This grouping represent the list of configured parameters */
-/* values independent of operational mode */
+  } // grouping common-all-modes
 
   grouping common-transceiver-configured-param {
-    description "Capability of an optical transceiver";
+    description
+      "The configured parameters of an optical transceiver,
+      that supplement the configured mode.";
 
     leaf line-coding-bitrate {
       type identityref {
@@ -2081,7 +2140,7 @@ module ietf-layer0-types {
         "ITU-T G.698.2 section 7.1.2";
     }
     leaf tx-channel-power {
-      type power-in-dbm-or-null;
+      type power-dbm-or-null;
       description
         "The current channel transmit power, when the value is 
         known or an empty value when the value is not known.
@@ -2090,14 +2149,14 @@ module ietf-layer0-types {
         configured.";
     }
     leaf rx-channel-power {
-      type power-in-dbm-or-null;
+      type power-dbm-or-null;
       config false;
       description
         "The current channel received power, when the value is 
         known or an empty value when the value is not known.";
     }
     leaf rx-total-power {
-      type power-in-dbm-or-null;
+      type power-dbm-or-null;
       config false;
       description
         "The current total received power, when the value is known 

@@ -338,6 +338,69 @@ Please replace XXXX with the RFC number assigned to this document.
    This list of triplet cd, pmd, penalty can be used to sample the
    function penalty = f(CD, PMD).
 
+## WDM Label and Label Range
+
+As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slot assigned to a WDM LSP on a given WDM Link (which models an OMS MCG).
+
+The same WDM label shall be assigned to the same WDM LSP on all the WDM Links on a regen-free LSP path or path segment.
+
+A frequency slot is defined in {{ITU-T_G.694.1}} as a contiguous frequency range characterized by its nominal central frequency and slot width. The frequency range allocated to a frequency slot is unavailable to other frequency slots.
+
+The definition of the frequency slot depends on the WDM grid type:
+
+* In case of CWDM fixed-grid, defined in {{ITU-T_G.694.2}}, the frequency slot is defined by a fixed CWDM channel spacing (cwdm-ch-spc-type) and by the nominal central wavelength which is computed as described in {{?RFC6205}}:
+
+~~~~
+      lambda = 1471 nm + N x channel spacing (measured in nm)
+~~~~
+
+* In case of DWDM fixed-grid, defined in {{ITU-T_G.694.1}}, the frequency slot is defined by a fixed DWDM channel spacing (dwdm-ch-spc-type) and by the nominal central frequency, which is computed as described in {{?RFC6205}}:
+
+~~~~
+      f = 193100.000 GHz + N x channel spacing (measured in GHz)
+~~~~
+
+* In case of DWDM flexible-grid, defined in {{ITU-T_G.694.1}}, the frequency slot is defined by the slot width and by the nominal central frequency, which are computed, based on the slot width granularity (SWG, fixed at 12.5GHz in {{ITU-T_G.694.1}}), and of the nominal central frequency granularity (NCFG, fixed at 6.25GHz in {{ITU-T_G.694.1}}) respectively, as described in {{?RFC7699}}:
+
+~~~~
+      SW = M x SWG (measured in GHz)
+      f = 193100.000 GHz + N x NCFG (measured in GHz)
+~~~~
+
+The definition of the channel spacing, NCFG and SWG in the YANG model are defined to support modelling of vendor-specific values (e.g., finer vendor-specific granularity for NCFG and SWG).
+
+The WDM Label Range represents the frequency slots that are available for WDM LSPs to be set up over a given WDM Link.
+
+The WDM Label Range is defined by the label-restriction list, defined in {{!I-D.ietf-teas-rfc8776-update}}, which, for WDM, should be augmented using the l0-label-range-info grouping (for WSON only models) or the flexi-grid-label-range-info grouping (for DWDM flexible-grid only models) or the wdm-label-range-info grouping (for models that supports both WSON and DWDM flexible-grid).
+
+Each entry in the label-restriction list represents either the range of the available central wavelength values (in case of CWDM fixed-grid) or the range of the available nominal central frequencies values (in case of DWDM fixed or flexible grids): the grid-type attribute defines the type of grid for each entry of the list.
+
+In case of DWDM flexible grid, each entry in the label-restriction list represents also the range of the supported slot width values based on the following attributes, defined in {{?RFC7699}}:
+
+* slot-width-granularity, which represents the minimum space between slot widths;
+
+* min-slot-width-factor: a multiplier of the slot width granularity, indicating the minimum slot width supported by each entry in the label-restriction list;
+
+* max-slot-width-factor: a multiplier of the slot width granularity, indicating the maximum slot width supported by each entry in the label-restriction list.
+
+Each entry of the label-restriction list, as defined in {{!I-D.ietf-teas-rfc8776-update}}, defines a label-start, a label-end, a label-step and a range-bitmap.
+
+The label-start and label-end definitions for WDM should be augmented using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that supports both WSON and DWDM flexible-grid).
+
+The label-step definition for WDM should be augmented using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that supports both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
+
+* For CWDM and DWDM fixed grids, it describes the channel spacing, as defined in {{?RFC6205}};
+
+* For DWDM flexible grids, it describes the nominal central frequency granularity (e.g., 6,25 GHz) as well as the multiplier for the supported values of n, as defined in {{?RFC7699}}.
+{: #yang-tree}
+
+# YANG Tree for Layer 0 Types Groupings
+
+~~~~ ascii-art
+{::include ./ietf-layer0-types-tree.txt}
+~~~~
+{: #fig-yang-tree}
+
 {: #yang-code}
 
 # YANG Module for Layer 0 Types
@@ -345,9 +408,8 @@ Please replace XXXX with the RFC number assigned to this document.
 ~~~~ yang
 {::include ./ietf-layer0-types.yang}
 ~~~~
-{: #fig-te-yang title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2023-10-04.yang"}
-
+{: #fig-yang-code title="Layer 0 Types YANG module"
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-01-23.yang"}
 
 # Security Considerations
 
