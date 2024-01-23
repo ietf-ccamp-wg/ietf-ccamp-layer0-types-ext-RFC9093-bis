@@ -360,12 +360,14 @@ The definition of the frequency slot depends on the WDM grid type:
       f = 193100.000 GHz + N x channel spacing (measured in GHz)
 ~~~~
 
-* In case of DWDM flexible-grid, defined in {{ITU-T_G.694.1}}, the frequency slot is defined by the slot width and by the nominal central frequency, which are computed, based on the slot width granularity (SWG) and of the nominal central frequency granularity (NCFG) respectively, as described in {{?RFC7699}}:
+* In case of DWDM flexible-grid, defined in {{ITU-T_G.694.1}}, the frequency slot is defined by the slot width and by the nominal central frequency, which are computed, based on the slot width granularity (SWG, fixed at 12.5GHz in {{ITU-T_G.694.1}}), and of the nominal central frequency granularity (NCFG, fixed at 6.25GHz in {{ITU-T_G.694.1}}) respectively, as described in {{?RFC7699}}:
 
 ~~~~
       SW = M x SWG (measured in GHz)
       f = 193100.000 GHz + N x NCFG (measured in GHz)
 ~~~~
+
+The definition of the channel spacing, NCFG and SWG in the YANG model are defined to support modelling of vendor-specific values (e.g., finer vendor-specific granularity for NCFG and SWG).
 
 The WDM Label Range represents the frequency slots that are available for WDM LSPs to be set up over a given WDM Link.
 
@@ -373,7 +375,7 @@ The WDM Label Range is defined by the label-restriction list, defined in {{!I-D.
 
 Each entry in the label-restriction list represents either the range of the available central wavelength values (in case of CWDM fixed-grid) or the range of the available nominal central frequencies values (in case of DWDM fixed or flexible grids): the grid-type attribute defines the type of grid for each entry of the list.
 
-In case of DWDM flexible grid, each entry in the label-restriction list represents also the range of the supported slow width values based on the following attributes, defined in {{?RFC7699}}:
+In case of DWDM flexible grid, each entry in the label-restriction list represents also the range of the supported slot width values based on the following attributes, defined in {{?RFC7699}}:
 
 * slot-width-granularity, which represents the minimum space between slot widths;
 
@@ -407,7 +409,7 @@ The label-step definition for WDM should be augmented using the wson-label-step 
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2023-12-05.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-01-23.yang"}
 
 # Security Considerations
 

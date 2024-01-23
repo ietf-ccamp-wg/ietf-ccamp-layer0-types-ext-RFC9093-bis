@@ -27,7 +27,7 @@ module ietf-layer0-types {
      Division Multiplexing) and DWDM (Dense Wavelength Division
      Multiplexing)) and flexi-grid optical networks.
 
-     Copyright (c) 2023 IETF Trust and the persons identified
+     Copyright (c) 2024 IETF Trust and the persons identified
      as authors of the code.  All rights reserved.
 
      Redistribution and use in source and binary forms, with
@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2023-12-05 {
+  revision 2024-01-23 {
     description
       "To be updated";
     reference
@@ -2017,8 +2017,7 @@ module ietf-layer0-types {
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
     leaf tx-polarization-power-difference {
-      type decimal-2;
-      units "dB";
+      type power-ratio;
       config false;
       description
         "The transmitter polarization dependent power difference 
@@ -2125,7 +2124,7 @@ module ietf-layer0-types {
   grouping common-transceiver-configured-param {
     description
       "The configured parameters of an optical transceiver,
-      which are independent from the configured operational mode.";
+      that supplement the configured mode.";
 
     leaf line-coding-bitrate {
       type identityref {
