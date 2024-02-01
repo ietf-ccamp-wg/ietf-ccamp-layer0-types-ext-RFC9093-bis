@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-07
+docname: draft-ietf-ccamp-rfc9093-bis-08
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group

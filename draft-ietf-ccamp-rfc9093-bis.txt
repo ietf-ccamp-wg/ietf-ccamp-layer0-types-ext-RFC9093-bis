@@ -6,7 +6,7 @@ CCAMP Working Group                                      S. Belotti, Ed.
 Internet-Draft                                                     Nokia
 Obsoletes: 9093 (if approved)                               I. Busi, Ed.
 Intended status: Standards Track                                  Huawei
-Expires: 26 July 2024                                     D. Beller, Ed.
+Expires: 4 August 2024                                    D. Beller, Ed.
                                                                    Nokia
                                                                 H. Zheng
                                                                   Huawei
@@ -16,11 +16,11 @@ Expires: 26 July 2024                                     D. Beller, Ed.
                                                   Futurewei Technologies
                                                                  D. King
                                                  University of Lancaster
-                                                         23 January 2024
+                                                         1 February 2024
 
 
                   A YANG Data Model for Layer 0 Types
-                    draft-ietf-ccamp-rfc9093-bis-07
+                    draft-ietf-ccamp-rfc9093-bis-08
 
 Abstract
 
@@ -48,14 +48,14 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 July 2024.
+   This Internet-Draft will expire on 4 August 2024.
 
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 1]
+Belotti, et al.           Expires 4 August 2024                 [Page 1]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
 Copyright Notice
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 2]
+Belotti, et al.           Expires 4 August 2024                 [Page 2]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    Layer 0 types specified in this document includes Wavelength Switched
@@ -165,9 +165,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 3]
+Belotti, et al.           Expires 4 August 2024                 [Page 3]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
 2.  Layer 0 Types Module Contents
@@ -221,9 +221,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 4]
+Belotti, et al.           Expires 4 August 2024                 [Page 4]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
       TBD: add a description and the list of references defined in YANG
@@ -277,9 +277,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 5]
+Belotti, et al.           Expires 4 August 2024                 [Page 5]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
       The flexi-grid label range was defined in [RFC8363], and the
@@ -333,9 +333,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 6]
+Belotti, et al.           Expires 4 August 2024                 [Page 6]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
       a YANG grouping for the standard modes defined in [ITU-T_G.698.2].
@@ -389,9 +389,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 7]
+Belotti, et al.           Expires 4 August 2024                 [Page 7]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    *  In case of CWDM fixed-grid, defined in [ITU-T_G.694.2], the
@@ -445,9 +445,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 8]
+Belotti, et al.           Expires 4 August 2024                 [Page 8]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    *  slot-width-granularity, which represents the minimum space between
@@ -501,9 +501,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                  [Page 9]
+Belotti, et al.           Expires 4 August 2024                 [Page 9]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        +-- (l0-grid-type)?
@@ -557,9 +557,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 10]
+Belotti, et al.           Expires 4 August 2024                [Page 10]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
           +--:(dwdm)
@@ -613,9 +613,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 11]
+Belotti, et al.           Expires 4 August 2024                [Page 11]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        +-- (mode)
@@ -669,9 +669,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 12]
+Belotti, et al.           Expires 4 August 2024                [Page 12]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                 |  +--ro penalty-value             union
@@ -725,9 +725,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 13]
+Belotti, et al.           Expires 4 August 2024                [Page 13]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                 |     +--ro rx-channel-power-min?      power-dbm
@@ -781,9 +781,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 14]
+Belotti, et al.           Expires 4 August 2024                [Page 14]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                       |       decimal-2
@@ -837,9 +837,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 15]
+Belotti, et al.           Expires 4 August 2024                [Page 15]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        +--ro min-OSNR?                           snr
@@ -893,9 +893,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 16]
+Belotti, et al.           Expires 4 August 2024                [Page 16]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                                   Figure 1
@@ -949,9 +949,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 17]
+Belotti, et al.           Expires 4 August 2024                [Page 17]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
         NOT', 'SHOULD', 'SHOULD NOT', 'RECOMMENDED', 'NOT RECOMMENDED',
@@ -1005,9 +1005,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 18]
+Belotti, et al.           Expires 4 August 2024                [Page 18]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            CWDM wavelength grid";
@@ -1061,9 +1061,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 19]
+Belotti, et al.           Expires 4 August 2024                [Page 19]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        }
@@ -1117,9 +1117,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 20]
+Belotti, et al.           Expires 4 August 2024                [Page 20]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        identity dwdm-12p5ghz {
@@ -1173,9 +1173,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 21]
+Belotti, et al.           Expires 4 August 2024                [Page 21]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
      identity flexi-slot-width-granularity {
@@ -1229,9 +1229,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 22]
+Belotti, et al.           Expires 4 August 2024                [Page 22]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          description
@@ -1285,9 +1285,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 23]
+Belotti, et al.           Expires 4 August 2024                [Page 23]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        }
@@ -1341,9 +1341,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 24]
+Belotti, et al.           Expires 4 August 2024                [Page 24]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            long-reach interfaces;
@@ -1397,9 +1397,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 25]
+Belotti, et al.           Expires 4 August 2024                [Page 25]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            tributary signals";
@@ -1453,9 +1453,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 26]
+Belotti, et al.           Expires 4 August 2024                [Page 26]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        reference
@@ -1509,9 +1509,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 27]
+Belotti, et al.           Expires 4 August 2024                [Page 27]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        }
@@ -1565,9 +1565,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 28]
+Belotti, et al.           Expires 4 August 2024                [Page 28]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            "OTU2 (10.70 Gb/s)";
@@ -1621,9 +1621,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 29]
+Belotti, et al.           Expires 4 August 2024                [Page 29]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
           OMS and its elements";
@@ -1677,9 +1677,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 30]
+Belotti, et al.           Expires 4 August 2024                [Page 30]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          "RFC6205: Generalized Labels for Lambda-Switch-Capable (LSC)
@@ -1733,9 +1733,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 31]
+Belotti, et al.           Expires 4 August 2024                [Page 31]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
      typedef flexi-m {
@@ -1789,9 +1789,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 32]
+Belotti, et al.           Expires 4 August 2024                [Page 32]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          The format of these identities has to be defined by the
@@ -1845,9 +1845,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 33]
+Belotti, et al.           Expires 4 August 2024                [Page 33]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
      }
@@ -1901,9 +1901,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 34]
+Belotti, et al.           Expires 4 August 2024                [Page 34]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
      typedef power-gain {
@@ -1957,9 +1957,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 35]
+Belotti, et al.           Expires 4 August 2024                [Page 35]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          type empty;
@@ -2013,9 +2013,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 36]
+Belotti, et al.           Expires 4 August 2024                [Page 36]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          "The power spectral density (PSD).
@@ -2069,9 +2069,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 37]
+Belotti, et al.           Expires 4 August 2024                [Page 37]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                  "Valid only when grid type is CWDM.";
@@ -2125,9 +2125,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 38]
+Belotti, et al.           Expires 4 August 2024                [Page 38]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                description
@@ -2181,9 +2181,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 39]
+Belotti, et al.           Expires 4 August 2024                [Page 39]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                  type l0-types:dwdm-n;
@@ -2237,9 +2237,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 40]
+Belotti, et al.           Expires 4 August 2024                [Page 40]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            }
@@ -2293,9 +2293,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 41]
+Belotti, et al.           Expires 4 August 2024                [Page 41]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
              "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
@@ -2349,9 +2349,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 42]
+Belotti, et al.           Expires 4 August 2024                [Page 42]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
      }
@@ -2405,9 +2405,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 43]
+Belotti, et al.           Expires 4 August 2024                [Page 43]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
           Label Switching Routers";
@@ -2461,9 +2461,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 44]
+Belotti, et al.           Expires 4 August 2024                [Page 44]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                 (LSC) Label Switching Routers";
@@ -2517,9 +2517,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 45]
+Belotti, et al.           Expires 4 August 2024                [Page 45]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          Switch Capable (LSC) Label Switching Routers,
@@ -2573,9 +2573,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 46]
+Belotti, et al.           Expires 4 August 2024                [Page 46]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                description
@@ -2629,9 +2629,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 47]
+Belotti, et al.           Expires 4 August 2024                [Page 47]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          }
@@ -2685,9 +2685,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 48]
+Belotti, et al.           Expires 4 August 2024                [Page 48]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          }
@@ -2741,9 +2741,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 49]
+Belotti, et al.           Expires 4 August 2024                [Page 49]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            container organizational-mode {
@@ -2797,9 +2797,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 50]
+Belotti, et al.           Expires 4 August 2024                [Page 50]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
              description "ID for the supported transceiver's mode.";
@@ -2853,9 +2853,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 51]
+Belotti, et al.           Expires 4 August 2024                [Page 51]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
           B-DScW-ytz(v) where all these attributes are conformant
@@ -2909,9 +2909,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 52]
+Belotti, et al.           Expires 4 August 2024                [Page 52]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          description
@@ -2965,9 +2965,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 53]
+Belotti, et al.           Expires 4 August 2024                [Page 53]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          }
@@ -3021,9 +3021,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 54]
+Belotti, et al.           Expires 4 August 2024                [Page 54]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
            This list of pair pmd and penalty can be used to
@@ -3077,9 +3077,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 55]
+Belotti, et al.           Expires 4 August 2024                [Page 55]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          }
@@ -3133,9 +3133,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 56]
+Belotti, et al.           Expires 4 August 2024                [Page 56]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          type uint32;
@@ -3189,9 +3189,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 57]
+Belotti, et al.           Expires 4 August 2024                [Page 57]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          config false;
@@ -3245,9 +3245,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 58]
+Belotti, et al.           Expires 4 August 2024                [Page 58]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          reference
@@ -3301,9 +3301,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 59]
+Belotti, et al.           Expires 4 August 2024                [Page 59]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
      grouping transmitter-tuning-range {
@@ -3357,9 +3357,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 60]
+Belotti, et al.           Expires 4 August 2024                [Page 60]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          description "The maximum input power of this interface";
@@ -3413,9 +3413,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 61]
+Belotti, et al.           Expires 4 August 2024                [Page 61]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
          config false;
@@ -3469,9 +3469,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 62]
+Belotti, et al.           Expires 4 August 2024                [Page 62]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
        }
@@ -3525,9 +3525,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 63]
+Belotti, et al.           Expires 4 August 2024                [Page 63]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
                     Figure 2: Layer 0 Types YANG module
@@ -3581,9 +3581,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 64]
+Belotti, et al.           Expires 4 August 2024                [Page 64]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
       Name:  ietf-layer0-types
@@ -3602,9 +3602,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
               Busi, I., Guo, A., Liu, X., Saad, T., and I. Bryskin,
               "Common YANG Data Types for Traffic Engineering", Work in
               Progress, Internet-Draft, draft-ietf-teas-rfc8776-update-
-              07, 15 September 2023,
+              09, 29 January 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              rfc8776-update-07>.
+              rfc8776-update-09>.
 
    [ITU-T_G.698.2]
               ITU-T Recommendation G.698.2, "Amplified multichannel
@@ -3637,9 +3637,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 65]
+Belotti, et al.           Expires 4 August 2024                [Page 65]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    [RFC6242]  Wasserman, M., "Using the NETCONF Protocol over Secure
@@ -3693,9 +3693,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 66]
+Belotti, et al.           Expires 4 August 2024                [Page 66]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    [I-D.ietf-ccamp-dwdm-if-param-yang]
@@ -3749,9 +3749,9 @@ Internet-Draft           Yang for Layer 0 Types             January 2024
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 67]
+Belotti, et al.           Expires 4 August 2024                [Page 67]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
@@ -3805,9 +3805,9 @@ Contributors
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 68]
+Belotti, et al.           Expires 4 August 2024                [Page 68]
 
-Internet-Draft           Yang for Layer 0 Types             January 2024
+Internet-Draft           Yang for Layer 0 Types            February 2024
 
 
    Victor Lopez
@@ -3861,4 +3861,4 @@ Authors' Addresses
 
 
 
-Belotti, et al.           Expires 26 July 2024                 [Page 69]
+Belotti, et al.           Expires 4 August 2024                [Page 69]
