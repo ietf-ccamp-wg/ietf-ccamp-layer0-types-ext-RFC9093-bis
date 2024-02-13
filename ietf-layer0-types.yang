@@ -2090,6 +2090,15 @@ module ietf-layer0-types {
     }
   } // grouping common-all-modes
 
+  grouping common-transceiver-param {
+    description
+      "The common parameters of an optical transceiver,
+      that supplement the configured mode.";
+
+    uses common-transceiver-configured-param;
+    uses common-transceiver-readonly-param;
+  }
+
   grouping common-transceiver-configured-param {
     description
       "The configured parameters of an optical transceiver,
@@ -2116,6 +2125,13 @@ module ietf-layer0-types {
         The empty value MUST NOT be used when this attribute is 
         configured.";
     }
+  } // grouping for configured transceiver attributes out of mode
+
+  grouping common-transceiver-readonly-param {
+    description
+      "The common read-only parameters of an optical transceiver,
+      that supplement the configured mode.";
+
     leaf rx-channel-power {
       type power-dbm-or-null;
       config false;
@@ -2130,7 +2146,7 @@ module ietf-layer0-types {
         "The current total received power, when the value is known 
         or an empty value when the value is not known.";
     }
-  } // grouping for configured attributes out of mode
+  } // grouping for read-only transceiver attributes out of mode
 
   grouping l0-tunnel-attributes {
     description

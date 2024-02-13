@@ -328,11 +328,17 @@ module: ietf-layer0-types
     +--ro rx-channel-power-min?     power-dbm
     +--ro rx-channel-power-max?     power-dbm
     +--ro rx-total-power-max?       power-dbm
-  grouping common-transceiver-configured-param:
+  grouping common-transceiver-param:
     +-- line-coding-bitrate?   identityref
     +-- tx-channel-power?      power-dbm-or-null
     +--ro rx-channel-power?      power-dbm-or-null
     +--ro rx-total-power?        power-dbm-or-null
+  grouping common-transceiver-configured-param:
+    +-- line-coding-bitrate?   identityref
+    +-- tx-channel-power?      power-dbm-or-null
+  grouping common-transceiver-readonly-param:
+    +--ro rx-channel-power?   power-dbm-or-null
+    +--ro rx-total-power?     power-dbm-or-null
   grouping l0-tunnel-attributes:
     +-- wavelength-assignment?   identityref
   grouping frequency-range:
