@@ -163,7 +163,7 @@ module: ietf-layer0-types
              +--ro fec-threshold?                      decimal64
              +--ro in-band-osnr?                       snr
              +--ro out-of-band-osnr?                   snr
-             +--ro tx-polarization-power-difference?   decimal-2
+             +--ro tx-polarization-power-difference?   power-ratio
              +--ro polarization-skew?                  decimal64
              +--ro min-central-frequency?              frequency-thz
              +--ro max-central-frequency?              frequency-thz
@@ -249,7 +249,7 @@ module: ietf-layer0-types
                    +--ro in-band-osnr?                       snr
                    +--ro out-of-band-osnr?                   snr
                    +--ro tx-polarization-power-difference?
-                   |       decimal-2
+                   |       power-ratio
                    +--ro polarization-skew?
                    |       decimal64
                    +--ro min-central-frequency?
@@ -311,7 +311,7 @@ module: ietf-layer0-types
     +--ro fec-threshold?                      decimal64
     +--ro in-band-osnr?                       snr
     +--ro out-of-band-osnr?                   snr
-    +--ro tx-polarization-power-difference?   decimal-2
+    +--ro tx-polarization-power-difference?   power-ratio
     +--ro polarization-skew?                  decimal64
   grouping common-standard-organizational-mode:
     +--ro line-coding-bitrate*   identityref
@@ -329,18 +329,17 @@ module: ietf-layer0-types
     +--ro rx-channel-power-max?     power-dbm
     +--ro rx-total-power-max?       power-dbm
   grouping common-transceiver-configured-param:
-    +--ro line-coding-bitrate?   identityref
+    +-- line-coding-bitrate?   identityref
     +-- tx-channel-power?      power-dbm-or-null
     +--ro rx-channel-power?      power-dbm-or-null
     +--ro rx-total-power?        power-dbm-or-null
   grouping l0-tunnel-attributes:
-    +-- bit-stuffing?            boolean
     +-- wavelength-assignment?   identityref
   grouping frequency-range:
     +-- lower-frequency    frequency-thz
     +-- upper-frequency    frequency-thz
   grouping l0-path-constraints:
-    +-- gsnr-margin?   snr
+    +-- gsnr-extra-margin?   snr
   grouping l0-path-properties:
     +--ro estimated-gsnr?          snr
     +--ro estimated-eol-gsnr?      snr

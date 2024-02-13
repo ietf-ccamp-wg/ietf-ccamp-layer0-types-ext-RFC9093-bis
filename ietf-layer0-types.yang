@@ -512,37 +512,6 @@ module ietf-layer0-types {
         Optical Networks";
     }
 
-  identity term-type {
-    description
-      "Termination type";
-    reference
-      "ITU-T G.709: Interfaces for the Optical Transport Network";
-  }
-
-    identity term-phys {
-      base term-type;
-      description
-        "Physical layer termination";
-    }
-
-    identity term-otu {
-      base term-type;
-      description
-        "OTU (Optical Transport Unit) termination";
-    }
-
-    identity term-odu {
-      base term-type;
-      description
-        "ODU (Optical Data Unit) termination";
-    }
-
-    identity term-opu {
-      base term-type;
-      description
-        "OPU (Optical Payload Unit) termination";
-    }
-
   identity otu-type {
     description
       "Base identity from which specific OTU identities are derived";
@@ -2130,11 +2099,10 @@ module ietf-layer0-types {
       type identityref {
         base line-coding;
       }
-      config false;
       description
         "Bit rate/line coding of the optical tributary signal.
         
-        Reporting this attribute is optional when the configured 
+        Support of this attribute is optional when the configured 
         mode supports only one bit rate/line coding.";
       reference 
         "ITU-T G.698.2 section 7.1.2";
@@ -2167,11 +2135,7 @@ module ietf-layer0-types {
   grouping l0-tunnel-attributes {
     description
       "Parameters for Layer0 (WSON or Flexi-Grid) Tunnels.";
-    leaf bit-stuffing {
-      type boolean;
-      description
-        "Bit stuffing enabled/disabled.";
-    }
+
     leaf wavelength-assignment {
       type identityref {
         base wavelength-assignment;
@@ -2212,7 +2176,7 @@ module ietf-layer0-types {
     description
       "Common attribute for Layer 0 path constraints to be used by
       Layer 0 computation.";
-    leaf gsnr-margin {
+    leaf gsnr-extra-margin {
       type snr {
         range 0..max;
       }
