@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-01-23 {
+  revision 2024-02-14 {
     description
       "To be updated";
     reference
