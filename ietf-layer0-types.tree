@@ -132,47 +132,14 @@ module: ietf-layer0-types
        |     +--ro rx-total-power-max?        power-dbm
        +--:(explicit-mode)
           +--ro explicit-mode
-             +--ro line-coding-bitrate?                identityref
-             +--ro bitrate?                            uint16
-             +--ro max-diff-group-delay?               uint32
-             +--ro max-chromatic-dispersion?           decimal64
-             +--ro cd-penalty* []
-             |  +--ro cd-value         union
-             |  +--ro penalty-value    union
-             +--ro max-polarization-mode-dispersion?   decimal64
-             +--ro pmd-penalty* []
-             |  +--ro pmd-value        union
-             |  +--ro penalty-value    union
-             +--ro max-polarization-dependant-loss
-             |       power-loss-or-null
-             +--ro pdl-penalty* []
-             |  +--ro pdl-value        power-loss-or-null
-             |  +--ro penalty-value    union
-             +--ro available-modulation-type?          identityref
-             +--ro min-OSNR?                           snr
-             +--ro rx-ref-channel-power?               power-dbm
-             +--ro rx-channel-power-penalty* []
-             |  +--ro rx-channel-power-value    power-dbm-or-null
-             |  +--ro penalty-value             union
-             +--ro min-Q-factor?                       int32
-             +--ro available-baud-rate?                uint32
-             +--ro roll-off?                           decimal64
-             +--ro min-carrier-spacing?                frequency-ghz
-             +--ro available-fec-type?                 identityref
-             +--ro fec-code-rate?                      decimal64
-             +--ro fec-threshold?                      decimal64
-             +--ro in-band-osnr?                       snr
-             +--ro out-of-band-osnr?                   snr
-             +--ro tx-polarization-power-difference?   power-ratio
-             +--ro polarization-skew?                  decimal64
-             +--ro min-central-frequency?              frequency-thz
-             +--ro max-central-frequency?              frequency-thz
-             +--ro transceiver-tunability?             frequency-ghz
-             +--ro tx-channel-power-min?               power-dbm
-             +--ro tx-channel-power-max?               power-dbm
-             +--ro rx-channel-power-min?               power-dbm
-             +--ro rx-channel-power-max?               power-dbm
-             +--ro rx-total-power-max?                 power-dbm
+             +--ro min-central-frequency?    frequency-thz
+             +--ro max-central-frequency?    frequency-thz
+             +--ro transceiver-tunability?   frequency-ghz
+             +--ro tx-channel-power-min?     power-dbm
+             +--ro tx-channel-power-max?     power-dbm
+             +--ro rx-channel-power-min?     power-dbm
+             +--ro rx-channel-power-max?     power-dbm
+             +--ro rx-total-power-max?       power-dbm
              +--ro compatible-modes
   grouping transceiver-capabilities:
     +-- supported-modes!
@@ -206,68 +173,14 @@ module: ietf-layer0-types
              |     +--ro rx-total-power-max?        power-dbm
              +--:(explicit-mode)
                 +--ro explicit-mode
-                   +--ro line-coding-bitrate?
-                   |       identityref
-                   +--ro bitrate?                            uint16
-                   +--ro max-diff-group-delay?               uint32
-                   +--ro max-chromatic-dispersion?
-                   |       decimal64
-                   +--ro cd-penalty* []
-                   |  +--ro cd-value         union
-                   |  +--ro penalty-value    union
-                   +--ro max-polarization-mode-dispersion?
-                   |       decimal64
-                   +--ro pmd-penalty* []
-                   |  +--ro pmd-value        union
-                   |  +--ro penalty-value    union
-                   +--ro max-polarization-dependant-loss
-                   |       power-loss-or-null
-                   +--ro pdl-penalty* []
-                   |  +--ro pdl-value        power-loss-or-null
-                   |  +--ro penalty-value    union
-                   +--ro available-modulation-type?
-                   |       identityref
-                   +--ro min-OSNR?                           snr
-                   +--ro rx-ref-channel-power?
-                   |       power-dbm
-                   +--ro rx-channel-power-penalty* []
-                   |  +--ro rx-channel-power-value
-                   |  |       power-dbm-or-null
-                   |  +--ro penalty-value             union
-                   +--ro min-Q-factor?                       int32
-                   +--ro available-baud-rate?                uint32
-                   +--ro roll-off?
-                   |       decimal64
-                   +--ro min-carrier-spacing?
-                   |       frequency-ghz
-                   +--ro available-fec-type?
-                   |       identityref
-                   +--ro fec-code-rate?
-                   |       decimal64
-                   +--ro fec-threshold?
-                   |       decimal64
-                   +--ro in-band-osnr?                       snr
-                   +--ro out-of-band-osnr?                   snr
-                   +--ro tx-polarization-power-difference?
-                   |       power-ratio
-                   +--ro polarization-skew?
-                   |       decimal64
-                   +--ro min-central-frequency?
-                   |       frequency-thz
-                   +--ro max-central-frequency?
-                   |       frequency-thz
-                   +--ro transceiver-tunability?
-                   |       frequency-ghz
-                   +--ro tx-channel-power-min?
-                   |       power-dbm
-                   +--ro tx-channel-power-max?
-                   |       power-dbm
-                   +--ro rx-channel-power-min?
-                   |       power-dbm
-                   +--ro rx-channel-power-max?
-                   |       power-dbm
-                   +--ro rx-total-power-max?
-                   |       power-dbm
+                   +--ro min-central-frequency?    frequency-thz
+                   +--ro max-central-frequency?    frequency-thz
+                   +--ro transceiver-tunability?   frequency-ghz
+                   +--ro tx-channel-power-min?     power-dbm
+                   +--ro tx-channel-power-max?     power-dbm
+                   +--ro rx-channel-power-min?     power-dbm
+                   +--ro rx-channel-power-max?     power-dbm
+                   +--ro rx-total-power-max?       power-dbm
                    +--ro compatible-modes
                       +--ro supported-application-codes*
                       |       -> ../../../mode-id
@@ -280,7 +193,7 @@ module: ietf-layer0-types
     +--ro organization-identifier?   organization-identifier
   grouping penalty-value:
     +--ro penalty-value    union
-  grouping common-explicit-mode:
+  grouping explicit-mode:
     +--ro line-coding-bitrate?                identityref
     +--ro bitrate?                            uint16
     +--ro max-diff-group-delay?               uint32
