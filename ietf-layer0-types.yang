@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-01-23 {
+  revision 2024-02-14 {
     description
       "To be updated";
     reference
@@ -1533,11 +1533,18 @@ module ietf-layer0-types {
   grouping transceiver-mode {
     description
       "This grouping is intended to be used for reporting the
-       information of a transceiver's mode.
-       
-       The compatible-modes container shall be augmented with the 
-       proper leafrefs when used: see for example the 
-       transceiver-capabilities grouping below.";
+      information of a transceiver's mode.
+
+      The attributes for the explicit mode shall be augmented when
+      used with either:
+      - the proper leafrefs, when explicit mode templates are used;
+        or,
+      - the explicit-mode grouping, when explicit mode templates
+        are not used.
+
+      The compatible-modes container shall be augmented with the 
+      proper leafrefs when used: see for example the 
+      transceiver-capabilities grouping below.";
     choice mode {
       mandatory true;
       description
@@ -1563,7 +1570,7 @@ module ietf-layer0-types {
           config false;
           description
             "The set of attributes for an explicit mode";
-          uses common-explicit-mode;
+          // uses explicit-mode;
           uses common-all-modes;
           container compatible-modes {
             description
@@ -1579,7 +1586,14 @@ module ietf-layer0-types {
   grouping transceiver-capabilities {
     description
       "This grouping is intended to be used for reporting the
-       capabilities of a transceiver.";
+      capabilities of a transceiver.
+      
+      The attributes for the explicit mode shall be augmented when
+      used with either:
+      - the proper leafrefs, when explicit mode templates are used;
+        or,
+      - the explicit-mode grouping, when explicit mode templates
+        are not used.";
 
     container supported-modes {
       presence
@@ -1700,7 +1714,7 @@ module ietf-layer0-types {
     }
   }
 
-  grouping common-explicit-mode {
+  grouping explicit-mode {
     description
       "Attributes capabilities related to explicit transceiver's
       mode.
@@ -2007,7 +2021,7 @@ module ietf-layer0-types {
       reference
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
-  } // grouping common-explicit-mode    
+  } // grouping explicit-mode    
 
   grouping common-standard-organizational-mode {
     description
@@ -2090,6 +2104,15 @@ module ietf-layer0-types {
     }
   } // grouping common-all-modes
 
+  grouping common-transceiver-param {
+    description
+      "The common parameters of an optical transceiver,
+      that supplement the configured mode.";
+
+    uses common-transceiver-configured-param;
+    uses common-transceiver-readonly-param;
+  }
+
   grouping common-transceiver-configured-param {
     description
       "The configured parameters of an optical transceiver,
@@ -2116,6 +2139,13 @@ module ietf-layer0-types {
         The empty value MUST NOT be used when this attribute is 
         configured.";
     }
+  } // grouping for configured transceiver attributes out of mode
+
+  grouping common-transceiver-readonly-param {
+    description
+      "The common read-only parameters of an optical transceiver,
+      that supplement the configured mode.";
+
     leaf rx-channel-power {
       type power-dbm-or-null;
       config false;
@@ -2130,7 +2160,7 @@ module ietf-layer0-types {
         "The current total received power, when the value is known 
         or an empty value when the value is not known.";
     }
-  } // grouping for configured attributes out of mode
+  } // grouping for read-only transceiver attributes out of mode
 
   grouping l0-tunnel-attributes {
     description
