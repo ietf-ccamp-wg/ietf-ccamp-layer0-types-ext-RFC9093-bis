@@ -1745,7 +1745,7 @@ module ietf-layer0-types {
         signal.";
     }
     leaf max-diff-group-delay  {
-      type uint32;
+      type decimal-2;
       units "ps";
       config false;
       description
@@ -1895,13 +1895,15 @@ module ietf-layer0-types {
       uses penalty-value;
     }
     leaf min-Q-factor {
-      type int32;
+      type decimal-2;
       units "dB";
       config false;
       description "min Qfactor at FEC threshold";
     }
     leaf available-baud-rate {
-      type uint32;
+      type decimal64 {
+        fraction-digits 1;
+      }
       units "Bd";
       config false;
       description
