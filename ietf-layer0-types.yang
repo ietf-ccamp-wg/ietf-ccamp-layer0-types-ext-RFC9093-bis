@@ -539,66 +539,45 @@ module ietf-layer0-types {
       base otu-type;
       description
         "OTU1 (2.66 Gb/s)";
-    }
-
-    identity OTU1e {
-      base otu-type;
-      description
-        "OTU1e (11.04 Gb/s)";
-    }
-
-    identity OTU1f {
-      base otu-type;
-      description
-        "OTU1f (11.27 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTU2 {
       base otu-type;
       description
         "OTU2 (10.70 Gb/s)";
-    }
-
-    identity OTU2e {
-      base otu-type;
-      description
-        "OTU2e (11.09 Gb/s)";
-    }
-
-    identity OTU2f {
-      base otu-type;
-      description
-        "OTU2f (11.31G)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTU3 {
       base otu-type;
       description
         "OTU3 (43.01 Gb/s)";
-    }
-
-    identity OTU3e1 {
-      base otu-type;
-      description
-        "OTU3e1 (44.57 Gb/s)";
-    }
-
-    identity OTU3e2 {
-      base otu-type;
-      description
-        "OTU3e2 (44.58 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTU4 {
       base otu-type;
       description
         "OTU4 (111.80 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTUCn {
       base otu-type;
       description
         "OTUCn (n x 105.25 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
   identity type-power-mode {

@@ -88,6 +88,12 @@ normative:
       org: ITU-T Recommendation G.698.2
     date: November 2018
     seriesinfo: ITU-T G.698.2
+  ITU-T_G.709:
+    title: Interfaces for the optical transport network
+    author:
+      org: ITU-T Recommendation G.709
+    date: March 2020
+    seriesinfo: ITU-T G.709
 
 informative:
   ITU-T_G.694.1:
@@ -102,6 +108,12 @@ informative:
       org: ITU-T Recommendation G.694.2
     date: December 2003
     seriesinfo: ITU-T G.694.2
+  ITU-T_G.Sup43:
+    title: "Transport of IEEE 10GBASE-R in optical transport networks (OTN)"
+    author:
+      org: ITU-T Supplement G.Sup43
+    date: December 2003
+    seriesinfo: ITU-T G.Sup43
 
 --- abstract
 
@@ -212,9 +224,11 @@ Please replace XXXX with the RFC number assigned to this document.
 
    > TBD: add a description and the list of references defined in YANG
 
-   otu-type:
+otu-type:
 
-   > TBD: add a description and the list of references defined in YANG
+> This specifies the type of OTU, including the types specified in {{ITU-T_G.709}}.
+
+> Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
 
    operational-mode:
 
