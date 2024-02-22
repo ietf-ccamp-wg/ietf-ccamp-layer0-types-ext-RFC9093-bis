@@ -183,9 +183,9 @@ module: ietf-layer0-types
                    +--ro rx-total-power-max?       power-dbm
                    +--ro compatible-modes
                       +--ro supported-application-codes*
-                      |       -> ../../../mode-id
+                      |       -> ../../../../supported-mode/mode-id
                       +--ro supported-organizational-modes*
-                              -> ../../../mode-id
+                              -> ../../../../supported-mode/mode-id
   grouping standard-mode:
     +--ro standard-mode?   standard-mode
   grouping organizational-mode:

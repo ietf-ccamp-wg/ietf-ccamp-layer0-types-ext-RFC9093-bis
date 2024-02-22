@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-02-14 {
+  revision 2024-02-22 {
     description
       "To be updated";
     reference
@@ -1621,7 +1621,7 @@ module ietf-layer0-types {
               leafrefs.";
             leaf-list supported-application-codes {
               type leafref {
-                path "../../../mode-id";
+                path "../../../../supported-mode/mode-id";
               }
               must "../../../../"
                   + "supported-mode[mode-id=current()]/"
@@ -1632,18 +1632,18 @@ module ietf-layer0-types {
               }
               description
                 "List of pointers to the application codes
-                  supported by the transceiver's explicit mode.";
+                supported by the transceiver's explicit mode.";
             }
             leaf-list supported-organizational-modes {
               type leafref {
-                path "../../../mode-id";
+                path "../../../../supported-mode/mode-id";
               }
               must "../../../../"
                   + "supported-mode[mode-id=current()]/"
                   + "organizational-mode" {
                 description
                   "The pointer is only for organizational modes
-                    supported by transceiver.";
+                  supported by transceiver.";
               }
               description
                 "List of pointers to the organizational modes
