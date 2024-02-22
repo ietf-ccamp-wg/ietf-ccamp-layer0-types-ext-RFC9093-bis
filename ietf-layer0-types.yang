@@ -1390,6 +1390,7 @@ module ietf-layer0-types {
         status deprecated;
         list subcarrier-flexi-n {
           key "flexi-n";
+          status deprecated;
           uses flexi-grid-frequency-slot;
           description
             "List of subcarrier channels for flexi-grid super

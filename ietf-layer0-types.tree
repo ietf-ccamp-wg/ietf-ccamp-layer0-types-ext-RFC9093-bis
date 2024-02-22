@@ -34,7 +34,7 @@ module: ietf-layer0-types
              |  +-- flexi-n?              l0-types:flexi-n
              |  +-- flexi-m?              l0-types:flexi-m
              x--:(super)
-             |  +-- subcarrier-flexi-n* [flexi-n]
+             |  x-- subcarrier-flexi-n* [flexi-n]
              |     +-- flexi-n?   l0-types:flexi-n
              |     +-- flexi-m?   l0-types:flexi-m
              +--:(multi)
@@ -85,7 +85,7 @@ module: ietf-layer0-types
        |  +-- flexi-n?              l0-types:flexi-n
        |  +-- flexi-m?              l0-types:flexi-m
        x--:(super)
-       |  +-- subcarrier-flexi-n* [flexi-n]
+       |  x-- subcarrier-flexi-n* [flexi-n]
        |     +-- flexi-n?   l0-types:flexi-n
        |     +-- flexi-m?   l0-types:flexi-m
        +--:(multi)
