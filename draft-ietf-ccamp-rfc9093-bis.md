@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-08
+docname: draft-ietf-ccamp-rfc9093-bis-09
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group
@@ -31,10 +31,6 @@ author:
     role: editor
     email: dieter.beller@nokia.com
   -
-    name: Haomian Zheng
-    org: Huawei
-    email: zhenghaomian@huawei.com
-  -
     name: Esther Le Rouzic
     ins: E. Le Rouzic
     org: Orange
@@ -43,12 +39,16 @@ author:
     name: Aihua Guo
     org: Futurewei Technologies
     email: aihuaguo.ietf@gmail.com
+
+contributor:
+  -
+    name: Haomian Zheng
+    org: Huawei
+    email: zhenghaomian@huawei.com
   -
     name: Daniel King
     org: University of Lancaster
     email: d.king@lancaster.ac.uk
-
-contributor:
   -
     name: Gabriele Galimberti
     org: Cisco
