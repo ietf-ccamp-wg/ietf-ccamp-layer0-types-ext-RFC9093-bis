@@ -512,6 +512,22 @@ module ietf-layer0-types {
         Optical Networks";
     }
 
+    identity lower-first-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "Allocate wavelengths in ascending order, beginning from the
+        lowest frequency and progressing toward the highest frequency
+        within the permissible frequency range.";
+    }
+
+    identity upper-first-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "Allocate wavelengths in decending order, beginning from the
+        highest frequency and progressing toward the lowest frequency
+        within the permissible frequency range.";
+    }
+
   identity otu-type {
     description
       "Base identity from which specific OTU identities are derived";

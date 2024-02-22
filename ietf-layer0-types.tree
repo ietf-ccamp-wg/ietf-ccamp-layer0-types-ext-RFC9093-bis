@@ -196,7 +196,7 @@ module: ietf-layer0-types
   grouping explicit-mode:
     +--ro line-coding-bitrate?                identityref
     +--ro bitrate?                            uint16
-    +--ro max-diff-group-delay?               uint32
+    +--ro max-diff-group-delay?               decimal-2
     +--ro max-chromatic-dispersion?           decimal64
     +--ro cd-penalty* []
     |  +--ro cd-value         union
@@ -215,8 +215,8 @@ module: ietf-layer0-types
     +--ro rx-channel-power-penalty* []
     |  +--ro rx-channel-power-value    power-dbm-or-null
     |  +--ro penalty-value             union
-    +--ro min-Q-factor?                       int32
-    +--ro available-baud-rate?                uint32
+    +--ro min-Q-factor?                       decimal-2
+    +--ro available-baud-rate?                decimal64
     +--ro roll-off?                           decimal64
     +--ro min-carrier-spacing?                frequency-ghz
     +--ro available-fec-type?                 identityref
