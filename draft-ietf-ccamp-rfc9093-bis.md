@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-08
+docname: draft-ietf-ccamp-rfc9093-bis-09
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group
@@ -31,10 +31,6 @@ author:
     role: editor
     email: dieter.beller@nokia.com
   -
-    name: Haomian Zheng
-    org: Huawei
-    email: zhenghaomian@huawei.com
-  -
     name: Esther Le Rouzic
     ins: E. Le Rouzic
     org: Orange
@@ -43,12 +39,16 @@ author:
     name: Aihua Guo
     org: Futurewei Technologies
     email: aihuaguo.ietf@gmail.com
+
+contributor:
+  -
+    name: Haomian Zheng
+    org: Huawei
+    email: zhenghaomian@huawei.com
   -
     name: Daniel King
     org: University of Lancaster
     email: d.king@lancaster.ac.uk
-
-contributor:
   -
     name: Gabriele Galimberti
     org: Cisco
@@ -88,6 +88,12 @@ normative:
       org: ITU-T Recommendation G.698.2
     date: November 2018
     seriesinfo: ITU-T G.698.2
+  ITU-T_G.709:
+    title: Interfaces for the optical transport network
+    author:
+      org: ITU-T Recommendation G.709
+    date: March 2020
+    seriesinfo: ITU-T G.709
 
 informative:
   ITU-T_G.694.1:
@@ -102,6 +108,12 @@ informative:
       org: ITU-T Recommendation G.694.2
     date: December 2003
     seriesinfo: ITU-T G.694.2
+  ITU-T_G.Sup43:
+    title: "Transport of IEEE 10GBASE-R in optical transport networks (OTN)"
+    author:
+      org: ITU-T Supplement G.Sup43
+    date: December 2003
+    seriesinfo: ITU-T G.Sup43
 
 --- abstract
 
@@ -212,9 +224,11 @@ Please replace XXXX with the RFC number assigned to this document.
 
    > TBD: add a description and the list of references defined in YANG
 
-   otu-type:
+otu-type:
 
-   > TBD: add a description and the list of references defined in YANG
+> This specifies the type of OTU, including the types specified in {{ITU-T_G.709}}.
+
+> Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
 
    operational-mode:
 

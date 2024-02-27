@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-02-14 {
+  revision 2024-02-22 {
     description
       "To be updated";
     reference
@@ -512,6 +512,22 @@ module ietf-layer0-types {
         Optical Networks";
     }
 
+    identity lower-first-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "Allocate wavelengths in ascending order, beginning from the
+        lowest frequency and progressing toward the highest frequency
+        within the permissible frequency range.";
+    }
+
+    identity upper-first-wavelength-assignment {
+      base wavelength-assignment;
+      description
+        "Allocate wavelengths in decending order, beginning from the
+        highest frequency and progressing toward the lowest frequency
+        within the permissible frequency range.";
+    }
+
   identity otu-type {
     description
       "Base identity from which specific OTU identities are derived";
@@ -523,66 +539,45 @@ module ietf-layer0-types {
       base otu-type;
       description
         "OTU1 (2.66 Gb/s)";
-    }
-
-    identity OTU1e {
-      base otu-type;
-      description
-        "OTU1e (11.04 Gb/s)";
-    }
-
-    identity OTU1f {
-      base otu-type;
-      description
-        "OTU1f (11.27 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTU2 {
       base otu-type;
       description
         "OTU2 (10.70 Gb/s)";
-    }
-
-    identity OTU2e {
-      base otu-type;
-      description
-        "OTU2e (11.09 Gb/s)";
-    }
-
-    identity OTU2f {
-      base otu-type;
-      description
-        "OTU2f (11.31G)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTU3 {
       base otu-type;
       description
         "OTU3 (43.01 Gb/s)";
-    }
-
-    identity OTU3e1 {
-      base otu-type;
-      description
-        "OTU3e1 (44.57 Gb/s)";
-    }
-
-    identity OTU3e2 {
-      base otu-type;
-      description
-        "OTU3e2 (44.58 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTU4 {
       base otu-type;
       description
         "OTU4 (111.80 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
     identity OTUCn {
       base otu-type;
       description
         "OTUCn (n x 105.25 Gb/s)";
+      reference
+        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
+        Transport Network (OTN)";
     }
 
   identity type-power-mode {
@@ -1390,6 +1385,7 @@ module ietf-layer0-types {
         status deprecated;
         list subcarrier-flexi-n {
           key "flexi-n";
+          status deprecated;
           uses flexi-grid-frequency-slot;
           description
             "List of subcarrier channels for flexi-grid super
@@ -1621,7 +1617,7 @@ module ietf-layer0-types {
               leafrefs.";
             leaf-list supported-application-codes {
               type leafref {
-                path "../../../mode-id";
+                path "../../../../supported-mode/mode-id";
               }
               must "../../../../"
                   + "supported-mode[mode-id=current()]/"
@@ -1632,18 +1628,18 @@ module ietf-layer0-types {
               }
               description
                 "List of pointers to the application codes
-                  supported by the transceiver's explicit mode.";
+                supported by the transceiver's explicit mode.";
             }
             leaf-list supported-organizational-modes {
               type leafref {
-                path "../../../mode-id";
+                path "../../../../supported-mode/mode-id";
               }
               must "../../../../"
                   + "supported-mode[mode-id=current()]/"
                   + "organizational-mode" {
                 description
                   "The pointer is only for organizational modes
-                    supported by transceiver.";
+                  supported by transceiver.";
               }
               description
                 "List of pointers to the organizational modes
@@ -1744,7 +1740,7 @@ module ietf-layer0-types {
         signal.";
     }
     leaf max-diff-group-delay  {
-      type uint32;
+      type decimal-2;
       units "ps";
       config false;
       description
@@ -1894,13 +1890,15 @@ module ietf-layer0-types {
       uses penalty-value;
     }
     leaf min-Q-factor {
-      type int32;
+      type decimal-2;
       units "dB";
       config false;
       description "min Qfactor at FEC threshold";
     }
     leaf available-baud-rate {
-      type uint32;
+      type decimal64 {
+        fraction-digits 1;
+      }
       units "Bd";
       config false;
       description
