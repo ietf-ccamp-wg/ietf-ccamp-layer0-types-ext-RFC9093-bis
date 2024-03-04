@@ -411,7 +411,7 @@ The label-step definition for WDM should be augmented using the wson-label-step 
 # YANG Tree for Layer 0 Types Groupings
 
 ~~~~ ascii-art
-{::include ./ietf-layer0-types-tree.txt}
+{::include ./ietf-layer0-types.folded.tree}
 ~~~~
 {: #fig-yang-tree}
 
