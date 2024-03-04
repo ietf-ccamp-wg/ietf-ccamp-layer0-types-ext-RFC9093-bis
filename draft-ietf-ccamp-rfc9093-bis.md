@@ -423,7 +423,7 @@ The label-step definition for WDM should be augmented using the wson-label-step 
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-01-23.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-03-04.yang"}
 
 # Security Considerations
 

@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-02-22 {
+  revision 2024-03-04 {
     description
       "To be updated";
     reference
@@ -1386,7 +1386,9 @@ module ietf-layer0-types {
         list subcarrier-flexi-n {
           key "flexi-n";
           status deprecated;
-          uses flexi-grid-frequency-slot;
+          uses flexi-grid-frequency-slot {
+            status deprecated;
+          }
           description
             "List of subcarrier channels for flexi-grid super
              channel.";

@@ -805,7 +805,7 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
 
 4.  YANG Module for Layer 0 Types
 
-   <CODE BEGINS> file "ietf-layer0-types@2024-01-23.yang"
+   <CODE BEGINS> file "ietf-layer0-types@2024-03-04.yang"
    module ietf-layer0-types {
      yang-version 1.1;
      namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types";
@@ -866,7 +866,7 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
 
    // replace the revision date with the module publication date
    // the format is (year-month-day)
-     revision 2024-02-22 {
+     revision 2024-03-04 {
        description
          "To be updated";
        reference
@@ -2422,7 +2422,9 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
            list subcarrier-flexi-n {
              key "flexi-n";
              status deprecated;
-             uses flexi-grid-frequency-slot;
+             uses flexi-grid-frequency-slot {
+               status deprecated;
+             }
              description
                "List of subcarrier channels for flexi-grid super
                 channel.";
@@ -2456,8 +2458,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
        container flexi-grid {
          description
            "flexi-grid definition";
-         leaf slot-width-granularity {
-           type identityref {
 
 
 
@@ -2466,6 +2466,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 44]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+         leaf slot-width-granularity {
+           type identityref {
              base flexi-slot-width-granularity;
            }
            default "flexi-swg-12p5ghz";
@@ -2512,8 +2514,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
                   max-slot-width-factor * slot-width-granularity
 
               If specified, maximum slot width must be greater than or
-              equal to minimum slot width.  If not specified, maximum
-              slot width is equal to minimum slot width.";
 
 
 
@@ -2522,6 +2522,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 45]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+              equal to minimum slot width.  If not specified, maximum
+              slot width is equal to minimum slot width.";
            reference
              "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
               Grid Dense Wavelength Division Multiplexing (DWDM)
@@ -2568,8 +2570,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
             granularity of 6.25 GHz, the granularity of the supported
             values of the nominal central frequency could be 12.5 GHz.
             In this case, the values of flexi-n should be even and this
-            constraint is reported by setting the flexi-n-step to 2.
-
 
 
 
@@ -2577,6 +2577,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 46]
 
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
+
+            constraint is reported by setting the flexi-n-step to 2.
 
             This attribute is also known as central frequency
             granularity in RFC 8363.";
@@ -2624,8 +2626,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
          case explicit-mode {
            container explicit-mode {
              config false;
-             description
-               "The set of attributes for an explicit mode";
 
 
 
@@ -2634,6 +2634,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 47]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+             description
+               "The set of attributes for an explicit mode";
              // uses explicit-mode;
              uses common-all-modes;
              container compatible-modes {
@@ -2680,8 +2682,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
            uses transceiver-mode {
              augment "mode/explicit-mode/explicit-mode/"
                    + "compatible-modes" {
-               description
-                 "Augments the compatible modes with the proper
 
 
 
@@ -2690,6 +2690,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 48]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+               description
+                 "Augments the compatible modes with the proper
                  leafrefs.";
                leaf-list supported-application-codes {
                  type leafref {
@@ -2736,8 +2738,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
 
        leaf standard-mode {
          type standard-mode;
-         config false;
-         description
 
 
 
@@ -2746,6 +2746,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 49]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+         config false;
+         description
            "G.698.2 standard mode";
        }
      }
@@ -2792,8 +2794,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
            impairment at the receiver, when the value is known or an
            empty value when the value is not known.";
        }
-     }
-
 
 
 
@@ -2801,6 +2801,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 50]
 
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
+
+     }
 
      grouping explicit-mode {
        description
@@ -2848,8 +2850,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
          config false;
          description
            "Maximum acceptable accumulated chromatic dispersion (CD)
-           on the receiver";
-       }
 
 
 
@@ -2858,6 +2858,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 51]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+           on the receiver";
+       }
        list cd-penalty {
          config false;
          description
@@ -2904,8 +2906,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
            sample the function penalty = f(PMD).";
          leaf pmd-value {
            type union {
-             type decimal64 {
-               fraction-digits 2;
 
 
 
@@ -2914,6 +2914,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 52]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+             type decimal64 {
+               fraction-digits 2;
                range "0..max";
              }
              type empty;
@@ -2960,8 +2962,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
          config false;
          description
            "Modulation type the specific transceiver in the list
-            can support";
-       }
 
 
 
@@ -2970,6 +2970,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 53]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+            can support";
+       }
        leaf min-OSNR {
          type snr;
          units "dBm";
@@ -3016,8 +3018,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
            fraction-digits 1;
          }
          units "Bd";
-         config false;
-         description
 
 
 
@@ -3026,6 +3026,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 54]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+         config false;
+         description
            "Baud-rate the specific transceiver in
            the list can support.
             Baud-rate is the unit for
@@ -3072,8 +3074,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
          }
          config false;
          description "Available FEC";
-       }
-       leaf fec-code-rate {
 
 
 
@@ -3082,6 +3082,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 55]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+       }
+       leaf fec-code-rate {
          type decimal64 {
            fraction-digits 8;
            range "0..max";
@@ -3128,8 +3130,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
            of 0.1nm @ 193.7 THz or 12.5 GHz";
          reference
            "OIF-400ZR-01.0: Implementation Agreement 400ZR";
-       }
-       leaf tx-polarization-power-difference {
 
 
 
@@ -3138,6 +3138,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 56]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+       }
+       leaf tx-polarization-power-difference {
          type power-ratio;
          config false;
          description
@@ -3184,8 +3186,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
 
      grouping transmitter-tuning-range {
        description
-         "Transmitter tuning range (f_tx-min, f_tx-max)";
-
 
 
 
@@ -3193,6 +3193,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 57]
 
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
+
+         "Transmitter tuning range (f_tx-min, f_tx-max)";
 
        leaf min-central-frequency {
          type frequency-thz;
@@ -3240,8 +3242,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
          config false;
          description "The maximum input power of this interface";
        }
-       leaf rx-total-power-max {
-         type power-dbm;
 
 
 
@@ -3250,6 +3250,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 58]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+       leaf rx-total-power-max {
+         type power-dbm;
          config false;
          description
            "Maximum rx optical power for all the channels.
@@ -3296,8 +3298,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
      } // grouping for configured transceiver attributes out of mode
 
      grouping common-transceiver-readonly-param {
-       description
-         "The common read-only parameters of an optical transceiver,
 
 
 
@@ -3306,6 +3306,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 59]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+       description
+         "The common read-only parameters of an optical transceiver,
          that supplement the configured mode.";
 
        leaf rx-channel-power {
@@ -3352,8 +3354,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
        }
        leaf upper-frequency {
          type frequency-thz;
-         must '. > ../lower-frequency' {
-           error-message
 
 
 
@@ -3362,6 +3362,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 60]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+         must '. > ../lower-frequency' {
+           error-message
              "The upper frequency must be greater than the lower
              frequency.";
          }
@@ -3408,8 +3410,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
        leaf estimated-lowest-gsnr {
          type snr;
          config false;
-         description
-           "The estimate lowest received GSNR for the computed path
 
 
 
@@ -3418,6 +3418,8 @@ Belotti, et al.         Expires 5 September 2024               [Page 61]
 Internet-Draft           Yang for Layer 0 Types               March 2024
 
 
+         description
+           "The estimate lowest received GSNR for the computed path
             among all possible wavelength channels along the same
             path.";
        }
@@ -3464,8 +3466,6 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
 
    For the following URI in the "IETF XML Registry" [RFC3688], IANA has
    updated the reference field to refer to this document:
-
-
 
 
 
