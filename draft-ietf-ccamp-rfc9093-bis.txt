@@ -531,7 +531,7 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
                 |  +-- flexi-n?              l0-types:flexi-n
                 |  +-- flexi-m?              l0-types:flexi-m
                 x--:(super)
-                |  +-- subcarrier-flexi-n* [flexi-n]
+                |  x-- subcarrier-flexi-n* [flexi-n]
                 |     +-- flexi-n?   l0-types:flexi-n
                 |     +-- flexi-m?   l0-types:flexi-m
                 +--:(multi)
@@ -590,7 +590,7 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
           |  +-- flexi-n?              l0-types:flexi-n
           |  +-- flexi-m?              l0-types:flexi-m
           x--:(super)
-          |  +-- subcarrier-flexi-n* [flexi-n]
+          |  x-- subcarrier-flexi-n* [flexi-n]
           |     +-- flexi-n?   l0-types:flexi-n
           |     +-- flexi-m?   l0-types:flexi-m
           +--:(multi)
@@ -704,9 +704,9 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
                       +--ro rx-total-power-max?       power-dbm
                       +--ro compatible-modes
                          +--ro supported-application-codes*
-                         |       -> ../../../mode-id
+                         |       -> ../../../../supported-mode/mode-id
                          +--ro supported-organizational-modes*
-                                 -> ../../../mode-id
+                                 -> ../../../../supported-mode/mode-id
      grouping standard-mode:
        +--ro standard-mode?   standard-mode
      grouping organizational-mode:
@@ -717,7 +717,7 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
      grouping explicit-mode:
        +--ro line-coding-bitrate?                identityref
        +--ro bitrate?                            uint16
-       +--ro max-diff-group-delay?               uint32
+       +--ro max-diff-group-delay?               decimal-2
        +--ro max-chromatic-dispersion?           decimal64
        +--ro cd-penalty* []
        |  +--ro cd-value         union
@@ -744,8 +744,8 @@ Internet-Draft           Yang for Layer 0 Types               March 2024
        +--ro rx-channel-power-penalty* []
        |  +--ro rx-channel-power-value    power-dbm-or-null
        |  +--ro penalty-value             union
-       +--ro min-Q-factor?                       int32
-       +--ro available-baud-rate?                uint32
+       +--ro min-Q-factor?                       decimal-2
+       +--ro available-baud-rate?                decimal64
        +--ro roll-off?                           decimal64
        +--ro min-carrier-spacing?                frequency-ghz
        +--ro available-fec-type?                 identityref
