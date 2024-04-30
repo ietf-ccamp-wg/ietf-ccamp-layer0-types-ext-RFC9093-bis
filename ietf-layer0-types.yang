@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-03-04 {
+  revision 2024-04-30 {
     description
       "To be updated";
     reference
@@ -598,22 +598,6 @@ module ietf-layer0-types {
         "all elements must use power (dBm)";
     }
 
-  identity operational-mode {
-    description
-      "Base identity to be used when defining organization/vendor 
-      specific modes.
-      
-      The format of the derived identities has to be defined by the 
-      organization which is responsible for defining the 
-      corresponding optical interface specification.";
-    reference
-      "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
-      Impairment-aware Topology.";
-  }
-// RFC Ed.: replace YYYY with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
 /*
  * Typedefs
  */
@@ -721,13 +705,11 @@ module ietf-layer0-types {
 // is published as an RFC
 
   typedef operational-mode {
-    type identityref {
-      base operational-mode;
-    }
+    type string;
     description
       "Identifies an organization (e.g., vendor) specific mode.
       
-      The format of these identities has to be defined by the 
+      The format of the string has to be defined by the 
       organization which is responsible for defining the 
       corresponding optical interface specification.";
     reference
