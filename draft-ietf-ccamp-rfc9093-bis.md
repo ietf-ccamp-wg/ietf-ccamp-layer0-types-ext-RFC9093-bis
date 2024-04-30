@@ -4,7 +4,7 @@ coding: utf-8
 title: A YANG Data Model for Layer 0 Types
 
 abbrev: Yang for Layer 0 Types
-docname: draft-ietf-ccamp-rfc9093-bis-09
+docname: draft-ietf-ccamp-rfc9093-bis-latest
 obsoletes: 9093
 submissiontype: IETF
 workgroup: CCAMP Working Group
@@ -94,6 +94,24 @@ normative:
       org: ITU-T Recommendation G.709
     date: March 2020
     seriesinfo: ITU-T G.709
+  ITU-T_G.977.1:
+    title: "Transverse compatible dense wavelength division multiplexing applications for repeatered optical fibre submarine cable systems"
+    author:
+      org: ITU-T Recommendation G.977.1
+    date: February 2021
+    seriesinfo: ITU-T G.977.1
+  ITU-T_G.9700:
+    title: "Fast access to subscriber terminals (G.fast) - Power spectral density specification"
+    author:
+      org: ITU-T Recommendation G.9700
+    date: July 2019
+    seriesinfo: ITU-T G.9700
+  ITU-T_G.666:
+    title: "Characteristics of polarization mode dispersion compensators and of receivers that compensate for polarization mode dispersion"
+    author:
+      org: ITU-T Recommendation G.666
+    date: February 2011
+    seriesinfo: ITU-T G.666
 
 informative:
   ITU-T_G.694.1:
@@ -114,6 +132,12 @@ informative:
       org: ITU-T Supplement G.Sup43
     date: December 2003
     seriesinfo: ITU-T G.Sup43
+  ITU-T_G.Sup39:
+    title: "Optical system design and engineering considerations"
+    author:
+      org: ITU-T Supplement G.Sup39
+    date: February 2016
+    seriesinfo: ITU-T G.Sup39
 
 --- abstract
 
@@ -351,6 +375,22 @@ otu-type:
    optional penalty associated with a given accumulated CD and PMD.
    This list of triplet cd, pmd, penalty can be used to sample the
    function penalty = f(CD, PMD).
+
+   modulation-format:
+
+   > TBD: add a description and informative reference to {{ITU-T_G.Sup39}}
+
+   snr:
+
+   > TBD: add a description and reference to {{ITU-T_G.977.1}}
+
+   psd:
+
+   > TBD: add a description and reference to {{ITU-T_G.9700}}
+
+   pmd:
+
+   > TBD: add a description and reference to {{ITU-T_G.666}}
 
 ## WDM Label and Label Range
 

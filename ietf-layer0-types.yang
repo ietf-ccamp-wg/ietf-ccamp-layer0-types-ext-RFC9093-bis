@@ -746,6 +746,10 @@ module ietf-layer0-types {
     description
       "(Optical) Signal to Noise Ratio measured over 0.1 nm
       resolution bandwidth";
+    reference
+      "ITU-T G.977.1 (02/2021): Transverse compatible dense
+      wavelength division multiplexing applications for repeatered
+      optical fibre submarine cable systems";
   }
 
   typedef snr-or-null {
@@ -905,6 +909,9 @@ module ietf-layer0-types {
       "The power spectral density (PSD).
       
       Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
+    reference
+      "ITU-T G.9700 (07/2019): Fast access to subscriber terminals
+      (G.fast) - Power spectral density specification";
   }
 
   typedef psd-or-null {
@@ -1777,6 +1784,10 @@ module ietf-layer0-types {
       description
         "Maximum acceptable accumulated polarization mode
          dispersion (PMD) on the receiver";
+      reference
+        "ITU-T G.666 (02/2011): Characteristics of polarization
+        mode dispersion compensators and of receivers that
+        compensate for polarization mode dispersion";
     }
     list pmd-penalty {
       config false;
