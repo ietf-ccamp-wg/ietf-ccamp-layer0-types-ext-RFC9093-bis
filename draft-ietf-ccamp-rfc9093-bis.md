@@ -1,9 +1,9 @@
 ---
 coding: utf-8
 
-title: A YANG Data Model for Layer 0 Types
+title: Common YANG Data Types for Layer 0 Networks
 
-abbrev: Yang for Layer 0 Types
+abbrev: L0 Common YANG Types
 docname: draft-ietf-ccamp-rfc9093-bis-latest
 obsoletes: 9093
 submissiontype: IETF
@@ -141,12 +141,11 @@ informative:
 
 --- abstract
 
-   This document defines a collection of common data types and groupings
-   in the YANG data modeling language.  These derived common types and
-   groupings are intended to be imported by modules that model Layer 0
-   optical Traffic Engineering (TE) configuration and state capabilities
-   such as Wavelength Switched Optical Networks (WSONs) and flexi-grid
-   Dense Wavelength Division Multiplexing (DWDM) networks.
+This document defines a collection of common data types, identities, and groupings
+in the YANG data modeling language. These derived common data types, identities,
+and groupings are intended to be imported by modules that model Layer 0
+configuration and state capabilities, such as Wavelength Switched Optical Networks (WSONs) and
+flexi-grid Dense Wavelength Division Multiplexing (DWDM) networks.
 
    This document obsoletes RFC 9093.
 
