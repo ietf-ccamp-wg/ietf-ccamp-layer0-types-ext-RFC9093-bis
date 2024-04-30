@@ -21,14 +21,16 @@ Expires: 1 November 2024                                  D. Beller, Ed.
 Abstract
 
    This document defines a collection of common data types, identities,
-   and groupings in the YANG data modeling language.  These derived
-   common data types, identities, and groupings are intended to be
-   imported by modules that model Layer 0 configuration and state
-   capabilities, such as Wavelength Switched Optical Networks (WSONs)
-   and flexi-grid Dense Wavelength Division Multiplexing (DWDM)
-   networks.
+   and groupings in the YANG data modeling language.  These common types
+   and groupings, derived from the built-in YANG data types, identities,
+   and groupings are intended to be imported by modules that model Layer
+   0 configuration and state capabilities, such as Wavelength Switched
+   Optical Networks (WSONs) and flexi-grid Dense Wavelength Division
+   Multiplexing (DWDM) networks.
 
-   This document obsoletes RFC 9093.
+   This document obsoletes RFC 9093 by replacing the YANG module it
+   contained with a new revision that includes additional YANG data
+   types, identities and groupings.
 
 Status of This Memo
 
@@ -46,8 +48,6 @@ Status of This Memo
    material or to cite them other than as "work in progress."
 
    This Internet-Draft will expire on 1 November 2024.
-
-
 
 
 
@@ -80,7 +80,7 @@ Table of Contents
    2.  Layer 0 Types Module Contents . . . . . . . . . . . . . . . .   4
      2.1.  WDM Label and Label Range . . . . . . . . . . . . . . . .   8
    3.  YANG Tree for Layer 0 Types Groupings . . . . . . . . . . . .  10
-   4.  YANG Module for Layer 0 Types . . . . . . . . . . . . . . . .  15
+   4.  YANG Module for Layer 0 Types . . . . . . . . . . . . . . . .  16
    5.  Security Considerations . . . . . . . . . . . . . . . . . . .  63
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  64
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  64
@@ -124,6 +124,11 @@ Internet-Draft            L0 Common YANG Types                April 2024
    statements of the YANG module in Section 4 or the summary in
    Appendix A.
 
+   This document obsoletes [RFC9093] by replacing it in its entirety.
+   It provides a new revision of the YANG module contained in that RFC,
+   and retains the data types previously defined, but also adds new type
+   definitions to the YANG module.  For further details, see Appendix A.
+
    The YANG data model in this document conforms to the Network
    Management Datastore Architecture defined in [RFC8342].
 
@@ -143,7 +148,7 @@ Internet-Draft            L0 Common YANG Types                April 2024
 
    In this document, names of data nodes and other data model objects
    are prefixed using the standard prefix associated with the
-   corresponding YANG imported modules.
+   corresponding YANG imported module.
 
                +==========+===================+===========+
                | Prefix   | YANG module       | Reference |
@@ -152,15 +157,10 @@ Internet-Draft            L0 Common YANG Types                April 2024
                +----------+-------------------+-----------+
 
                  Table 1: Prefixes and corresponding YANG
-                                 modules
+                                  module
 
    RFC Editor Note: Please replace XXXX with the RFC number assigned to
-   this document.
-
-
-
-
-
+   this document and remove this note.
 
 
 
@@ -340,40 +340,39 @@ Internet-Draft            L0 Common YANG Types                April 2024
 
    transceiver-capabilities:
 
-      a YANG grouping to define the transceiver capabilities (also
+      A YANG grouping to define the transceiver capabilities (also
       called "modes") needed to determine optical signal compatibility.
 
    standard-mode:
 
-      a YANG grouping for the standard modes defined in [ITU-T_G.698.2].
+      A YANG grouping for the standard modes defined in [ITU-T_G.698.2].
 
    organizational-mode:
 
-      a YANG grouping to define transponder operational mode supported
-      by organizations or vendors.
+      A YANG grouping to define transponder operational mode supported
+      by organizations or vendors, as defined in
+      [I-D.ietf-ccamp-optical-impairment-topology-yang].
 
    common-explicit-mode:
 
-      a YANG grouping to define the list of attributes related to
-      optical impairments limits in case of transceiver explicit mode.
-      This grouping should be the same used in
-      [I-D.ietf-ccamp-dwdm-if-param-yang].
+      A YANG grouping to define the list of attributes related to
+      optical impairments limits in case of transceiver explicit mode,
+      as defined in [I-D.ietf-ccamp-optical-impairment-topology-yang].
 
    transmitter-tuning-range:
 
-      a YANG grouping that defines the transmitter tuning range, which
+      A YANG grouping that defines the transmitter tuning range, which
       includes the minimum and maximum tuning frequency, as well as the
       frequency tuning steps.
 
    common-organizational-explicit-mode:
 
-      a YANG grouping to define the common capabilities attributes limit
-      range in case of operational mode and explicit mode.  Also this
-      grouping should be used in [I-D.ietf-ccamp-dwdm-if-param-yang].
+      A YANG grouping to define the common capabilities attributes limit
+      range in case of operational mode and explicit mode.
 
    cd-pmd-penalty:
 
-      a YANG grouping to define the triplet used as entries in the list
+      A YANG grouping to define the triplet used as entries in the list
       optional penalty associated with a given accumulated CD and PMD.
       This list of triplet cd, pmd, penalty can be used to sample the
       function penalty = f(CD, PMD).
@@ -386,6 +385,7 @@ Internet-Draft            L0 Common YANG Types                April 2024
    snr:
 
       TBD: add a description and reference to [ITU-T_G.977.1]
+
 
 
 
@@ -405,8 +405,10 @@ Internet-Draft            L0 Common YANG Types                April 2024
 2.1.  WDM Label and Label Range
 
    As described in [RFC6205] and [RFC7699], the WDM label represents the
-   frequency slot assigned to a WDM LSP on a given WDM Link (which
-   models an OMS MCG).
+   frequency slot assigned to a WDM Label Switched Path (LSP) on a given
+   WDM Link, which models an Optical Multiplex Section (OMS) Media
+   Channel Group (MCG) as described in
+   [I-D.ietf-ccamp-optical-impairment-topology-yang].
 
    The same WDM label shall be assigned to the same WDM LSP on all the
    WDM Links on a regen-free LSP path or path segment.
@@ -439,8 +441,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
       nominal central frequency granularity (NCFG, fixed at 6.25GHz in
       [ITU-T_G.694.1]) respectively, as described in [RFC7699]:
 
-         SW = M x SWG (measured in GHz)
-         f = 193100.000 GHz + N x NCFG (measured in GHz)
 
 
 
@@ -449,6 +449,9 @@ Belotti, et al.          Expires 1 November 2024                [Page 8]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+         SW = M x SWG (measured in GHz)
+         f = 193100.000 GHz + N x NCFG (measured in GHz)
 
    The definition of the channel spacing, NCFG and SWG in the YANG model
    are defined to support modelling of vendor-specific values (e.g.,
@@ -495,9 +498,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
    models) or the wdm-label-start-end grouping (for models that supports
    both WSON and DWDM flexible-grid).
 
-   The label-step definition for WDM should be augmented using the wson-
-   label-step grouping (for WSON only models) or the flexi-grid-label-
-   step grouping (for DWDM flexible-grid only models) or the wdm-label-
 
 
 
@@ -506,6 +506,9 @@ Belotti, et al.          Expires 1 November 2024                [Page 9]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+   The label-step definition for WDM should be augmented using the wson-
+   label-step grouping (for WSON only models) or the flexi-grid-label-
+   step grouping (for DWDM flexible-grid only models) or the wdm-label-
    step grouping (for models that supports both WSON and DWDM flexible-
    grid).  The label-step definition for WDM depends on the WDM grid
    type:
@@ -551,9 +554,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
           |  +-- cwdm-n?                     l0-types:cwdm-n
           +--:(flexi-grid)
              +-- (single-or-super-channel)?
-                +--:(single)
-                |  +-- flexi-n?              l0-types:flexi-n
-                |  +-- flexi-m?              l0-types:flexi-m
 
 
 
@@ -562,6 +562,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 10]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+                +--:(single)
+                |  +-- flexi-n?              l0-types:flexi-n
+                |  +-- flexi-m?              l0-types:flexi-m
                 x--:(super)
                 |  x-- subcarrier-flexi-n* [flexi-n]
                 |     +-- flexi-n?   l0-types:flexi-n
@@ -607,9 +610,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
        +-- flexi-n?   l0-types:flexi-n
      grouping flexi-grid-frequency-slot:
        +-- flexi-n?   l0-types:flexi-n
-       +-- flexi-m?   l0-types:flexi-m
-     grouping flexi-grid-label-hop:
-       +-- (single-or-super-channel)?
 
 
 
@@ -618,6 +618,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 11]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+       +-- flexi-m?   l0-types:flexi-m
+     grouping flexi-grid-label-hop:
+       +-- (single-or-super-channel)?
           +--:(single)
           |  +-- flexi-n?              l0-types:flexi-n
           |  +-- flexi-m?              l0-types:flexi-m
@@ -663,9 +666,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
           |     +--ro max-central-frequency?     frequency-thz
           |     +--ro transceiver-tunability?    frequency-ghz
           |     +--ro tx-channel-power-min?      power-dbm
-          |     +--ro tx-channel-power-max?      power-dbm
-          |     +--ro rx-channel-power-min?      power-dbm
-          |     +--ro rx-channel-power-max?      power-dbm
 
 
 
@@ -674,6 +674,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 12]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+          |     +--ro tx-channel-power-max?      power-dbm
+          |     +--ro rx-channel-power-min?      power-dbm
+          |     +--ro rx-channel-power-max?      power-dbm
           |     +--ro rx-total-power-max?        power-dbm
           +--:(explicit-mode)
              +--ro explicit-mode
@@ -719,9 +722,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
                 +--:(explicit-mode)
                    +--ro explicit-mode
                       +--ro min-central-frequency?    frequency-thz
-                      +--ro max-central-frequency?    frequency-thz
-                      +--ro transceiver-tunability?   frequency-ghz
-                      +--ro tx-channel-power-min?     power-dbm
 
 
 
@@ -730,6 +730,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 13]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+                      +--ro max-central-frequency?    frequency-thz
+                      +--ro transceiver-tunability?   frequency-ghz
+                      +--ro tx-channel-power-min?     power-dbm
                       +--ro tx-channel-power-max?     power-dbm
                       +--ro rx-channel-power-min?     power-dbm
                       +--ro rx-channel-power-max?     power-dbm
@@ -775,9 +778,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
        +--ro min-Q-factor?                       decimal-2
        +--ro available-baud-rate?                decimal64
        +--ro roll-off?                           decimal64
-       +--ro min-carrier-spacing?                frequency-ghz
-       +--ro available-fec-type?                 identityref
-       +--ro fec-code-rate?                      decimal64
 
 
 
@@ -786,6 +786,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 14]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+       +--ro min-carrier-spacing?                frequency-ghz
+       +--ro available-fec-type?                 identityref
+       +--ro fec-code-rate?                      decimal64
        +--ro fec-threshold?                      decimal64
        +--ro in-band-osnr?                       snr
        +--ro out-of-band-osnr?                   snr
@@ -831,9 +834,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
 
                                   Figure 1
 
-4.  YANG Module for Layer 0 Types
-
-
 
 
 
@@ -841,6 +841,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 15]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+4.  YANG Module for Layer 0 Types
 
    <CODE BEGINS> file "ietf-layer0-types@2024-03-04.yang"
    module ietf-layer0-types {
@@ -888,8 +890,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
         The key words 'MUST', 'MUST NOT', 'REQUIRED', 'SHALL', 'SHALL
         NOT', 'SHOULD', 'SHOULD NOT', 'RECOMMENDED', 'NOT RECOMMENDED',
         'MAY', and 'OPTIONAL' in this document are to be interpreted as
-        described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
-        they appear in all capitals, as shown here.";
 
 
 
@@ -897,6 +897,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 16]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+        described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
+        they appear in all capitals, as shown here.";
 
    // RFC Ed.: replace XXXX with actual RFC number and remove
    // this note
@@ -944,9 +947,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
            CWDM wavelength grid";
        }
 
-       identity wson-grid-dwdm {
-         base l0-grid-type;
-
 
 
 Belotti, et al.          Expires 1 November 2024               [Page 17]
@@ -954,6 +954,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 17]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+       identity wson-grid-dwdm {
+         base l0-grid-type;
          description
            "DWDM grid";
          reference
@@ -1000,8 +1002,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
        }
 
      identity dwdm-ch-spc-type {
-       description
-         "DWDM channel-spacing type";
 
 
 
@@ -1010,6 +1010,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 18]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+       description
+         "DWDM channel-spacing type";
        reference
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
           Label Switching Routers,
@@ -1056,8 +1058,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
 
        identity dwdm-12p5ghz {
          base dwdm-ch-spc-type;
-         description
-           "12.5 GHz channel spacing";
 
 
 
@@ -1066,6 +1066,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 19]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+         description
+           "12.5 GHz channel spacing";
          reference
            "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
            Label Switching Routers,
@@ -1112,8 +1114,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
        }
 
      identity flexi-slot-width-granularity {
-       description
-         "Flexi-grid slot width granularity";
 
 
 
@@ -1122,6 +1122,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 20]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+       description
+         "Flexi-grid slot width granularity";
        reference
          "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
          Switch Capable (LSC) Label Switching Routers,
@@ -1168,8 +1170,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
        identity QAM8 {
          base modulation;
          description
-           "8QAM (8 symbols Quadrature Amplitude Modulation)";
-       }
 
 
 
@@ -1177,6 +1177,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 21]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+           "8QAM (8 symbols Quadrature Amplitude Modulation)";
+       }
 
        identity DP-QAM8 {
          base modulation;
@@ -1224,9 +1227,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
            Modulation)";
        }
 
-     identity fec-type {
-       description
-
 
 
 Belotti, et al.          Expires 1 November 2024               [Page 22]
@@ -1234,6 +1234,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 22]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+     identity fec-type {
+       description
          "Base identity from which specific FEC
          (Forward Error Correction) type identities are derived.";
      }
@@ -1280,8 +1282,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
            "Clause 16.4.4 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
            long-reach interfaces;
 
-           Annex E of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
-           long-reach interfaces.";
 
 
 
@@ -1290,6 +1290,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 23]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+           Annex E of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
+           long-reach interfaces.";
        }
 
        identity c-fec {
@@ -1336,8 +1338,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
            the Optical channel Transport Unit order 1 (OTU1) optical
            tributary signals";
          reference
-           "Section 7.2.1.2 of ITU-T G.959.1 v8.0 (07/2018).";
-       }
 
 
 
@@ -1345,6 +1345,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 24]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+           "Section 7.2.1.2 of ITU-T G.959.1 v8.0 (07/2018).";
+       }
 
        identity line-coding-NRZ-10G {
          description
@@ -1391,9 +1394,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
          "Wavelength selection base";
        reference
          "RFC 7689: Signaling Extensions for Wavelength Switched
-         Optical Networks";
-     }
-
 
 
 
@@ -1401,6 +1401,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 25]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+         Optical Networks";
+     }
 
        identity first-fit-wavelength-assignment {
          base wavelength-assignment;
@@ -1447,9 +1450,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
          description
            "Allocate wavelengths in decending order, beginning from the
            highest frequency and progressing toward the lowest frequency
-           within the permissible frequency range.";
-       }
-
 
 
 
@@ -1457,6 +1457,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 26]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+           within the permissible frequency range.";
+       }
 
      identity otu-type {
        description
@@ -1503,9 +1506,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
 
        identity OTUCn {
          base otu-type;
-         description
-           "OTUCn (n x 105.25 Gb/s)";
-         reference
 
 
 
@@ -1514,6 +1514,9 @@ Belotti, et al.          Expires 1 November 2024               [Page 27]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+         description
+           "OTUCn (n x 105.25 Gb/s)";
+         reference
            "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
            Transport Network (OTN)";
        }
@@ -1560,9 +1563,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
           DWDM frequency grid";
      }
 
-     typedef cwdm-n {
-       type int16;
-
 
 
 Belotti, et al.          Expires 1 November 2024               [Page 28]
@@ -1570,6 +1570,8 @@ Belotti, et al.          Expires 1 November 2024               [Page 28]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+     typedef cwdm-n {
+       type int16;
        description
          "The given value 'N' is used to determine the nominal central
           wavelength.
@@ -1617,8 +1619,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
           A slot width is defined by:
             slot width = M x SWG (measured in GHz),
 
-          where SWG is defined by the flexi-slot-width-granularity.";
-
 
 
 Belotti, et al.          Expires 1 November 2024               [Page 29]
@@ -1626,6 +1626,7 @@ Belotti, et al.          Expires 1 November 2024               [Page 29]
 Internet-Draft            L0 Common YANG Types                April 2024
 
 
+          where SWG is defined by the flexi-slot-width-granularity.";
        reference
          "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
          Switch Capable (LSC) Label Switching Routers,
@@ -1673,7 +1674,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
    // RFC Ed.: replace YYYY with actual RFC number and remove
    // this note after draft-ietf-ccamp-optical-impairment-topology-yang
    // is published as an RFC
-
 
 
 
@@ -3557,6 +3557,14 @@ Internet-Draft            L0 Common YANG Types                April 2024
 
 7.1.  Normative References
 
+   [I-D.ietf-ccamp-optical-impairment-topology-yang]
+              Beller, D., Le Rouzic, E., Belotti, S., Galimberti, G.,
+              and I. Busi, "A YANG Data Model for Optical Impairment-
+              aware Topology", Work in Progress, Internet-Draft, draft-
+              ietf-ccamp-optical-impairment-topology-yang-15, 4 March
+              2024, <https://datatracker.ietf.org/doc/html/draft-ietf-
+              ccamp-optical-impairment-topology-yang-15>.
+
    [I-D.ietf-teas-rfc8776-update]
               Busi, I., Guo, A., Liu, X., Saad, T., and I. Bryskin,
               "Common YANG Data Types for Traffic Engineering", Work in
@@ -3571,20 +3579,18 @@ Internet-Draft            L0 Common YANG Types                April 2024
               that compensate for polarization mode dispersion", ITU-T
               G.666 , February 2011.
 
-   [ITU-T_G.698.2]
-              ITU-T Recommendation G.698.2, "Amplified multichannel
-              dense wavelength division multiplexing applications with
-              single channel optical interfaces", ITU-T G.698.2 ,
-              November 2018.
-
-
-
 
 
 Belotti, et al.          Expires 1 November 2024               [Page 64]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+   [ITU-T_G.698.2]
+              ITU-T Recommendation G.698.2, "Amplified multichannel
+              dense wavelength division multiplexing applications with
+              single channel optical interfaces", ITU-T G.698.2 ,
+              November 2018.
 
    [ITU-T_G.709]
               ITU-T Recommendation G.709, "Interfaces for the optical
@@ -3625,14 +3631,8 @@ Internet-Draft            L0 Common YANG Types                April 2024
               Shell (SSH)", RFC 6242, DOI 10.17487/RFC6242, June 2011,
               <https://www.rfc-editor.org/info/rfc6242>.
 
-   [RFC7699]  Farrel, A., King, D., Li, Y., and F. Zhang, "Generalized
-              Labels for the Flexi-Grid in Lambda Switch Capable (LSC)
-              Label Switching Routers", RFC 7699, DOI 10.17487/RFC7699,
-              November 2015, <https://www.rfc-editor.org/info/rfc7699>.
 
-   [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
-              RFC 7950, DOI 10.17487/RFC7950, August 2016,
-              <https://www.rfc-editor.org/info/rfc7950>.
+
 
 
 
@@ -3641,6 +3641,15 @@ Belotti, et al.          Expires 1 November 2024               [Page 65]
 
 Internet-Draft            L0 Common YANG Types                April 2024
 
+
+   [RFC7699]  Farrel, A., King, D., Li, Y., and F. Zhang, "Generalized
+              Labels for the Flexi-Grid in Lambda Switch Capable (LSC)
+              Label Switching Routers", RFC 7699, DOI 10.17487/RFC7699,
+              November 2015, <https://www.rfc-editor.org/info/rfc7699>.
+
+   [RFC7950]  Bjorklund, M., Ed., "The YANG 1.1 Data Modeling Language",
+              RFC 7950, DOI 10.17487/RFC7950, August 2016,
+              <https://www.rfc-editor.org/info/rfc7950>.
 
    [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
@@ -3677,15 +3686,6 @@ Internet-Draft            L0 Common YANG Types                April 2024
               <https://www.rfc-editor.org/info/rfc8795>.
 
 7.2.  Informative References
-
-   [I-D.ietf-ccamp-dwdm-if-param-yang]
-              Galimberti, G., Hiremagalur, D., Grammel, G., Manzotti,
-              R., and D. Breuer, "A YANG model to manage the optical
-              interface parameters for an external transponder in a WDM
-              network", Work in Progress, Internet-Draft, draft-ietf-
-              ccamp-dwdm-if-param-yang-10, 23 October 2023,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              dwdm-if-param-yang-10>.
 
 
 

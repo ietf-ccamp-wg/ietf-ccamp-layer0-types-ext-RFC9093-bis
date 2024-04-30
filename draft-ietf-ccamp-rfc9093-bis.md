@@ -142,12 +142,13 @@ informative:
 --- abstract
 
 This document defines a collection of common data types, identities, and groupings
-in the YANG data modeling language. These derived common data types, identities,
+in the YANG data modeling language. 
+These common types and groupings, derived from the built-in YANG data types, identities,
 and groupings are intended to be imported by modules that model Layer 0
 configuration and state capabilities, such as Wavelength Switched Optical Networks (WSONs) and
 flexi-grid Dense Wavelength Division Multiplexing (DWDM) networks.
 
-   This document obsoletes RFC 9093.
+This document obsoletes RFC 9093 by replacing the YANG module it contained with a new revision that includes additional YANG data types, identities and groupings.
 
 --- middle
 
@@ -176,6 +177,12 @@ flexi-grid Dense Wavelength Division Multiplexing (DWDM) networks.
    statements of the YANG module in {{yang-code}} or the summary in
    {{changes-bis}}.
 
+This document obsoletes {{?RFC9093}} by replacing it in its entirety. It
+provides a new revision of the YANG module contained in that RFC,
+and retains the data types previously defined, but also adds new type
+definitions to the YANG module.
+For further details, see {{changes-bis}}.
+
    The YANG data model in this document conforms to the Network
    Management Datastore Architecture defined in {{!RFC8342}}.
 
@@ -191,14 +198,14 @@ flexi-grid Dense Wavelength Division Multiplexing (DWDM) networks.
 
    In this document, names of data nodes and other data model objects
    are prefixed using the standard prefix associated with the
-   corresponding YANG imported modules.
+   corresponding YANG imported module.
 
 | Prefix       | YANG module                      | Reference
 | l0-types     | ietf-layer0-types                | RFC XXXX
-{: #tab-prefixes title="Prefixes and corresponding YANG modules"}
+{: #tab-prefixes title="Prefixes and corresponding YANG module"}
 
 RFC Editor Note:
-Please replace XXXX with the RFC number assigned to this document.
+Please replace XXXX with the RFC number assigned to this document and remove this note.
 
 # Layer 0 Types Module Contents
 
@@ -335,65 +342,62 @@ otu-type:
     to support optical network scenarios that contain both fixed- and flexi-grid
     links.
 
-   transceiver-capabilities:
+transceiver-capabilities:
 
-   > a YANG grouping to define the transceiver capabilities (also called
-   "modes") needed to determine optical signal compatibility.
+> A YANG grouping to define the transceiver capabilities (also called
+"modes") needed to determine optical signal compatibility.
 
-   standard-mode:
+standard-mode:
 
-   > a YANG grouping for the standard modes defined in {{ITU-T_G.698.2}}.
+> A YANG grouping for the standard modes defined in {{ITU-T_G.698.2}}.
 
-   organizational-mode:
+organizational-mode:
 
-   > a YANG grouping to define transponder operational mode supported by
-   organizations or vendors.
+> A YANG grouping to define transponder operational mode supported by
+organizations or vendors, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
-   common-explicit-mode:
+common-explicit-mode:
 
-   > a YANG grouping to define the list of attributes related to optical
-   impairments limits in case of transceiver explicit mode.  This
-   grouping should be the same used in
-   {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
+> A YANG grouping to define the list of attributes related to optical
+impairments limits in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
-   transmitter-tuning-range:
+transmitter-tuning-range:
 
-   > a YANG grouping that defines the transmitter tuning range, which
-   includes the minimum and maximum tuning frequency, as well as the
-   frequency tuning steps.
+> A YANG grouping that defines the transmitter tuning range, which
+includes the minimum and maximum tuning frequency, as well as the
+frequency tuning steps.
 
-   common-organizational-explicit-mode:
+common-organizational-explicit-mode:
 
-   > a YANG grouping to define the common capabilities attributes limit
-   range in case of operational mode and explicit mode.  Also this
-   grouping should be used in {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
+> A YANG grouping to define the common capabilities attributes limit
+range in case of operational mode and explicit mode.
 
-   cd-pmd-penalty:
-   
-   > a YANG grouping to define the triplet used as entries in the list
-   optional penalty associated with a given accumulated CD and PMD.
-   This list of triplet cd, pmd, penalty can be used to sample the
-   function penalty = f(CD, PMD).
+cd-pmd-penalty:
 
-   modulation-format:
+> A YANG grouping to define the triplet used as entries in the list
+optional penalty associated with a given accumulated CD and PMD.
+This list of triplet cd, pmd, penalty can be used to sample the
+function penalty = f(CD, PMD).
 
-   > TBD: add a description and informative reference to {{ITU-T_G.Sup39}}
+modulation-format:
 
-   snr:
+> TBD: add a description and informative reference to {{ITU-T_G.Sup39}}
 
-   > TBD: add a description and reference to {{ITU-T_G.977.1}}
+snr:
 
-   psd:
+> TBD: add a description and reference to {{ITU-T_G.977.1}}
 
-   > TBD: add a description and reference to {{ITU-T_G.9700}}
+psd:
 
-   pmd:
+> TBD: add a description and reference to {{ITU-T_G.9700}}
 
-   > TBD: add a description and reference to {{ITU-T_G.666}}
+pmd:
+
+> TBD: add a description and reference to {{ITU-T_G.666}}
 
 ## WDM Label and Label Range
 
-As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slot assigned to a WDM LSP on a given WDM Link (which models an OMS MCG).
+As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slot assigned to a WDM Label Switched Path (LSP) on a given WDM Link, which models an Optical Multiplex Section (OMS) Media Channel Group (MCG) as described in {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
 The same WDM label shall be assigned to the same WDM LSP on all the WDM Links on a regen-free LSP path or path segment.
 
