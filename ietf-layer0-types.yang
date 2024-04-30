@@ -739,9 +739,7 @@ module ietf-layer0-types {
   }    
 
   typedef snr {
-    type decimal64 {
-      fraction-digits 2;
-    }
+    type decimal-2;
     units "dB@0.1nm";
     description
       "(Optical) Signal to Noise Ratio measured over 0.1 nm
@@ -1685,8 +1683,7 @@ module ietf-layer0-types {
 
     leaf penalty-value {
       type union {
-        type decimal64 {
-          fraction-digits 2;
+        type decimal-2 {
           range "0..max";
         }
         type empty;
@@ -1739,8 +1736,7 @@ module ietf-layer0-types {
         lane";
     }
     leaf max-chromatic-dispersion {
-      type decimal64 {
-        fraction-digits 2;
+      type decimal-2 {
         range "0..max";
       }
       units "ps/nm";
@@ -1750,6 +1746,7 @@ module ietf-layer0-types {
         on the receiver";
     }
     list cd-penalty {
+      key cd-index;
       config false;
       description
         "Optional penalty associated with a given accumulated
@@ -1757,10 +1754,19 @@ module ietf-layer0-types {
 
         This list of pair cd and penalty values can be used to
         sample the function penalty = f(CD).";
+      leaf cd-index {
+        type decimal-2 {
+          range "0..max";
+        }
+        description
+          "The identifier of one entry of the cd-penalty list.
+              
+          It may be equal to the cd-value attribute, when the
+          cd-value attribute is present.";
+      }
       leaf cd-value {
         type union {
-          type decimal64 {
-            fraction-digits 2;
+          type decimal-2 {
             range "0..max";
           }
           type empty;
@@ -1775,8 +1781,7 @@ module ietf-layer0-types {
       uses penalty-value;
     }
     leaf max-polarization-mode-dispersion {
-      type decimal64 {
-        fraction-digits 2;
+      type decimal-2 {
         range "0..max";
       }
       units "ps";
@@ -1790,6 +1795,7 @@ module ietf-layer0-types {
         compensate for polarization mode dispersion";
     }
     list pmd-penalty {
+      key pmd-index;
       config false;
       description
         "Optional penalty associated with a given accumulated
@@ -1797,10 +1803,19 @@ module ietf-layer0-types {
 
         This list of pair pmd and penalty can be used to
         sample the function penalty = f(PMD).";
+      leaf pmd-index {
+        type decimal-2 {
+          range "0..max";
+        }
+        description
+          "The identifier of one entry of the pmd-penalty list.
+              
+          It may be equal to the pmd-value attribute, when the
+          pmd-value attribute is present.";
+      }
       leaf pmd-value {
         type union {
-          type decimal64 {
-            fraction-digits 2;
+          type decimal-2 {
             range "0..max";
           }
           type empty;
@@ -1823,6 +1838,7 @@ module ietf-layer0-types {
         dependent loss (PDL) on the receiver";
     }
     list pdl-penalty {
+      key pdl-index;
       config false;
       description
         "Optional penalty associated with a given accumulated 
@@ -1830,6 +1846,16 @@ module ietf-layer0-types {
 
         This list of pair pdl and penalty values can be used to
         sample the function PDL = f(penalty).";
+      leaf pdl-index {
+        type decimal-2 {
+          range "0..max";
+        }
+        description
+          "The identifier of one entry of the pdl-penalty list.
+              
+          It may be equal to the pdl-value attribute, when the
+          pdl-value attribute is present.";
+      }
       leaf pdl-value {
         type power-loss-or-null;
         config false;
@@ -1867,12 +1893,24 @@ module ietf-layer0-types {
         and min-OSNR";
     }
     list rx-channel-power-penalty {
+      key rx-channel-power-index;
       config false;
       description
         "Optional penalty associated with a received power
           lower than rx-ref-channel-power.
           This list of pair power and penalty can be used to
           sample the function penalty = f(rx-channel-power).";
+      leaf rx-channel-power-index {
+        type decimal-2 {
+          range "0..max";
+        }
+        description
+          "The identifier of one entry of the
+          rx-channel-power-penalty list.
+              
+          It may be equal to the rx-channel-power-value attribute,
+          when the rx-channel-power-value attribute is present.";
+      }
       leaf rx-channel-power-value {
         type power-dbm-or-null;
         units "dBm";
@@ -2003,9 +2041,7 @@ module ietf-layer0-types {
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
     leaf polarization-skew {
-      type decimal64 {
-        fraction-digits 2;
-      }
+      type decimal-2;
       units "ps";
       config false;
       description
