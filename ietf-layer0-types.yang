@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-04-30 {
+  revision 2024-05-21 {
     description
       "To be updated";
     reference
@@ -1746,37 +1746,21 @@ module ietf-layer0-types {
         on the receiver";
     }
     list cd-penalty {
-      key cd-index;
+      key cd-value;
       config false;
       description
         "Optional penalty associated with a given accumulated
         chromatic dispersion (CD) value.
 
-        This list of pair cd and penalty values can be used to
+        This list of pair CD and penalty values can be used to
         sample the function penalty = f(CD).";
-      leaf cd-index {
-        type decimal-2 {
-          range "0..max";
-        }
-        description
-          "The identifier of one entry of the cd-penalty list.
-              
-          It may be equal to the cd-value attribute, when the
-          cd-value attribute is present.";
-      }
       leaf cd-value {
-        type union {
-          type decimal-2 {
-            range "0..max";
-          }
-          type empty;
-        }
+        type decimal-2;
         units "ps/nm";
         config false;
         mandatory true;
         description
-          "The Chromatic Dispersion (CD), when the value is known 
-          or an empty value when the value is not known.";
+          "The Chromatic Dispersion (CD).";
       }
       uses penalty-value;
     }
@@ -1795,37 +1779,23 @@ module ietf-layer0-types {
         compensate for polarization mode dispersion";
     }
     list pmd-penalty {
-      key pmd-index;
+      key pmd-value;
       config false;
       description
         "Optional penalty associated with a given accumulated
         polarization mode dispersion (PMD) value.
 
-        This list of pair pmd and penalty can be used to
+        This list of pair PMD and penalty can be used to
         sample the function penalty = f(PMD).";
-      leaf pmd-index {
+      leaf pmd-value {
         type decimal-2 {
           range "0..max";
-        }
-        description
-          "The identifier of one entry of the pmd-penalty list.
-              
-          It may be equal to the pmd-value attribute, when the
-          pmd-value attribute is present.";
-      }
-      leaf pmd-value {
-        type union {
-          type decimal-2 {
-            range "0..max";
-          }
-          type empty;
         }
         units "ps";
         config false;
         mandatory true;
         description
-          "The Polarization Mode Dispersion (PMD), when the value 
-          is known or an empty value when the value is not known.";
+          "The Polarization Mode Dispersion (PMD).";
       }
       uses penalty-value;
     }
@@ -1838,31 +1808,21 @@ module ietf-layer0-types {
         dependent loss (PDL) on the receiver";
     }
     list pdl-penalty {
-      key pdl-index;
+      key pdl-value;
       config false;
       description
         "Optional penalty associated with a given accumulated 
         polarization dependent loss (PDL) value.
 
-        This list of pair pdl and penalty values can be used to
+        This list of pair PDL and penalty values can be used to
         sample the function PDL = f(penalty).";
-      leaf pdl-index {
-        type decimal-2 {
-          range "0..max";
-        }
-        description
-          "The identifier of one entry of the pdl-penalty list.
-              
-          It may be equal to the pdl-value attribute, when the
-          pdl-value attribute is present.";
-      }
       leaf pdl-value {
-        type power-loss-or-null;
+        type power-loss;
         config false;
         mandatory true;
         description
           "Maximum acceptable accumulated polarization dependent
-          loss.";
+          loss (PDL).";
       }
       uses penalty-value;
     }
@@ -1893,32 +1853,21 @@ module ietf-layer0-types {
         and min-OSNR";
     }
     list rx-channel-power-penalty {
-      key rx-channel-power-index;
+      key rx-channel-power-value;
       config false;
       description
         "Optional penalty associated with a received power
-          lower than rx-ref-channel-power.
-          This list of pair power and penalty can be used to
-          sample the function penalty = f(rx-channel-power).";
-      leaf rx-channel-power-index {
-        type decimal-2 {
-          range "0..max";
-        }
-        description
-          "The identifier of one entry of the
-          rx-channel-power-penalty list.
-              
-          It may be equal to the rx-channel-power-value attribute,
-          when the rx-channel-power-value attribute is present.";
-      }
+        lower than rx-ref-channel-power.
+
+        This list of pair power and penalty can be used to
+        sample the function penalty = f(rx-channel-power).";
       leaf rx-channel-power-value {
-        type power-dbm-or-null;
+        type power-dbm;
         units "dBm";
         config false;
         mandatory true;
         description
-          "The Received Power, when the value is known or an empty 
-          value when the value is not known.";
+          "The Received Power.";
       }
       uses penalty-value;
     }
