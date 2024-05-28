@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-03-04 {
+  revision 2024-05-21 {
     description
       "To be updated";
     reference
@@ -598,22 +598,6 @@ module ietf-layer0-types {
         "all elements must use power (dBm)";
     }
 
-  identity operational-mode {
-    description
-      "Base identity to be used when defining organization/vendor 
-      specific modes.
-      
-      The format of the derived identities has to be defined by the 
-      organization which is responsible for defining the 
-      corresponding optical interface specification.";
-    reference
-      "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
-      Impairment-aware Topology.";
-  }
-// RFC Ed.: replace YYYY with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
 /*
  * Typedefs
  */
@@ -721,13 +705,11 @@ module ietf-layer0-types {
 // is published as an RFC
 
   typedef operational-mode {
-    type identityref {
-      base operational-mode;
-    }
+    type string;
     description
       "Identifies an organization (e.g., vendor) specific mode.
       
-      The format of these identities has to be defined by the 
+      The format of the string has to be defined by the 
       organization which is responsible for defining the 
       corresponding optical interface specification.";
     reference
@@ -757,13 +739,15 @@ module ietf-layer0-types {
   }    
 
   typedef snr {
-    type decimal64 {
-      fraction-digits 2;
-    }
+    type decimal-2;
     units "dB@0.1nm";
     description
       "(Optical) Signal to Noise Ratio measured over 0.1 nm
       resolution bandwidth";
+    reference
+      "ITU-T G.977.1 (02/2021): Transverse compatible dense
+      wavelength division multiplexing applications for repeatered
+      optical fibre submarine cable systems";
   }
 
   typedef snr-or-null {
@@ -923,6 +907,9 @@ module ietf-layer0-types {
       "The power spectral density (PSD).
       
       Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
+    reference
+      "ITU-T G.9700 (07/2019): Fast access to subscriber terminals
+      (G.fast) - Power spectral density specification";
   }
 
   typedef psd-or-null {
@@ -1696,8 +1683,7 @@ module ietf-layer0-types {
 
     leaf penalty-value {
       type union {
-        type decimal64 {
-          fraction-digits 2;
+        type decimal-2 {
           range "0..max";
         }
         type empty;
@@ -1750,8 +1736,7 @@ module ietf-layer0-types {
         lane";
     }
     leaf max-chromatic-dispersion {
-      type decimal64 {
-        fraction-digits 2;
+      type decimal-2 {
         range "0..max";
       }
       units "ps/nm";
@@ -1761,33 +1746,26 @@ module ietf-layer0-types {
         on the receiver";
     }
     list cd-penalty {
+      key cd-value;
       config false;
       description
         "Optional penalty associated with a given accumulated
         chromatic dispersion (CD) value.
 
-        This list of pair cd and penalty values can be used to
+        This list of pair CD and penalty values can be used to
         sample the function penalty = f(CD).";
       leaf cd-value {
-        type union {
-          type decimal64 {
-            fraction-digits 2;
-            range "0..max";
-          }
-          type empty;
-        }
+        type decimal-2;
         units "ps/nm";
         config false;
         mandatory true;
         description
-          "The Chromatic Dispersion (CD), when the value is known 
-          or an empty value when the value is not known.";
+          "The Chromatic Dispersion (CD).";
       }
       uses penalty-value;
     }
     leaf max-polarization-mode-dispersion {
-      type decimal64 {
-        fraction-digits 2;
+      type decimal-2 {
         range "0..max";
       }
       units "ps";
@@ -1795,29 +1773,29 @@ module ietf-layer0-types {
       description
         "Maximum acceptable accumulated polarization mode
          dispersion (PMD) on the receiver";
+      reference
+        "ITU-T G.666 (02/2011): Characteristics of polarization
+        mode dispersion compensators and of receivers that
+        compensate for polarization mode dispersion";
     }
     list pmd-penalty {
+      key pmd-value;
       config false;
       description
         "Optional penalty associated with a given accumulated
         polarization mode dispersion (PMD) value.
 
-        This list of pair pmd and penalty can be used to
+        This list of pair PMD and penalty can be used to
         sample the function penalty = f(PMD).";
       leaf pmd-value {
-        type union {
-          type decimal64 {
-            fraction-digits 2;
-            range "0..max";
-          }
-          type empty;
+        type decimal-2 {
+          range "0..max";
         }
         units "ps";
         config false;
         mandatory true;
         description
-          "The Polarization Mode Dispersion (PMD), when the value 
-          is known or an empty value when the value is not known.";
+          "The Polarization Mode Dispersion (PMD).";
       }
       uses penalty-value;
     }
@@ -1830,20 +1808,21 @@ module ietf-layer0-types {
         dependent loss (PDL) on the receiver";
     }
     list pdl-penalty {
+      key pdl-value;
       config false;
       description
         "Optional penalty associated with a given accumulated 
         polarization dependent loss (PDL) value.
 
-        This list of pair pdl and penalty values can be used to
+        This list of pair PDL and penalty values can be used to
         sample the function PDL = f(penalty).";
       leaf pdl-value {
-        type power-loss-or-null;
+        type power-loss;
         config false;
         mandatory true;
         description
           "Maximum acceptable accumulated polarization dependent
-          loss.";
+          loss (PDL).";
       }
       uses penalty-value;
     }
@@ -1874,20 +1853,21 @@ module ietf-layer0-types {
         and min-OSNR";
     }
     list rx-channel-power-penalty {
+      key rx-channel-power-value;
       config false;
       description
         "Optional penalty associated with a received power
-          lower than rx-ref-channel-power.
-          This list of pair power and penalty can be used to
-          sample the function penalty = f(rx-channel-power).";
+        lower than rx-ref-channel-power.
+
+        This list of pair power and penalty can be used to
+        sample the function penalty = f(rx-channel-power).";
       leaf rx-channel-power-value {
-        type power-dbm-or-null;
+        type power-dbm;
         units "dBm";
         config false;
         mandatory true;
         description
-          "The Received Power, when the value is known or an empty 
-          value when the value is not known.";
+          "The Received Power.";
       }
       uses penalty-value;
     }
@@ -2010,9 +1990,7 @@ module ietf-layer0-types {
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
     leaf polarization-skew {
-      type decimal64 {
-        fraction-digits 2;
-      }
+      type decimal-2;
       units "ps";
       config false;
       description

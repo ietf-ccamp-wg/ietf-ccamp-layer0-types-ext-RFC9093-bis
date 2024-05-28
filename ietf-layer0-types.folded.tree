@@ -197,23 +197,23 @@ module: ietf-layer0-types
     +--ro line-coding-bitrate?                identityref
     +--ro bitrate?                            uint16
     +--ro max-diff-group-delay?               decimal-2
-    +--ro max-chromatic-dispersion?           decimal64
-    +--ro cd-penalty* []
-    |  +--ro cd-value         union
+    +--ro max-chromatic-dispersion?           decimal-2
+    +--ro cd-penalty* [cd-value]
+    |  +--ro cd-value         decimal-2
     |  +--ro penalty-value    union
-    +--ro max-polarization-mode-dispersion?   decimal64
-    +--ro pmd-penalty* []
-    |  +--ro pmd-value        union
+    +--ro max-polarization-mode-dispersion?   decimal-2
+    +--ro pmd-penalty* [pmd-value]
+    |  +--ro pmd-value        decimal-2
     |  +--ro penalty-value    union
     +--ro max-polarization-dependant-loss     power-loss-or-null
-    +--ro pdl-penalty* []
-    |  +--ro pdl-value        power-loss-or-null
+    +--ro pdl-penalty* [pdl-value]
+    |  +--ro pdl-value        power-loss
     |  +--ro penalty-value    union
     +--ro available-modulation-type?          identityref
     +--ro min-OSNR?                           snr
     +--ro rx-ref-channel-power?               power-dbm
-    +--ro rx-channel-power-penalty* []
-    |  +--ro rx-channel-power-value    power-dbm-or-null
+    +--ro rx-channel-power-penalty* [rx-channel-power-value]
+    |  +--ro rx-channel-power-value    power-dbm
     |  +--ro penalty-value             union
     +--ro min-Q-factor?                       decimal-2
     +--ro available-baud-rate?                decimal64
@@ -225,7 +225,7 @@ module: ietf-layer0-types
     +--ro in-band-osnr?                       snr
     +--ro out-of-band-osnr?                   snr
     +--ro tx-polarization-power-difference?   power-ratio
-    +--ro polarization-skew?                  decimal64
+    +--ro polarization-skew?                  decimal-2
   grouping common-standard-organizational-mode:
     +--ro line-coding-bitrate*   identityref
   grouping transmitter-tuning-range:
