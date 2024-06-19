@@ -523,14 +523,109 @@ RFC Editor Note: Please replace XXXX with the RFC number assigned to this docume
 
 # Changes from RFC 9093
 
-To be added in a future revision of this draft.
+This version adds new data types, identities, and groupings to the YANG modules.
+
+The following new YANG data types have been added to the 'ietf-layer0-types' module:
+
+- Standard-mode
+- Organization-identifier
+- Operational-mode
+- frequency-thz
+- frequency-ghz
+- snr
+- snr-or-null
+- fiber-type
+- decimal-2
+- decimal-2-or-null
+- power-gain
+- power-gain-or-null
+- power-loss
+- power-loss-or-null
+- power-ratio
+- power-ratio-or-null
+- power-dbm
+- power-dbm-or-null
+- decimal-5
+- decimal-5-or-null
+- psd
+- psd-or-null
+
+The following new YANG identities have been added to the 'ietf-layer0-types' module:
+
+- identity cwdm-ch-spc-type
+- identity flexi-ncfg-type
+- identity flexi-ncfg-6p25gh
+- identity modulation
+- identity DPSK 
+- identity QPSK
+- identity DP-QPSK
+- identity QAM8
+- identity DP-QAM8
+- identity QAM16
+- identity DP-QAM16
+- identity QAM32 
+- identity DP-QAM32 
+- identity QAM64
+- identity DP-QAM64
+- identity fec-type
+- identity g-fec
+- identity super-fec
+- identity no-fec 
+- identity sc-fec 
+- identity o-fec 
+- identity c-fec 
+- identity line-coding 
+- identity line-coding-NRZ-2p5G 
+- identity line-coding-NRZ-OTU1 
+- identity line-coding-NRZ-10G 
+- identity line-coding-NRZ-OTU2 
+- identity line-coding-OTL4.4-SC 
+- identity line-coding-FOIC1.4-SC 
+- identity wavelength-assignment 
+- identity first-fit-wavelength-assignment
+- identity random-wavelength-assignment 
+- identity least-loaded-wavelength-assignment 
+- identity lower-first-wavelength-assignment 
+- identity upper-first-wavelength-assignment 
+- identity otu-type 
+- identity OTU1 
+- identity OTU2 
+- identity OTU3 
+- identity OTU4 
+- identity OTUCn 
+- identity type-power-mode 
+- identity power-spectral-density 
+- identity carrier-power 
+
+The following new YANG groupings have been added to the 'ietf-layer0-types' module:
+
+- wdm-label-start-end
+- wdm-label-step
+- wdm-label-hop
+- wdm-label-range-info
+- transceiver-mode
+- transceiver-capabilities
+- standard-mode
+- organizational-mode
+- penalty-value
+- explicit-mode
+- common-standard-organizational-mode
+- transmitter-tuning-range
+- common-all-mode
+- common-transceiver-param
+- common-transceiver-configured-param
+- common-transceiver-readonly-param
+- l0-tunnel-attributes
+- frequency-range
+- l0-path-constraints
+- l0-path-properties
 
 {: numbered="false"}
 
 # Acknowledgments
 
-   The authors and the working group give their sincere thanks to Robert
-   Wilton for the YANG doctor review and Tom Petch for his comments
-   during the model and document development.
+The authors and the working group give their sincere thanks to Robert
+Wilton for the YANG doctor review and to Adrian Farrel and Tom Petch for their comments
+during the model and document development.
 
-   This document was prepared using kramdown.
+This document was prepared using kramdown.
