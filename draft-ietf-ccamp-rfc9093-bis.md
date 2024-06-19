@@ -212,7 +212,7 @@ Please replace XXXX with the RFC number assigned to this document and remove thi
    This document defines a YANG module for common Layer 0 types, ietf-
    layer0-types.  This module is used for WSON and flexi-grid DWDM
    networks.  The "ietf-layer0-types" module contains the following YANG
-   reusable types and groupings:
+   reusable YANG data types, identities and groupings:
 
    l0-grid-type:
 
@@ -234,25 +234,25 @@ Please replace XXXX with the RFC number assigned to this document and remove thi
    > A base YANG identity for the DWDM flexi-grid Nominal Central Frequency Granularity (NCFG) 
       type as defined in {{!RFC7699}}.
 
+   > Note that the only value for NCFG standardized in {{ITU-T_G.694.1}} is 6.25GHz.
+
    flexi-slot-width-granularity:
 
-   > TBD: add a description and a reference (also in YANG)
+   > A base YANG identity for the DWDM flexi-grid Slot Width Granularity (SWG) type, as defined in {{!RFC7699}}.
+
+   > Note that the only value for SWG standardized in {{ITU-T_G.694.1}} is 12.5GHz.
 
    fec-type:
 
-   > TBD: add a description and the list of references defined in YANG
+   > A base YANG identity from which specific FEC (Forward Error Correction) type identities are derived.
 
    line-coding:
 
-   > TBD: add a description and the list of references defined in YANG
+   > A base YANG identity from which specific identities defining the bit rate/line coding of optical tributary signals are derived.
 
    wavelength-assignment:
 
-   > TBD: add a description and the list of references defined in YANG
-
-   term-type:
-
-   > TBD: add a description and the list of references defined in YANG
+   > A base YANG identity from which for Wavelength selection method, as defined in {{!RFC7689}}.
 
 otu-type:
 
@@ -260,9 +260,10 @@ otu-type:
 
 > Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
 
-   operational-mode:
+operational-mode:
 
-   > TBD: add a description and the list of references defined in YANG
+> A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
+
 
    wson-label-start-end:
 
@@ -372,21 +373,21 @@ common-organizational-explicit-mode:
 > A YANG grouping to define the common capabilities attributes limit
 range in case of operational mode and explicit mode.
 
-modulation-format:
+modulation:
 
-> TBD: add a description and informative reference to {{ITU-T_G.Sup39}}
+> A base YANG identity the different modulation types, as defined in {{ITU-T_G.Sup39}}
 
 snr:
 
-> TBD: add a description and reference to {{ITU-T_G.977.1}}
+> A YANG data type used to represent an (Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
 
 psd:
 
-> TBD: add a description and reference to {{ITU-T_G.9700}}
+> A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
 
-pmd:
+penalty-value:
 
-> TBD: add a description and reference to {{ITU-T_G.666}}
+> A YANG grouping to define the penalty value used of multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
 
 ## WDM Label and Label Range
 
