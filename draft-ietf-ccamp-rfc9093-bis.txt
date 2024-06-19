@@ -908,7 +908,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
    // replace the revision date with the module publication date
    // the format is (year-month-day)
-     revision 2024-05-21 {
+     revision 2024-06-19 {
        description
          "To be updated";
        reference
@@ -2939,7 +2939,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          }
          uses penalty-value;
        }
-       leaf max-polarization-dependant-loss {
+       leaf max-polarization-dependent-loss {
          type power-loss-or-null;
          config false;
          mandatory true;
