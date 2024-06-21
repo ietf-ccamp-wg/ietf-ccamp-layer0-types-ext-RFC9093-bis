@@ -79,65 +79,115 @@ contributor:
     email: victor.lopez@nokia.com
 
 normative:
+  ITU-T_G.666:
+    title: >
+      Characteristics of polarization mode dispersion compensators and of receivers that compensate for polarization mode dispersion"
+    author:
+      org: International Telecommunication Union
+    date: February 2011
+    seriesinfo: ITU-T Recommendation G.666
+    target: https://www.itu.int/rec/T-REC-G.666
+  ITU-T_G.694.1:
+    title: "Spectral grids for WDM applications: DWDM frequency grid"
+    author:
+      org: International Telecommunication Union
+    date: October 2020
+    seriesinfo: ITU-T Recommendation G.694.1
+    target: https://www.itu.int/rec/T-REC-G.694.1
+  ITU-T_G.694.2:
+    title: "Spectral grids for WDM applications: CWDM wavelength grid"
+    author:
+      org: International Telecommunication Union
+    date: December 2003
+    seriesinfo: ITU-T Recommendation G.694.2
+    target: https://www.itu.int/rec/T-REC-G.694.2
   ITU-T_G.698.2:
     title: >
       Amplified multichannel dense wavelength division
       multiplexing applications with single channel optical
       interfaces
     author:
-      org: ITU-T Recommendation G.698.2
+      org: International Telecommunication Union
     date: November 2018
-    seriesinfo: ITU-T G.698.2
+    seriesinfo: ITU-T Recommendation G.698.2
+    target: https://www.itu.int/rec/T-REC-G.698.2
   ITU-T_G.709:
     title: Interfaces for the optical transport network
     author:
-      org: ITU-T Recommendation G.709
-    date: March 2020
-    seriesinfo: ITU-T G.709
+      org: International Telecommunication Union
+    date: June 2020
+    seriesinfo: ITU-T Recommendation G.709
+    target: https://www.itu.int/rec/T-REC-G.709
+  ITU-T_G.709.2:
+    title: OTU4 long-reach interface
+    author:
+      org: International Telecommunication Union
+    date: September 2020
+    seriesinfo: ITU-T Recommendation G.709.2, Corrigendum 1
+    target: https://www.itu.int/rec/T-REC-G.709.2
+  ITU-T_G.709.3:
+    title: Flexible OTN B100G long-reach interfaces
+    author:
+      org: International Telecommunication Union
+    date: November 2022
+    seriesinfo: ITU-T Recommendation G.709.3, Amendment 1
+    target: https://www.itu.int/rec/T-REC-G.709.3
+  ITU-T_G.959.1:
+    title: Optical transport network physical layer interfaces
+    author:
+      org: International Telecommunication Union
+    date: July 2018
+    seriesinfo: ITU-T Recommendation G.959.1
+    target: https://www.itu.int/rec/T-REC-G.959.1
+  ITU-T_G.975:
+    title: Forward error correction for submarine systems
+    author:
+      org: International Telecommunication Union
+    date: October 2000
+    seriesinfo: ITU-T Recommendation G.975
+    target: https://www.itu.int/rec/T-REC-G.975
+  ITU-T_G.975.1:
+    title: Forward error correction for high bit-rate DWDM submarine systems
+    author:
+      org: International Telecommunication Union
+    date: July 2013
+    seriesinfo: ITU-T Recommendation G.975.1, Corrigendum 2
+    target: https://www.itu.int/rec/T-REC-G.975.1
   ITU-T_G.977.1:
     title: "Transverse compatible dense wavelength division multiplexing applications for repeatered optical fibre submarine cable systems"
     author:
-      org: ITU-T Recommendation G.977.1
+      org: International Telecommunication Union
     date: February 2021
-    seriesinfo: ITU-T G.977.1
+    seriesinfo: ITU-T Recommendation G.977.1
+    target: https://www.itu.int/rec/T-REC-G.977.1
   ITU-T_G.9700:
     title: "Fast access to subscriber terminals (G.fast) - Power spectral density specification"
     author:
-      org: ITU-T Recommendation G.9700
+      org: International Telecommunication Union
     date: July 2019
-    seriesinfo: ITU-T G.9700
-  ITU-T_G.666:
-    title: "Characteristics of polarization mode dispersion compensators and of receivers that compensate for polarization mode dispersion"
+    seriesinfo: ITU-T Recommendation G.9700
+    target: https://www.itu.int/rec/T-REC-G.9700
+  OIF_400ZR:
+    title: Implementation Agreement 400ZR
     author:
-      org: ITU-T Recommendation G.666
-    date: February 2011
-    seriesinfo: ITU-T G.666
+      org:  Optical Internetworking Forum
+    date: March 2020
+    seriesinfo: OIF-400ZR-01.0 Implementation Agreement
+    target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-01.0_reduced2.pdf
 
 informative:
-  ITU-T_G.694.1:
-    title: "Spectral grids for WDM applications: DWDM frequency grid"
-    author:
-      org: ITU-T Recommendation G.694.1
-    date: October 2020
-    seriesinfo: ITU-T G.694.1
-  ITU-T_G.694.2:
-    title: "Spectral grids for WDM applications: CWDM wavelength grid"
-    author:
-      org: ITU-T Recommendation G.694.2
-    date: December 2003
-    seriesinfo: ITU-T G.694.2
   ITU-T_G.Sup43:
     title: "Transport of IEEE 10GBASE-R in optical transport networks (OTN)"
     author:
-      org: ITU-T Supplement G.Sup43
+      org: International Telecommunication Union
     date: December 2003
-    seriesinfo: ITU-T G.Sup43
+    seriesinfo: ITU-T Supplement G.Sup43
   ITU-T_G.Sup39:
     title: "Optical system design and engineering considerations"
     author:
-      org: ITU-T Supplement G.Sup39
+      org: International Telecommunication Union
     date: February 2016
-    seriesinfo: ITU-T G.Sup39
+    seriesinfo: ITU-T Supplement G.Sup39
 
 --- abstract
 
@@ -455,6 +505,8 @@ The label-step definition for WDM should be augmented using the wson-label-step 
 {: #yang-code}
 
 # YANG Module for Layer 0 Types
+
+This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC7698}}, {{!RFC8363}}, {{!RFC8363}}, {{!RFC9093}}, {{ITU-T_G.666}}, {{ITU-T_G.694.1}}, {{ITU-T_G.694.2}}, {{ITU-T_G.698.2}}, {{ITU-T_G.709}}, {{ITU-T_G.709.2}}, {{ITU-T_G.709.3}}, {{ITU-T_G.959.1}} {{ITU-T_G.975}}, {{ITU-T_G.975.1}}, {{ITU-T_G.977.1}}, {{ITU-T_G.9700}} and {{OIF_400ZR}}.
 
 ~~~~ yang
 {::include ./ietf-layer0-types.yang}

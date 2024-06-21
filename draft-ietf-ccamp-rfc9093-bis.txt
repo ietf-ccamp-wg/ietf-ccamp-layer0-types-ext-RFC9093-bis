@@ -6,13 +6,13 @@ CCAMP Working Group                                      S. Belotti, Ed.
 Internet-Draft                                                     Nokia
 Obsoletes: 9093 (if approved)                               I. Busi, Ed.
 Intended status: Standards Track                                  Huawei
-Expires: 21 December 2024                                 D. Beller, Ed.
+Expires: 23 December 2024                                 D. Beller, Ed.
                                                                    Nokia
                                                             E. Le Rouzic
                                                                   Orange
                                                                   A. Guo
                                                   Futurewei Technologies
-                                                            19 June 2024
+                                                            21 June 2024
 
 
               Common YANG Data Types for Layer 0 Networks
@@ -47,13 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 December 2024.
+   This Internet-Draft will expire on 23 December 2024.
 
 
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 1]
+Belotti, et al.         Expires 23 December 2024                [Page 1]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -85,11 +85,11 @@ Table of Contents
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  63
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  63
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .  63
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .  66
-   Appendix A.  Changes from RFC 9093  . . . . . . . . . . . . . . .  67
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  71
-   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  71
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  72
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .  67
+   Appendix A.  Changes from RFC 9093  . . . . . . . . . . . . . . .  68
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  72
+   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  72
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  73
 
 1.  Introduction
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 2]
+Belotti, et al.         Expires 23 December 2024                [Page 2]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -165,7 +165,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 3]
+Belotti, et al.         Expires 23 December 2024                [Page 3]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -221,7 +221,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 4]
+Belotti, et al.         Expires 23 December 2024                [Page 4]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -277,7 +277,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 5]
+Belotti, et al.         Expires 23 December 2024                [Page 5]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -333,7 +333,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 6]
+Belotti, et al.         Expires 23 December 2024                [Page 6]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -389,7 +389,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 7]
+Belotti, et al.         Expires 23 December 2024                [Page 7]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -445,7 +445,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 8]
+Belotti, et al.         Expires 23 December 2024                [Page 8]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -501,7 +501,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024                [Page 9]
+Belotti, et al.         Expires 23 December 2024                [Page 9]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -557,7 +557,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 10]
+Belotti, et al.         Expires 23 December 2024               [Page 10]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -613,7 +613,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 11]
+Belotti, et al.         Expires 23 December 2024               [Page 11]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -669,7 +669,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 12]
+Belotti, et al.         Expires 23 December 2024               [Page 12]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -725,7 +725,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 13]
+Belotti, et al.         Expires 23 December 2024               [Page 13]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -781,7 +781,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 14]
+Belotti, et al.         Expires 23 December 2024               [Page 14]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -837,7 +837,7 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 15]
+Belotti, et al.         Expires 23 December 2024               [Page 15]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -845,6 +845,12 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                                   Figure 1
 
 4.  YANG Module for Layer 0 Types
+
+   This YANG module references [RFC6205], [RFC7689], [RFC7699],
+   [RFC7698], [RFC8363], [RFC8363], [RFC9093], [ITU-T_G.666],
+   [ITU-T_G.694.1], [ITU-T_G.694.2], [ITU-T_G.698.2], [ITU-T_G.709],
+   [ITU-T_G.709.2], [ITU-T_G.709.3], [ITU-T_G.959.1] [ITU-T_G.975],
+   [ITU-T_G.975.1], [ITU-T_G.977.1], [ITU-T_G.9700] and [OIF_400ZR].
 
    <CODE BEGINS> file "ietf-layer0-types@2024-03-04.yang"
    module ietf-layer0-types {
@@ -884,20 +890,20 @@ Internet-Draft            L0 Common YANG Types                 June 2024
         subject to the license terms contained in, the Revised
         BSD License set forth in Section 4.c of the IETF Trust's
         Legal Provisions Relating to IETF Documents
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 16]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
         (https://trustee.ietf.org/license-info).
 
         This version of this YANG module is part of RFC XXXX; see
         the RFC itself for full legal notices.
 
         The key words 'MUST', 'MUST NOT', 'REQUIRED', 'SHALL', 'SHALL
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 16]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
         NOT', 'SHOULD', 'SHOULD NOT', 'RECOMMENDED', 'NOT RECOMMENDED',
         'MAY', and 'OPTIONAL' in this document are to be interpreted as
         described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
@@ -940,20 +946,20 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        identity wson-grid-cwdm {
          base l0-grid-type;
          description
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 17]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            "CWDM grid";
          reference
            "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
            Label Switching Routers,
 
            ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 17]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            CWDM wavelength grid";
        }
 
@@ -996,20 +1002,20 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          base cwdm-ch-spc-type;
          description
            "20nm channel spacing";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 18]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          reference
            "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
            Label Switching Routers,
 
            ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
            CWDM wavelength grid";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 18]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        }
 
      identity dwdm-ch-spc-type {
@@ -1052,19 +1058,20 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "25 GHz channel spacing";
          reference
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 19]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
            Label Switching Routers,
 
            ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
            DWDM frequency grid";
        }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 19]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
        identity dwdm-12p5ghz {
          base dwdm-ch-spc-type;
@@ -1107,6 +1114,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          base flexi-ncfg-type;
          description
            "6.25 GHz Nominal Central Frequency Granularity (NCFG)";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 20]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          reference
            "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
            Switch Capable (LSC) Label Switching Routers,
@@ -1114,13 +1129,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
            DWDM frequency grid";
        }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 20]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
      identity flexi-slot-width-granularity {
        description
@@ -1162,6 +1170,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
 
        identity DP-QPSK {
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 21]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          base modulation;
          description
            "DP-QPSK (Dual Polarization Quadrature
@@ -1170,14 +1186,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
        identity QAM8 {
          base modulation;
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 21]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          description
            "8QAM (8 symbols Quadrature Amplitude Modulation)";
        }
@@ -1218,6 +1226,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        identity QAM64 {
          base modulation;
          description
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 22]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            "QAM64 (64 symbols Quadrature Amplitude Modulation)";
        }
 
@@ -1226,14 +1242,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "DP-QAM64 (64 symbols Dual Polarization Quadrature Amplitude
            Modulation)";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 22]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        }
 
      identity fec-type {
@@ -1275,6 +1283,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            interface.";
        }
 
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 23]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
        identity o-fec {
          base fec-type;
          description
@@ -1282,14 +1297,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            Bose, Chaudhuri and Hocquenghem (BCH) FEC.";
          reference
            "Clause 16.4.4 of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 23]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            long-reach interfaces;
 
            Annex E of ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
@@ -1331,6 +1338,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            the optical tributary signal class NRZ 2.5G";
          reference
            "Section 3.2.6 of ITU-T G.959.1 v8.0 (07/2018).";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 24]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
        }
 
        identity line-coding-NRZ-OTU1 {
@@ -1338,14 +1353,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "The non return to zero (NRZ) bit rate/line coding used by
            the Optical channel Transport Unit order 1 (OTU1) optical
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 24]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            tributary signals";
          reference
            "Section 7.2.1.2 of ITU-T G.959.1 v8.0 (07/2018).";
@@ -1387,6 +1394,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            carrying a FlexO Interface of order C1 with 4 lanes
            (FOIC1.1) with Staircase Forward Error Correction
            (SC FEC).";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 25]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          reference
            "Section 3.2.1 of ITU-T G.698.2 v3.0 (11/2018).";
        }
@@ -1394,14 +1409,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
      identity wavelength-assignment {
        description
          "Wavelength selection base";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 25]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        reference
          "RFC 7689: Signaling Extensions for Wavelength Switched
          Optical Networks";
@@ -1443,6 +1450,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          base wavelength-assignment;
          description
            "Allocate wavelengths in ascending order, beginning from the
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 26]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            lowest frequency and progressing toward the highest frequency
            within the permissible frequency range.";
        }
@@ -1450,14 +1465,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        identity upper-first-wavelength-assignment {
          base wavelength-assignment;
          description
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 26]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            "Allocate wavelengths in decending order, beginning from the
            highest frequency and progressing toward the lowest frequency
            within the permissible frequency range.";
@@ -1499,20 +1506,20 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
        identity OTU4 {
          base otu-type;
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 27]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          description
            "OTU4 (111.80 Gb/s)";
          reference
            "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
            Transport Network (OTN)";
        }
-
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 27]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
        identity OTUCn {
          base otu-type;
@@ -1555,6 +1562,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
             f = 193100.000 GHz + N x channel spacing (measured in GHz),
 
           where 193100.000 GHz (193.100000 THz) is the ITU-T 'anchor
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 28]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
           frequency' for transmission over the DWDM grid, and where
           'channel spacing' is defined by the dwdm-ch-spc-type.";
        reference
@@ -1562,14 +1577,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
           Label Switching Routers,
 
           ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 28]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
           DWDM frequency grid";
      }
 
@@ -1611,6 +1618,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          Switch Capable (LSC) Label Switching Routers,
 
           ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 29]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
           DWDM frequency grid";
      }
 
@@ -1618,13 +1633,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        type uint16;
        description
          "The given value 'M' is used to determine the slot width.
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 29]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
           A slot width is defined by:
             slot width = M x SWG (measured in GHz),
@@ -1667,6 +1675,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        description
          "Identifies an organization (e.g., vendor) specific mode.
 
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 30]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          The format of the string has to be defined by the
          organization which is responsible for defining the
          corresponding optical interface specification.";
@@ -1674,14 +1689,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          "Section 2.5.2 of RFC YYYY: A YANG Data Model for Optical
          Impairment-aware Topology.";
      }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 30]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    // RFC Ed.: replace YYYY with actual RFC number and remove
    // this note after draft-ietf-ccamp-optical-impairment-topology-yang
    // is published as an RFC
@@ -1723,6 +1730,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
        description
          "(Optical) Signal to Noise Ratio measured over 0.1 nm
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 31]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          resolution bandwidth, when known, or an empty value when
          unknown.";
      }
@@ -1730,14 +1745,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
      typedef fiber-type {
        type enumeration {
          enum G.652 {
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 31]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            description
              "G.652 Standard Singlemode Fiber";
          }
@@ -1779,6 +1786,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
        description
          "A decimal64 value with two digits, when the value is known or
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 32]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          an empty value when the value is not known.";
      }
 
@@ -1786,14 +1801,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        type decimal-2 {
          range "0..max";
        }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 32]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        units "dB";
        description
          "The gain in dB.";
@@ -1835,6 +1842,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          "The power difference in dB.";
      }
 
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 33]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
      typedef power-ratio-or-null {
        type union {
          type power-ratio;
@@ -1842,14 +1857,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
        description
          "The power difference in dB, when it is known or an empty
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 33]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          value when the difference is not known.";
      }
 
@@ -1891,6 +1898,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
      typedef psd {
        type decimal64 {
          fraction-digits 16;
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 34]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
        }
        units "W/Hz";
        description
@@ -1898,14 +1913,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
          Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
        reference
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 34]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          "ITU-T G.9700 (07/2019): Fast access to subscriber terminals
          (G.fast) - Power spectral density specification";
      }
@@ -1947,6 +1954,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                 (LSC) Label Switching Routers";
            }
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 35]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          }
          case cwdm {
            leaf cwdm-n {
@@ -1954,14 +1969,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                    \"wson-grid-cwdm\")" {
                description
                  "Valid only when grid type is CWDM.";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 35]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
              }
              type l0-types:cwdm-n;
              description
@@ -2003,6 +2010,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              reference
                "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                 (LSC) Label Switching Routers";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 36]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            }
          }
          case cwdm {
@@ -2010,14 +2025,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              when "derived-from-or-self(../../grid-type,
                    \"wson-grid-cwdm\")" {
                description
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 36]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
                  "Valid only when grid type is CWDM.";
              }
              type identityref {
@@ -2059,6 +2066,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                leaf dwdm-n {
                  type l0-types:dwdm-n;
                  description
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 37]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
                    "The given value 'N' is used to determine the
                     nominal central frequency.";
                }
@@ -2066,14 +2081,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              case multi {
                leaf-list subcarrier-dwdm-n {
                  type l0-types:dwdm-n;
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 37]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
                  min-elements 2;
                  description
                    "The given values 'N' are used to determine the
@@ -2115,6 +2122,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              \"flexi-grid-dwdm\")" {
            description
              "Applicable only when the grid type is flexi-grid-dwdm.";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 38]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          }
          description
            "flexi-grid definition";
@@ -2122,14 +2137,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            type identityref {
              base flexi-slot-width-granularity;
            }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 38]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            default "flexi-swg-12p5ghz";
            description
              "Minimum space between slot widths. Default is 12.500
@@ -2171,6 +2178,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
               Maximum slot width is calculated by:
                 Maximum slot width (GHz) =
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 39]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
                   max-slot-width-factor * slot-width-granularity
 
               If specified, maximum slot width must be greater than or
@@ -2178,14 +2193,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               slot width is equal to minimum slot width.";
            reference
              "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 39]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
               Grid Dense Wavelength Division Multiplexing (DWDM)
               Networks";
          }
@@ -2227,6 +2234,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              reference
                "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                 (LSC) Label Switching Routers";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 40]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            }
          }
        }
@@ -2234,13 +2249,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
           Label Switching Routers";
      }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 40]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
      grouping wson-label-hop {
        description
@@ -2282,6 +2290,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                 central wavelength.";
              reference
                "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 41]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
                 (LSC) Label Switching Routers";
            }
          }
@@ -2290,13 +2306,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
           Label Switching Routers";
      }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 41]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
      grouping l0-label-range-info {
        description
@@ -2337,6 +2346,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              }
              type identityref {
                base dwdm-ch-spc-type;
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 42]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
              }
              description
                "Label-step is the channel spacing (GHz), e.g., 100.000,
@@ -2346,14 +2363,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                 (LSC) Label Switching Routers";
            }
          }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 42]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          case cwdm {
            leaf wson-cwdm-channel-spacing {
              when "derived-from-or-self(../../grid-type,
@@ -2393,6 +2402,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
            As described in section 3.1 of RFC 8363, the range of
            available nominal central frequencies are advertised for
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 43]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            m=1, which means that for an available central frequency n,
            the frequency slot from central frequency n-1 to central
            frequency n+1 is available.";
@@ -2402,14 +2419,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          Switch Capable (LSC) Label Switching Routers,
 
          RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 43]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          Dense Wavelength Division Multiplexing (DWDM) Networks";
      }
 
@@ -2449,6 +2458,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                 channel.";
            }
          }
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 44]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          case multi {
            container frequency-slots {
              description
@@ -2458,14 +2475,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                key "flexi-n";
                min-elements 2;
                uses flexi-grid-frequency-slot;
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 44]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
                description
                  "List of frequency slots used for flexi-grid super
                  channel.";
@@ -2505,6 +2514,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            default "1";
            description
              "A multiplier of the slot width granularity, indicating
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 45]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
               the minimum slot width supported by an optical port.
 
               Minimum slot width is calculated by:
@@ -2514,14 +2531,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
               Grid Dense Wavelength Division Multiplexing (DWDM)
               Networks";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 45]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          }
          leaf max-slot-width-factor {
            type uint16 {
@@ -2561,6 +2570,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          default "flexi-ch-spc-6p25ghz";
          status deprecated;
          description
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 46]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            "Label-step is the nominal central frequency granularity
             (GHz), e.g., 6.25 GHz.";
          reference
@@ -2570,14 +2587,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        leaf flexi-ncfg {
          type identityref {
            base flexi-ncfg-type;
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 46]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          }
          default "flexi-ncfg-6p25ghz";
          description
@@ -2617,6 +2626,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          - the proper leafrefs, when explicit mode templates are used;
            or,
          - the explicit-mode grouping, when explicit mode templates
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 47]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            are not used.
 
          The compatible-modes container shall be augmented with the
@@ -2626,14 +2643,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          mandatory true;
          description
            "Indicates whether the transceiver's mode is a standard
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 47]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
              mode, an organizational mode or an explicit mode.";
          case G.698.2 {
            uses standard-mode;
@@ -2673,6 +2682,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          "This grouping is intended to be used for reporting the
          capabilities of a transceiver.
 
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 48]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          The attributes for the explicit mode shall be augmented when
          used with either:
          - the proper leafrefs, when explicit mode templates are used;
@@ -2682,14 +2699,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
        container supported-modes {
          presence
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 48]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            "When present, it indicates that the modes supported by a
            transceiver are reported.";
          description
@@ -2729,6 +2738,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                }
                leaf-list supported-organizational-modes {
                  type leafref {
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 49]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
                    path "../../../../supported-mode/mode-id";
                  }
                  must "../../../../"
@@ -2738,14 +2755,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
                      "The pointer is only for organizational modes
                      supported by transceiver.";
                  }
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 49]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
                  description
                    "List of pointers to the organizational modes
                      supported by the transceiver's explicit mode.";
@@ -2785,6 +2794,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
        leaf organization-identifier {
          type organization-identifier;
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 50]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          config false;
          description
            "organization identifier that uses organizational
@@ -2794,14 +2811,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
      grouping penalty-value {
        description
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 50]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          "A common definition of the penalty value used for describing
          multiple penalty types (.e.g, CD, PMD, PDL).";
 
@@ -2841,6 +2850,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "Bit rate/line coding of the optical tributary signal.";
          reference
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 51]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            "ITU-T G.698.2 section 7.1.2";
        }
        leaf bitrate {
@@ -2850,14 +2867,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "The gross bitrate (e.g., 100, 200) of the optical tributary
            signal.";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 51]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        }
        leaf max-diff-group-delay  {
          type decimal-2;
@@ -2897,6 +2906,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          uses penalty-value;
        }
        leaf max-polarization-mode-dispersion {
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 52]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          type decimal-2 {
            range "0..max";
          }
@@ -2906,14 +2923,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            "Maximum acceptable accumulated polarization mode
             dispersion (PMD) on the receiver";
          reference
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 52]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            "ITU-T G.666 (02/2011): Characteristics of polarization
            mode dispersion compensators and of receivers that
            compensate for polarization mode dispersion";
@@ -2954,6 +2963,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            "Optional penalty associated with a given accumulated
            polarization dependent loss (PDL) value.
 
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 53]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            This list of pair PDL and penalty values can be used to
            sample the function PDL = f(penalty).";
          leaf pdl-value {
@@ -2962,14 +2978,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            mandatory true;
            description
              "Maximum acceptable accumulated polarization dependent
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 53]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
              loss (PDL).";
          }
          uses penalty-value;
@@ -3010,6 +3018,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            This list of pair power and penalty can be used to
            sample the function penalty = f(rx-channel-power).";
          leaf rx-channel-power-value {
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 54]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            type power-dbm;
            units "dBm";
            config false;
@@ -3018,14 +3034,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
              "The Received Power.";
          }
          uses penalty-value;
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 54]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        }
        leaf min-Q-factor {
          type decimal-2;
@@ -3066,6 +3074,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            50% of the baud rate at each side.";
        }
        leaf min-carrier-spacing {
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 55]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          type frequency-ghz;
          config false;
          description
@@ -3074,14 +3090,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            (which have the same optical characteristics but the central
            frequencies) such that if they are placed next to each other
            the interference due to spectrum overlap between them can be
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 55]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            considered negligible.
 
            In case of heterogeneous OTSi it is up to path computation
@@ -3123,6 +3131,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            transmitter spectrum furthest from the nominal central
            frequency) measured at reference point Ss.
 
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 56]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            The in-band OSNR is referenced to an optical bandwidth of
            0.1nm @ 193.7 THz or 12.5 GHz.";
          reference
@@ -3130,14 +3145,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
        leaf out-of-band-osnr {
          type snr;
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 56]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          config false;
          description
            "The ratio of the peak transmitter power to the integrated
@@ -3179,6 +3186,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          transceiver's modes.";
 
        leaf-list line-coding-bitrate {
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 57]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          type identityref {
            base line-coding;
          }
@@ -3186,13 +3201,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "The list of the bit rate/line coding of the optical
            tributary signal supported by the transceiver.
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 57]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
            Reporting this list is optional when the standard or
            organization mode supports only one bit rate/line coding.";
@@ -3234,6 +3242,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        leaf tx-channel-power-min {
          type power-dbm;
          config false;
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 58]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
          description "The minimum output power of this interface";
        }
        leaf tx-channel-power-max {
@@ -3242,14 +3258,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description "The maximum output power of this interface";
        }
        leaf rx-channel-power-min {
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 58]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          type power-dbm;
          config false;
          description "The minimum input power of this interface";
@@ -3290,6 +3298,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
          description
            "Bit rate/line coding of the optical tributary signal.
 
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 59]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
            Support of this attribute is optional when the configured
            mode supports only one bit rate/line coding.";
          reference
@@ -3298,14 +3314,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        leaf tx-channel-power {
          type power-dbm-or-null;
          description
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 59]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
            "The current channel transmit power, when the value is
            known or an empty value when the value is not known.
 
@@ -3347,6 +3355,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        }
      }
 
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 60]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
      grouping frequency-range {
        description
          "This grouping defines the lower and upper bounds of a
@@ -3354,14 +3369,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
          This grouping SHOULD NOT be used to define a frequency slot,
          which SHOULD be defined using the n and m values instead.";
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 60]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
        leaf lower-frequency {
          type frequency-thz;
          mandatory true;
@@ -3403,6 +3410,14 @@ Internet-Draft            L0 Common YANG Types                 June 2024
        description
          "Common attribute for reporting the Layer 0 computed path
          properties.";
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 61]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
        leaf estimated-gsnr {
          type snr;
          config false;
@@ -3410,14 +3425,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
            "The estimate received GSNR for the computed path.";
        }
        leaf estimated-eol-gsnr {
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 61]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
          type snr;
          config false;
          description
@@ -3456,27 +3463,17 @@ Internet-Draft            L0 Common YANG Types                 June 2024
    invoking and running NETCONF within a Secure Shell (SSH) session as
    an SSH subsystem.
 
+   The objects in this YANG module are common data types and groupings.
+   No object in this module can be read or written to.  These
+   definitions can be imported and used by other Layer 0 specific
 
 
 
-
-
-
-
-
-
-
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 62]
+Belotti, et al.         Expires 23 December 2024               [Page 62]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
 
-   The objects in this YANG module are common data types and groupings.
-   No object in this module can be read or written to.  These
-   definitions can be imported and used by other Layer 0 specific
    modules.  It is critical to consider how imported definitions will be
    utilized and accessible via RPC operations, as the resultant schema
    will have data nodes that can be writable, or readable, and will have
@@ -3525,7 +3522,10 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 63]
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 63]
 
 Internet-Draft            L0 Common YANG Types                 June 2024
 
@@ -3538,31 +3538,90 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               draft-ietf-teas-rfc8776-update-11>.
 
    [ITU-T_G.666]
-              ITU-T Recommendation G.666, "Characteristics of
+              International Telecommunication Union, "Characteristics of
               polarization mode dispersion compensators and of receivers
-              that compensate for polarization mode dispersion", ITU-T
-              G.666 , February 2011.
+              that compensate for polarization mode dispersion"", ITU-T
+              Recommendation G.666 , February 2011,
+              <https://www.itu.int/rec/T-REC-G.666>.
+
+   [ITU-T_G.694.1]
+              International Telecommunication Union, "Spectral grids for
+              WDM applications: DWDM frequency grid", ITU-T
+              Recommendation G.694.1 , October 2020,
+              <https://www.itu.int/rec/T-REC-G.694.1>.
+
+   [ITU-T_G.694.2]
+              International Telecommunication Union, "Spectral grids for
+              WDM applications: CWDM wavelength grid", ITU-T
+              Recommendation G.694.2 , December 2003,
+              <https://www.itu.int/rec/T-REC-G.694.2>.
 
    [ITU-T_G.698.2]
-              ITU-T Recommendation G.698.2, "Amplified multichannel
-              dense wavelength division multiplexing applications with
-              single channel optical interfaces", ITU-T G.698.2 ,
-              November 2018.
+              International Telecommunication Union, "Amplified
+              multichannel dense wavelength division multiplexing
+              applications with single channel optical interfaces",
+              ITU-T Recommendation G.698.2 , November 2018,
+              <https://www.itu.int/rec/T-REC-G.698.2>.
 
    [ITU-T_G.709]
-              ITU-T Recommendation G.709, "Interfaces for the optical
-              transport network", ITU-T G.709 , March 2020.
+              International Telecommunication Union, "Interfaces for the
+              optical transport network", ITU-T Recommendation G.709 ,
+              June 2020, <https://www.itu.int/rec/T-REC-G.709>.
+
+   [ITU-T_G.709.2]
+              International Telecommunication Union, "OTU4 long-reach
+              interface", ITU-T Recommendation G.709.2, Corrigendum 1 ,
+              September 2020, <https://www.itu.int/rec/T-REC-G.709.2>.
+
+   [ITU-T_G.709.3]
+              International Telecommunication Union, "Flexible OTN B100G
+              long-reach interfaces", ITU-T Recommendation G.709.3,
+              Amendment 1 , November 2022,
+              <https://www.itu.int/rec/T-REC-G.709.3>.
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 64]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
+   [ITU-T_G.959.1]
+              International Telecommunication Union, "Optical transport
+              network physical layer interfaces", ITU-T Recommendation
+              G.959.1 , July 2018,
+              <https://www.itu.int/rec/T-REC-G.959.1>.
 
    [ITU-T_G.9700]
-              ITU-T Recommendation G.9700, "Fast access to subscriber
-              terminals (G.fast) - Power spectral density
-              specification", ITU-T G.9700 , July 2019.
+              International Telecommunication Union, "Fast access to
+              subscriber terminals (G.fast) - Power spectral density
+              specification", ITU-T Recommendation G.9700 , July 2019,
+              <https://www.itu.int/rec/T-REC-G.9700>.
+
+   [ITU-T_G.975]
+              International Telecommunication Union, "Forward error
+              correction for submarine systems", ITU-T Recommendation
+              G.975 , October 2000,
+              <https://www.itu.int/rec/T-REC-G.975>.
+
+   [ITU-T_G.975.1]
+              International Telecommunication Union, "Forward error
+              correction for high bit-rate DWDM submarine systems",
+              ITU-T Recommendation G.975.1, Corrigendum 2 , July 2013,
+              <https://www.itu.int/rec/T-REC-G.975.1>.
 
    [ITU-T_G.977.1]
-              ITU-T Recommendation G.977.1, "Transverse compatible dense
-              wavelength division multiplexing applications for
-              repeatered optical fibre submarine cable systems", ITU-T
-              G.977.1 , February 2021.
+              International Telecommunication Union, "Transverse
+              compatible dense wavelength division multiplexing
+              applications for repeatered optical fibre submarine cable
+              systems", ITU-T Recommendation G.977.1 , February 2021,
+              <https://www.itu.int/rec/T-REC-G.977.1>.
+
+   [OIF_400ZR]
+              Optical Internetworking Forum, "Implementation Agreement
+              400ZR", OIF-400ZR-01.0 Implementation Agreement , March
+              2020, <https://www.oiforum.com/wp-content/uploads/OIF-
+              400ZR-01.0_reduced2.pdf>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -3574,17 +3633,19 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               (GMPLS)", RFC 4203, DOI 10.17487/RFC4203, October 2005,
               <https://www.rfc-editor.org/info/rfc4203>.
 
+
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 65]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
    [RFC6205]  Otani, T., Ed. and D. Li, Ed., "Generalized Labels for
               Lambda-Switch-Capable (LSC) Label Switching Routers",
               RFC 6205, DOI 10.17487/RFC6205, March 2011,
               <https://www.rfc-editor.org/info/rfc6205>.
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 64]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
 
    [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
               and A. Bierman, Ed., "Network Configuration Protocol
@@ -3600,6 +3661,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               Switched Optical Networks", RFC 7689,
               DOI 10.17487/RFC7689, November 2015,
               <https://www.rfc-editor.org/info/rfc7689>.
+
+   [RFC7698]  Gonzalez de Dios, O., Ed., Casellas, R., Ed., Zhang, F.,
+              Fu, X., Ceccarelli, D., and I. Hussain, "Framework and
+              Requirements for GMPLS-Based Control of Flexi-Grid Dense
+              Wavelength Division Multiplexing (DWDM) Networks",
+              RFC 7698, DOI 10.17487/RFC7698, November 2015,
+              <https://www.rfc-editor.org/info/rfc7698>.
 
    [RFC7699]  Farrel, A., King, D., Li, Y., and F. Zhang, "Generalized
               Labels for the Flexi-Grid in Lambda Switch Capable (LSC)
@@ -3623,6 +3691,13 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               DOI 10.17487/RFC8341, March 2018,
               <https://www.rfc-editor.org/info/rfc8341>.
 
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 66]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
    [RFC8342]  Bjorklund, M., Schoenwaelder, J., Shafer, P., Watsen, K.,
               and R. Wilton, "Network Management Datastore Architecture
               (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
@@ -3634,14 +3709,6 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               Networks", RFC 8363, DOI 10.17487/RFC8363, May 2018,
               <https://www.rfc-editor.org/info/rfc8363>.
 
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 65]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/info/rfc8446>.
@@ -3652,27 +3719,22 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               DOI 10.17487/RFC8795, August 2020,
               <https://www.rfc-editor.org/info/rfc8795>.
 
+   [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
+              YANG Data Model for Layer 0 Types", RFC 9093,
+              DOI 10.17487/RFC9093, August 2021,
+              <https://www.rfc-editor.org/info/rfc9093>.
+
 7.2.  Informative References
 
-   [ITU-T_G.694.1]
-              ITU-T Recommendation G.694.1, "Spectral grids for WDM
-              applications: DWDM frequency grid", ITU-T G.694.1 ,
-              October 2020.
-
-   [ITU-T_G.694.2]
-              ITU-T Recommendation G.694.2, "Spectral grids for WDM
-              applications: CWDM wavelength grid", ITU-T G.694.2 ,
-              December 2003.
-
    [ITU-T_G.Sup39]
-              ITU-T Supplement G.Sup39, "Optical system design and
-              engineering considerations", ITU-T G.Sup39 , February
-              2016.
+              International Telecommunication Union, "Optical system
+              design and engineering considerations", ITU-T Supplement
+              G.Sup39 , February 2016.
 
    [ITU-T_G.Sup43]
-              ITU-T Supplement G.Sup43, "Transport of IEEE 10GBASE-R in
-              optical transport networks (OTN)", ITU-T G.Sup43 ,
-              December 2003.
+              International Telecommunication Union, "Transport of IEEE
+              10GBASE-R in optical transport networks (OTN)", ITU-T
+              Supplement G.Sup43 , December 2003.
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
@@ -3684,37 +3746,25 @@ Internet-Draft            L0 Common YANG Types                 June 2024
               RFC 6163, DOI 10.17487/RFC6163, April 2011,
               <https://www.rfc-editor.org/info/rfc6163>.
 
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 67]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
+
    [RFC7446]  Lee, Y., Ed., Bernstein, G., Ed., Li, D., and W. Imajuku,
               "Routing and Wavelength Assignment Information Model for
               Wavelength Switched Optical Networks", RFC 7446,
               DOI 10.17487/RFC7446, February 2015,
               <https://www.rfc-editor.org/info/rfc7446>.
 
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 66]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    [RFC7581]  Bernstein, G., Ed., Lee, Y., Ed., Li, D., Imajuku, W., and
               J. Han, "Routing and Wavelength Assignment Information
               Encoding for Wavelength Switched Optical Networks",
               RFC 7581, DOI 10.17487/RFC7581, June 2015,
               <https://www.rfc-editor.org/info/rfc7581>.
-
-   [RFC7698]  Gonzalez de Dios, O., Ed., Casellas, R., Ed., Zhang, F.,
-              Fu, X., Ceccarelli, D., and I. Hussain, "Framework and
-              Requirements for GMPLS-Based Control of Flexi-Grid Dense
-              Wavelength Division Multiplexing (DWDM) Networks",
-              RFC 7698, DOI 10.17487/RFC7698, November 2015,
-              <https://www.rfc-editor.org/info/rfc7698>.
-
-   [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
-              YANG Data Model for Layer 0 Types", RFC 9093,
-              DOI 10.17487/RFC9093, August 2021,
-              <https://www.rfc-editor.org/info/rfc9093>.
 
 Appendix A.  Changes from RFC 9093
 
@@ -3746,19 +3796,19 @@ Appendix A.  Changes from RFC 9093
 
    *  power-gain
 
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 67]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    *  power-gain-or-null
 
    *  power-loss
 
    *  power-loss-or-null
+
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 68]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
 
    *  power-ratio
 
@@ -3803,18 +3853,18 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
    *  identity QAM32
 
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 68]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    *  identity DP-QAM32
 
    *  identity QAM64
 
    *  identity DP-QAM64
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 69]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
 
    *  identity fec-type
 
@@ -3858,19 +3908,19 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
    *  identity otu-type
 
-
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 69]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    *  identity OTU1
 
    *  identity OTU2
 
    *  identity OTU3
+
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 70]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
 
    *  identity OTU4
 
@@ -3915,18 +3965,18 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
    *  common-transceiver-configured-param
 
-
-
-Belotti, et al.         Expires 21 December 2024               [Page 70]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    *  common-transceiver-readonly-param
 
    *  l0-tunnel-attributes
 
    *  frequency-range
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 71]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
+
 
    *  l0-path-constraints
 
@@ -3972,15 +4022,16 @@ Contributors
    Email: byyun@etri.re.kr
 
 
-
-Belotti, et al.         Expires 21 December 2024               [Page 71]
-
-Internet-Draft            L0 Common YANG Types                 June 2024
-
-
    Ricard Vilalta
    CTTC
    Email: ricard.vilalta@cttc.es
+
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 72]
+
+Internet-Draft            L0 Common YANG Types                 June 2024
 
 
    Young Lee
@@ -4029,4 +4080,9 @@ Authors' Addresses
 
 
 
-Belotti, et al.         Expires 21 December 2024               [Page 72]
+
+
+
+
+
+Belotti, et al.         Expires 23 December 2024               [Page 73]
