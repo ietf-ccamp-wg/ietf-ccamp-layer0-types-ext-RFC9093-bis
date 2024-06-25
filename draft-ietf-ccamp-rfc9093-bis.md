@@ -425,7 +425,7 @@ range in case of operational mode and explicit mode.
 
 modulation:
 
-> A base YANG identity the different modulation types, as defined in {{ITU-T_G.Sup39}}
+> A base YANG identity to define the different modulation types, as defined in {{ITU-T_G.Sup39}}
 
 snr:
 
