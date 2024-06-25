@@ -494,9 +494,9 @@ based on the following attributes, defined based on concepts used in {{?RFC7699}
 
 Each entry of the label-restriction list, as defined in {{!I-D.ietf-teas-rfc8776-update}}, defines a label-start, a label-end, a label-step and a range-bitmap.
 
-The label-start and label-end definitions, when used for WDM networks, should be augmented with WDM technology-specific attributes using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that supports both WSON and DWDM flexible-grid).
+The label-start and label-end definitions, when used for representing WDM labe range, are augmented with WDM technology-specific attributes, using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that supports both WSON and DWDM flexible-grid).
 
-The label-step definition, when used for WDM networks, should be augmented with WDM technology-specific attributes using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that supports both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
+The label-step definition, when used for representing WDM labe range, are augmented with WDM technology-specific attributes, using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that supports both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
 
 * For CWDM and DWDM fixed grids, it describes the channel spacing, as defined in {{?RFC6205}};
 
