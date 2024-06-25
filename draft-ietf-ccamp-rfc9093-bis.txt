@@ -394,8 +394,8 @@ Belotti, et al.         Expires 27 December 2024                [Page 7]
 Internet-Draft            L0 Common YANG Types                 June 2024
 
 
-      A base YANG identity the different modulation types, as defined in
-      [ITU-T_G.Sup39]
+      A base YANG identity to define the different modulation types, as
+      defined in [ITU-T_G.Sup39]
 
    snr:
 
@@ -410,9 +410,9 @@ Internet-Draft            L0 Common YANG Types                 June 2024
 
    penalty-value:
 
-      A YANG grouping to define the penalty value used of multiple
-      penalty types, such as Chromatic Dispersion (CD), Polarization
-      Mode Dispersion (PMD), as defined in [ITU-T_G.666] or Polarization
+      A YANG grouping to define the penalty value for multiple penalty
+      types, such as Chromatic Dispersion (CD), Polarization Mode
+      Dispersion (PMD), as defined in [ITU-T_G.666] or Polarization
       Dependent Loss(PDL)
 
 2.1.  WDM Label and Label Range
