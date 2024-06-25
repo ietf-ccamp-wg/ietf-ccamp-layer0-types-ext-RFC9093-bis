@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-05-21 {
+  revision 2024-06-19 {
     description
       "To be updated";
     reference
@@ -1799,7 +1799,7 @@ module ietf-layer0-types {
       }
       uses penalty-value;
     }
-    leaf max-polarization-dependant-loss {
+    leaf max-polarization-dependent-loss {
       type power-loss-or-null;
       config false;
       mandatory true;
