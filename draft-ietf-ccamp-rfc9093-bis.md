@@ -437,7 +437,7 @@ psd:
 
 penalty-value:
 
-> A YANG grouping to define the penalty value used of multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
+> A YANG grouping to define the penalty value for multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
 
 ## WDM Label and Label Range {#label-range}
 
