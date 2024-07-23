@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-06-19 {
+  revision 2024-07-23 {
     description
       "To be updated";
     reference
@@ -920,6 +920,24 @@ module ietf-layer0-types {
     description
       "The power spectral density (PSD), when it is known or an
       empty value when the PSD is not known.";
+  }
+
+  typedef decimal-18 {
+    type decimal64 {
+      fraction-digits 18;
+    }
+    description
+      "A decimal64 value with eighteen digits.";
+  }
+
+  typedef decimal-18-or-null {
+    type union {
+      type decimal-18;
+      type empty;
+    }
+    description
+      "A decimal64 value with eighteen digits, when the value is
+      known or an empty value when the value is not known.";
   }
 
 /*
