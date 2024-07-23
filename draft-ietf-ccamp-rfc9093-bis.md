@@ -264,180 +264,145 @@ Please replace XXXX with the RFC number assigned to this document and remove thi
    networks.  The "ietf-layer0-types" module contains the following YANG
    reusable YANG data types, identities and groupings:
 
-   l0-grid-type:
+l0-grid-type:
+: A base YANG identity for the grid type as defined in {{!RFC6205}} and {{!RFC7699}}.
 
-   > A base YANG identity for the grid type as defined in {{!RFC6205}} and
-     {{!RFC7699}}.
+cwdm-ch-spc-type:
+: A base YANG identity for the Coarse Wavelength Division
+Multiplexing (CWDM) channel-spacing type as defined in {{!RFC6205}}.
 
-   cwdm-ch-spc-type:
+dwdm-ch-spc-type:
+: A base YANG identity for the DWDM channel-spacing type as defined
+in {{!RFC6205}}.
 
-   > A base YANG identity for the Coarse Wavelength Division
-     Multiplexing (CWDM) channel-spacing type as defined in {{!RFC6205}}.
+flexi-ncfg-type:
+: A base YANG identity for the DWDM flexi-grid Nominal Central Frequency Granularity (NCFG) 
+  type as defined in {{!RFC7699}}.
 
-   dwdm-ch-spc-type:
+> Note that the only value for NCFG standardized in {{ITU-T_G.694.1}} is 6.25GHz.
 
-   > A base YANG identity for the DWDM channel-spacing type as defined
-     in {{!RFC6205}}.
+flexi-slot-width-granularity:
+: A base YANG identity for the DWDM flexi-grid Slot Width Granularity (SWG) type, as defined in {{!RFC7699}}.
+: Note that the only value for SWG standardized in {{ITU-T_G.694.1}} is 12.5GHz.
 
-   flexi-ncfg-type:
+fec-type:
+: A base YANG identity from which specific FEC (Forward Error Correction) type identities are derived.
 
-   > A base YANG identity for the DWDM flexi-grid Nominal Central Frequency Granularity (NCFG) 
-      type as defined in {{!RFC7699}}.
+line-coding:
+: A base YANG identity from which specific identities defining the bit rate/line coding of optical tributary signals are derived.
 
-   > Note that the only value for NCFG standardized in {{ITU-T_G.694.1}} is 6.25GHz.
-
-   flexi-slot-width-granularity:
-
-   > A base YANG identity for the DWDM flexi-grid Slot Width Granularity (SWG) type, as defined in {{!RFC7699}}.
-
-   > Note that the only value for SWG standardized in {{ITU-T_G.694.1}} is 12.5GHz.
-
-   fec-type:
-
-   > A base YANG identity from which specific FEC (Forward Error Correction) type identities are derived.
-
-   line-coding:
-
-   > A base YANG identity from which specific identities defining the bit rate/line coding of optical tributary signals are derived.
-
-   wavelength-assignment:
-
-   > A base YANG identity from which for Wavelength selection method, as defined in {{!RFC7689}}.
+wavelength-assignment:
+: A base YANG identity from which for Wavelength selection method, as defined in {{!RFC7689}}.
 
 otu-type:
-
-> This specifies the type of OTU, including the types specified in {{ITU-T_G.709}}.
-
-> Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
+: This specifies the type of OTU, including the types specified in {{ITU-T_G.709}}.
+: Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
 
 operational-mode:
+: A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
 
-> A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
+wson-label-start-end:
+: The WSON label range was defined in {{!RFC6205}}, and the generic
+topology model defines the label-start/label-end in {{!RFC8795}}.
+This grouping shows the WSON-specific label-start and label-end
+information. See {{label-range}} for more details. 
 
+wson-label-hop:
+: The WSON label range was defined in {{!RFC6205}}, and the generic
+topology model defines the label-hop in {{!RFC8795}}.  This grouping
+shows the WSON-specific label-hop information. See {{label-range}} for more details.
 
-   wson-label-start-end:
+l0-label-range-info:
+: A YANG grouping that defines the Layer 0 label range information
+applicable for WSON as defined in {{!RFC6205}}. The label range info is defined per priority {{!RFC4203}}.
+: This grouping is used in the flexi-grid DWDM by adding more flexi-grid-specific
+parameters. See {{label-range}} for more details.
 
-   > The WSON label range was defined in {{!RFC6205}}, and the generic
-     topology model defines the label-start/label-end in {{!RFC8795}}.
-     This grouping shows the WSON-specific label-start and label-end
-     information. See {{label-range}} for more details. 
+wson-label-step:
+: A YANG grouping that defines label steps for WSON as defined in
+{{!I-D.ietf-teas-rfc8776-update}}. See {{label-range}} for more details.
 
-   wson-label-hop:
+flexi-grid-label-start-end:
+: The flexi-grid label range was defined in {{!RFC7699}}, and the
+generic topology model defines the label-start/label-end in
+{{!RFC8795}}.
+: This grouping shows the flexi-grid-specific label-
+start and label-end information which is used to describe the range of available nominal central frequencies. See {{label-range}} for more details.
+: As described in section 3.1 of {{!RFC8363}}, the range of available nominal central frequencies are advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
 
-   > The WSON label range was defined in {{!RFC6205}}, and the generic
-     topology model defines the label-hop in {{!RFC8795}}.  This grouping
-     shows the WSON-specific label-hop information. See {{label-range}} for more details.
+flexi-grid-label-hop:
+: The flexi-grid label range was defined in {{!RFC8363}}, and the
+generic topology model defines the label-hop in {{!RFC8795}}.
+: This grouping shows the WSON-specific label-hop information. See {{label-range}} for more details.
 
-   l0-label-range-info:
+flexi-grid-label-range-info:
+: A YANG grouping that defines flexi-grid label range information as
+defined in {{!RFC8363}}. See {{label-range}} for more details. See {{label-range}} for more details.
 
-   > A YANG grouping that defines the Layer 0 label range information
-     applicable for WSON as defined in {{!RFC6205}}. The label range info is defined per priority {{!RFC4203}}. This grouping is
-     used in the flexi-grid DWDM by adding more flexi-grid-specific
-     parameters. See {{label-range}} for more details.
+flexi-grid-label-step:
+: A YANG grouping that defines flexi-grid label steps as defined in
+{{!I-D.ietf-teas-rfc8776-update}}. See {{label-range}} for more details.
 
-   wson-label-step:
+wdm-label-start-end:
+: A YANG grouping that combines the definition of label-start/label-end information
+that was defined separately in wson-label-start-end and flexi-grid-label-start-end,
+to support optical network scenarios that contain both fixed- and flexi-grid
+links. See {{label-range}} for more details.
 
-   > A YANG grouping that defines label steps for WSON as defined in
-     {{!I-D.ietf-teas-rfc8776-update}}. See {{label-range}} for more details.
+wdm-label-hop:
+: A YANG grouping that combines the definition of label hop information
+that was defined separately in wson-label-hop and flexi-grid-label-hop,
+to support optical network scenarios that contain both fixed- and flexi-grid
+links. See {{label-range}} for more details.
 
-   flexi-grid-label-start-end:
+wdm-label-range-info:
+: A YANG grouping that combines the definition of label range information
+that was defined separately in wson-label-range-info and flexi-grid-label-range-info,
+to support optical network scenarios that contain both fixed- and flexi-grid
+links. See {{label-range}} for more details.
 
-  > The flexi-grid label range was defined in {{!RFC7699}}, and the
-  generic topology model defines the label-start/label-end in
-  {{!RFC8795}}.  This grouping shows the flexi-grid-specific label-
-  start and label-end information which is used to describe the range of available nominal central frequencies. See {{label-range}} for more details.
-
-  > As described in section 3.1 of {{!RFC8363}}, the range of available nominal central frequencies are advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
-
-   flexi-grid-label-hop:
-
-   > The flexi-grid label range was defined in {{!RFC8363}}, and the
-     generic topology model defines the label-hop in {{!RFC8795}}.  This
-     grouping shows the WSON-specific label-hop information. See {{label-range}} for more details.
-
-   flexi-grid-label-range-info:
-
-   > A YANG grouping that defines flexi-grid label range information as
-     defined in {{!RFC8363}}. See {{label-range}} for more details. See {{label-range}} for more details.
-
-   flexi-grid-label-step:
-
-   > A YANG grouping that defines flexi-grid label steps as defined in
-     {{!I-D.ietf-teas-rfc8776-update}}. See {{label-range}} for more details.
-
-   wdm-label-start-end:
-
-  > A YANG grouping that combines the definition of label-start/label-end information
-    that was defined separately in wson-label-start-end and flexi-grid-label-start-end,
-    to support optical network scenarios that contain both fixed- and flexi-grid
-    links. See {{label-range}} for more details.
-
-   wdm-label-hop:
-
-  > A YANG grouping that combines the definition of label hop information
-    that was defined separately in wson-label-hop and flexi-grid-label-hop,
-    to support optical network scenarios that contain both fixed- and flexi-grid
-    links. See {{label-range}} for more details.
-
-   wdm-label-range-info:
-
-  > A YANG grouping that combines the definition of label range information
-    that was defined separately in wson-label-range-info and flexi-grid-label-range-info,
-    to support optical network scenarios that contain both fixed- and flexi-grid
-    links. See {{label-range}} for more details.
-
-   wdm-label-step:
-
-  > A YANG grouping that combines the definition of label step information
-    defined separately in wson-label-step and flexi-grid-label-step,
-    to support optical network scenarios that contain both fixed- and flexi-grid
-    links. See {{label-range}} for more details.
+wdm-label-step:
+: A YANG grouping that combines the definition of label step information
+defined separately in wson-label-step and flexi-grid-label-step,
+to support optical network scenarios that contain both fixed- and flexi-grid
+links. See {{label-range}} for more details.
 
 transceiver-capabilities:
-
-> A YANG grouping to define the transceiver capabilities (also called
+: A YANG grouping to define the transceiver capabilities (also called
 "modes") needed to determine optical signal compatibility.
 
 standard-mode:
-
-> A YANG grouping for the standard modes defined in {{ITU-T_G.698.2}}.
+: A YANG grouping for the standard modes defined in {{ITU-T_G.698.2}}.
 
 organizational-mode:
-
-> A YANG grouping to define transponder operational mode supported by
+: A YANG grouping to define transponder operational mode supported by
 organizations or vendors, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
-common-explicit-mode:
-
-> A YANG grouping to define the list of attributes related to optical
+explicit-mode:
+: A YANG grouping to define the list of attributes related to optical
 impairments limits in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
+: Note that the the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
 
 transmitter-tuning-range:
-
-> A YANG grouping that defines the transmitter tuning range, which
+: A YANG grouping that defines the transmitter tuning range, which
 includes the minimum and maximum tuning frequency, as well as the
 frequency tuning steps.
 
 common-organizational-explicit-mode:
-
-> A YANG grouping to define the common capabilities attributes limit
+: A YANG grouping to define the common capabilities attributes limit
 range in case of operational mode and explicit mode.
 
 modulation:
-
-> A base YANG identity to define the different modulation types, as defined in {{ITU-T_G.Sup39}}
+: A base YANG identity to define the different modulation types, as defined in {{ITU-T_G.Sup39}}
 
 snr:
-
-> A YANG data type used to represent an (Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
+: A YANG data type used to represent an (Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
 
 psd:
-
-> A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
+: A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
 
 penalty-value:
-
-> A YANG grouping to define the penalty value for multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
+: A YANG grouping to define the penalty value for multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
 
 ## WDM Label and Label Range {#label-range}
 

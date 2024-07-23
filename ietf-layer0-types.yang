@@ -2017,7 +2017,7 @@ module ietf-layer0-types {
       reference
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
-  } // grouping explicit-mode    
+  } // grouping explicit-mode
 
   grouping common-standard-organizational-mode {
     description
