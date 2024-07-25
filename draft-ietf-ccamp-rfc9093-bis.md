@@ -381,7 +381,7 @@ organizations or vendors, as defined in {{!I-D.ietf-ccamp-optical-impairment-top
 explicit-mode:
 : A YANG grouping to define the list of attributes related to optical
 impairments limits in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
-: Note that the the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
+: Note that the the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can be calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
 
 transmitter-tuning-range:
 : A YANG grouping that defines the transmitter tuning range, which

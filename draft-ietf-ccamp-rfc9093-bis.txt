@@ -6,13 +6,13 @@ CCAMP Working Group                                      S. Belotti, Ed.
 Internet-Draft                                                     Nokia
 Obsoletes: 9093 (if approved)                               I. Busi, Ed.
 Intended status: Standards Track                                  Huawei
-Expires: 24 January 2025                                  D. Beller, Ed.
+Expires: 26 January 2025                                  D. Beller, Ed.
                                                                    Nokia
                                                             E. Le Rouzic
                                                                   Orange
                                                                   A. Guo
                                                   Futurewei Technologies
-                                                            23 July 2024
+                                                            25 July 2024
 
 
               Common YANG Data Types for Layer 0 Networks
@@ -47,13 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 January 2025.
+   This Internet-Draft will expire on 26 January 2025.
 
 
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 1]
+Belotti, et al.          Expires 26 January 2025                [Page 1]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 2]
+Belotti, et al.          Expires 26 January 2025                [Page 2]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -165,7 +165,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 3]
+Belotti, et al.          Expires 26 January 2025                [Page 3]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -221,7 +221,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 4]
+Belotti, et al.          Expires 26 January 2025                [Page 4]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -277,7 +277,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 5]
+Belotti, et al.          Expires 26 January 2025                [Page 5]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -333,13 +333,13 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 6]
+Belotti, et al.          Expires 26 January 2025                [Page 6]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
 
       OTSi is not explicitly reported within the explicit-mode
-      parameters because it can calculated using the available-baud-
+      parameters because it can be calculated using the available-baud-
       rate, the roll-off and the min-carrier-spacing attributes.
 
    transmitter-tuning-range:  A YANG grouping that defines the
@@ -389,7 +389,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 7]
+Belotti, et al.          Expires 26 January 2025                [Page 7]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -445,7 +445,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 8]
+Belotti, et al.          Expires 26 January 2025                [Page 8]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -501,7 +501,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025                [Page 9]
+Belotti, et al.          Expires 26 January 2025                [Page 9]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -557,7 +557,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 10]
+Belotti, et al.          Expires 26 January 2025               [Page 10]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -613,7 +613,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 11]
+Belotti, et al.          Expires 26 January 2025               [Page 11]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -669,7 +669,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 12]
+Belotti, et al.          Expires 26 January 2025               [Page 12]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -725,7 +725,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 13]
+Belotti, et al.          Expires 26 January 2025               [Page 13]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -781,7 +781,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 14]
+Belotti, et al.          Expires 26 January 2025               [Page 14]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -837,7 +837,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 15]
+Belotti, et al.          Expires 26 January 2025               [Page 15]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -893,7 +893,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 16]
+Belotti, et al.          Expires 26 January 2025               [Page 16]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -949,7 +949,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 17]
+Belotti, et al.          Expires 26 January 2025               [Page 17]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1005,7 +1005,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 18]
+Belotti, et al.          Expires 26 January 2025               [Page 18]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1061,7 +1061,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 19]
+Belotti, et al.          Expires 26 January 2025               [Page 19]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1117,7 +1117,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 20]
+Belotti, et al.          Expires 26 January 2025               [Page 20]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1173,7 +1173,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 21]
+Belotti, et al.          Expires 26 January 2025               [Page 21]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1229,7 +1229,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 22]
+Belotti, et al.          Expires 26 January 2025               [Page 22]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1285,7 +1285,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 23]
+Belotti, et al.          Expires 26 January 2025               [Page 23]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1341,7 +1341,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 24]
+Belotti, et al.          Expires 26 January 2025               [Page 24]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1397,7 +1397,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 25]
+Belotti, et al.          Expires 26 January 2025               [Page 25]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1453,7 +1453,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 26]
+Belotti, et al.          Expires 26 January 2025               [Page 26]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1509,7 +1509,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 27]
+Belotti, et al.          Expires 26 January 2025               [Page 27]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1565,7 +1565,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 28]
+Belotti, et al.          Expires 26 January 2025               [Page 28]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1621,7 +1621,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 29]
+Belotti, et al.          Expires 26 January 2025               [Page 29]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1677,7 +1677,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 30]
+Belotti, et al.          Expires 26 January 2025               [Page 30]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1733,7 +1733,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 31]
+Belotti, et al.          Expires 26 January 2025               [Page 31]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1789,7 +1789,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 32]
+Belotti, et al.          Expires 26 January 2025               [Page 32]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1845,7 +1845,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 33]
+Belotti, et al.          Expires 26 January 2025               [Page 33]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1901,7 +1901,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 34]
+Belotti, et al.          Expires 26 January 2025               [Page 34]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -1957,7 +1957,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 35]
+Belotti, et al.          Expires 26 January 2025               [Page 35]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2013,7 +2013,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 36]
+Belotti, et al.          Expires 26 January 2025               [Page 36]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2069,7 +2069,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 37]
+Belotti, et al.          Expires 26 January 2025               [Page 37]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2125,7 +2125,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 38]
+Belotti, et al.          Expires 26 January 2025               [Page 38]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2181,7 +2181,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 39]
+Belotti, et al.          Expires 26 January 2025               [Page 39]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2237,7 +2237,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 40]
+Belotti, et al.          Expires 26 January 2025               [Page 40]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2293,7 +2293,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 41]
+Belotti, et al.          Expires 26 January 2025               [Page 41]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2349,7 +2349,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 42]
+Belotti, et al.          Expires 26 January 2025               [Page 42]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2405,7 +2405,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 43]
+Belotti, et al.          Expires 26 January 2025               [Page 43]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2461,7 +2461,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 44]
+Belotti, et al.          Expires 26 January 2025               [Page 44]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2517,7 +2517,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 45]
+Belotti, et al.          Expires 26 January 2025               [Page 45]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2573,7 +2573,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 46]
+Belotti, et al.          Expires 26 January 2025               [Page 46]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2629,7 +2629,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 47]
+Belotti, et al.          Expires 26 January 2025               [Page 47]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2685,7 +2685,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 48]
+Belotti, et al.          Expires 26 January 2025               [Page 48]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2741,7 +2741,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 49]
+Belotti, et al.          Expires 26 January 2025               [Page 49]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2797,7 +2797,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 50]
+Belotti, et al.          Expires 26 January 2025               [Page 50]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2853,7 +2853,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 51]
+Belotti, et al.          Expires 26 January 2025               [Page 51]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2909,7 +2909,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 52]
+Belotti, et al.          Expires 26 January 2025               [Page 52]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -2965,7 +2965,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 53]
+Belotti, et al.          Expires 26 January 2025               [Page 53]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3021,7 +3021,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 54]
+Belotti, et al.          Expires 26 January 2025               [Page 54]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3077,7 +3077,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 55]
+Belotti, et al.          Expires 26 January 2025               [Page 55]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3133,7 +3133,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 56]
+Belotti, et al.          Expires 26 January 2025               [Page 56]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3189,7 +3189,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 57]
+Belotti, et al.          Expires 26 January 2025               [Page 57]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3245,7 +3245,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 58]
+Belotti, et al.          Expires 26 January 2025               [Page 58]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3301,7 +3301,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 59]
+Belotti, et al.          Expires 26 January 2025               [Page 59]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3357,7 +3357,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 60]
+Belotti, et al.          Expires 26 January 2025               [Page 60]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3413,7 +3413,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 61]
+Belotti, et al.          Expires 26 January 2025               [Page 61]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3469,7 +3469,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 62]
+Belotti, et al.          Expires 26 January 2025               [Page 62]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3525,7 +3525,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 63]
+Belotti, et al.          Expires 26 January 2025               [Page 63]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3534,8 +3534,8 @@ Internet-Draft            L0 Common YANG Types                 July 2024
               Busi, I., Guo, A., Liu, X., Saad, T., and I. Bryskin,
               "Common YANG Data Types for Traffic Engineering", Work in
               Progress, Internet-Draft, draft-ietf-teas-rfc8776-update-
-              11, 27 May 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-teas-rfc8776-update-11>.
+              12, 25 July 2024, <https://datatracker.ietf.org/doc/html/
+              draft-ietf-teas-rfc8776-update-12>.
 
    [ITU-T_G.666]
               International Telecommunication Union, "Characteristics of
@@ -3581,7 +3581,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 64]
+Belotti, et al.          Expires 26 January 2025               [Page 64]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3637,7 +3637,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 65]
+Belotti, et al.          Expires 26 January 2025               [Page 65]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3693,7 +3693,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 66]
+Belotti, et al.          Expires 26 January 2025               [Page 66]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3749,7 +3749,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 67]
+Belotti, et al.          Expires 26 January 2025               [Page 67]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3805,7 +3805,7 @@ Appendix A.  Changes from RFC 9093
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 68]
+Belotti, et al.          Expires 26 January 2025               [Page 68]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3861,7 +3861,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 69]
+Belotti, et al.          Expires 26 January 2025               [Page 69]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3917,7 +3917,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 70]
+Belotti, et al.          Expires 26 January 2025               [Page 70]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -3973,7 +3973,7 @@ Internet-Draft            L0 Common YANG Types                 July 2024
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 71]
+Belotti, et al.          Expires 26 January 2025               [Page 71]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -4029,7 +4029,7 @@ Contributors
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 72]
+Belotti, et al.          Expires 26 January 2025               [Page 72]
 
 Internet-Draft            L0 Common YANG Types                 July 2024
 
@@ -4085,4 +4085,4 @@ Authors' Addresses
 
 
 
-Belotti, et al.          Expires 24 January 2025               [Page 73]
+Belotti, et al.          Expires 26 January 2025               [Page 73]
