@@ -490,36 +490,31 @@ sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-11-26.yang"}
 
 # Security Considerations
 
-   The YANG module specified in this document defines a schema for data
-   that is designed to be accessed via network management protocols such
-   as NETCONF {{!RFC6241}} or RESTCONF {{!RFC8040}}.  The lowest NETCONF layer
-   is the secure transport layer, and the mandatory-to-implement secure
-   transport is Secure Shell (SSH) {{!RFC6242}}.  The lowest RESTCONF layer
-   is HTTPS, and the mandatory-to-implement secure transport is TLS
-   {{!RFC8446}}.
+This section is modeled after the template described in Section 3.7
+of {{?I-D.ietf-netmod-rfc8407bis}}.
 
-   The Network Configuration Access Control Model (NACM) {{!RFC8341}}
-   provides the means to restrict access for particular NETCONF or
-   RESTCONF users to a preconfigured subset of all available NETCONF or
-   RESTCONF protocol operations and content.  The NETCONF protocol over
-   Secure Shell (SSH) specification {{!RFC6242}} describes a method for
-   invoking and running NETCONF within a Secure Shell (SSH) session as
-   an SSH subsystem.
+The "ietf-layer0-types" YANG module define data models that are
+designed to be accessed via YANG-based management protocols, such as
+NETCONF {{?RFC6241}} and RESTCONF {{?RFC8040}}. These protocols have to
+use a secure transport layer (e.g., SSH {{?RFC4252}}, TLS {{?RFC8446}}, and
+QUIC {{?RFC9000}}) and have to use mutual authentication.
 
-   The objects in this YANG module are common data types and groupings.
-   No object in this module can be read or written to.  These
-   definitions can be imported and used by other Layer 0 specific
-   modules.  It is critical to consider how imported definitions will be
-   utilized and accessible via RPC operations, as the resultant schema
-   will have data nodes that can be writable, or readable, and will have
-   a significant effect on the network operations if used incorrectly or
-   maliciously.  All of these considerations belong in the document that
-   defines the modules that import from this YANG module.  Therefore, it
-   is important to manage access to resultant data nodes that are
-   considered sensitive or vulnerable in some network environments.
+The Network Configuration Access Control Model (NACM) {{!RFC8341}}
+provides the means to restrict access for particular NETCONF or
+RESTCONF users to a preconfigured subset of all available NETCONF or
+RESTCONF protocol operations and content.
 
-   The security considerations spelled out in the YANG 1.1 specification
-   {{!RFC7950}} apply for this document as well.
+The YANG modules define a set of identities, types, and
+groupings. These nodes are intended to be reused by other YANG
+modules. The modules by themselves do not expose any data nodes that
+are writable, data nodes that contain read-only state, or RPCs.
+As such, there are no additional security issues related to
+the YANG module that need to be considered.
+
+Modules that use the groupings that are defined in this document
+should identify the corresponding security considerations. For
+example, reusing some of these groupings will expose privacy-related
+information (e.g., 'node-example').
 
 # IANA Considerations
 

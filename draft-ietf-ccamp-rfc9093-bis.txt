@@ -87,9 +87,9 @@ Table of Contents
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .  64
      7.2.  Informative References  . . . . . . . . . . . . . . . . .  68
    Appendix A.  Changes from RFC 9093  . . . . . . . . . . . . . . .  69
-   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  72
-   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  72
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  73
+   Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  73
+   Contributors  . . . . . . . . . . . . . . . . . . . . . . . . . .  73
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  74
 
 1.  Introduction
 
@@ -3481,36 +3481,31 @@ Internet-Draft            L0 Common YANG Types             November 2024
 
 5.  Security Considerations
 
-   The YANG module specified in this document defines a schema for data
-   that is designed to be accessed via network management protocols such
-   as NETCONF [RFC6241] or RESTCONF [RFC8040].  The lowest NETCONF layer
-   is the secure transport layer, and the mandatory-to-implement secure
-   transport is Secure Shell (SSH) [RFC6242].  The lowest RESTCONF layer
-   is HTTPS, and the mandatory-to-implement secure transport is TLS
-   [RFC8446].
+   This section is modeled after the template described in Section 3.7
+   of [I-D.ietf-netmod-rfc8407bis].
+
+   The "ietf-layer0-types" YANG module define data models that are
+   designed to be accessed via YANG-based management protocols, such as
+   NETCONF [RFC6241] and RESTCONF [RFC8040].  These protocols have to
+   use a secure transport layer (e.g., SSH [RFC4252], TLS [RFC8446], and
+   QUIC [RFC9000]) and have to use mutual authentication.
 
    The Network Configuration Access Control Model (NACM) [RFC8341]
    provides the means to restrict access for particular NETCONF or
    RESTCONF users to a preconfigured subset of all available NETCONF or
-   RESTCONF protocol operations and content.  The NETCONF protocol over
-   Secure Shell (SSH) specification [RFC6242] describes a method for
-   invoking and running NETCONF within a Secure Shell (SSH) session as
-   an SSH subsystem.
+   RESTCONF protocol operations and content.
 
-   The objects in this YANG module are common data types and groupings.
-   No object in this module can be read or written to.  These
-   definitions can be imported and used by other Layer 0 specific
-   modules.  It is critical to consider how imported definitions will be
-   utilized and accessible via RPC operations, as the resultant schema
-   will have data nodes that can be writable, or readable, and will have
-   a significant effect on the network operations if used incorrectly or
-   maliciously.  All of these considerations belong in the document that
-   defines the modules that import from this YANG module.  Therefore, it
-   is important to manage access to resultant data nodes that are
-   considered sensitive or vulnerable in some network environments.
+   The YANG modules define a set of identities, types, and groupings.
+   These nodes are intended to be reused by other YANG modules.  The
+   modules by themselves do not expose any data nodes that are writable,
+   data nodes that contain read-only state, or RPCs.  As such, there are
+   no additional security issues related to the YANG module that need to
+   be considered.
 
-   The security considerations spelled out in the YANG 1.1 specification
-   [RFC7950] apply for this document as well.
+   Modules that use the groupings that are defined in this document
+   should identify the corresponding security considerations.  For
+   example, reusing some of these groupings will expose privacy-related
+   information (e.g., 'node-example').
 
 6.  IANA Considerations
 
@@ -3521,6 +3516,11 @@ Internet-Draft            L0 Common YANG Types             November 2024
       Registrant Contact:  The IESG
       XML:  N/A; the requested URI is an XML namespace.
 
+   This document also adds an updated YANG module to the "YANG Module
+   Names" registry [RFC7950]:
+
+
+
 
 
 
@@ -3529,9 +3529,6 @@ Belotti, et al.            Expires 30 May 2025                 [Page 63]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
-
-   This document also adds an updated YANG module to the "YANG Module
-   Names" registry [RFC7950]:
 
       Name:  ietf-layer0-types
       Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
@@ -3574,8 +3571,11 @@ Internet-Draft            L0 Common YANG Types             November 2024
               Recommendation G.694.1 , October 2020,
               <https://www.itu.int/rec/T-REC-G.694.1>.
 
-
-
+   [ITU-T_G.694.2]
+              International Telecommunication Union, "Spectral grids for
+              WDM applications: CWDM wavelength grid", ITU-T
+              Recommendation G.694.2 , December 2003,
+              <https://www.itu.int/rec/T-REC-G.694.2>.
 
 
 
@@ -3585,12 +3585,6 @@ Belotti, et al.            Expires 30 May 2025                 [Page 64]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
-
-   [ITU-T_G.694.2]
-              International Telecommunication Union, "Spectral grids for
-              WDM applications: CWDM wavelength grid", ITU-T
-              Recommendation G.694.2 , December 2003,
-              <https://www.itu.int/rec/T-REC-G.694.2>.
 
    [ITU-T_G.698.2]
               International Telecommunication Union, "Amplified
@@ -3633,6 +3627,12 @@ Internet-Draft            L0 Common YANG Types             November 2024
               G.975 , October 2000,
               <https://www.itu.int/rec/T-REC-G.975>.
 
+   [ITU-T_G.975.1]
+              International Telecommunication Union, "Forward error
+              correction for high bit-rate DWDM submarine systems",
+              ITU-T Recommendation G.975.1, Corrigendum 2 , July 2013,
+              <https://www.itu.int/rec/T-REC-G.975.1>.
+
 
 
 
@@ -3641,12 +3641,6 @@ Belotti, et al.            Expires 30 May 2025                 [Page 65]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
-
-   [ITU-T_G.975.1]
-              International Telecommunication Union, "Forward error
-              correction for high bit-rate DWDM submarine systems",
-              ITU-T Recommendation G.975.1, Corrigendum 2 , July 2013,
-              <https://www.itu.int/rec/T-REC-G.975.1>.
 
    [ITU-T_G.977.1]
               International Telecommunication Union, "Transverse
@@ -3686,9 +3680,15 @@ Internet-Draft            L0 Common YANG Types             November 2024
               (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
               <https://www.rfc-editor.org/rfc/rfc6241>.
 
-   [RFC6242]  Wasserman, M., "Using the NETCONF Protocol over Secure
-              Shell (SSH)", RFC 6242, DOI 10.17487/RFC6242, June 2011,
-              <https://www.rfc-editor.org/rfc/rfc6242>.
+   [RFC7688]  Lee, Y., Ed. and G. Bernstein, Ed., "GMPLS OSPF
+              Enhancement for Signal and Network Element Compatibility
+              for Wavelength Switched Optical Networks", RFC 7688,
+              DOI 10.17487/RFC7688, November 2015,
+              <https://www.rfc-editor.org/rfc/rfc7688>.
+
+
+
+
 
 
 
@@ -3697,12 +3697,6 @@ Belotti, et al.            Expires 30 May 2025                 [Page 66]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
-
-   [RFC7688]  Lee, Y., Ed. and G. Bernstein, Ed., "GMPLS OSPF
-              Enhancement for Signal and Network Element Compatibility
-              for Wavelength Switched Optical Networks", RFC 7688,
-              DOI 10.17487/RFC7688, November 2015,
-              <https://www.rfc-editor.org/rfc/rfc7688>.
 
    [RFC7689]  Bernstein, G., Ed., Xu, S., Lee, Y., Ed., Martinelli, G.,
               and H. Harai, "Signaling Extensions for Wavelength
@@ -3726,10 +3720,6 @@ Internet-Draft            L0 Common YANG Types             November 2024
               RFC 7950, DOI 10.17487/RFC7950, August 2016,
               <https://www.rfc-editor.org/rfc/rfc7950>.
 
-   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
-              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
-              <https://www.rfc-editor.org/rfc/rfc8040>.
-
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
@@ -3744,7 +3734,17 @@ Internet-Draft            L0 Common YANG Types             November 2024
               (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8342>.
 
+   [RFC8363]  Zhang, X., Zheng, H., Casellas, R., Gonzalez de Dios, O.,
+              and D. Ceccarelli, "GMPLS OSPF-TE Extensions in Support of
+              Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+              Networks", RFC 8363, DOI 10.17487/RFC8363, May 2018,
+              <https://www.rfc-editor.org/rfc/rfc8363>.
 
+   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
+              O. Gonzalez de Dios, "YANG Data Model for Traffic
+              Engineering (TE) Topologies", RFC 8795,
+              DOI 10.17487/RFC8795, August 2020,
+              <https://www.rfc-editor.org/rfc/rfc8795>.
 
 
 
@@ -3754,28 +3754,20 @@ Belotti, et al.            Expires 30 May 2025                 [Page 67]
 Internet-Draft            L0 Common YANG Types             November 2024
 
 
-   [RFC8363]  Zhang, X., Zheng, H., Casellas, R., Gonzalez de Dios, O.,
-              and D. Ceccarelli, "GMPLS OSPF-TE Extensions in Support of
-              Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-              Networks", RFC 8363, DOI 10.17487/RFC8363, May 2018,
-              <https://www.rfc-editor.org/rfc/rfc8363>.
-
-   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
-              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
-              <https://www.rfc-editor.org/rfc/rfc8446>.
-
-   [RFC8795]  Liu, X., Bryskin, I., Beeram, V., Saad, T., Shah, H., and
-              O. Gonzalez de Dios, "YANG Data Model for Traffic
-              Engineering (TE) Topologies", RFC 8795,
-              DOI 10.17487/RFC8795, August 2020,
-              <https://www.rfc-editor.org/rfc/rfc8795>.
-
    [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
               YANG Data Model for Layer 0 Types", RFC 9093,
               DOI 10.17487/RFC9093, August 2021,
               <https://www.rfc-editor.org/rfc/rfc9093>.
 
 7.2.  Informative References
+
+   [I-D.ietf-netmod-rfc8407bis]
+              Bierman, A., Boucadair, M., and Q. Wu, "Guidelines for
+              Authors and Reviewers of Documents Containing YANG Data
+              Models", Work in Progress, Internet-Draft, draft-ietf-
+              netmod-rfc8407bis-21, 13 November 2024,
+              <https://datatracker.ietf.org/doc/html/draft-ietf-netmod-
+              rfc8407bis-21>.
 
    [ITU-T_G.Sup39]
               International Telecommunication Union, "Optical system
@@ -3785,6 +3777,10 @@ Internet-Draft            L0 Common YANG Types             November 2024
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
               <https://www.rfc-editor.org/rfc/rfc3688>.
+
+   [RFC4252]  Ylonen, T. and C. Lonvick, Ed., "The Secure Shell (SSH)
+              Authentication Protocol", RFC 4252, DOI 10.17487/RFC4252,
+              January 2006, <https://www.rfc-editor.org/rfc/rfc4252>.
 
    [RFC6163]  Lee, Y., Ed., Bernstein, G., Ed., and W. Imajuku,
               "Framework for GMPLS and Path Computation Element (PCE)
@@ -3798,7 +3794,11 @@ Internet-Draft            L0 Common YANG Types             November 2024
               DOI 10.17487/RFC7446, February 2015,
               <https://www.rfc-editor.org/rfc/rfc7446>.
 
-
+   [RFC7581]  Bernstein, G., Ed., Lee, Y., Ed., Li, D., Imajuku, W., and
+              J. Han, "Routing and Wavelength Assignment Information
+              Encoding for Wavelength Switched Optical Networks",
+              RFC 7581, DOI 10.17487/RFC7581, June 2015,
+              <https://www.rfc-editor.org/rfc/rfc7581>.
 
 
 
@@ -3810,11 +3810,18 @@ Belotti, et al.            Expires 30 May 2025                 [Page 68]
 Internet-Draft            L0 Common YANG Types             November 2024
 
 
-   [RFC7581]  Bernstein, G., Ed., Lee, Y., Ed., Li, D., Imajuku, W., and
-              J. Han, "Routing and Wavelength Assignment Information
-              Encoding for Wavelength Switched Optical Networks",
-              RFC 7581, DOI 10.17487/RFC7581, June 2015,
-              <https://www.rfc-editor.org/rfc/rfc7581>.
+   [RFC8040]  Bierman, A., Bjorklund, M., and K. Watsen, "RESTCONF
+              Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
+              <https://www.rfc-editor.org/rfc/rfc8040>.
+
+   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
+              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
+              <https://www.rfc-editor.org/rfc/rfc8446>.
+
+   [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
+              Multiplexed and Secure Transport", RFC 9000,
+              DOI 10.17487/RFC9000, May 2021,
+              <https://www.rfc-editor.org/rfc/rfc9000>.
 
 Appendix A.  Changes from RFC 9093
 
@@ -3852,19 +3859,18 @@ Appendix A.  Changes from RFC 9093
 
    *  QAM64
 
-   *  DP-QAM64
-
-   *  fec-type
-
-   *  g-fec
-
-
 
 
 Belotti, et al.            Expires 30 May 2025                 [Page 69]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
+
+   *  DP-QAM64
+
+   *  fec-type
+
+   *  g-fec
 
    *  super-fec
 
@@ -3908,12 +3914,6 @@ Internet-Draft            L0 Common YANG Types             November 2024
 
    *  carrier-power
 
-   *  switching-wson-lsc
-
-   *  switching-flexi-grid-lsc
-
-   The following new YANG data types have been added to the 'ietf-
-   layer0-types' module:
 
 
 
@@ -3921,6 +3921,13 @@ Belotti, et al.            Expires 30 May 2025                 [Page 70]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
+
+   *  switching-wson-lsc
+
+   *  switching-flexi-grid-lsc
+
+   The following new YANG data types have been added to the 'ietf-
+   layer0-types' module:
 
    *  Standard-mode
 
@@ -3964,19 +3971,19 @@ Internet-Draft            L0 Common YANG Types             November 2024
 
    *  psd
 
-   *  psd-or-null
-
-   The following new YANG groupings have been added to the 'ietf-
-   layer0-types' module:
-
-   *  wdm-label-start-end
-
 
 
 Belotti, et al.            Expires 30 May 2025                 [Page 71]
 
 Internet-Draft            L0 Common YANG Types             November 2024
 
+
+   *  psd-or-null
+
+   The following new YANG groupings have been added to the 'ietf-
+   layer0-types' module:
+
+   *  wdm-label-start-end
 
    *  wdm-label-step
 
@@ -4016,6 +4023,17 @@ Internet-Draft            L0 Common YANG Types             November 2024
 
    *  l0-path-properties
 
+
+
+
+
+
+
+Belotti, et al.            Expires 30 May 2025                 [Page 72]
+
+Internet-Draft            L0 Common YANG Types             November 2024
+
+
 Acknowledgments
 
    The authors and the working group give their sincere thanks to Robert
@@ -4025,14 +4043,6 @@ Acknowledgments
    This document was prepared using kramdown.
 
 Contributors
-
-
-
-
-Belotti, et al.            Expires 30 May 2025                 [Page 72]
-
-Internet-Draft            L0 Common YANG Types             November 2024
-
 
    Haomian Zheng
    Huawei
@@ -4074,21 +4084,18 @@ Internet-Draft            L0 Common YANG Types             November 2024
    Email: younglee.tx@gmail.com
 
 
+
+Belotti, et al.            Expires 30 May 2025                 [Page 73]
+
+Internet-Draft            L0 Common YANG Types             November 2024
+
+
    Victor Lopez
    Nokia
    Email: victor.lopez@nokia.com
 
 
 Authors' Addresses
-
-
-
-
-
-Belotti, et al.            Expires 30 May 2025                 [Page 73]
-
-Internet-Draft            L0 Common YANG Types             November 2024
-
 
    Sergio Belotti (editor)
    Nokia
@@ -4113,13 +4120,6 @@ Internet-Draft            L0 Common YANG Types             November 2024
    Aihua Guo
    Futurewei Technologies
    Email: aihuaguo.ietf@gmail.com
-
-
-
-
-
-
-
 
 
 
