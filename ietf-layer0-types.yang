@@ -1497,6 +1497,7 @@ module ietf-layer0-types {
       proper leafrefs when used: see for example the 
       transceiver-capabilities grouping below.";
     choice mode {
+      config false;
       mandatory true;
       description
         "Indicates whether the transceiver's mode is a standard
@@ -2010,14 +2011,33 @@ module ietf-layer0-types {
       description
         "This parameter indicates the transmitter frequency fine
         tuning steps e.g 3.125GHz or 0.001GHz.";
-    } 
+    }
   } // grouping transmitter-tuning-range
 
   grouping common-all-modes {
     description
       "Common attributes used by all transceiver's modes.";
 
-    uses transmitter-tuning-range;
+    container transmitter-tuning-range {
+      config false;
+      description
+        "Transmitter tuning range (f_tx-min, f_tx-max)";
+      uses transmitter-tuning-range;
+    }
+/* Alternative solution (not future safe):
+
+    uses transmitter-tuning-range {
+      refine min-central-frequency {
+        config false;
+      }
+      refine max-central-frequency {
+        config false;
+      }
+      refine transceiver-tunability {
+        config false;
+      }
+    }
+*/
     leaf tx-channel-power-min {
       type power-dbm;
       config false;
