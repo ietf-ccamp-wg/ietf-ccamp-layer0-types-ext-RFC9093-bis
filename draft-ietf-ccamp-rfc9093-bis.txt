@@ -3509,16 +3509,16 @@ Internet-Draft            L0 Common YANG Types             November 2024
 
 6.  IANA Considerations
 
-   For the following URI in the "IETF XML Registry" [RFC3688], IANA has
-   updated the reference field to refer to this document:
+   This document requests IANA to update the following URIs in the "IETF
+   XML Registry" [RFC3688] to refer to this document:
 
       URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
       Registrant Contact:  The IESG
       XML:  N/A; the requested URI is an XML namespace.
 
-   This document also adds an updated YANG module to the "YANG Module
-   Names" registry [RFC7950]:
-
+   This document requests IANA to register the following YANG modules in
+   the "YANG Module Names" registry [RFC6020] within the "YANG
+   Parameters" registry group.
 
 
 
@@ -3531,12 +3531,13 @@ Internet-Draft            L0 Common YANG Types             November 2024
 
 
       Name:  ietf-layer0-types
+      Maintained by IANA?  N
       Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
       Prefix:  l0-types
       Reference:  RFC XXXX
 
-   RFC Editor Note: Please replace XXXX with the RFC number assigned to
-   this document.
+      RFC Editor Note: Please replace XXXX with the RFC number assigned
+      to this document and remove this note.
 
 7.  References
 
@@ -3576,7 +3577,6 @@ Internet-Draft            L0 Common YANG Types             November 2024
               WDM applications: CWDM wavelength grid", ITU-T
               Recommendation G.694.2 , December 2003,
               <https://www.itu.int/rec/T-REC-G.694.2>.
-
 
 
 
@@ -3670,6 +3670,11 @@ Internet-Draft            L0 Common YANG Types             November 2024
               (GMPLS)", RFC 4203, DOI 10.17487/RFC4203, October 2005,
               <https://www.rfc-editor.org/rfc/rfc4203>.
 
+   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
+              the Network Configuration Protocol (NETCONF)", RFC 6020,
+              DOI 10.17487/RFC6020, October 2010,
+              <https://www.rfc-editor.org/rfc/rfc6020>.
+
    [RFC6205]  Otani, T., Ed. and D. Li, Ed., "Generalized Labels for
               Lambda-Switch-Capable (LSC) Label Switching Routers",
               RFC 6205, DOI 10.17487/RFC6205, March 2011,
@@ -3685,11 +3690,6 @@ Internet-Draft            L0 Common YANG Types             November 2024
               for Wavelength Switched Optical Networks", RFC 7688,
               DOI 10.17487/RFC7688, November 2015,
               <https://www.rfc-editor.org/rfc/rfc7688>.
-
-
-
-
-
 
 
 

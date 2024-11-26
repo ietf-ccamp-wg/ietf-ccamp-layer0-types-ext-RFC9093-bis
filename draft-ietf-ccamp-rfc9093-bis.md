@@ -518,7 +518,7 @@ information (e.g., 'node-example').
 
 # IANA Considerations
 
-For the following URI in the "IETF XML Registry" {{?RFC3688}}, IANA has updated the reference field to refer to this document:
+This document requests IANA to update the following URIs in the "IETF XML Registry" {{?RFC3688}} to refer to this document:
 
 ~~~~
    URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
@@ -526,17 +526,17 @@ For the following URI in the "IETF XML Registry" {{?RFC3688}}, IANA has updated 
    XML:  N/A; the requested URI is an XML namespace.
 ~~~~
 
-This document also adds an updated YANG module to the "YANG Module
-Names" registry {{!RFC7950}}:
+This document requests IANA to register the following YANG modules in the "YANG Module Names" registry {{!RFC6020}} within the "YANG Parameters" registry group.
 
 ~~~~
    Name:  ietf-layer0-types
+   Maintained by IANA?  N
    Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
    Prefix:  l0-types
    Reference:  RFC XXXX
 ~~~~
 
-RFC Editor Note: Please replace XXXX with the RFC number assigned to this document.
+> RFC Editor Note: Please replace XXXX with the RFC number assigned to this document and remove this note.
 
 --- back
 

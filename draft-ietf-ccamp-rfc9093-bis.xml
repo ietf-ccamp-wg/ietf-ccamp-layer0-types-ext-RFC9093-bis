@@ -3002,7 +3002,7 @@ information (e.g., 'node-example').</t>
 </section>
 <section anchor="iana-considerations"><name>IANA Considerations</name>
 
-<t>For the following URI in the "IETF XML Registry" <xref target="RFC3688"/>, IANA has updated the reference field to refer to this document:</t>
+<t>This document requests IANA to update the following URIs in the "IETF XML Registry" <xref target="RFC3688"/> to refer to this document:</t>
 
 <figure><artwork><![CDATA[
    URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
@@ -3010,17 +3010,19 @@ information (e.g., 'node-example').</t>
    XML:  N/A; the requested URI is an XML namespace.
 ]]></artwork></figure>
 
-<t>This document also adds an updated YANG module to the "YANG Module
-Names" registry <xref target="RFC7950"/>:</t>
+<t>This document requests IANA to register the following YANG modules in the "YANG Module Names" registry <xref target="RFC6020"/> within the "YANG Parameters" registry group.</t>
 
 <figure><artwork><![CDATA[
    Name:  ietf-layer0-types
+   Maintained by IANA?  N
    Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
    Prefix:  l0-types
    Reference:  RFC XXXX
 ]]></artwork></figure>
 
-<t>RFC Editor Note: Please replace XXXX with the RFC number assigned to this document.</t>
+<ul empty="true"><li>
+  <t>RFC Editor Note: Please replace XXXX with the RFC number assigned to this document and remove this note.</t>
+</li></ul>
 
 </section>
 
@@ -3493,6 +3495,19 @@ Names" registry <xref target="RFC7950"/>:</t>
   <seriesInfo name="STD" value="91"/>
   <seriesInfo name="RFC" value="8341"/>
   <seriesInfo name="DOI" value="10.17487/RFC8341"/>
+</reference>
+
+<reference anchor="RFC6020">
+  <front>
+    <title>YANG - A Data Modeling Language for the Network Configuration Protocol (NETCONF)</title>
+    <author fullname="M. Bjorklund" initials="M." role="editor" surname="Bjorklund"/>
+    <date month="October" year="2010"/>
+    <abstract>
+      <t>YANG is a data modeling language used to model configuration and state data manipulated by the Network Configuration Protocol (NETCONF), NETCONF remote procedure calls, and NETCONF notifications. [STANDARDS-TRACK]</t>
+    </abstract>
+  </front>
+  <seriesInfo name="RFC" value="6020"/>
+  <seriesInfo name="DOI" value="10.17487/RFC6020"/>
 </reference>
 
 
@@ -4282,27 +4297,28 @@ QXSNoCR0igpuQbRgbqc7TtR8Iv7SFqe7AcZEJLSLX8vbHeOIhaUjAio+fX52
 gA7T/YzImvLEY/4nysdpGgCZ5Pwwy2aFHCC5jTw+KT4HEivX8aqE62OxSpmK
 h+hE4VFxqTLlQ+EvGST92YQetom09SJC+05IZjjMUgYiupmT4PYtQdXBHP9P
 VlSSf9wTap5MAmHAZCYsN2EUScRP0/Dax0NUIN4CmwnWBZM+Rax7YvinPFPJ
-d+xo/2TfITFfC52iU3P9dn4k40lWj15dvmZ/Pn7LzoNRCKxztyqYenNndxeZ
-nUYd+xjIO+BbQWEo6olTGEQDznhDGUBmIJHuxLh2AY0DE+8xNkvjPZSqe+TK
-yfZuJ9FenO2hAtgrSVvqJ2DzQUBSDuJ+vsddYEevLt5QC1gBfHSyvv9CwAeW
-eIbQ0lqREWmRqIeo+llHQiU0ioSXZ6YBgqQucskW1XF7dJU+4zQGIhrHXYVp
-OQ6FpHr2fBvkoo0CbAmQutd5IsFbCktneIl3C10jG3diq/Z4Zds/w49ePH7y
-CrgPaOQkyaHNWYSv8dBIxTBzaq3THGFr8Y6E+xOkfW5gkIjR8zw4jvff4+9o
-VYiHJR7qVk6sB+KpCYWE4rjPu8831XZci/Al2og4uLHkIskdLRxNnuZ787SE
-n6fmFipJrDkCp6AWeh6uya4wJM06iLgG5+PSRnulauz4WaHIS+EjXs0FP9RP
-gfCvw7OLPzH85Vf4hX/gyV9/3T/elR+JX+Hf3o7+jP8Ov2xuMP2p+AN+29nS
-n/LfZUA7/j7CiHj8hReXFX/ECf5GI2R99av+UH9m3FgU//ZOzv/ibUy33zi/
-OL38ref8otet7LBR+uL08u1WZ8u7OCh98/r06KCnv3K72AgbYQrW/zDMPWcb
-bAISaZBM3N/ziYGZ8Nk/HkDqmnEnCU1Y3Ur4Yua0wg2Ut6NowuNn/E8ZJesN
-sDZJfsd3TDzMEa85YV9leR3vJktiL8r69qdmASz8rpKVNJsuzUoXZrpG/ODU
-nbmPvipkMKQtNP1T9gcj/gGc5MQ/0svNt/4KAyAEK6iQT+sPsz3H7wiMH/uv
-cht8IW//VW5Dyyj8WW41uJpYf5gtJJDb1h/WGNlA/KM/rdxJLWCX3UgUiYWy
-4sWPg6n9yTgpfKBruxKZFxJqFz+zE6Z6duZPElqu2D/PflmLHxRiWL1mQYRe
-TeiVGkLe7hsflW70K74r3nRXNLPv2kjUOC4xbM5QUDpclObH2jkltDy3DILB
-D6vkDJGH+f0+XszAGZ2nGZd0hqdCmdQHaQjPgkh1PG8ZpvHAj8MUS5H38bCA
-/t73pOPPE5gHBPC7MMpFKT11NgAzJCcn23UI5EuDJ2x/kIZgzr0GWSeeslyC
-1XEWYIkx0TukyhECwsEslf45OtNTF2UiDjA9QTKd6EOdaUDegKkMp0hAuLoe
-eA+4H/Cb3P8PBRUqG72kAQA=
+d+xo/2S/SmLKRTGyUTOwEak1Mup0IF8/6ORdv50fZTLkZPXo1eVr9ufjt+w8
+GIXAXXergu83d3Z3QRQR1w1l9JgxGV2IcdUC6gbG3GNslsZ7KFL3yI+T7d1O
+or0420Ppv1cStdRPzOoD8JSAuJ/vcf/X0auLN9QCYIOPTtb3X4gYGVoibClM
+Se74mMBHJUSlzzoSqrnISWluoVg0eiwWlmiiDznRsROcalV0h6MCl1w73Q2Q
+k2ZMJ++kHQVGF6KOjoVBHBUW6kbTMZr+PlEy8DUu4CfoofrRwpfC/xneDd5C
+18jeFeGb3eMFc/8MPxqtP9Jnr4CtgfdPkhxanUX4zA+tX4xfp/Y6fxK2Fg9U
+uKNCGv7m7qAwTYNJQgH23OfDw9E9z4PDf/89/o42jHjG4qEm56xxIB62UAAq
+Tva8+3xT7f+1CJYCOQSjBjeWFCYpp0WxKUH4yeRpCW1PTQJRcl+TD05BLfQ8
+XG9eYQCcdexxDc7HJebySrXf8bNCSZnCR7x2DH6oHx7hX4dnF39i+Muv8Av/
+wJO//rp/vCs/Er/Cv70d/Rn/HX7Z3GD6U/EH/LazpT/lv8vwefx9hPH3+Asv
+ZSv+iBP8jUbI+upX/aH+zLgfKf7tnZz/xduYbr9xfnF6+VvP+UWvW9lho/TF
+6eXbrc6Wd3FQ+ub16dFBT3/ldugRNsIUzhrDMPecbbAJiMBBMnF/zycGDsMk
+A3jcqWvGXTI0YXUr4fmZ0wo3UN7F4oEBP+N/yphcb4CVUPI7vmPiGZB4Owr7
+Kov5eDdZEntR1rc/Nctt4XeVrKTZdGlWujCTQ+IHp+48gfRVIV8ibaHpDbM/
+GPEP4Nwo/pE+db71VxhuIVhBBZhaf5jtOX5HIOvtv8pt8D2+/Ve5DS2j8Ge5
+1eBqYv1htpBAblt/WGNkA/GP/rRyJ7WAXXYjUSQWipgXPw6m9ifjpPCBriRL
+ZF5I3138zE7P6tl5RklouSINPfsdL35QiJj1moUsejWBXmoIGUtgfFSKH6j4
+rnivXtHMvtkjUeO4MrE5Q0HpcIiaH2tXmNDy3FwIBj+skutFug72+3gNFAUD
+ntRc0hmeQWUKIaQhPHki1fEsaZg0BD8OUyx83sejCXqX35OOP09gHhDA78Io
+F4X71EkEbJOcXHrXIZAvDZ6w/UEagsn5GmSdeDhzCVbHWYAFzUTvkOpUCAgH
+s1R6A8mDQF2U1TPAZAjJdKKPkKZNdONneGYFhKvLiPeA+wG/N/7/nLdEdyul
+AQA=
 
 -->
 
