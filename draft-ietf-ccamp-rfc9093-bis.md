@@ -467,14 +467,6 @@ The label-step definition, when used for representing WDM labe range, are augmen
 * For CWDM and DWDM fixed grids, it describes the channel spacing, as defined in {{?RFC6205}};
 
 * For DWDM flexible grids, it describes the nominal central frequency granularity (e.g., 6,25 GHz) as well as the multiplier for the supported values of n, as defined in {{?RFC7699}}.
-{: #yang-tree}
-
-# YANG Tree for Layer 0 Types Groupings
-
-~~~~ ascii-art
-{::include ./ietf-layer0-types.folded.tree}
-~~~~
-{: #fig-yang-tree}
 
 {: #yang-code}
 
@@ -539,6 +531,19 @@ This document requests IANA to register the following YANG modules in the "YANG 
 > RFC Editor Note: Please replace XXXX with the RFC number assigned to this document and remove this note.
 
 --- back
+
+{: #yang-tree}
+
+# The Complete Schema Trees
+
+This appendix presents the complete tree of the Layer 0 Types data model. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
+
+# Layer 0 Schema Tree
+
+~~~~ ascii-art
+{::include ./ietf-layer0-types.folded.tree}
+~~~~
+{: #fig-yang-tree}
 
 {: #changes-bis}
 
