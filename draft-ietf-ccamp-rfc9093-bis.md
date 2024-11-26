@@ -294,10 +294,6 @@ line-coding:
 wavelength-assignment:
 : A base YANG identity from which for Wavelength selection method, as defined in {{!RFC7689}}.
 
-otu-type:
-: This specifies the type of OTU, including the types specified in {{ITU-T_G.709}}.
-: Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
-
 operational-mode:
 : A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
 
@@ -548,7 +544,48 @@ RFC Editor Note: Please replace XXXX with the RFC number assigned to this docume
 
 # Changes from RFC 9093
 
-This version adds new data types, identities, and groupings to the YANG modules.
+This version adds new identities, data types, and groupings to the 'ietf-layer0-types' YANG module.
+
+The following new YANG identities have been added to the 'ietf-layer0-types' module:
+
+- cwdm-ch-spc-type
+- flexi-ncfg-type
+- flexi-ncfg-6p25gh
+- modulation
+- DPSK 
+- QPSK
+- DP-QPSK
+- QAM8
+- DP-QAM8
+- QAM16
+- DP-QAM16
+- QAM32 
+- DP-QAM32 
+- QAM64
+- DP-QAM64
+- fec-type
+- g-fec
+- super-fec
+- no-fec 
+- sc-fec 
+- o-fec 
+- c-fec 
+- line-coding 
+- line-coding-NRZ-2p5G 
+- line-coding-NRZ-OTU1 
+- line-coding-NRZ-10G 
+- line-coding-NRZ-OTU2 
+- line-coding-OTL4.4-SC 
+- line-coding-FOIC1.4-SC 
+- wavelength-assignment 
+- first-fit-wavelength-assignment
+- random-wavelength-assignment 
+- least-loaded-wavelength-assignment 
+- lower-first-wavelength-assignment 
+- upper-first-wavelength-assignment 
+- type-power-mode 
+- power-spectral-density 
+- carrier-power
 
 The following new YANG data types have been added to the 'ietf-layer0-types' module:
 
@@ -574,53 +611,6 @@ The following new YANG data types have been added to the 'ietf-layer0-types' mod
 - decimal-5-or-null
 - psd
 - psd-or-null
-
-The following new YANG identities have been added to the 'ietf-layer0-types' module:
-
-- identity cwdm-ch-spc-type
-- identity flexi-ncfg-type
-- identity flexi-ncfg-6p25gh
-- identity modulation
-- identity DPSK 
-- identity QPSK
-- identity DP-QPSK
-- identity QAM8
-- identity DP-QAM8
-- identity QAM16
-- identity DP-QAM16
-- identity QAM32 
-- identity DP-QAM32 
-- identity QAM64
-- identity DP-QAM64
-- identity fec-type
-- identity g-fec
-- identity super-fec
-- identity no-fec 
-- identity sc-fec 
-- identity o-fec 
-- identity c-fec 
-- identity line-coding 
-- identity line-coding-NRZ-2p5G 
-- identity line-coding-NRZ-OTU1 
-- identity line-coding-NRZ-10G 
-- identity line-coding-NRZ-OTU2 
-- identity line-coding-OTL4.4-SC 
-- identity line-coding-FOIC1.4-SC 
-- identity wavelength-assignment 
-- identity first-fit-wavelength-assignment
-- identity random-wavelength-assignment 
-- identity least-loaded-wavelength-assignment 
-- identity lower-first-wavelength-assignment 
-- identity upper-first-wavelength-assignment 
-- identity otu-type 
-- identity OTU1 
-- identity OTU2 
-- identity OTU3 
-- identity OTU4 
-- identity OTUCn 
-- identity type-power-mode 
-- identity power-spectral-density 
-- identity carrier-power 
 
 The following new YANG groupings have been added to the 'ietf-layer0-types' module:
 
