@@ -51,7 +51,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-07-23 {
+  revision 2024-11-26 {
     description
       "To be updated";
     reference
@@ -526,58 +526,6 @@ module ietf-layer0-types {
         "Allocate wavelengths in decending order, beginning from the
         highest frequency and progressing toward the lowest frequency
         within the permissible frequency range.";
-    }
-
-  identity otu-type {
-    description
-      "Base identity from which specific OTU identities are derived";
-    reference
-      "ITU-T G.709: Interfaces for the Optical Transport Network";
-  }
-
-    identity OTU1 {
-      base otu-type;
-      description
-        "OTU1 (2.66 Gb/s)";
-      reference
-        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
-        Transport Network (OTN)";
-    }
-
-    identity OTU2 {
-      base otu-type;
-      description
-        "OTU2 (10.70 Gb/s)";
-      reference
-        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
-        Transport Network (OTN)";
-    }
-
-    identity OTU3 {
-      base otu-type;
-      description
-        "OTU3 (43.01 Gb/s)";
-      reference
-        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
-        Transport Network (OTN)";
-    }
-
-    identity OTU4 {
-      base otu-type;
-      description
-        "OTU4 (111.80 Gb/s)";
-      reference
-        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
-        Transport Network (OTN)";
-    }
-
-    identity OTUCn {
-      base otu-type;
-      description
-        "OTUCn (n x 105.25 Gb/s)";
-      reference
-        "ITU-T G.709 v6.0 (06/2020): Interfaces for the Optical
-        Transport Network (OTN)";
     }
 
   identity type-power-mode {
