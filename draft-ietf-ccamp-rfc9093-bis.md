@@ -176,12 +176,6 @@ normative:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-01.0_reduced2.pdf
 
 informative:
-  ITU-T_G.Sup43:
-    title: "Transport of IEEE 10GBASE-R in optical transport networks (OTN)"
-    author:
-      org: International Telecommunication Union
-    date: December 2003
-    seriesinfo: ITU-T Supplement G.Sup43
   ITU-T_G.Sup39:
     title: "Optical system design and engineering considerations"
     author:
@@ -251,11 +245,14 @@ For further details, see {{changes-bis}}.
    corresponding YANG imported module.
 
 | Prefix       | YANG module                      | Reference
+| te-types     | ietf-te-types                    | \[RFCYYYY]
 | l0-types     | ietf-layer0-types                | RFC XXXX
 {: #tab-prefixes title="Prefixes and corresponding YANG module"}
 
-RFC Editor Note:
-Please replace XXXX with the RFC number assigned to this document and remove this note.
+> RFC Editor Note:
+> Please replace XXXX with the RFC number assigned to this document.
+> Please replace YYYY with the RFC number assigned to {{!I-D.ietf-teas-rfc8776-update}}.
+> Please remove this note.
 
 # Layer 0 Types Module Contents
 
@@ -399,6 +396,14 @@ psd:
 
 penalty-value:
 : A YANG grouping to define the penalty value for multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
+
+switching-wson-lsc:
+: A YANG identity for the Wavelength Switched Optical Network Lambda-Switch Capable (WSON-LSC) interface switching capability as defined in {{!RFC7688}}.
+
+switching-flexi-grid-lsc:
+: A YANG identity for the Flexi-Grid Lambda-Switch Capable (Flexi-Grid-LSC) interface switching capability as defined in {{!RFC8363}}.
+
+It is worth noting that there is an inheritance relationship between the Lambda-Switch Capable (LSC) switching capability, defined in {{!RFC3471}}, and the WSON-LSC and Flexi-Grid-LSC, defined respectively in {{!RFC7688}} and {{!RFC8363}}. As a consequence, the 'switching-wson-lsc' and 'switching-flexi-grid-lsc' YANG identities are defined as derived identities from the 'switching-lsc', defined in {{!I-D.ietf-teas-rfc8776-update}}.
 
 ## WDM Label and Label Range {#label-range}
 
@@ -586,6 +591,8 @@ The following new YANG identities have been added to the 'ietf-layer0-types' mod
 - type-power-mode 
 - power-spectral-density 
 - carrier-power
+- switching-wson-lsc
+- switching-flexi-grid-lsc
 
 The following new YANG data types have been added to the 'ietf-layer0-types' module:
 

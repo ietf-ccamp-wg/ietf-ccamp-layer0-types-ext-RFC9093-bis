@@ -3,6 +3,14 @@ module ietf-layer0-types {
   namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types";
   prefix l0-types;
 
+  import ietf-te-types {
+    prefix te-types;
+    reference
+      "RFC YYYY: Common YANG Data Types for Traffic Engineering";
+  }
+  // RFC Editor: replace YYYY with actual RFC number assigned to 
+  // [I-D.ietf-teas-rfc8776-update] and remove this note
+
   organization
     "IETF CCAMP Working Group";
   contact
@@ -545,6 +553,27 @@ module ietf-layer0-types {
       description
         "all elements must use power (dBm)";
     }
+
+  identity switching-wson-lsc {
+    base te-types:switching-lsc;
+    description
+      "Wavelength Switched Optical Network Lambda-Switch Capable
+      (WSON-LSC).";
+    reference
+      "Section 3 of RFC 7688: GMPLS OSPF Enhancement for Signal and
+      Network Element Compatibility for Wavelength Switched Optical
+      Networks";
+  }
+
+  identity switching-flexi-grid-lsc {
+    base te-types:switching-lsc;
+    description
+      "Flexi-grid Lambda-Switch Capable (Flexi-Grid-LSC).";
+    reference
+      "Section 4.1 of RFC 8363: GMPLS OSPF-TE Extensions in Support
+      of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+      Networks";
+  }
 
 /*
  * Typedefs
