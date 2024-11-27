@@ -146,7 +146,7 @@ module: ietf-layer0-types
              +--ro rx-total-power-max?         power-dbm
              +--ro compatible-modes
   grouping transceiver-capabilities:
-    +-- supported-modes!
+    +--ro supported-modes!
        +--ro supported-mode* [mode-id]
           +--ro mode-id?                          string
           +--ro (mode)

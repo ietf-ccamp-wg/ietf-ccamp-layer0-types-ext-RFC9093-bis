@@ -59,7 +59,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2024-11-26 {
+  revision 2024-11-27 {
     description
       "To be updated";
     reference
@@ -1580,6 +1580,7 @@ module ietf-layer0-types {
       presence
         "When present, it indicates that the modes supported by a 
         transceiver are reported.";
+      config false;
       description
         "The top level container for the list supported 
         transceiver's modes.";
