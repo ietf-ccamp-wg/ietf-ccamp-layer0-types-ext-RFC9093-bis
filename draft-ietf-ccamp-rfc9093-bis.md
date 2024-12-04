@@ -478,7 +478,7 @@ This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC7698
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-11-26.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-11-27.yang"}
 
 # Security Considerations
 
@@ -537,8 +537,6 @@ This document requests IANA to register the following YANG modules in the "YANG 
 # The Complete Schema Trees
 
 This appendix presents the complete tree of the Layer 0 Types data model. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
-
-# Layer 0 Schema Tree
 
 ~~~~ ascii-art
 {::include ./ietf-layer0-types.folded.tree}
