@@ -176,12 +176,6 @@ normative:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-01.0_reduced2.pdf
 
 informative:
-  ITU-T_G.Sup43:
-    title: "Transport of IEEE 10GBASE-R in optical transport networks (OTN)"
-    author:
-      org: International Telecommunication Union
-    date: December 2003
-    seriesinfo: ITU-T Supplement G.Sup43
   ITU-T_G.Sup39:
     title: "Optical system design and engineering considerations"
     author:
@@ -251,11 +245,14 @@ For further details, see {{changes-bis}}.
    corresponding YANG imported module.
 
 | Prefix       | YANG module                      | Reference
+| te-types     | ietf-te-types                    | \[RFCYYYY]
 | l0-types     | ietf-layer0-types                | RFC XXXX
 {: #tab-prefixes title="Prefixes and corresponding YANG module"}
 
-RFC Editor Note:
-Please replace XXXX with the RFC number assigned to this document and remove this note.
+> RFC Editor Note:
+> Please replace XXXX with the RFC number assigned to this document.
+> Please replace YYYY with the RFC number assigned to {{!I-D.ietf-teas-rfc8776-update}}.
+> Please remove this note.
 
 # Layer 0 Types Module Contents
 
@@ -293,10 +290,6 @@ line-coding:
 
 wavelength-assignment:
 : A base YANG identity from which for Wavelength selection method, as defined in {{!RFC7689}}.
-
-otu-type:
-: This specifies the type of OTU, including the types specified in {{ITU-T_G.709}}.
-: Since {{ITU-T_G.Sup43}} does not guarantee interoperability in the data plane, the type of OTUk defined in {{ITU-T_G.Sup43}} can be defined in vendor-specific YANG modules using the otu-type identity, defined in this document, as the base.
 
 operational-mode:
 : A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
@@ -404,6 +397,14 @@ psd:
 penalty-value:
 : A YANG grouping to define the penalty value for multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
 
+switching-wson-lsc:
+: A YANG identity for the Wavelength Switched Optical Network Lambda-Switch Capable (WSON-LSC) interface switching capability as defined in {{!RFC7688}}.
+
+switching-flexi-grid-lsc:
+: A YANG identity for the Flexi-Grid Lambda-Switch Capable (Flexi-Grid-LSC) interface switching capability as defined in {{!RFC8363}}.
+
+It is worth noting that there is an inheritance relationship between the Lambda-Switch Capable (LSC) switching capability, defined in {{!RFC3471}}, and the WSON-LSC and Flexi-Grid-LSC, defined respectively in {{!RFC7688}} and {{!RFC8363}}. As a consequence, the 'switching-wson-lsc' and 'switching-flexi-grid-lsc' YANG identities are defined as derived identities from the 'switching-lsc', defined in {{!I-D.ietf-teas-rfc8776-update}}.
+
 ## WDM Label and Label Range {#label-range}
 
 As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slot assigned to a WDM Label Switched Path (LSP) on a given WDM Link, which models an Optical Multiplex Section (OMS) Media Channel Group (MCG) as described in {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}.
@@ -466,14 +467,6 @@ The label-step definition, when used for representing WDM labe range, are augmen
 * For CWDM and DWDM fixed grids, it describes the channel spacing, as defined in {{?RFC6205}};
 
 * For DWDM flexible grids, it describes the nominal central frequency granularity (e.g., 6,25 GHz) as well as the multiplier for the supported values of n, as defined in {{?RFC7699}}.
-{: #yang-tree}
-
-# YANG Tree for Layer 0 Types Groupings
-
-~~~~ ascii-art
-{::include ./ietf-layer0-types.folded.tree}
-~~~~
-{: #fig-yang-tree}
 
 {: #yang-code}
 
@@ -485,44 +478,39 @@ This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC7698
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-03-04.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-11-26.yang"}
 
 # Security Considerations
 
-   The YANG module specified in this document defines a schema for data
-   that is designed to be accessed via network management protocols such
-   as NETCONF {{!RFC6241}} or RESTCONF {{!RFC8040}}.  The lowest NETCONF layer
-   is the secure transport layer, and the mandatory-to-implement secure
-   transport is Secure Shell (SSH) {{!RFC6242}}.  The lowest RESTCONF layer
-   is HTTPS, and the mandatory-to-implement secure transport is TLS
-   {{!RFC8446}}.
+This section is modeled after the template described in Section 3.7
+of {{?I-D.ietf-netmod-rfc8407bis}}.
 
-   The Network Configuration Access Control Model (NACM) {{!RFC8341}}
-   provides the means to restrict access for particular NETCONF or
-   RESTCONF users to a preconfigured subset of all available NETCONF or
-   RESTCONF protocol operations and content.  The NETCONF protocol over
-   Secure Shell (SSH) specification {{!RFC6242}} describes a method for
-   invoking and running NETCONF within a Secure Shell (SSH) session as
-   an SSH subsystem.
+The "ietf-layer0-types" YANG module define data models that are
+designed to be accessed via YANG-based management protocols, such as
+NETCONF {{?RFC6241}} and RESTCONF {{?RFC8040}}. These protocols have to
+use a secure transport layer (e.g., SSH {{?RFC4252}}, TLS {{?RFC8446}}, and
+QUIC {{?RFC9000}}) and have to use mutual authentication.
 
-   The objects in this YANG module are common data types and groupings.
-   No object in this module can be read or written to.  These
-   definitions can be imported and used by other Layer 0 specific
-   modules.  It is critical to consider how imported definitions will be
-   utilized and accessible via RPC operations, as the resultant schema
-   will have data nodes that can be writable, or readable, and will have
-   a significant effect on the network operations if used incorrectly or
-   maliciously.  All of these considerations belong in the document that
-   defines the modules that import from this YANG module.  Therefore, it
-   is important to manage access to resultant data nodes that are
-   considered sensitive or vulnerable in some network environments.
+The Network Configuration Access Control Model (NACM) {{!RFC8341}}
+provides the means to restrict access for particular NETCONF or
+RESTCONF users to a preconfigured subset of all available NETCONF or
+RESTCONF protocol operations and content.
 
-   The security considerations spelled out in the YANG 1.1 specification
-   {{!RFC7950}} apply for this document as well.
+The YANG modules define a set of identities, types, and
+groupings. These nodes are intended to be reused by other YANG
+modules. The modules by themselves do not expose any data nodes that
+are writable, data nodes that contain read-only state, or RPCs.
+As such, there are no additional security issues related to
+the YANG module that need to be considered.
+
+Modules that use the groupings that are defined in this document
+should identify the corresponding security considerations. For
+example, reusing some of these groupings will expose privacy-related
+information (e.g., 'node-example').
 
 # IANA Considerations
 
-For the following URI in the "IETF XML Registry" {{?RFC3688}}, IANA has updated the reference field to refer to this document:
+This document requests IANA to update the following URIs in the "IETF XML Registry" {{?RFC3688}} to refer to this document:
 
 ~~~~
    URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
@@ -530,25 +518,81 @@ For the following URI in the "IETF XML Registry" {{?RFC3688}}, IANA has updated 
    XML:  N/A; the requested URI is an XML namespace.
 ~~~~
 
-This document also adds an updated YANG module to the "YANG Module
-Names" registry {{!RFC7950}}:
+This document requests IANA to register the following YANG modules in the "YANG Module Names" registry {{!RFC6020}} within the "YANG Parameters" registry group.
 
 ~~~~
    Name:  ietf-layer0-types
+   Maintained by IANA?  N
    Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
    Prefix:  l0-types
    Reference:  RFC XXXX
 ~~~~
 
-RFC Editor Note: Please replace XXXX with the RFC number assigned to this document.
+> RFC Editor Note: Please replace XXXX with the RFC number assigned to this document and remove this note.
 
 --- back
+
+{: #yang-tree}
+
+# The Complete Schema Trees
+
+This appendix presents the complete tree of the Layer 0 Types data model. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
+
+# Layer 0 Schema Tree
+
+~~~~ ascii-art
+{::include ./ietf-layer0-types.folded.tree}
+~~~~
+{: #fig-yang-tree}
 
 {: #changes-bis}
 
 # Changes from RFC 9093
 
-This version adds new data types, identities, and groupings to the YANG modules.
+This version adds new identities, data types, and groupings to the 'ietf-layer0-types' YANG module.
+
+The following new YANG identities have been added to the 'ietf-layer0-types' module:
+
+- cwdm-ch-spc-type
+- flexi-ncfg-type
+- flexi-ncfg-6p25gh
+- modulation
+- DPSK 
+- QPSK
+- DP-QPSK
+- QAM8
+- DP-QAM8
+- QAM16
+- DP-QAM16
+- QAM32 
+- DP-QAM32 
+- QAM64
+- DP-QAM64
+- fec-type
+- g-fec
+- super-fec
+- no-fec 
+- sc-fec 
+- o-fec 
+- c-fec 
+- line-coding 
+- line-coding-NRZ-2p5G 
+- line-coding-NRZ-OTU1 
+- line-coding-NRZ-10G 
+- line-coding-NRZ-OTU2 
+- line-coding-OTL4.4-SC 
+- line-coding-FOIC1.4-SC 
+- wavelength-assignment 
+- first-fit-wavelength-assignment
+- random-wavelength-assignment 
+- least-loaded-wavelength-assignment 
+- lower-first-wavelength-assignment 
+- upper-first-wavelength-assignment 
+- type-power-mode 
+- power-spectral-density 
+- carrier-power
+- switching-wson-lsc
+- switching-flexi-grid-lsc
 
 The following new YANG data types have been added to the 'ietf-layer0-types' module:
 
@@ -574,53 +618,6 @@ The following new YANG data types have been added to the 'ietf-layer0-types' mod
 - decimal-5-or-null
 - psd
 - psd-or-null
-
-The following new YANG identities have been added to the 'ietf-layer0-types' module:
-
-- identity cwdm-ch-spc-type
-- identity flexi-ncfg-type
-- identity flexi-ncfg-6p25gh
-- identity modulation
-- identity DPSK 
-- identity QPSK
-- identity DP-QPSK
-- identity QAM8
-- identity DP-QAM8
-- identity QAM16
-- identity DP-QAM16
-- identity QAM32 
-- identity DP-QAM32 
-- identity QAM64
-- identity DP-QAM64
-- identity fec-type
-- identity g-fec
-- identity super-fec
-- identity no-fec 
-- identity sc-fec 
-- identity o-fec 
-- identity c-fec 
-- identity line-coding 
-- identity line-coding-NRZ-2p5G 
-- identity line-coding-NRZ-OTU1 
-- identity line-coding-NRZ-10G 
-- identity line-coding-NRZ-OTU2 
-- identity line-coding-OTL4.4-SC 
-- identity line-coding-FOIC1.4-SC 
-- identity wavelength-assignment 
-- identity first-fit-wavelength-assignment
-- identity random-wavelength-assignment 
-- identity least-loaded-wavelength-assignment 
-- identity lower-first-wavelength-assignment 
-- identity upper-first-wavelength-assignment 
-- identity otu-type 
-- identity OTU1 
-- identity OTU2 
-- identity OTU3 
-- identity OTU4 
-- identity OTUCn 
-- identity type-power-mode 
-- identity power-spectral-density 
-- identity carrier-power 
 
 The following new YANG groupings have been added to the 'ietf-layer0-types' module:
 
