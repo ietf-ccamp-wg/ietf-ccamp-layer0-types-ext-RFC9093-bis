@@ -1675,8 +1675,8 @@ module ietf-layer0-types {
 
   grouping penalty-value {
     description
-      "A common definition of the penalty value used for describing
-      multiple penalty types (.e.g, CD, PMD, PDL).";
+      "A common definition of the OSNR penalty value used for
+       describing multiple penalty types (.e.g, CD, PMD, PDL).";
 
     leaf penalty-value {
       type union {
@@ -1740,7 +1740,7 @@ module ietf-layer0-types {
       config false;
       description
         "Maximum acceptable accumulated chromatic dispersion (CD) 
-        on the receiver";
+        on the receiver in optimal OSNR condition";
     }
     list cd-penalty {
       key cd-value;
@@ -1749,8 +1749,8 @@ module ietf-layer0-types {
         "Optional penalty associated with a given accumulated
         chromatic dispersion (CD) value.
 
-        This list of pair CD and penalty values can be used to
-        sample the function penalty = f(CD).";
+        This list of pair CD and OSNR penalty can be used to
+        sample the function OSNR penalty = f(CD).";
       leaf cd-value {
         type decimal-2;
         units "ps/nm";
@@ -1769,7 +1769,8 @@ module ietf-layer0-types {
       config false;
       description
         "Maximum acceptable accumulated polarization mode
-         dispersion (PMD) on the receiver";
+         dispersion (PMD) on the receiver in optimal OSNR
+         condition";
       reference
         "ITU-T G.666 (02/2011): Characteristics of polarization
         mode dispersion compensators and of receivers that
@@ -1782,8 +1783,8 @@ module ietf-layer0-types {
         "Optional penalty associated with a given accumulated
         polarization mode dispersion (PMD) value.
 
-        This list of pair PMD and penalty can be used to
-        sample the function penalty = f(PMD).";
+        This list of pair PMD and OSNR penalty can be used to
+        sample the function OSNR penalty = f(PMD).";
       leaf pmd-value {
         type decimal-2 {
           range "0..max";
@@ -1801,8 +1802,8 @@ module ietf-layer0-types {
       config false;
       mandatory true;
       description
-        "Maximum acceptable accumulated accumulated polarization 
-        dependent loss (PDL) on the receiver";
+        "Maximum acceptable accumulated polarization dependent
+         loss (PDL) on the receiver in optimal OSNR condition";
     }
     list pdl-penalty {
       key pdl-value;
@@ -1811,8 +1812,8 @@ module ietf-layer0-types {
         "Optional penalty associated with a given accumulated 
         polarization dependent loss (PDL) value.
 
-        This list of pair PDL and penalty values can be used to
-        sample the function penalty = f(PDL).";
+        This list of pair PDL and OSNR penalty can be used to
+        sample the function OSNR penalty = f(PDL).";
       leaf pdl-value {
         type power-loss;
         config false;
@@ -1856,8 +1857,8 @@ module ietf-layer0-types {
         "Optional penalty associated with a received power
         lower than rx-ref-channel-power.
 
-        This list of pair power and penalty can be used to
-        sample the function penalty = f(rx-channel-power).";
+        This list of pair power and OSNR penalty can be used to
+        sample the function OSNR penalty = f(rx-channel-power).";
       leaf rx-channel-power-value {
         type power-dbm;
         units "dBm";
