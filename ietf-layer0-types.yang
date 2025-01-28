@@ -1812,7 +1812,7 @@ module ietf-layer0-types {
         polarization dependent loss (PDL) value.
 
         This list of pair PDL and penalty values can be used to
-        sample the function PDL = f(penalty).";
+        sample the function penalty = f(PDL).";
       leaf pdl-value {
         type power-loss;
         config false;
