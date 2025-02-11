@@ -1740,8 +1740,8 @@ module ietf-layer0-types {
       config false;
       description
         "Maximum acceptable accumulated chromatic dispersion (CD) 
-         on the receiver at Rx-power reference point
-         (rx-ref-channel-power) and controlled OSNR penaltiies";
+        on the receiver at Rx-power reference point
+        (rx-ref-channel-power) and in absence of other impairments";
     }
     list cd-penalty {
       key cd-value;
@@ -1772,7 +1772,7 @@ module ietf-layer0-types {
       description
         "Maximum acceptable accumulated polarization mode
          dispersion (PMD) on the receiver at Rx-power reference point
-         (rx-ref-channel-power) and controlled OSNR penaltiies";
+         (rx-ref-channel-power) and in absence of other impairments";
       reference
         "ITU-T G.666 (02/2011): Characteristics of polarization
         mode dispersion compensators and of receivers that
@@ -1807,7 +1807,7 @@ module ietf-layer0-types {
       description
         "Maximum acceptable accumulated polarization dependent
          loss (PDL) on the receiver at Rx-power reference point
-         (rx-ref-channel-power) and controlled OSNR penaltiies";
+         (rx-ref-channel-power) and in absence of other impairments";
     }
     list pdl-penalty {
       key pdl-value;
