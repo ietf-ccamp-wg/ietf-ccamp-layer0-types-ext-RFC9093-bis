@@ -376,10 +376,10 @@ explicit-mode:
 impairments limits in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 : Note that the the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can be calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
 
-transmitter-tuning-range:
-: A YANG grouping that defines the transmitter tuning range, which
+transceiver-tuning-range:
+: A YANG grouping that defines the transceiver tuning range, which
 includes the minimum and maximum tuning frequency, as well as the
-frequency tuning steps.
+frequency tuning granularity.
 
 common-organizational-explicit-mode:
 : A YANG grouping to define the common capabilities attributes limit
@@ -478,7 +478,7 @@ This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC7698
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2024-11-27.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-02-25.yang"}
 
 # Security Considerations
 
@@ -539,7 +539,7 @@ This document requests IANA to register the following YANG modules in the "YANG 
 This appendix presents the complete tree of the Layer 0 Types data model. See {{?RFC8340}} for an explanation of the symbols used. The data type of every leaf node is shown near the right end of the corresponding line.
 
 ~~~~ ascii-art
-{::include ./ietf-layer0-types.folded.tree}
+{::include-fold ./ietf-layer0-types.tree}
 ~~~~
 {: #fig-yang-tree}
 
@@ -630,7 +630,7 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - penalty-value
 - explicit-mode
 - common-standard-organizational-mode
-- transmitter-tuning-range
+- transceiver-tuning-range
 - common-all-mode
 - common-transceiver-param
 - common-transceiver-configured-param

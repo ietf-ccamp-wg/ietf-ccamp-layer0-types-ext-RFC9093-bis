@@ -109,10 +109,13 @@ module: ietf-layer0-types
        +--:(G.698.2)
        |  +--ro standard-mode?              standard-mode
        |  +--ro line-coding-bitrate*        identityref
-       |  +--ro transmitter-tuning-range
-       |  |  +--ro min-central-frequency?    frequency-thz
-       |  |  +--ro max-central-frequency?    frequency-thz
-       |  |  +--ro transceiver-tunability?   frequency-ghz
+       |  +--ro transceiver-tuning-range
+       |  |  +--ro min-central-frequency?
+       |  |  |       frequency-thz
+       |  |  +--ro max-central-frequency?
+       |  |  |       frequency-thz
+       |  |  +--ro transceiver-tunability-granularity?
+       |  |          frequency-ghz
        |  +--ro tx-channel-power-min?       power-dbm
        |  +--ro tx-channel-power-max?       power-dbm
        |  +--ro rx-channel-power-min?       power-dbm
@@ -124,10 +127,13 @@ module: ietf-layer0-types
        |     +--ro organization-identifier?
        |     |       organization-identifier
        |     +--ro line-coding-bitrate*        identityref
-       |     +--ro transmitter-tuning-range
-       |     |  +--ro min-central-frequency?    frequency-thz
-       |     |  +--ro max-central-frequency?    frequency-thz
-       |     |  +--ro transceiver-tunability?   frequency-ghz
+       |     +--ro transceiver-tuning-range
+       |     |  +--ro min-central-frequency?
+       |     |  |       frequency-thz
+       |     |  +--ro max-central-frequency?
+       |     |  |       frequency-thz
+       |     |  +--ro transceiver-tunability-granularity?
+       |     |          frequency-ghz
        |     +--ro tx-channel-power-min?       power-dbm
        |     +--ro tx-channel-power-max?       power-dbm
        |     +--ro rx-channel-power-min?       power-dbm
@@ -135,10 +141,13 @@ module: ietf-layer0-types
        |     +--ro rx-total-power-max?         power-dbm
        +--:(explicit-mode)
           +--ro explicit-mode
-             +--ro transmitter-tuning-range
-             |  +--ro min-central-frequency?    frequency-thz
-             |  +--ro max-central-frequency?    frequency-thz
-             |  +--ro transceiver-tunability?   frequency-ghz
+             +--ro transceiver-tuning-range
+             |  +--ro min-central-frequency?
+             |  |       frequency-thz
+             |  +--ro max-central-frequency?
+             |  |       frequency-thz
+             |  +--ro transceiver-tunability-granularity?
+             |          frequency-ghz
              +--ro tx-channel-power-min?       power-dbm
              +--ro tx-channel-power-max?       power-dbm
              +--ro rx-channel-power-min?       power-dbm
@@ -153,10 +162,13 @@ module: ietf-layer0-types
              +--:(G.698.2)
              |  +--ro standard-mode?              standard-mode
              |  +--ro line-coding-bitrate*        identityref
-             |  +--ro transmitter-tuning-range
-             |  |  +--ro min-central-frequency?    frequency-thz
-             |  |  +--ro max-central-frequency?    frequency-thz
-             |  |  +--ro transceiver-tunability?   frequency-ghz
+             |  +--ro transceiver-tuning-range
+             |  |  +--ro min-central-frequency?
+             |  |  |       frequency-thz
+             |  |  +--ro max-central-frequency?
+             |  |  |       frequency-thz
+             |  |  +--ro transceiver-tunability-granularity?
+             |  |          frequency-ghz
              |  +--ro tx-channel-power-min?       power-dbm
              |  +--ro tx-channel-power-max?       power-dbm
              |  +--ro rx-channel-power-min?       power-dbm
@@ -168,10 +180,13 @@ module: ietf-layer0-types
              |     +--ro organization-identifier?
              |     |       organization-identifier
              |     +--ro line-coding-bitrate*        identityref
-             |     +--ro transmitter-tuning-range
-             |     |  +--ro min-central-frequency?    frequency-thz
-             |     |  +--ro max-central-frequency?    frequency-thz
-             |     |  +--ro transceiver-tunability?   frequency-ghz
+             |     +--ro transceiver-tuning-range
+             |     |  +--ro min-central-frequency?
+             |     |  |       frequency-thz
+             |     |  +--ro max-central-frequency?
+             |     |  |       frequency-thz
+             |     |  +--ro transceiver-tunability-granularity?
+             |     |          frequency-ghz
              |     +--ro tx-channel-power-min?       power-dbm
              |     +--ro tx-channel-power-max?       power-dbm
              |     +--ro rx-channel-power-min?       power-dbm
@@ -179,10 +194,13 @@ module: ietf-layer0-types
              |     +--ro rx-total-power-max?         power-dbm
              +--:(explicit-mode)
                 +--ro explicit-mode
-                   +--ro transmitter-tuning-range
-                   |  +--ro min-central-frequency?    frequency-thz
-                   |  +--ro max-central-frequency?    frequency-thz
-                   |  +--ro transceiver-tunability?   frequency-ghz
+                   +--ro transceiver-tuning-range
+                   |  +--ro min-central-frequency?
+                   |  |       frequency-thz
+                   |  +--ro max-central-frequency?
+                   |  |       frequency-thz
+                   |  +--ro transceiver-tunability-granularity?
+                   |          frequency-ghz
                    +--ro tx-channel-power-min?       power-dbm
                    +--ro tx-channel-power-max?       power-dbm
                    +--ro rx-channel-power-min?       power-dbm
@@ -235,15 +253,15 @@ module: ietf-layer0-types
     +--ro polarization-skew?                  decimal-2
   grouping common-standard-organizational-mode:
     +--ro line-coding-bitrate*   identityref
-  grouping transmitter-tuning-range:
-    +-- min-central-frequency?    frequency-thz
-    +-- max-central-frequency?    frequency-thz
-    +-- transceiver-tunability?   frequency-ghz
+  grouping transceiver-tuning-range:
+    +-- min-central-frequency?                frequency-thz
+    +-- max-central-frequency?                frequency-thz
+    +-- transceiver-tunability-granularity?   frequency-ghz
   grouping common-all-modes:
-    +--ro transmitter-tuning-range
-    |  +--ro min-central-frequency?    frequency-thz
-    |  +--ro max-central-frequency?    frequency-thz
-    |  +--ro transceiver-tunability?   frequency-ghz
+    +--ro transceiver-tuning-range
+    |  +--ro min-central-frequency?                frequency-thz
+    |  +--ro max-central-frequency?                frequency-thz
+    |  +--ro transceiver-tunability-granularity?   frequency-ghz
     +--ro tx-channel-power-min?       power-dbm
     +--ro tx-channel-power-max?       power-dbm
     +--ro rx-channel-power-min?       power-dbm
