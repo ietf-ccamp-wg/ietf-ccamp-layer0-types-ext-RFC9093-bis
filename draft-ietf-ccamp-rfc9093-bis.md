@@ -77,6 +77,14 @@ contributor:
     name: Victor Lopez
     org: Nokia
     email: victor.lopez@nokia.com
+  -
+    name: Roberto Manzotti
+    org: Cisco
+    email: rmanzott@cisco.com
+  -
+    name: Gert Grammel
+    org: Juniper
+    email: ggrammel@juniper.net
 
 normative:
   ITU-T_G.666:
