@@ -3,11 +3,11 @@ module: ietf-layer0-types
   grouping wdm-label-start-end:
     +-- (grid-type)?
        +--:(fixed-dwdm)
-       |  +-- dwdm-n?    l0-types:dwdm-n
+       |  +-- dwdm-n?    dwdm-n
        +--:(cwdm)
-       |  +-- cwdm-n?    l0-types:cwdm-n
+       |  +-- cwdm-n?    cwdm-n
        +--:(flexi-grid)
-          +-- flexi-n?   l0-types:flexi-n
+          +-- flexi-n?   flexi-n
   grouping wdm-label-step:
     +-- (l0-grid-type)?
        +--:(fixed-dwdm)
@@ -23,25 +23,25 @@ module: ietf-layer0-types
        +--:(fixed-dwdm)
        |  +-- (fixed-single-or-super-channel)?
        |     +--:(single)
-       |     |  +-- dwdm-n?               l0-types:dwdm-n
+       |     |  +-- dwdm-n?               dwdm-n
        |     +--:(multi)
-       |        +-- subcarrier-dwdm-n*    l0-types:dwdm-n
+       |        +-- subcarrier-dwdm-n*    dwdm-n
        +--:(cwdm)
-       |  +-- cwdm-n?                     l0-types:cwdm-n
+       |  +-- cwdm-n?                     cwdm-n
        +--:(flexi-grid)
           +-- (single-or-super-channel)?
              +--:(single)
-             |  +-- flexi-n?              l0-types:flexi-n
-             |  +-- flexi-m?              l0-types:flexi-m
+             |  +-- flexi-n?              flexi-n
+             |  +-- flexi-m?              flexi-m
              x--:(super)
              |  x-- subcarrier-flexi-n* [flexi-n]
-             |     +-- flexi-n?   l0-types:flexi-n
-             |     +-- flexi-m?   l0-types:flexi-m
+             |     +-- flexi-n?   flexi-n
+             |     +-- flexi-m?   flexi-m
              +--:(multi)
                 +-- frequency-slots
                    +-- frequency-slot* [flexi-n]
-                      +-- flexi-n?   l0-types:flexi-n
-                      +-- flexi-m?   l0-types:flexi-m
+                      +-- flexi-n?   flexi-n
+                      +-- flexi-m?   flexi-m
   grouping wdm-label-range-info:
     +-- grid-type?    identityref
     +-- priority?     uint8
@@ -52,19 +52,19 @@ module: ietf-layer0-types
   grouping wson-label-start-end:
     +-- (grid-type)?
        +--:(dwdm)
-       |  +-- dwdm-n?   l0-types:dwdm-n
+       |  +-- dwdm-n?   dwdm-n
        +--:(cwdm)
-          +-- cwdm-n?   l0-types:cwdm-n
+          +-- cwdm-n?   cwdm-n
   grouping wson-label-hop:
     +-- (grid-type)?
        +--:(dwdm)
        |  +-- (single-or-super-channel)?
        |     +--:(single)
-       |     |  +-- dwdm-n?              l0-types:dwdm-n
+       |     |  +-- dwdm-n?              dwdm-n
        |     +--:(super)
-       |        +-- subcarrier-dwdm-n*   l0-types:dwdm-n
+       |        +-- subcarrier-dwdm-n*   dwdm-n
        +--:(cwdm)
-          +-- cwdm-n?                    l0-types:cwdm-n
+          +-- cwdm-n?                    cwdm-n
   grouping l0-label-range-info:
     +-- grid-type?   identityref
     +-- priority?    uint8
@@ -75,24 +75,24 @@ module: ietf-layer0-types
        +--:(cwdm)
           +-- wson-cwdm-channel-spacing?   identityref
   grouping flexi-grid-label-start-end:
-    +-- flexi-n?   l0-types:flexi-n
+    +-- flexi-n?   flexi-n
   grouping flexi-grid-frequency-slot:
-    +-- flexi-n?   l0-types:flexi-n
-    +-- flexi-m?   l0-types:flexi-m
+    +-- flexi-n?   flexi-n
+    +-- flexi-m?   flexi-m
   grouping flexi-grid-label-hop:
     +-- (single-or-super-channel)?
        +--:(single)
-       |  +-- flexi-n?              l0-types:flexi-n
-       |  +-- flexi-m?              l0-types:flexi-m
+       |  +-- flexi-n?              flexi-n
+       |  +-- flexi-m?              flexi-m
        x--:(super)
        |  x-- subcarrier-flexi-n* [flexi-n]
-       |     +-- flexi-n?   l0-types:flexi-n
-       |     +-- flexi-m?   l0-types:flexi-m
+       |     +-- flexi-n?   flexi-n
+       |     +-- flexi-m?   flexi-m
        +--:(multi)
           +-- frequency-slots
              +-- frequency-slot* [flexi-n]
-                +-- flexi-n?   l0-types:flexi-n
-                +-- flexi-m?   l0-types:flexi-m
+                +-- flexi-n?   flexi-n
+                +-- flexi-m?   flexi-m
   grouping flexi-grid-label-range-info:
     +-- grid-type?    identityref
     +-- priority?     uint8
@@ -278,14 +278,14 @@ module: ietf-layer0-types
   grouping common-transceiver-readonly-param:
     +--ro rx-channel-power?   power-dbm-or-null
     +--ro rx-total-power?     power-dbm-or-null
-  grouping l0-tunnel-attributes:
+  grouping tunnel-attributes:
     +-- wavelength-assignment?   identityref
   grouping frequency-range:
     +-- lower-frequency    frequency-thz
     +-- upper-frequency    frequency-thz
-  grouping l0-path-constraints:
+  grouping path-constraints:
     +-- gsnr-extra-margin?   snr
-  grouping l0-path-properties:
+  grouping path-properties:
     +--ro estimated-gsnr?          snr
     +--ro estimated-eol-gsnr?      snr
     +--ro estimated-lowest-gsnr?   snr

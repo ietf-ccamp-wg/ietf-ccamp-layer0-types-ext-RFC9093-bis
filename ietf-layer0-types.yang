@@ -59,7 +59,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2025-02-25 {
+  revision 2025-05-28 {
     description
       "To be updated";
     reference
@@ -936,7 +936,7 @@ module ietf-layer0-types {
             description
               "Valid only when grid type is DWDM.";
           }
-          type l0-types:dwdm-n;
+          type dwdm-n;
           description
             "The given value 'N' is used to determine the
              nominal central frequency.";
@@ -952,7 +952,7 @@ module ietf-layer0-types {
             description
               "Valid only when grid type is CWDM.";
           }
-          type l0-types:cwdm-n;
+          type cwdm-n;
           description
             "The given value 'N' is used to determine the nominal
              central wavelength.";
@@ -962,7 +962,7 @@ module ietf-layer0-types {
         }
       }
       case flexi-grid {
-        uses l0-types:flexi-grid-label-start-end;
+        uses flexi-grid-label-start-end;
       }
     }
     reference
@@ -1038,7 +1038,7 @@ module ietf-layer0-types {
             "single or super channel";
           case single {
             leaf dwdm-n {
-              type l0-types:dwdm-n;
+              type dwdm-n;
               description
                 "The given value 'N' is used to determine the
                  nominal central frequency.";
@@ -1046,7 +1046,7 @@ module ietf-layer0-types {
           }
           case multi {
             leaf-list subcarrier-dwdm-n {
-              type l0-types:dwdm-n;
+              type dwdm-n;
               min-elements 2;
               description
                 "The given values 'N' are used to determine the
@@ -1061,7 +1061,7 @@ module ietf-layer0-types {
       }
       case cwdm {
         leaf cwdm-n {
-          type l0-types:cwdm-n;
+          type cwdm-n;
           description
             "The given value 'N' is used to determine the nominal
              central wavelength.";
@@ -1071,7 +1071,7 @@ module ietf-layer0-types {
         }
       }
       case flexi-grid {
-        uses l0-types:flexi-grid-label-hop;
+        uses flexi-grid-label-hop;
       }
     }
     reference
@@ -1163,7 +1163,7 @@ module ietf-layer0-types {
             description
               "Valid only when grid type is DWDM.";
           }
-          type l0-types:dwdm-n;
+          type dwdm-n;
           description
             "The central frequency of DWDM.";
           reference
@@ -1178,7 +1178,7 @@ module ietf-layer0-types {
             description
               "Valid only when grid type is CWDM.";
           }
-          type l0-types:cwdm-n;
+          type cwdm-n;
           description
             "Channel wavelength computing input.";
           reference
@@ -1204,7 +1204,7 @@ module ietf-layer0-types {
             "single or super channel";
           case single {
             leaf dwdm-n {
-              type l0-types:dwdm-n;
+              type dwdm-n;
               description
                 "The given value 'N' is used to determine the
                  nominal central frequency.";
@@ -1212,7 +1212,7 @@ module ietf-layer0-types {
           }
           case super {
             leaf-list subcarrier-dwdm-n {
-              type l0-types:dwdm-n;
+              type dwdm-n;
               description
                 "The given values 'N' are used to determine the
                  nominal central frequency for each subcarrier
@@ -1226,7 +1226,7 @@ module ietf-layer0-types {
       }
       case cwdm {
         leaf cwdm-n {
-          type l0-types:cwdm-n;
+          type cwdm-n;
           description
             "The given value 'N' is used to determine the nominal
              central wavelength.";
@@ -1321,7 +1321,7 @@ module ietf-layer0-types {
       "The flexi-grid label-start or label-end used to specify
        flexi-grid label range.";
     leaf flexi-n {
-      type l0-types:flexi-n;
+      type flexi-n;
       description
         "The given value 'N' is used to determine the nominal
         central frequency.
@@ -1345,7 +1345,7 @@ module ietf-layer0-types {
       "Flexi-grid frequency slot grouping.";
     uses flexi-grid-label-start-end;
     leaf flexi-m {
-      type l0-types:flexi-m;
+      type flexi-m;
       description
         "The given value 'M' is used to determine the slot width.";
     }
@@ -1515,16 +1515,12 @@ module ietf-layer0-types {
       "This grouping is intended to be used for reporting the
       information of a transceiver's mode.
 
-      The attributes for the explicit mode shall be augmented when
-      used with either:
-      - the proper leafrefs, when explicit mode templates are used;
-        or,
-      - the explicit-mode grouping, when explicit mode templates
-        are not used.
-
-      The compatible-modes container shall be augmented with the 
-      proper leafrefs when used: see for example the 
-      transceiver-capabilities grouping below.";
+      When this grouping is used:
+      - the explicit-mode container shall be properly augmented
+        (see the description of the explicit-mode container below);
+      - the compatible-modes container shall be properly augmented
+        (see the description of the compatible-modes container
+        below).";
     choice mode {
       config false;
       mandatory true;
@@ -1550,14 +1546,75 @@ module ietf-layer0-types {
         container explicit-mode {
           config false;
           description
-            "The set of attributes for an explicit mode";
-          // uses explicit-mode;
+            "The set of attributes for an explicit mode.
+
+            The explicit mode attributes can be defined either:
+            - as a leafref to an explicit mode template; or:
+            - using the explicit-mode grouping.
+
+            Therefore, this container shall be augmented with either
+            a use statement for the explicit-mode grouping or a
+            leafref to an explicit mode template and the choice
+            depends on where this grouping is used.
+            In the latter case, the augmentation shall provide the
+            correct XPaths that depend on where this grouping is used
+            within the YANG data tree.
+            See for example the YANG code commented below";
+/*  YANG example for using the explicit-mode grouping:
+          uses explicit-mode;
+*/
           uses common-all-modes;
           container compatible-modes {
             description
               "Container for all the standard and organizational
-                modes supported by the transceiver's explicit
-                mode.";
+              modes supported by the transceiver's explicit mode.
+              
+              This container shall be augmented with the definition
+              of the supported-application-codes and
+              supported-organizational-modes leaf-lists, which
+              provides the list of pointers to the application codes
+              and, respectively, the organizational modes supported
+              by the transceiver's explicit mode.
+              The augmentation shall provide the correct XPaths that
+              depend on where this grouping is used within the YANG
+              data tree.
+              See for example the YANG code commented below.";
+/*  YANG example for the definition of
+    supported-application-codes and
+    supported-organizational-modes leaf-lists:
+
+            leaf-list supported-application-codes {
+              type leafref {
+                path "../../../../supported-mode/mode-id";
+              }
+              must "../../../../"
+                  + "supported-mode[mode-id=current()]/"
+                  + "standard-mode" {
+                description
+                  "The pointer is only for application codes
+                  supported by transceiver."; 
+              }
+              description
+                "List of pointers to the application codes
+                supported by the transceiver's explicit mode.";
+            }
+            leaf-list supported-organizational-modes {
+              type leafref {
+                path "../../../../supported-mode/mode-id";
+              }
+              must "../../../../"
+                  + "supported-mode[mode-id=current()]/"
+                  + "organizational-mode" {
+                description
+                  "The pointer is only for organizational modes
+                  supported by transceiver.";
+              }
+              description
+                "List of pointers to the organizational modes
+                  supported by the transceiver's explicit mode.";
+            }
+
+*/
           }  // container compatible-modes
         }  // container explicit-mode
       } // end of case explicit-mode
@@ -1568,13 +1625,10 @@ module ietf-layer0-types {
     description
       "This grouping is intended to be used for reporting the
       capabilities of a transceiver.
-      
-      The attributes for the explicit mode shall be augmented when
-      used with either:
-      - the proper leafrefs, when explicit mode templates are used;
-        or,
-      - the explicit-mode grouping, when explicit mode templates
-        are not used.";
+
+      When this grouping is used:
+      - the explicit-mode container shall be properly augmented (see
+        the description of the transceiver-mode grouping.";
 
     container supported-modes {
       presence
@@ -2185,7 +2239,7 @@ module ietf-layer0-types {
     }
   } // grouping for read-only transceiver attributes out of mode
 
-  grouping l0-tunnel-attributes {
+  grouping tunnel-attributes {
     description
       "Parameters for Layer0 (WSON or Flexi-Grid) Tunnels.";
 
@@ -2225,7 +2279,7 @@ module ietf-layer0-types {
     }
   }
 
-  grouping l0-path-constraints {
+  grouping path-constraints {
     description
       "Common attribute for Layer 0 path constraints to be used by
       Layer 0 computation.";
@@ -2241,7 +2295,7 @@ module ietf-layer0-types {
     }
   }
 
-  grouping l0-path-properties {
+  grouping path-properties {
     description
       "Common attribute for reporting the Layer 0 computed path
       properties.";
