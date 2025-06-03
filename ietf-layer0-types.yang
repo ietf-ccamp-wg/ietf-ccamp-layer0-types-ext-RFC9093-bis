@@ -59,7 +59,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2025-05-28 {
+  revision 2025-06-03 {
     description
       "To be updated";
     reference
@@ -1100,9 +1100,9 @@ module ietf-layer0-types {
           "Minimum space between slot widths. Default is 12.500
            GHz.";
         reference
-          "RFC 7698: Framework and Requirements for GMPLS-Based
-           Control of Flexi-Grid Dense Wavelength Division
-           Multiplexing (DWDM) Networks";
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
+           Grid Dense Wavelength Division Multiplexing (DWDM)
+           Networks";
       }
       leaf min-slot-width-factor {
         type uint16 {
@@ -1521,104 +1521,6 @@ module ietf-layer0-types {
       - the compatible-modes container shall be properly augmented
         (see the description of the compatible-modes container
         below).";
-    choice mode {
-      config false;
-      mandatory true;
-      description
-        "Indicates whether the transceiver's mode is a standard
-          mode, an organizational mode or an explicit mode.";
-      case G.698.2 {
-        uses standard-mode;
-        uses common-standard-organizational-mode;
-        uses common-all-modes;
-      }
-      case organizational-mode {
-        container organizational-mode {
-          config false;
-          description
-            "The set of attributes for an organizational mode";
-          uses organizational-mode;
-          uses common-standard-organizational-mode;
-          uses common-all-modes;
-        }  // container organizational-mode
-      }
-      case explicit-mode {
-        container explicit-mode {
-          config false;
-          description
-            "The set of attributes for an explicit mode.
-
-            The explicit mode attributes can be defined either:
-            - as a leafref to an explicit mode template; or:
-            - using the explicit-mode grouping.
-
-            Therefore, this container shall be augmented with either
-            a use statement for the explicit-mode grouping or a
-            leafref to an explicit mode template and the choice
-            depends on where this grouping is used.
-            In the latter case, the augmentation shall provide the
-            correct XPaths that depend on where this grouping is used
-            within the YANG data tree.
-            See for example the YANG code commented below";
-/*  YANG example for using the explicit-mode grouping:
-          uses explicit-mode;
-*/
-          uses common-all-modes;
-          container compatible-modes {
-            description
-              "Container for all the standard and organizational
-              modes supported by the transceiver's explicit mode.
-              
-              This container shall be augmented with the definition
-              of the supported-application-codes and
-              supported-organizational-modes leaf-lists, which
-              provides the list of pointers to the application codes
-              and, respectively, the organizational modes supported
-              by the transceiver's explicit mode.
-              The augmentation shall provide the correct XPaths that
-              depend on where this grouping is used within the YANG
-              data tree.
-              See for example the YANG code commented below.";
-/*  YANG example for the definition of
-    supported-application-codes and
-    supported-organizational-modes leaf-lists:
-
-            leaf-list supported-application-codes {
-              type leafref {
-                path "../../../../supported-mode/mode-id";
-              }
-              must "../../../../"
-                  + "supported-mode[mode-id=current()]/"
-                  + "standard-mode" {
-                description
-                  "The pointer is only for application codes
-                  supported by transceiver."; 
-              }
-              description
-                "List of pointers to the application codes
-                supported by the transceiver's explicit mode.";
-            }
-            leaf-list supported-organizational-modes {
-              type leafref {
-                path "../../../../supported-mode/mode-id";
-              }
-              must "../../../../"
-                  + "supported-mode[mode-id=current()]/"
-                  + "organizational-mode" {
-                description
-                  "The pointer is only for organizational modes
-                  supported by transceiver.";
-              }
-              description
-                "List of pointers to the organizational modes
-                  supported by the transceiver's explicit mode.";
-            }
-
-*/
-          }  // container compatible-modes
-        }  // container explicit-mode
-      } // end of case explicit-mode
-    } // end of choice
   }
 
   grouping transceiver-capabilities {
@@ -1626,10 +1528,12 @@ module ietf-layer0-types {
       "This grouping is intended to be used for reporting the
       capabilities of a transceiver.
 
-      When this grouping is used:
-      - the explicit-mode container shall be properly augmented (see
-        the description of the transceiver-mode grouping.";
+      When this grouping is used, the explicit-mode container shall
+      be augmented with a leafref to an explicit mode template with
+      the proper XPath which depends from where this grouping is
+      actually used.
 
+      See for example the YANG code commented below.";
     container supported-modes {
       presence
         "When present, it indicates that the modes supported by a 
@@ -1649,44 +1553,72 @@ module ietf-layer0-types {
           }
           description "ID for the supported transceiver's mode.";
         }
-        uses transceiver-mode {
-          augment "mode/explicit-mode/explicit-mode/"
-                + "compatible-modes" {
-            description
-              "Augments the compatible modes with the proper 
-              leafrefs.";
-            leaf-list supported-application-codes {
-              type leafref {
-                path "../../../../supported-mode/mode-id";
-              }
-              must "../../../../"
-                  + "supported-mode[mode-id=current()]/"
-                  + "standard-mode" {
-                description
-                  "The pointer is only for application codes
-                  supported by transceiver."; 
-              }
-              description
-                "List of pointers to the application codes
-                supported by the transceiver's explicit mode.";
-            }
-            leaf-list supported-organizational-modes {
-              type leafref {
-                path "../../../../supported-mode/mode-id";
-              }
-              must "../../../../"
-                  + "supported-mode[mode-id=current()]/"
-                  + "organizational-mode" {
-                description
-                  "The pointer is only for organizational modes
-                  supported by transceiver.";
-              }
-              description
-                "List of pointers to the organizational modes
-                  supported by the transceiver's explicit mode.";
-            }
+        choice mode {
+          config false;
+          mandatory true;
+          description
+            "Indicates whether the transceiver's mode is a standard
+              mode, an organizational mode or an explicit mode.";
+          case G.698.2 {
+            uses standard-mode;
+            uses common-standard-organizational-mode;
+            uses common-all-modes;
           }
-        }
+          case organizational-mode {
+            container organizational-mode {
+              config false;
+              description
+                "The set of attributes for an organizational mode";
+              uses organizational-mode;
+              uses common-standard-organizational-mode;
+              uses common-all-modes;
+            }  // container organizational-mode
+          }
+          case explicit-mode {
+            container explicit-mode {
+              config false;
+              description
+                "The set of attributes for an explicit mode.";
+              uses common-all-modes;
+              container compatible-modes {
+                description
+                  "Container for all the standard and organizational
+                  modes supported by the transceiver's explicit
+                  mode.";
+                leaf-list supported-application-codes {
+                  type leafref {
+                    path "../../../../supported-mode/mode-id";
+                  }
+                  must "../../../../"
+                      + "supported-mode[mode-id=current()]/"
+                      + "standard-mode" {
+                    description
+                      "The pointer is only for application codes
+                      supported by transceiver."; 
+                  }
+                  description
+                    "List of pointers to the application codes
+                    supported by the transceiver's explicit mode.";
+                }
+                leaf-list supported-organizational-modes {
+                  type leafref {
+                    path "../../../../supported-mode/mode-id";
+                  }
+                  must "../../../../"
+                      + "supported-mode[mode-id=current()]/"
+                      + "organizational-mode" {
+                    description
+                      "The pointer is only for organizational modes
+                      supported by transceiver.";
+                  }
+                  description
+                    "List of pointers to the organizational modes
+                      supported by the transceiver's explicit mode.";
+                }
+              }  // container compatible-modes
+            }  // container explicit-mode
+          } // end of case explicit-mode
+        } // end of choice
       }  // list supported-modes
     }  // container supported-modes
   }  // grouping transceiver-capabilities
