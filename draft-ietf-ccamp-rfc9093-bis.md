@@ -511,7 +511,7 @@ The label-step definition, when used for representing WDM label range, are augme
 
 # YANG Module for Layer 0 Types
 
-This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC8363}}, {{!RFC8363}}, {{!RFC9093}}, {{ITU-T_G.666}}, {{ITU-T_G.694.1}}, {{ITU-T_G.694.2}}, {{ITU-T_G.698.2}}, {{ITU-T_G.709}}, {{ITU-T_G.709.2}}, {{ITU-T_G.709.3}}, {{ITU-T_G.959.1}} {{ITU-T_G.975}}, {{ITU-T_G.975.1}}, {{ITU-T_G.977.1}}, {{ITU-T_G.9700}} and {{OIF_400ZR}}.
+This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC8363}}, {{!RFC9093}}, {{ITU-T_G.666}}, {{ITU-T_G.694.1}}, {{ITU-T_G.694.2}}, {{ITU-T_G.698.2}}, {{ITU-T_G.709}}, {{ITU-T_G.709.2}}, {{ITU-T_G.709.3}}, {{ITU-T_G.959.1}} {{ITU-T_G.975}}, {{ITU-T_G.975.1}}, {{ITU-T_G.977.1}}, {{ITU-T_G.9700}} and {{OIF_400ZR}}.
 
 ~~~~ yang
 {::include ./ietf-layer0-types.yang}
