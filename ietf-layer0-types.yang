@@ -1510,19 +1510,6 @@ module ietf-layer0-types {
     }
   }
 
-  grouping transceiver-mode {
-    description
-      "This grouping is intended to be used for reporting the
-      information of a transceiver's mode.
-
-      When this grouping is used:
-      - the explicit-mode container shall be properly augmented
-        (see the description of the explicit-mode container below);
-      - the compatible-modes container shall be properly augmented
-        (see the description of the compatible-modes container
-        below).";
-  }
-
   grouping transceiver-capabilities {
     description
       "This grouping is intended to be used for reporting the

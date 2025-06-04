@@ -662,7 +662,6 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - wdm-label-step
 - wdm-label-hop
 - wdm-label-range-info
-- transceiver-mode
 - transceiver-capabilities
 - standard-mode
 - organizational-mode
@@ -674,10 +673,10 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - common-transceiver-param
 - common-transceiver-configured-param
 - common-transceiver-readonly-param
-- l0-tunnel-attributes
+- tunnel-attributes
 - frequency-range
-- l0-path-constraints
-- l0-path-properties
+- path-constraints
+- path-properties
 
 {: numbered="false"}
 
