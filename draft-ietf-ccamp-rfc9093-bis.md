@@ -51,8 +51,8 @@ contributor:
     email: d.king@lancaster.ac.uk
   -
     name: Gabriele Galimberti
-    org: Cisco
-    email: ggalimbe@cisco.com
+    org: Nokia
+    email: gabriele.galimberti@nokia.com
   -
     name: Enrico Griseri
     org: Nokia
@@ -184,6 +184,18 @@ normative:
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-01.0_reduced2.pdf
 
 informative:
+  ITU-T_G.807:
+    title: "Generic functional architecture of the optical media network"
+    author:
+      org: International Telecommunication Union
+    date: January 2021
+    seriesinfo: ITU-T Supplement G.807, Amendment 1
+  ITU-T_G.872:
+    title: "Architecture of optical transport networks"
+    author:
+      org: International Telecommunication Union
+    date: January 2021
+    seriesinfo: ITU-T Supplement G.872, Amendment 1
   ITU-T_G.Sup39:
     title: "Optical system design and engineering considerations"
     author:
@@ -193,11 +205,11 @@ informative:
 
 --- abstract
 
-This document defines a collection of common data types, identities, and groupings
-in the YANG data modeling language. 
-These common types and groupings, derived from the built-in YANG data types, identities,
-and groupings are intended to be imported by modules that model Layer 0
-configuration and state capabilities, such as Wavelength Switched Optical Networks (WSONs) and
+This document defines a collection of common data types, identities,
+and groupings in the YANG data modeling language. These common types
+and groupings, derived from the built-in YANG data types, identities,
+and groupings are intended to be imported by modules that model Optical Layer 0 configuration and state
+capabilities, such as Wavelength Switched Optical Networks (WSONs) and
 flexi-grid Dense Wavelength Division Multiplexing (DWDM) networks.
 
 This document obsoletes RFC 9093 by replacing the YANG module it contained with a new revision that includes additional YANG data types, identities and groupings.
@@ -240,7 +252,17 @@ For further details, see {{changes-bis}}.
 
 ## Terminology and Notations
 
-   Refer to {{?RFC7446}} and {{?RFC7581}} for the key terms used in this
+In the context of this document, the term "layer 0" refers to the
+photonic layer or WDM layer network in the architecture of the
+optical transport network (OTN) as defined in {{ITU-T_G.709}}, {{ITU-T_G.872}},
+and {{ITU-T_G.807}} as opposed to the electrical switching
+layers of the OTN, which are typically referred to as layer 1 (L1).
+
+The term "layer 0" may also be used for other transport network
+technologies (e.g., copper-based, radio-based, or free space optics-
+based, etc.), which are outside the scope of this document.
+
+   Refer to {{?RFC7446}} and {{?RFC7581}} for other key terms used in this
    document, and the terminology for describing YANG data models can be
    found in {{!RFC7950}}.
 
@@ -371,6 +393,13 @@ links. See {{label-range}} for more details.
 transceiver-capabilities:
 : A YANG grouping to define the transceiver capabilities (also called
 "modes") needed to determine optical signal compatibility.
+: When this grouping is used, the explicit-mode container shall be augmented
+with a leafref to an explicit mode template with the proper XPath which
+depends from where this grouping is actually used.
+
+> Examples of how the transceiver-capabilities grouping can be used and augmented with a leafref
+to an explicit mode template are provided in the YANG models defined in
+{{?I-D.ietf-ccamp-optical-impairment-topology-yang}} and {{?I-D.ietf-ccamp-dwdm-if-param-yang}}.
 
 standard-mode:
 : A YANG grouping for the standard modes defined in {{ITU-T_G.698.2}}.
@@ -382,7 +411,7 @@ organizations or vendors, as defined in {{!I-D.ietf-ccamp-optical-impairment-top
 explicit-mode:
 : A YANG grouping to define the list of attributes related to optical
 impairments limits in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
-: Note that the the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can be calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
+: Note that the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can be calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
 
 transceiver-tuning-range:
 : A YANG grouping that defines the transceiver tuning range, which
@@ -415,9 +444,11 @@ It is worth noting that there is an inheritance relationship between the Lambda-
 
 ## WDM Label and Label Range {#label-range}
 
-As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slot assigned to a WDM Label Switched Path (LSP) on a given WDM Link, which models an Optical Multiplex Section (OMS) Media Channel Group (MCG) as described in {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}.
+As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slots assigned to a WDM Label Switched Path (LSP) on a given WDM Link, which models an Optical Multiplex Section (OMS) Media Channel Group (MCG) as described in {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
-The same WDM label shall be assigned to the same WDM LSP on all the WDM Links on a regen-free LSP path or path segment.
+The same WDM label (which represents the frequency slots associated to the WDM LSP) will be assigned on all the
+WDM Links along a regen-free LSP path or path segment (i.e., an LSP path or path segment which does not include any 3R regenerator). Depending on the 3R capabilities, the WDM label may or may not change at a 3R regenerator: see
+{{Section 2.7 of ?I-D.ietf-ccamp-optical-impairment-topology-yang}} for more details on 3R regenerators.
 
 A frequency slot is defined in {{ITU-T_G.694.1}} as a contiguous frequency range characterized by its nominal central frequency and slot width. The frequency range allocated to a frequency slot is unavailable to other frequency slots.
 
@@ -468,9 +499,9 @@ based on the following attributes, defined based on concepts used in {{?RFC7699}
 
 Each entry of the label-restriction list, as defined in {{!I-D.ietf-teas-rfc8776-update}}, defines a label-start, a label-end, a label-step and a range-bitmap.
 
-The label-start and label-end definitions, when used for representing WDM labe range, are augmented with WDM technology-specific attributes, using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that supports both WSON and DWDM flexible-grid).
+The label-start and label-end definitions, when used for representing WDM label range, are augmented with WDM technology-specific attributes, using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that supports both WSON and DWDM flexible-grid).
 
-The label-step definition, when used for representing WDM labe range, are augmented with WDM technology-specific attributes, using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that supports both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
+The label-step definition, when used for representing WDM label range, are augmented with WDM technology-specific attributes, using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that supports both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
 
 * For CWDM and DWDM fixed grids, it describes the channel spacing, as defined in {{?RFC6205}};
 
@@ -480,7 +511,7 @@ The label-step definition, when used for representing WDM labe range, are augmen
 
 # YANG Module for Layer 0 Types
 
-This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC7698}}, {{!RFC8363}}, {{!RFC8363}}, {{!RFC9093}}, {{ITU-T_G.666}}, {{ITU-T_G.694.1}}, {{ITU-T_G.694.2}}, {{ITU-T_G.698.2}}, {{ITU-T_G.709}}, {{ITU-T_G.709.2}}, {{ITU-T_G.709.3}}, {{ITU-T_G.959.1}} {{ITU-T_G.975}}, {{ITU-T_G.975.1}}, {{ITU-T_G.977.1}}, {{ITU-T_G.9700}} and {{OIF_400ZR}}.
+This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC8363}}, {{!RFC9093}}, {{ITU-T_G.666}}, {{ITU-T_G.694.1}}, {{ITU-T_G.694.2}}, {{ITU-T_G.698.2}}, {{ITU-T_G.709}}, {{ITU-T_G.709.2}}, {{ITU-T_G.709.3}}, {{ITU-T_G.959.1}} {{ITU-T_G.975}}, {{ITU-T_G.975.1}}, {{ITU-T_G.977.1}}, {{ITU-T_G.9700}} and {{OIF_400ZR}}.
 
 ~~~~ yang
 {::include ./ietf-layer0-types.yang}
@@ -631,7 +662,6 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - wdm-label-step
 - wdm-label-hop
 - wdm-label-range-info
-- transceiver-mode
 - transceiver-capabilities
 - standard-mode
 - organizational-mode
@@ -643,10 +673,10 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - common-transceiver-param
 - common-transceiver-configured-param
 - common-transceiver-readonly-param
-- l0-tunnel-attributes
+- tunnel-attributes
 - frequency-range
-- l0-path-constraints
-- l0-path-properties
+- path-constraints
+- path-properties
 
 {: numbered="false"}
 
