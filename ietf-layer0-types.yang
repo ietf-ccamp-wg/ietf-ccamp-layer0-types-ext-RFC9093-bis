@@ -59,7 +59,7 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2025-06-03 {
+  revision 2025-06-06 {
     description
       "To be updated";
     reference
@@ -1572,7 +1572,7 @@ module ietf-layer0-types {
                   "Container for all the standard and organizational
                   modes supported by the transceiver's explicit
                   mode.";
-                leaf-list supported-application-codes {
+                leaf-list supported-application-code {
                   type leafref {
                     path "../../../../supported-mode/mode-id";
                   }
@@ -1587,7 +1587,7 @@ module ietf-layer0-types {
                     "List of pointers to the application codes
                     supported by the transceiver's explicit mode.";
                 }
-                leaf-list supported-organizational-modes {
+                leaf-list supported-organizational-mode {
                   type leafref {
                     path "../../../../supported-mode/mode-id";
                   }
@@ -1606,7 +1606,7 @@ module ietf-layer0-types {
             }  // container explicit-mode
           } // end of case explicit-mode
         } // end of choice
-      }  // list supported-modes
+      }  // list supported-mode
     }  // container supported-modes
   }  // grouping transceiver-capabilities
 
@@ -2195,6 +2195,25 @@ module ietf-layer0-types {
       description
         "The upper frequency boundary of the
         frequency range.";
+    }
+  }
+
+  grouping frequency-range-with-identifier {
+    description
+      "This grouping extends the frequency-range defined in
+      ietf-layer0-types with an identifier, which used as a key when
+      it is needed to define different properties (e.g., optical
+      impairments) for different frequency ranges.";
+    leaf frequency-range-id {
+      type uint16;
+      description
+        "The identifier of the frequency range.";
+    }
+    container frequency-range {
+      description
+        "The frequency range for which these optical
+        impairments apply.";
+      uses frequency-range;
     }
   }
 

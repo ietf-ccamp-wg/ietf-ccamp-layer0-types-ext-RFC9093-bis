@@ -157,9 +157,9 @@ module: ietf-layer0-types
                    +--ro rx-channel-power-max?       power-dbm
                    +--ro rx-total-power-max?         power-dbm
                    +--ro compatible-modes
-                      +--ro supported-application-codes*
+                      +--ro supported-application-code*
                       |       -> ../../../../supported-mode/mode-id
-                      +--ro supported-organizational-modes*
+                      +--ro supported-organizational-mode*
                               -> ../../../../supported-mode/mode-id
   grouping standard-mode:
     +--ro standard-mode?   standard-mode
@@ -233,6 +233,11 @@ module: ietf-layer0-types
   grouping frequency-range:
     +-- lower-frequency    frequency-thz
     +-- upper-frequency    frequency-thz
+  grouping frequency-range-with-identifier:
+    +-- frequency-range-id?   uint16
+    +-- frequency-range
+       +-- lower-frequency    frequency-thz
+       +-- upper-frequency    frequency-thz
   grouping path-constraints:
     +-- gsnr-extra-margin?   snr
   grouping path-properties:
