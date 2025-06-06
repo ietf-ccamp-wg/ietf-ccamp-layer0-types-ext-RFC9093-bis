@@ -1520,7 +1520,14 @@ module ietf-layer0-types {
       the proper XPath which depends from where this grouping is
       actually used.
 
-      See for example the YANG code commented below.";
+      See for example the ietf-optical-impairment-topology YANG
+      module in RFC YYYY.";
+    reference
+        "RFC YYYY: A YANG Data Model for Optical Impairment-aware
+        Topology.";
+// RFC Ed.: replace YYYY with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
     container supported-modes {
       presence
         "When present, it indicates that the modes supported by a 

@@ -675,6 +675,7 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - common-transceiver-readonly-param
 - tunnel-attributes
 - frequency-range
+- frequency-range-with-identifier
 - path-constraints
 - path-properties
 
