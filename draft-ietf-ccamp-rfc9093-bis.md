@@ -230,7 +230,7 @@ This document obsoletes RFC 9093 by replacing the YANG module it contained with 
    are designed to be the common types applicable for modeling Traffic
    Engineering (TE) features as well as non-TE features (e.g., physical
    network configuration aspects) for Layer 0 optical networks in
-   model(s) defined outside of this document.  The applicability of
+   models defined outside of this document.  The applicability of
    Layer 0 types specified in this document includes Wavelength Switched
    Optical Networks (WSONs) {{?RFC6163}} {{ITU-T_G.694.1}} and {{ITU-T_G.694.2}}, and flexi-grid Dense
    Wavelength Division Multiplexing (DWDM) networks {{?RFC7698}}
@@ -259,8 +259,7 @@ and {{ITU-T_G.807}} as opposed to the electrical switching
 layers of the OTN, which are typically referred to as layer 1 (L1).
 
 The term "layer 0" may also be used for other transport network
-technologies (e.g., copper-based, radio-based, or free space optics-
-based, etc.), which are outside the scope of this document.
+technologies (e.g., copper-based, radio-based, or free space optics-based, etc.), which are outside the scope of this document.
 
    Refer to {{?RFC7446}} and {{?RFC7581}} for other key terms used in this
    document, and the terminology for describing YANG data models can be
@@ -286,10 +285,9 @@ based, etc.), which are outside the scope of this document.
 
 # Layer 0 Types Module Contents
 
-   This document defines a YANG module for common Layer 0 types, ietf-
-   layer0-types.  This module is used for WSON and flexi-grid DWDM
-   networks.  The "ietf-layer0-types" module contains the following YANG
-   reusable YANG data types, identities and groupings:
+This document defines a YANG module for common Layer 0 types, ietf-layer0-types.
+This module is used for WSON and flexi-grid DWDM networks.
+The "ietf-layer0-types" module contains the following YANG reusable YANG data types, identities and groupings:
 
 l0-grid-type:
 : A base YANG identity for the grid type as defined in {{!RFC6205}} and {{!RFC7699}}.
@@ -319,7 +317,7 @@ line-coding:
 : A base YANG identity from which specific identities defining the bit rate/line coding of optical tributary signals are derived.
 
 wavelength-assignment:
-: A base YANG identity from which for Wavelength selection method, as defined in {{!RFC7689}}.
+: A base YANG identity from which specific identities defining the the Wavelength selection methods, as defined in {{!RFC7689}}, are derived.
 
 operational-mode:
 : A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
@@ -349,9 +347,8 @@ flexi-grid-label-start-end:
 : The flexi-grid label range was defined in {{!RFC7699}}, and the
 generic topology model defines the label-start/label-end in
 {{!RFC8795}}.
-: This grouping shows the flexi-grid-specific label-
-start and label-end information which is used to describe the range of available nominal central frequencies. See {{label-range}} for more details.
-: As described in section 3.1 of {{!RFC8363}}, the range of available nominal central frequencies are advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
+: This grouping shows the flexi-grid-specific label-start and label-end information which is used to describe the range of available nominal central frequencies. See {{label-range}} for more details.
+: As described in section 3.1 of {{!RFC8363}}, the range of available nominal central frequencies is advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
 
 flexi-grid-label-hop:
 : The flexi-grid label range was defined in {{!RFC8363}}, and the
@@ -394,7 +391,7 @@ transceiver-capabilities:
 : A YANG grouping to define the transceiver capabilities (also called
 "modes") needed to determine optical signal compatibility.
 : When this grouping is used, the explicit-mode container shall be augmented
-with a leafref to an explicit mode template with the proper XPath which
+with a leafref to an explicit mode template with the proper XPath, which
 depends from where this grouping is actually used.
 
 > Examples of how the transceiver-capabilities grouping can be used and augmented with a leafref
@@ -409,8 +406,8 @@ organizational-mode:
 organizations or vendors, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
 explicit-mode:
-: A YANG grouping to define the list of attributes related to optical
-impairments limits in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
+: A YANG grouping to define the list of attributes related to the limits of the optical
+impairments, in case of transceiver explicit mode, as defined in {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 : Note that the actual portion of the spectrum occupied by an OTSi is not explicitly reported within the explicit-mode parameters because it can be calculated using the available-baud-rate, the roll-off and the min-carrier-spacing attributes.
 
 transceiver-tuning-range:
@@ -418,15 +415,14 @@ transceiver-tuning-range:
 includes the minimum and maximum tuning frequency, as well as the
 frequency tuning granularity.
 
-common-organizational-explicit-mode:
-: A YANG grouping to define the common capabilities attributes limit
-range in case of operational mode and explicit mode.
+common-all-modes:
+: A YANG grouping used to define the common attributes used by all transceiver's modes.
 
 modulation:
 : A base YANG identity to define the different modulation types, as defined in {{ITU-T_G.Sup39}}
 
 snr:
-: A YANG data type used to represent an (Optical) Signal to Noise Ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
+: A YANG data type used to represent an (Optical) Signal-to-noise ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
 
 psd:
 : A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
@@ -446,7 +442,7 @@ It is worth noting that there is an inheritance relationship between the Lambda-
 
 As described in {{!RFC6205}} and {{!RFC7699}}, the WDM label represents the frequency slots assigned to a WDM Label Switched Path (LSP) on a given WDM Link, which models an Optical Multiplex Section (OMS) Media Channel Group (MCG) as described in {{?I-D.ietf-ccamp-optical-impairment-topology-yang}}.
 
-The same WDM label (which represents the frequency slots associated to the WDM LSP) will be assigned on all the
+The same WDM label (which represents the frequency slots associated with the WDM LSP) will be assigned on all the
 WDM Links along a regen-free LSP path or path segment (i.e., an LSP path or path segment which does not include any 3R regenerator). Depending on the 3R capabilities, the WDM label may or may not change at a 3R regenerator: see
 {{Section 2.7 of ?I-D.ietf-ccamp-optical-impairment-topology-yang}} for more details on 3R regenerators.
 
@@ -483,12 +479,11 @@ The definition of the channel spacing, NCFG and SWG in the YANG model have been 
 
 The WDM Label Range represents the frequency slots that are available for WDM LSPs to be set up over a given WDM Link.
 
-The WDM Label Range is defined by augmenting the label-restriction list, defined in {{!I-D.ietf-teas-rfc8776-update}}, with WDM technology-specific attributes, using the l0-label-range-info grouping (for WSON only models) or the flexi-grid-label-range-info grouping (for DWDM flexible-grid only models) or the wdm-label-range-info grouping (for models that supports both WSON and DWDM flexible-grid).
+The WDM Label Range is defined by augmenting the label-restriction list, defined in {{!I-D.ietf-teas-rfc8776-update}}, with WDM technology-specific attributes, using the l0-label-range-info grouping (for WSON only models) or the flexi-grid-label-range-info grouping (for DWDM flexible-grid only models) or the wdm-label-range-info grouping (for models that support both WSON and DWDM flexible-grid).
 
 Each entry in the label-restriction list represents either the range of the available central wavelength values (in case of CWDM fixed-grid) or the range of the available nominal central frequencies values (in case of DWDM fixed or flexible grids): the grid-type attribute defines the type of grid for each entry of the list.
 
-In case of DWDM flexible grid, each entry in the label-restriction
-list represents also the range of the supported slot width values
+In case of DWDM flexible grid, each entry in the label-restriction list also represents the range of the supported slot width values
 based on the following attributes, defined based on concepts used in {{?RFC7699}}:
 
 * slot-width-granularity, which represents the minimum space between slot widths;
@@ -499,9 +494,9 @@ based on the following attributes, defined based on concepts used in {{?RFC7699}
 
 Each entry of the label-restriction list, as defined in {{!I-D.ietf-teas-rfc8776-update}}, defines a label-start, a label-end, a label-step and a range-bitmap.
 
-The label-start and label-end definitions, when used for representing WDM label range, are augmented with WDM technology-specific attributes, using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that supports both WSON and DWDM flexible-grid).
+The label-start and label-end definitions, when used for representing WDM label range, are augmented with WDM technology-specific attributes, using the wson-label-start-end grouping (for WSON only models) or the flexi-grid-label-start-end grouping (for DWDM flexible-grid only models) or the wdm-label-start-end grouping (for models that support both WSON and DWDM flexible-grid).
 
-The label-step definition, when used for representing WDM label range, are augmented with WDM technology-specific attributes, using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that supports both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
+The label-step definition, when used for representing WDM label range, is augmented with WDM technology-specific attributes, using the wson-label-step grouping (for WSON only models) or the flexi-grid-label-step grouping (for DWDM flexible-grid only models) or the wdm-label-step grouping (for models that support both WSON and DWDM flexible-grid). The label-step definition for WDM depends on the WDM grid type:
 
 * For CWDM and DWDM fixed grids, it describes the channel spacing, as defined in {{?RFC6205}};
 
@@ -524,47 +519,49 @@ sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-02-25.yang"}
 This section is modeled after the template described in Section 3.7
 of {{?I-D.ietf-netmod-rfc8407bis}}.
 
-The "ietf-layer0-types" YANG module define data models that are
+The "ietf-layer0-types" YANG module defines a data model that is
 designed to be accessed via YANG-based management protocols, such as
-NETCONF {{?RFC6241}} and RESTCONF {{?RFC8040}}. These protocols have to
-use a secure transport layer (e.g., SSH {{?RFC4252}}, TLS {{?RFC8446}}, and
-QUIC {{?RFC9000}}) and have to use mutual authentication.
+NETCONF {{?RFC6241}} and RESTCONF {{?RFC8040}}. These YANG-based management
+protocols (1) have to use a secure transport layer
+(e.g., SSH {{?RFC4252}}, TLS {{?RFC8446}}, and
+QUIC {{?RFC9000}}) and (2) have
+to use mutual authentication.
 
 The Network Configuration Access Control Model (NACM) {{!RFC8341}}
 provides the means to restrict access for particular NETCONF or
 RESTCONF users to a preconfigured subset of all available NETCONF or
 RESTCONF protocol operations and content.
 
-The YANG modules define a set of identities, types, and
+The YANG module defines a set of identities, types, and
 groupings. These nodes are intended to be reused by other YANG
-modules. The modules by themselves do not expose any data nodes that
+modules. The module by itself does not expose any data nodes that
 are writable, data nodes that contain read-only state, or RPCs.
 As such, there are no additional security issues related to
 the YANG module that need to be considered.
 
 Modules that use the groupings that are defined in this document
-should identify the corresponding security considerations. For
-example, reusing some of these groupings will expose privacy-related
-information (e.g., 'node-example').
+should identify the corresponding security considerations.
 
 # IANA Considerations
 
-This document requests IANA to update the following URIs in the "IETF XML Registry" {{?RFC3688}} to refer to this document:
+IANA is requested to update the following registration in the "ns" registry
+within the "IETF XML Registry" group {{?RFC3688}} to reference this document:
 
 ~~~~
-   URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
-   Registrant Contact:  The IESG
-   XML:  N/A; the requested URI is an XML namespace.
+      URI: urn:ietf:params:xml:ns:yang:ietf-layer0-types
+      Registrant Contact:  The IESG.
+      XML: N/A; the requested URI is an XML namespace.
 ~~~~
 
-This document requests IANA to register the following YANG modules in the "YANG Module Names" registry {{!RFC6020}} within the "YANG Parameters" registry group.
+IANA is requested to register the following YANG module in the "YANG Module Names" registry {{!RFC6020}}
+within the "YANG Parameters" registry group.
 
 ~~~~
-   Name:  ietf-layer0-types
-   Maintained by IANA?  N
-   Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
-   Prefix:  l0-types
-   Reference:  RFC XXXX
+      Name: ietf-layer0-types
+      Maintained by IANA? N
+      Namespace: urn:ietf:params:xml:ns:yang:ietf-layer0-types
+      Prefix: l0-types
+      Reference: RFC XXXX
 ~~~~
 
 > RFC Editor Note: Please replace XXXX with the RFC number assigned to this document and remove this note.

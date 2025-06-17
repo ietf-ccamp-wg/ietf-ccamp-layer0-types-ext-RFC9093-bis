@@ -6,13 +6,13 @@ CCAMP Working Group                                      S. Belotti, Ed.
 Internet-Draft                                                     Nokia
 Obsoletes: 9093 (if approved)                               I. Busi, Ed.
 Intended status: Standards Track                                  Huawei
-Expires: 8 December 2025                                  D. Beller, Ed.
+Expires: 19 December 2025                                 D. Beller, Ed.
                                                                    Nokia
                                                             E. Le Rouzic
                                                                   Orange
                                                                   A. Guo
                                                   Futurewei Technologies
-                                                             6 June 2025
+                                                            17 June 2025
 
 
               Common YANG Data Types for Layer 0 Networks
@@ -47,13 +47,13 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 December 2025.
+   This Internet-Draft will expire on 19 December 2025.
 
 
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 1]
+Belotti, et al.         Expires 19 December 2025                [Page 1]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -104,20 +104,20 @@ Table of Contents
    from the built-in YANG data types.  The derived types and groupings
    are designed to be the common types applicable for modeling Traffic
    Engineering (TE) features as well as non-TE features (e.g., physical
-   network configuration aspects) for Layer 0 optical networks in
-   model(s) defined outside of this document.  The applicability of
+   network configuration aspects) for Layer 0 optical networks in models
+   defined outside of this document.  The applicability of Layer 0 types
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 2]
+Belotti, et al.         Expires 19 December 2025                [Page 2]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
-   Layer 0 types specified in this document includes Wavelength Switched
-   Optical Networks (WSONs) [RFC6163] [ITU-T_G.694.1] and
-   [ITU-T_G.694.2], and flexi-grid Dense Wavelength Division
-   Multiplexing (DWDM) networks [RFC7698] [ITU-T_G.694.1].
+   specified in this document includes Wavelength Switched Optical
+   Networks (WSONs) [RFC6163] [ITU-T_G.694.1] and [ITU-T_G.694.2], and
+   flexi-grid Dense Wavelength Division Multiplexing (DWDM) networks
+   [RFC7698] [ITU-T_G.694.1].
 
    This document adds new type definitions to the YANG modules and
    obsoletes [RFC9093].  For further details, see the revision
@@ -165,7 +165,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 3]
+Belotti, et al.         Expires 19 December 2025                [Page 3]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -221,7 +221,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 4]
+Belotti, et al.         Expires 19 December 2025                [Page 4]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -232,8 +232,9 @@ Internet-Draft            L0 Common YANG Types                 June 2025
       defining the bit rate/line coding of optical tributary signals are
       derived.
 
-   wavelength-assignment:  A base YANG identity from which for
-      Wavelength selection method, as defined in [RFC7689].
+   wavelength-assignment:  A base YANG identity from which specific
+      identities defining the the Wavelength selection methods, as
+      defined in [RFC7689], are derived.
 
    operational-mode:  A YANG data type used to identify an organization
       (e.g., vendor) specific mode for transceiver capability
@@ -265,19 +266,18 @@ Internet-Draft            L0 Common YANG Types                 June 2025
       in [RFC7699], and the generic topology model defines the label-
       start/label-end in [RFC8795].
 
-      This grouping shows the flexi-grid-specific label- start and
-      label-end information which is used to describe the range of
-      available nominal central frequencies.  See Section 2.1 for more
-      details.
+      This grouping shows the flexi-grid-specific label-start and label-
+      end information which is used to describe the range of available
+      nominal central frequencies.  See Section 2.1 for more details.
 
       As described in section 3.1 of [RFC8363], the range of available
-      nominal central frequencies are advertised for m=1, which means
+      nominal central frequencies is advertised for m=1, which means
       that for an available central frequency n, the frequency slot from
       central frequency n-1 to central frequency n+1 is available.
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 5]
+Belotti, et al.         Expires 19 December 2025                [Page 5]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -327,13 +327,13 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
       When this grouping is used, the explicit-mode container shall be
       augmented with a leafref to an explicit mode template with the
-      proper XPath which depends from where this grouping is actually
+      proper XPath, which depends from where this grouping is actually
       used.
 
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 6]
+Belotti, et al.         Expires 19 December 2025                [Page 6]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -352,8 +352,8 @@ Internet-Draft            L0 Common YANG Types                 June 2025
       in [I-D.ietf-ccamp-optical-impairment-topology-yang].
 
    explicit-mode:  A YANG grouping to define the list of attributes
-      related to optical impairments limits in case of transceiver
-      explicit mode, as defined in
+      related to the limits of the optical impairments, in case of
+      transceiver explicit mode, as defined in
       [I-D.ietf-ccamp-optical-impairment-topology-yang].
 
       Note that the actual portion of the spectrum occupied by an OTSi
@@ -365,15 +365,14 @@ Internet-Draft            L0 Common YANG Types                 June 2025
       transceiver tuning range, which includes the minimum and maximum
       tuning frequency, as well as the frequency tuning granularity.
 
-   common-organizational-explicit-mode:  A YANG grouping to define the
-      common capabilities attributes limit range in case of operational
-      mode and explicit mode.
+   common-all-modes:  A YANG grouping used to define the common
+      attributes used by all transceiver's modes.
 
    modulation:  A base YANG identity to define the different modulation
       types, as defined in [ITU-T_G.Sup39]
 
-   snr:  A YANG data type used to represent an (Optical) Signal to Noise
-      Ratio measured over 0.1 nm resolution bandwidth, as defined in
+   snr:  A YANG data type used to represent an (Optical) Signal-to-noise
+      ratio measured over 0.1 nm resolution bandwidth, as defined in
       [ITU-T_G.977.1]
 
    psd:  A YANG data type used to represent a Power Spectral Density
@@ -385,17 +384,15 @@ Internet-Draft            L0 Common YANG Types                 June 2025
       Polarization Dependent Loss(PDL)
 
    switching-wson-lsc:  A YANG identity for the Wavelength Switched
+      Optical Network Lambda-Switch Capable (WSON-LSC) interface
+      switching capability as defined in [RFC7688].
 
 
 
-
-Belotti, et al.          Expires 8 December 2025                [Page 7]
+Belotti, et al.         Expires 19 December 2025                [Page 7]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
-
-      Optical Network Lambda-Switch Capable (WSON-LSC) interface
-      switching capability as defined in [RFC7688].
 
    switching-flexi-grid-lsc:  A YANG identity for the Flexi-Grid Lambda-
       Switch Capable (Flexi-Grid-LSC) interface switching capability as
@@ -418,10 +415,10 @@ Internet-Draft            L0 Common YANG Types                 June 2025
    [I-D.ietf-ccamp-optical-impairment-topology-yang].
 
    The same WDM label (which represents the frequency slots associated
-   to the WDM LSP) will be assigned on all the WDM Links along a regen-
-   free LSP path or path segment (i.e., an LSP path or path segment
-   which does not include any 3R regenerator).  Depending on the 3R
-   capabilities, the WDM label may or may not change at a 3R
+   with the WDM LSP) will be assigned on all the WDM Links along a
+   regen-free LSP path or path segment (i.e., an LSP path or path
+   segment which does not include any 3R regenerator).  Depending on the
+   3R capabilities, the WDM label may or may not change at a 3R
    regenerator: see Section 2.7 of
    [I-D.ietf-ccamp-optical-impairment-topology-yang] for more details on
    3R regenerators.
@@ -441,17 +438,17 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
          lambda = 1471 nm + n * channel spacing (measured in nm)
 
+      where 'n' is defined in [RFC6205] as integer (positive, negative,
+      or 0)
 
 
 
 
-Belotti, et al.          Expires 8 December 2025                [Page 8]
+
+Belotti, et al.         Expires 19 December 2025                [Page 8]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
-
-      where 'n' is defined in [RFC6205] as integer (positive, negative,
-      or 0)
 
    *  In case of DWDM fixed-grid, defined in [ITU-T_G.694.1], the
       frequency slot is defined by a fixed DWDM channel spacing (dwdm-
@@ -492,19 +489,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
    specific attributes, using the l0-label-range-info grouping (for WSON
    only models) or the flexi-grid-label-range-info grouping (for DWDM
    flexible-grid only models) or the wdm-label-range-info grouping (for
-   models that supports both WSON and DWDM flexible-grid).
-
-
-
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025                [Page 9]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
-
+   models that support both WSON and DWDM flexible-grid).
 
    Each entry in the label-restriction list represents either the range
    of the available central wavelength values (in case of CWDM fixed-
@@ -512,8 +497,17 @@ Internet-Draft            L0 Common YANG Types                 June 2025
    values (in case of DWDM fixed or flexible grids): the grid-type
    attribute defines the type of grid for each entry of the list.
 
+
+
+
+
+Belotti, et al.         Expires 19 December 2025                [Page 9]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    In case of DWDM flexible grid, each entry in the label-restriction
-   list represents also the range of the supported slot width values
+   list also represents the range of the supported slot width values
    based on the following attributes, defined based on concepts used in
    [RFC7699]:
 
@@ -537,13 +531,13 @@ Internet-Draft            L0 Common YANG Types                 June 2025
    attributes, using the wson-label-start-end grouping (for WSON only
    models) or the flexi-grid-label-start-end grouping (for DWDM
    flexible-grid only models) or the wdm-label-start-end grouping (for
-   models that supports both WSON and DWDM flexible-grid).
+   models that support both WSON and DWDM flexible-grid).
 
    The label-step definition, when used for representing WDM label
-   range, are augmented with WDM technology-specific attributes, using
+   range, is augmented with WDM technology-specific attributes, using
    the wson-label-step grouping (for WSON only models) or the flexi-
    grid-label-step grouping (for DWDM flexible-grid only models) or the
-   wdm-label-step grouping (for models that supports both WSON and DWDM
+   wdm-label-step grouping (for models that support both WSON and DWDM
    flexible-grid).  The label-step definition for WDM depends on the WDM
    grid type:
 
@@ -557,7 +551,13 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 10]
+
+
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 10]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -613,7 +613,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 11]
+Belotti, et al.         Expires 19 December 2025               [Page 11]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -669,7 +669,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 12]
+Belotti, et al.         Expires 19 December 2025               [Page 12]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -725,7 +725,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 13]
+Belotti, et al.         Expires 19 December 2025               [Page 13]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -781,7 +781,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 14]
+Belotti, et al.         Expires 19 December 2025               [Page 14]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -837,7 +837,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 15]
+Belotti, et al.         Expires 19 December 2025               [Page 15]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -893,7 +893,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 16]
+Belotti, et al.         Expires 19 December 2025               [Page 16]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -949,7 +949,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 17]
+Belotti, et al.         Expires 19 December 2025               [Page 17]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1005,7 +1005,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 18]
+Belotti, et al.         Expires 19 December 2025               [Page 18]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1061,7 +1061,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 19]
+Belotti, et al.         Expires 19 December 2025               [Page 19]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1117,7 +1117,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 20]
+Belotti, et al.         Expires 19 December 2025               [Page 20]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1173,7 +1173,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 21]
+Belotti, et al.         Expires 19 December 2025               [Page 21]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1229,7 +1229,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 22]
+Belotti, et al.         Expires 19 December 2025               [Page 22]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1285,7 +1285,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 23]
+Belotti, et al.         Expires 19 December 2025               [Page 23]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1341,7 +1341,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 24]
+Belotti, et al.         Expires 19 December 2025               [Page 24]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1397,7 +1397,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 25]
+Belotti, et al.         Expires 19 December 2025               [Page 25]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1453,7 +1453,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 26]
+Belotti, et al.         Expires 19 December 2025               [Page 26]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1509,7 +1509,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 27]
+Belotti, et al.         Expires 19 December 2025               [Page 27]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1565,7 +1565,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 28]
+Belotti, et al.         Expires 19 December 2025               [Page 28]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1621,7 +1621,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 29]
+Belotti, et al.         Expires 19 December 2025               [Page 29]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1677,7 +1677,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 30]
+Belotti, et al.         Expires 19 December 2025               [Page 30]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1733,7 +1733,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 31]
+Belotti, et al.         Expires 19 December 2025               [Page 31]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1789,7 +1789,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 32]
+Belotti, et al.         Expires 19 December 2025               [Page 32]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1845,7 +1845,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 33]
+Belotti, et al.         Expires 19 December 2025               [Page 33]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1901,7 +1901,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 34]
+Belotti, et al.         Expires 19 December 2025               [Page 34]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -1957,7 +1957,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 35]
+Belotti, et al.         Expires 19 December 2025               [Page 35]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2013,7 +2013,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 36]
+Belotti, et al.         Expires 19 December 2025               [Page 36]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2069,7 +2069,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 37]
+Belotti, et al.         Expires 19 December 2025               [Page 37]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2125,7 +2125,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 38]
+Belotti, et al.         Expires 19 December 2025               [Page 38]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2181,7 +2181,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 39]
+Belotti, et al.         Expires 19 December 2025               [Page 39]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2237,7 +2237,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 40]
+Belotti, et al.         Expires 19 December 2025               [Page 40]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2293,7 +2293,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 41]
+Belotti, et al.         Expires 19 December 2025               [Page 41]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2349,7 +2349,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 42]
+Belotti, et al.         Expires 19 December 2025               [Page 42]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2405,7 +2405,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 43]
+Belotti, et al.         Expires 19 December 2025               [Page 43]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2461,7 +2461,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 44]
+Belotti, et al.         Expires 19 December 2025               [Page 44]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2517,7 +2517,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 45]
+Belotti, et al.         Expires 19 December 2025               [Page 45]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2573,7 +2573,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 46]
+Belotti, et al.         Expires 19 December 2025               [Page 46]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2629,7 +2629,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 47]
+Belotti, et al.         Expires 19 December 2025               [Page 47]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2685,7 +2685,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 48]
+Belotti, et al.         Expires 19 December 2025               [Page 48]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2741,7 +2741,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 49]
+Belotti, et al.         Expires 19 December 2025               [Page 49]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2797,7 +2797,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 50]
+Belotti, et al.         Expires 19 December 2025               [Page 50]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2853,7 +2853,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 51]
+Belotti, et al.         Expires 19 December 2025               [Page 51]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2909,7 +2909,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 52]
+Belotti, et al.         Expires 19 December 2025               [Page 52]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -2965,7 +2965,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 53]
+Belotti, et al.         Expires 19 December 2025               [Page 53]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -3021,7 +3021,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 54]
+Belotti, et al.         Expires 19 December 2025               [Page 54]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -3077,7 +3077,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 55]
+Belotti, et al.         Expires 19 December 2025               [Page 55]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -3133,7 +3133,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 56]
+Belotti, et al.         Expires 19 December 2025               [Page 56]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -3189,7 +3189,7 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 57]
+Belotti, et al.         Expires 19 December 2025               [Page 57]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
@@ -3219,55 +3219,56 @@ Internet-Draft            L0 Common YANG Types                 June 2025
    This section is modeled after the template described in Section 3.7
    of [I-D.ietf-netmod-rfc8407bis].
 
-   The "ietf-layer0-types" YANG module define data models that are
+   The "ietf-layer0-types" YANG module defines a data model that is
    designed to be accessed via YANG-based management protocols, such as
-   NETCONF [RFC6241] and RESTCONF [RFC8040].  These protocols have to
-   use a secure transport layer (e.g., SSH [RFC4252], TLS [RFC8446], and
-   QUIC [RFC9000]) and have to use mutual authentication.
+   NETCONF [RFC6241] and RESTCONF [RFC8040].  These YANG-based
+   management protocols (1) have to use a secure transport layer (e.g.,
+   SSH [RFC4252], TLS [RFC8446], and QUIC [RFC9000]) and (2) have to use
+   mutual authentication.
 
    The Network Configuration Access Control Model (NACM) [RFC8341]
    provides the means to restrict access for particular NETCONF or
    RESTCONF users to a preconfigured subset of all available NETCONF or
    RESTCONF protocol operations and content.
 
-   The YANG modules define a set of identities, types, and groupings.
+   The YANG module defines a set of identities, types, and groupings.
    These nodes are intended to be reused by other YANG modules.  The
-   modules by themselves do not expose any data nodes that are writable,
+   module by itself does not expose any data nodes that are writable,
    data nodes that contain read-only state, or RPCs.  As such, there are
    no additional security issues related to the YANG module that need to
    be considered.
 
    Modules that use the groupings that are defined in this document
-   should identify the corresponding security considerations.  For
-   example, reusing some of these groupings will expose privacy-related
-   information (e.g., 'node-example').
+   should identify the corresponding security considerations.
 
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 58]
+
+Belotti, et al.         Expires 19 December 2025               [Page 58]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 5.  IANA Considerations
 
-   This document requests IANA to update the following URIs in the "IETF
-   XML Registry" [RFC3688] to refer to this document:
+   IANA is requested to update the following registration in the "ns"
+   registry within the "IETF XML Registry" group [RFC3688] to reference
+   this document:
 
-      URI:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
-      Registrant Contact:  The IESG
-      XML:  N/A; the requested URI is an XML namespace.
+         URI: urn:ietf:params:xml:ns:yang:ietf-layer0-types
+         Registrant Contact:  The IESG.
+         XML: N/A; the requested URI is an XML namespace.
 
-   This document requests IANA to register the following YANG modules in
-   the "YANG Module Names" registry [RFC6020] within the "YANG
-   Parameters" registry group.
+   IANA is requested to register the following YANG module in the "YANG
+   Module Names" registry [RFC6020] within the "YANG Parameters"
+   registry group.
 
-      Name:  ietf-layer0-types
-      Maintained by IANA?  N
-      Namespace:  urn:ietf:params:xml:ns:yang:ietf-layer0-types
-      Prefix:  l0-types
-      Reference:  RFC XXXX
+         Name: ietf-layer0-types
+         Maintained by IANA? N
+         Namespace: urn:ietf:params:xml:ns:yang:ietf-layer0-types
+         Prefix: l0-types
+         Reference: RFC XXXX
 
       RFC Editor Note: Please replace XXXX with the RFC number assigned
       to this document and remove this note.
@@ -3292,19 +3293,25 @@ Internet-Draft            L0 Common YANG Types                 June 2025
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
               rfc8776-update-17>.
 
+
+
+
+
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 59]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    [ITU-T_G.666]
               International Telecommunication Union, "Characteristics of
               polarization mode dispersion compensators and of receivers
               that compensate for polarization mode dispersion"", ITU-T
               Recommendation G.666 , February 2011,
               <https://www.itu.int/rec/T-REC-G.666>.
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 59]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
-
 
    [ITU-T_G.694.1]
               International Telecommunication Union, "Spectral grids for
@@ -3347,20 +3354,19 @@ Internet-Draft            L0 Common YANG Types                 June 2025
               G.959.1 , July 2018,
               <https://www.itu.int/rec/T-REC-G.959.1>.
 
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 60]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    [ITU-T_G.9700]
               International Telecommunication Union, "Fast access to
               subscriber terminals (G.fast) - Power spectral density
               specification", ITU-T Recommendation G.9700 , July 2019,
               <https://www.itu.int/rec/T-REC-G.9700>.
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 60]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
-
 
    [ITU-T_G.975]
               International Telecommunication Union, "Forward error
@@ -3402,21 +3408,20 @@ Internet-Draft            L0 Common YANG Types                 June 2025
               (GMPLS)", RFC 4203, DOI 10.17487/RFC4203, October 2005,
               <https://www.rfc-editor.org/rfc/rfc4203>.
 
+
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 61]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
               the Network Configuration Protocol (NETCONF)", RFC 6020,
               DOI 10.17487/RFC6020, October 2010,
               <https://www.rfc-editor.org/rfc/rfc6020>.
-
-
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 61]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
-
 
    [RFC6205]  Otani, T., Ed. and D. Li, Ed., "Generalized Labels for
               Lambda-Switch-Capable (LSC) Label Switching Routers",
@@ -3458,21 +3463,21 @@ Internet-Draft            L0 Common YANG Types                 June 2025
               DOI 10.17487/RFC8341, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8341>.
 
+
+
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 62]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    [RFC8342]  Bjorklund, M., Schoenwaelder, J., Shafer, P., Watsen, K.,
               and R. Wilton, "Network Management Datastore Architecture
               (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8342>.
-
-
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 62]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
-
 
    [RFC8363]  Zhang, X., Zheng, H., Casellas, R., Gonzalez de Dios, O.,
               and D. Ceccarelli, "GMPLS OSPF-TE Extensions in Support of
@@ -3514,21 +3519,21 @@ Internet-Draft            L0 Common YANG Types                 June 2025
               architecture of the optical media network", ITU-T
               Supplement G.807, Amendment 1 , January 2021.
 
+
+
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 63]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    [ITU-T_G.872]
               International Telecommunication Union, "Architecture of
               optical transport networks", ITU-T Supplement G.872,
               Amendment 1 , January 2021.
-
-
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 63]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
-
 
    [ITU-T_G.Sup39]
               International Telecommunication Union, "Optical system
@@ -3572,19 +3577,18 @@ Internet-Draft            L0 Common YANG Types                 June 2025
               Protocol", RFC 8040, DOI 10.17487/RFC8040, January 2017,
               <https://www.rfc-editor.org/rfc/rfc8040>.
 
-   [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
-              BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
-              <https://www.rfc-editor.org/rfc/rfc8340>.
 
 
 
 
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 64]
+Belotti, et al.         Expires 19 December 2025               [Page 64]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
+
+   [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
+              BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
+              <https://www.rfc-editor.org/rfc/rfc8340>.
 
    [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
@@ -3630,18 +3634,18 @@ Appendix A.  The Complete Schema Trees
           |     |  +-- dwdm-n?               dwdm-n
           |     +--:(multi)
           |        +-- subcarrier-dwdm-n*    dwdm-n
-          +--:(cwdm)
-          |  +-- cwdm-n?                     cwdm-n
-          +--:(flexi-grid)
-             +-- (single-or-super-channel)?
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 65]
+Belotti, et al.         Expires 19 December 2025               [Page 65]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
+          +--:(cwdm)
+          |  +-- cwdm-n?                     cwdm-n
+          +--:(flexi-grid)
+             +-- (single-or-super-channel)?
                 +--:(single)
                 |  +-- flexi-n?              flexi-n
                 |  +-- flexi-m?              flexi-m
@@ -3686,18 +3690,18 @@ Internet-Draft            L0 Common YANG Types                 June 2025
           |  +-- wson-dwdm-channel-spacing?   identityref
           +--:(cwdm)
              +-- wson-cwdm-channel-spacing?   identityref
-     grouping flexi-grid-label-start-end:
-       +-- flexi-n?   flexi-n
-     grouping flexi-grid-frequency-slot:
-       +-- flexi-n?   flexi-n
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 66]
+Belotti, et al.         Expires 19 December 2025               [Page 66]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
+     grouping flexi-grid-label-start-end:
+       +-- flexi-n?   flexi-n
+     grouping flexi-grid-frequency-slot:
+       +-- flexi-n?   flexi-n
        +-- flexi-m?   flexi-m
      grouping flexi-grid-label-hop:
        +-- (single-or-super-channel)?
@@ -3742,18 +3746,18 @@ Internet-Draft            L0 Common YANG Types                 June 2025
                 |  +--ro tx-channel-power-min?       power-dbm
                 |  +--ro tx-channel-power-max?       power-dbm
                 |  +--ro rx-channel-power-min?       power-dbm
-                |  +--ro rx-channel-power-max?       power-dbm
-                |  +--ro rx-total-power-max?         power-dbm
-                +--:(organizational-mode)
-                |  +--ro organizational-mode
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 67]
+Belotti, et al.         Expires 19 December 2025               [Page 67]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
+                |  +--ro rx-channel-power-max?       power-dbm
+                |  +--ro rx-total-power-max?         power-dbm
+                +--:(organizational-mode)
+                |  +--ro organizational-mode
                 |     +--ro operational-mode?           operational-mode
                 |     +--ro organization-identifier?
                 |     |       organization-identifier
@@ -3798,18 +3802,18 @@ Internet-Draft            L0 Common YANG Types                 June 2025
        +--ro penalty-value    union
      grouping explicit-mode:
        +--ro line-coding-bitrate?                identityref
-       +--ro bitrate?                            uint16
-       +--ro max-diff-group-delay?               decimal-2
-       +--ro max-chromatic-dispersion?           decimal-2
-       +--ro cd-penalty* [cd-value]
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 68]
+Belotti, et al.         Expires 19 December 2025               [Page 68]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
+       +--ro bitrate?                            uint16
+       +--ro max-diff-group-delay?               decimal-2
+       +--ro max-chromatic-dispersion?           decimal-2
+       +--ro cd-penalty* [cd-value]
        |  +--ro cd-value         decimal-2
        |  +--ro penalty-value    union
        +--ro max-polarization-mode-dispersion?   decimal-2
@@ -3854,18 +3858,18 @@ Internet-Draft            L0 Common YANG Types                 June 2025
        +--ro rx-channel-power-max?       power-dbm
        +--ro rx-total-power-max?         power-dbm
      grouping common-transceiver-param:
-       +-- line-coding-bitrate?   identityref
-       +-- tx-channel-power?      power-dbm-or-null
-       +--ro rx-channel-power?      power-dbm-or-null
-       +--ro rx-total-power?        power-dbm-or-null
 
 
 
-Belotti, et al.          Expires 8 December 2025               [Page 69]
+Belotti, et al.         Expires 19 December 2025               [Page 69]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
 
+       +-- line-coding-bitrate?   identityref
+       +-- tx-channel-power?      power-dbm-or-null
+       +--ro rx-channel-power?      power-dbm-or-null
+       +--ro rx-total-power?        power-dbm-or-null
      grouping common-transceiver-configured-param:
        +-- line-coding-bitrate?   identityref
        +-- tx-channel-power?      power-dbm-or-null
@@ -3911,16 +3915,16 @@ Appendix B.  Changes from RFC 9093
 
    *  QPSK
 
-   *  DP-QPSK
-
-   *  QAM8
 
 
-
-Belotti, et al.          Expires 8 December 2025               [Page 70]
+Belotti, et al.         Expires 19 December 2025               [Page 70]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
+
+   *  DP-QPSK
+
+   *  QAM8
 
    *  DP-QAM8
 
@@ -3966,17 +3970,17 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
    *  wavelength-assignment
 
-   *  first-fit-wavelength-assignment
-
-   *  random-wavelength-assignment
 
 
 
-
-Belotti, et al.          Expires 8 December 2025               [Page 71]
+Belotti, et al.         Expires 19 December 2025               [Page 71]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
+
+   *  first-fit-wavelength-assignment
+
+   *  random-wavelength-assignment
 
    *  least-loaded-wavelength-assignment
 
@@ -4023,16 +4027,16 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
    *  power-loss
 
-   *  power-loss-or-null
-
-   *  power-ratio
 
 
-
-Belotti, et al.          Expires 8 December 2025               [Page 72]
+Belotti, et al.         Expires 19 December 2025               [Page 72]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
+
+   *  power-loss-or-null
+
+   *  power-ratio
 
    *  power-ratio-or-null
 
@@ -4079,16 +4083,16 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
    *  common-transceiver-configured-param
 
-   *  common-transceiver-readonly-param
-
-   *  tunnel-attributes
 
 
-
-Belotti, et al.          Expires 8 December 2025               [Page 73]
+Belotti, et al.         Expires 19 December 2025               [Page 73]
 
 Internet-Draft            L0 Common YANG Types                 June 2025
 
+
+   *  common-transceiver-readonly-param
+
+   *  tunnel-attributes
 
    *  frequency-range
 
@@ -4133,17 +4137,18 @@ Contributors
    Email: dhruv.ietf@gmail.com
 
 
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 74]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    Bin Yeong Yoon
    ETRI
    Email: byyun@etri.re.kr
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 74]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
 
 
    Ricard Vilalta
@@ -4188,18 +4193,18 @@ Authors' Addresses
    Email: dieter.beller@nokia.com
 
 
+
+
+
+
+Belotti, et al.         Expires 19 December 2025               [Page 75]
+
+Internet-Draft            L0 Common YANG Types                 June 2025
+
+
    Esther Le Rouzic
    Orange
    Email: esther.lerouzic@orange.com
-
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 75]
-
-Internet-Draft            L0 Common YANG Types                 June 2025
 
 
    Aihua Guo
@@ -4248,9 +4253,4 @@ Internet-Draft            L0 Common YANG Types                 June 2025
 
 
 
-
-
-
-
-
-Belotti, et al.          Expires 8 December 2025               [Page 76]
+Belotti, et al.         Expires 19 December 2025               [Page 76]
