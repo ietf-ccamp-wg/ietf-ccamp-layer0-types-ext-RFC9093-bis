@@ -317,7 +317,7 @@ line-coding:
 : A base YANG identity from which specific identities defining the bit rate/line coding of optical tributary signals are derived.
 
 wavelength-assignment:
-: A base YANG identity from which specific identities defining the the Wavelength selection methods, as defined in {{!RFC7689}}, are derived.
+: A base YANG identity from which specific identities defining the Wavelength selection methods, as defined in {{!RFC7689}}, are derived.
 
 operational-mode:
 : A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
