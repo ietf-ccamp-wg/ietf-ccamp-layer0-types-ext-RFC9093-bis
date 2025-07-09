@@ -63,10 +63,97 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2025-06-06 {
+  revision 2025-07-09 {
     //Med: Please list the changes vs. 9093. Refer to 8407bis for guidance
     description
-      "To be updated";
+      "This revision adds the following new identities:
+       - cwdm-ch-spc-type;
+       - flexi-ncfg-type;
+       - flexi-ncfg-6p25gh;
+       - modulation;
+       - DPSK;
+       - QPSK;
+       - DP-QPSK;
+       - QAM8;
+       - DP-QAM8;
+       - QAM16;
+       - DP-QAM16;
+       - QAM32;
+       - DP-QAM32;
+       - QAM64;
+       - DP-QAM64;
+       - fec-type;
+       - g-fec;
+       - super-fec;
+       - no-fec;
+       - sc-fec;
+       - o-fec;
+       - c-fec;
+       - line-coding;
+       - line-coding-NRZ-2p5G;
+       - line-coding-NRZ-OTU1;
+       - line-coding-NRZ-10G;
+       - line-coding-NRZ-OTU2;
+       - line-coding-OTL4.4-SC;
+       - line-coding-FOIC1.4-SC;
+       - wavelength-assignment;
+       - first-fit-wavelength-assignment;
+       - random-wavelength-assignment;
+       - least-loaded-wavelength-assignment;
+       - lower-first-wavelength-assignment;
+       - upper-first-wavelength-assignment;
+       - type-power-mode;
+       - power-spectral-density;
+       - carrier-power;
+       - switching-wson-lsc;
+       - switching-flexi-grid-lsc.
+
+       This revision adds the following new data types:
+       - standard-mode
+       - organization-identifier
+       - operational-mode
+       - frequency-thz
+       - frequency-ghz
+       - snr
+       - snr-or-null
+       - fiber-type
+       - decimal-2
+       - decimal-2-or-null
+       - power-gain
+       - power-gain-or-null
+       - power-loss
+       - power-loss-or-null
+       - power-ratio
+       - power-ratio-or-null
+       - power-dbm
+       - power-dbm-or-null
+       - decimal-5
+       - decimal-5-or-null
+       - psd
+       - psd-or-null.
+
+       This revision adds the following new groupings:
+       - wdm-label-start-end;
+       - wdm-label-step;
+       - wdm-label-hop;
+       - wdm-label-range-info;
+       - transceiver-capabilities;
+       - standard-mode;
+       - organizational-mode;
+       - penalty-value;
+       - explicit-mode;
+       - common-standard-organizational-mode;
+       - transceiver-tuning-range;
+       - common-all-mode;
+       - common-transceiver-param;
+       - common-transceiver-configured-param;
+       - common-transceiver-readonly-param;
+       - tunnel-attributes;
+       - frequency-range;
+       - frequency-range-with-identifier;
+       - path-constraints;
+       - path-properties.
+      "
     reference
       "RFC XXXX: Common YANG Data Types for Layer 0 Networks";
   }
