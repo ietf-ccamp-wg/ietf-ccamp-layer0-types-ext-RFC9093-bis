@@ -637,7 +637,6 @@ The following new YANG data types have been added to the 'ietf-layer0-types' mod
 - frequency-ghz
 - snr
 - snr-or-null
-- fiber-type
 - decimal-2
 - decimal-2-or-null
 - power-gain

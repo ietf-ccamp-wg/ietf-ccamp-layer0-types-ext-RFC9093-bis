@@ -116,7 +116,6 @@ module ietf-layer0-types {
        - frequency-ghz
        - snr
        - snr-or-null
-       - fiber-type
        - decimal-2
        - decimal-2-or-null
        - power-gain
@@ -821,35 +820,6 @@ module ietf-layer0-types {
       "(Optical) Signal to Noise Ratio measured over 0.1 nm
        resolution bandwidth, when known, or an empty value when
        unknown.";
-  }
-
-  typedef fiber-type {
-    type enumeration {
-      enum G.652 {
-        description
-          "G.652 Standard Singlemode Fiber.";
-      }
-      enum G.654 {
-        description
-          "G.654 Cutoff Shifted Fiber.";
-      }
-      enum G.653 {
-        description "G.653 Dispersion Shifted Fiber.";
-      }
-      enum G.655 {
-        description "G.655 Non-Zero Dispersion Shifted Fiber.";
-      }
-      enum G.656 {
-        description
-          "G.656 Non-Zero Dispersion for Wideband Optical Transport.";
-      }
-      enum G.657 {
-        description
-          "G.657 Bend-Insensitive Fiber.";
-      }
-    }
-    description
-      "ITU-T based fiber-types";  //Med: -- is there a public reference to cited? Do we expect those to evolve? If so, use identities.
   }
 
   typedef decimal-2 {
