@@ -985,8 +985,8 @@ module ietf-layer0-types {
         "Label for fixed & flexi-DWDM or CWDM grid";
       case fixed-dwdm {
         leaf dwdm-n {
-          when "derived-from-or-self(../../../grid-type, "  // Med: use + for folding
-              + "wson-grid-dwdm)" {        //Med: --Should be prefixed
+          when "derived-from-or-self(../../../grid-type, "
+             + "l0-types:wson-grid-dwdm)" {
             description
               "Valid only when grid type is DWDM.";
           }
