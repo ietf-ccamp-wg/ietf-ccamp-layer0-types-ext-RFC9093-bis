@@ -752,7 +752,7 @@ module ietf-layer0-types {
         "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
                      wavelength division multiplexing applications
                      with single channel optical interfaces Optical
-                     transport network";
+                     transport network, Clause 5.3";
   }
 
   typedef organization-identifier {
