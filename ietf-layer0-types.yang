@@ -170,7 +170,7 @@ module ietf-layer0-types {
 
   identity l0-grid-type {
     description
-      "Layer 0 grid type";  //Med: Use a better description
+      "Base identity for the WDM grid types.";
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                  (LSC), Label Switching Routers
