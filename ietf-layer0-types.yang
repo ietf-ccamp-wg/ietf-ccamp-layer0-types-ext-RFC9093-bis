@@ -1303,7 +1303,12 @@ module ietf-layer0-types {
         base l0-grid-type;
       }
       description
-        "Grid type."; //Med: that is?
+        "The type of WDM grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                  (LSC), Label Switching Routers
+        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
+                  CWDM wavelength grid";
     }
     leaf priority {
       type uint8;
