@@ -214,7 +214,7 @@ module ietf-layer0-types {
 
   identity cwdm-ch-spc-type {
     description
-      "CWDM channel-spacing type";      //Med: Use a better description
+      "Base identity for CWDM channel-spacing types.";
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                  Label Switching Routers //Med: Add explicit section
