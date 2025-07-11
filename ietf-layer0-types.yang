@@ -198,7 +198,7 @@ module ietf-layer0-types {
         "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                    (LSC), Label Switching Routers
         ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid";
+                   DWDM frequency grid, Clause 7.";
     }
 
     identity flexi-grid-dwdm {
