@@ -1676,7 +1676,6 @@ module ietf-layer0-types {
 
     leaf standard-mode {
       type standard-mode;
-      config false;   //Med: Is this needed in all cases?
       description
         "G.698.2 standard mode.";
     }
