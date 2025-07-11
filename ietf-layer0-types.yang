@@ -217,7 +217,7 @@ module ietf-layer0-types {
       "Base identity for CWDM channel-spacing types.";
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers //Med: Add explicit section
+                 Label Switching Routers, Section 3.3
        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
                  CWDM wavelength grid";
   }
