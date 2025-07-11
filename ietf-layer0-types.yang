@@ -1467,8 +1467,7 @@ module ietf-layer0-types {
         }
         default "flexi-swg-12p5ghz";  //Med: Are we sure this will be valid for all cases
         description
-          "Minimum space between slot widths. Default is 12.500  //Med: redundant if you maintain the default statement
-           GHz.";
+          "Minimum space between slot widths.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of
                      Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
