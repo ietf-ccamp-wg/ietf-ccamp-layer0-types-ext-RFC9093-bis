@@ -64,7 +64,6 @@ module ietf-layer0-types {
 // replace the revision date with the module publication date
 // the format is (year-month-day)
   revision 2025-07-09 {
-    //Med: Please list the changes vs. 9093. Refer to 8407bis for guidance
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
