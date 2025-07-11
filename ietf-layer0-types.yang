@@ -1210,7 +1210,7 @@ module ietf-layer0-types {
     choice grid-type {
       description
         "Label for DWDM or CWDM grid";
-      case dwdm {    //Med: -- may be transformed to a container of you want to keep the when clause. Please refer to 8407bis for this.
+      case dwdm {
         leaf dwdm-n {
           when "derived-from-or-self(../../../grid-type, "
              + "wson-grid-dwdm)" {      //Med: --pleass use the prefix here.
