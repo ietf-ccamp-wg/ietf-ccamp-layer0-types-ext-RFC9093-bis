@@ -1708,8 +1708,9 @@ module ietf-layer0-types {
 
   grouping penalty-value {
     description
-      "A common definition of the OSNR penalty value used for   //Med: Expand OSNR
-       describing multiple penalty types (e.g., CD, PMD, or PDL).";
+      "A common definition of the Optical Signal-to-Noise Ratio
+       (OSNR) penalty value used for describing multiple penalty
+       types (e.g., CD, PMD, or PDL).";
 
     leaf penalty-value {
       type union {
