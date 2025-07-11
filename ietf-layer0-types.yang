@@ -1002,7 +1002,7 @@ module ietf-layer0-types {
       case cwdm {
         leaf cwdm-n {
           when "derived-from-or-self(../../../grid-type, "
-             + "wson-grid-cwdm)" {         //Med: --Should be prefixed
+             + "l0-types:wson-grid-cwdm)" {
             description
               "Valid only when grid type is CWDM.";
           }
