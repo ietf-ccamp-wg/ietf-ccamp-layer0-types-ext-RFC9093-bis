@@ -1089,7 +1089,7 @@ module ietf-layer0-types {
       case fixed-dwdm {
         choice fixed-single-or-super-channel {
           description
-            "single or super channel.";  //Med: I guess you meant multi? I would use a more descriptive text
+            "Single channel or multi-channel.";
           case single {
             leaf dwdm-n {
               type dwdm-n;
