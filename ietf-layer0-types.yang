@@ -1463,7 +1463,7 @@ module ietf-layer0-types {
         type identityref {
           base flexi-slot-width-granularity;
         }
-        default "flexi-swg-12p5ghz";  //Med: Are we sure this will be valid for all cases
+        default "flexi-swg-12p5ghz";
         description
           "Minimum space between slot widths.";
         reference
