@@ -271,7 +271,7 @@ module ietf-layer0-types {
         "25 GHz channel spacing.";
       reference
         "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers   //Med: mention Section 3.2
+                   Label Switching Routers, Section 3.2
         ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
                    DWDM frequency grid";
     }
