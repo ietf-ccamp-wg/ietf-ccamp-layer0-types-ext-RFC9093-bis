@@ -1087,7 +1087,7 @@ module ietf-layer0-types {
       description
         "Label for DWDM or CWDM grid.";
       case fixed-dwdm {
-        choice fixed-single-or-super-channel {
+        choice fixed-single-or-multi-channel {
           description
             "Single channel or multi-channel.";
           case single {
