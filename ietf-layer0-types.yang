@@ -1225,7 +1225,7 @@ module ietf-layer0-types {
                        (LSC) Label Switching Routers";
         }
       }
-      case cwdm {   //Med: -- may be transformed to a container of you want to keep the when clause. Please refer to 8407bis for this.
+      case cwdm {
         leaf cwdm-n {
           when "derived-from-or-self(../../../grid-type, "
              +  "wson-grid-cwdm)" {      //Med: --pleass use the prefix here.
