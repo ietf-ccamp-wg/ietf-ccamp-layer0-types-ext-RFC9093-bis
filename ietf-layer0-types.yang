@@ -183,7 +183,7 @@ module ietf-layer0-types {
     identity wson-grid-cwdm {
       base l0-grid-type;
       description
-        "CWDM grid";   //Med: Expand + Use a better description
+        "Coarse Wavelength Division Multiplexing (CWDM) grid.";
       reference
         "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                    Label Switching Routers
