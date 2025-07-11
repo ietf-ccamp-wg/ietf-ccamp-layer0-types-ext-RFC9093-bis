@@ -1139,7 +1139,7 @@ module ietf-layer0-types {
     uses l0-label-range-info;
     container flexi-grid {
       when "derived-from-or-self(../grid-type, "
-         + "flexi-grid-dwdm)" {     //Med: --pleass use the prefix here.
+         + "l0-types:flexi-grid-dwdm)" {
         description
           "Applicable only when the grid type is flexi-grid-dwdm.";
       }
