@@ -194,7 +194,7 @@ module ietf-layer0-types {
     identity wson-grid-dwdm {
       base l0-grid-type;
       description
-        "DWDM grid";    //Med: Expand + Use a better description
+        "Fixed Dense Wavelength Division Multiplexing (DWDM) grid.";
       reference
         "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                    (LSC), Label Switching Routers
