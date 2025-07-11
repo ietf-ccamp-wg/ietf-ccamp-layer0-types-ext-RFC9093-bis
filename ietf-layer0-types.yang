@@ -177,8 +177,6 @@ module ietf-layer0-types {
                 CWDM wavelength grid";
   }
 
-//Med: indentation is not consistent. Please run "pyang -f yang --yang-canonical"
-
     identity wson-grid-cwdm {
       base l0-grid-type;
       description
