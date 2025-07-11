@@ -1534,7 +1534,7 @@ module ietf-layer0-types {
       type identityref {
         base flexi-ncfg-type;
       }
-      default "flexi-ncfg-6p25ghz";  //Med: Same comment for the other default values
+      default "flexi-ncfg-6p25ghz";
       description
         "Label-step is the nominal central frequency granularity
          (GHz), e.g., 6.25 GHz.";
