@@ -1213,7 +1213,7 @@ module ietf-layer0-types {
       case dwdm {
         leaf dwdm-n {
           when "derived-from-or-self(../../../grid-type, "
-             + "wson-grid-dwdm)" {      //Med: --pleass use the prefix here.
+             + "l0-types:wson-grid-dwdm)" {
             description
               "Valid only when grid type is DWDM.";
           }
