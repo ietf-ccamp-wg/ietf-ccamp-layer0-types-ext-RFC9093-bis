@@ -627,7 +627,7 @@ module ietf-layer0-types {
   identity type-power-mode {
     description
       "power equalization mode used within the
-       OMS and its elements.";    //Med: expand
+       Optical Multiplex Section (OMS) and its elements.";
   }
 
     identity power-spectral-density {
