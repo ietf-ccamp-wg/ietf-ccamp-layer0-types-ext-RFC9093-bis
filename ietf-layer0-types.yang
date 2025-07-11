@@ -1686,6 +1686,9 @@ module ietf-layer0-types {
     description
       "Transponder operational mode supported by organizations or
        vendor";
+    reference
+      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+                  Topology, Section 2.6.2";
 
     leaf operational-mode {
       type operational-mode;
