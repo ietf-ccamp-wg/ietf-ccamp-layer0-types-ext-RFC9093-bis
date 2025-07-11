@@ -485,7 +485,7 @@ module ietf-layer0-types {
          ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach 
                      interfaces, Annex D
          ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach
-                     interfaces, Clause 15";   //Med: Consistent reference style clause vs section
+                     interfaces, Clause 15";
     }
 
   identity line-coding {
