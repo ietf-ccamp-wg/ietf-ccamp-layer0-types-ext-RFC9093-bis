@@ -235,7 +235,7 @@ module ietf-layer0-types {
 
   identity dwdm-ch-spc-type {
     description
-      "DWDM channel-spacing type.";
+      "Base identity for DWDM channel-spacing types.";
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                  Label Switching Routers   //Med: mention Section 3.2
