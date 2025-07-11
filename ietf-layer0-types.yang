@@ -1333,7 +1333,7 @@ module ietf-layer0-types {
       case dwdm {
         leaf wson-dwdm-channel-spacing {
           when "derived-from-or-self(../../grid-type, "
-             + "wson-grid-dwdm)" { //Med: use the prefix
+             + "l0-types:wson-grid-dwdm)" {
             description
               "Valid only when grid type is DWDM.";
           }
