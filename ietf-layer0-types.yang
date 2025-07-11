@@ -1692,14 +1692,12 @@ module ietf-layer0-types {
 
     leaf operational-mode {
       type operational-mode;
-      config false;
       description
         "configured organization- or vendor-specific
          application identifiers (AI) supported by the transponder";
     }
     leaf organization-identifier {
       type organization-identifier;
-      config false;
       description
         "Organization identifier that uses organizational
          Mode.";   //Med: I don't understand this description. Please reword.
