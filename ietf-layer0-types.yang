@@ -1330,7 +1330,7 @@ module ietf-layer0-types {
     choice l0-grid-type {
       description
         "Grid type: DWDM, CWDM, etc.";
-      case dwdm {    //Med: -- may be transformed to a container of you want to keep the when clause. Please refer to 8407bis for this.
+      case dwdm {
         leaf wson-dwdm-channel-spacing {
           when "derived-from-or-self(../../grid-type, "
              + "wson-grid-dwdm)" { //Med: use the prefix
