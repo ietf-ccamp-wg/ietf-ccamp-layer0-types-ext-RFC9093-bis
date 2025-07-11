@@ -1716,7 +1716,7 @@ module ietf-layer0-types {
         type empty;
       }
       units "dB";
-      config false;  //Med: Idem for the other config comments above
+      config false;
       mandatory true;
       description
         "The OSNR penalty associated with the related optical
