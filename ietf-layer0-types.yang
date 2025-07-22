@@ -1932,7 +1932,11 @@ module ietf-layer0-types {
       units "dB";
       config false;
       description
-        "min Qfactor at FEC threshold.";  //Med: Add a more meaningful description
+        "The value of the Q factor at the FEC threshold
+         (fec-threshold).";
+      reference
+        "ITU-T O.201 (07/2003): Q-factor test equipment to estimate
+                   the transmission performance of optical channels";
     }
     leaf available-baud-rate {
       type decimal64 {
