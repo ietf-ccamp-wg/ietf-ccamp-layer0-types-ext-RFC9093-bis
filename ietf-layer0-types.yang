@@ -151,6 +151,10 @@ module ietf-layer0-types {
        - frequency-range-with-identifier;
        - path-constraints;
        - path-properties.
+
+       The default value of the min-slot-width-factor data node
+       within flexi-grid-label-range-info grouping has been removed
+       (bug fixing).
       ";
     reference
       "RFC XXXX: Common YANG Data Types for Layer 0 Networks";

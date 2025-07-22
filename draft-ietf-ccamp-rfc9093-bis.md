@@ -583,50 +583,50 @@ This appendix presents the complete tree of the Layer 0 Types data model. See {{
 
 # Changes from RFC 9093
 
-This version adds new identities, data types, and groupings to the 'ietf-layer0-types' YANG module.
+This version adds new identities, data types, and groupings to the 'ietf-layer0-types' YANG module. It also fixes few bugs in {{?RFC9093}}.
 
 The following new YANG identities have been added to the 'ietf-layer0-types' module:
 
-- cwdm-ch-spc-type
-- flexi-ncfg-type
-- flexi-ncfg-6p25gh
-- modulation
-- DPSK
-- QPSK
-- DP-QPSK
-- QAM8
-- DP-QAM8
-- QAM16
-- DP-QAM16
-- QAM32
-- DP-QAM32
-- QAM64
-- DP-QAM64
-- fec-type
-- g-fec
-- super-fec
-- no-fec
-- sc-fec
-- o-fec
-- c-fec
-- line-coding
-- line-coding-NRZ-2p5G
-- line-coding-NRZ-OTU1
-- line-coding-NRZ-10G
-- line-coding-NRZ-OTU2
-- line-coding-OTL4.4-SC
-- line-coding-FOIC1.4-SC
-- wavelength-assignment
-- first-fit-wavelength-assignment
-- random-wavelength-assignment
-- least-loaded-wavelength-assignment
-- lower-first-wavelength-assignment
-- upper-first-wavelength-assignment
-- type-power-mode
-- power-spectral-density
-- carrier-power
-- switching-wson-lsc
-- switching-flexi-grid-lsc
+- cwdm-ch-spc-type;
+- flexi-ncfg-type;
+- flexi-ncfg-6p25gh;
+- modulation;
+- dpsk;
+- qpsk;
+- dp-qpsk;
+- qam8;
+- dp-qam8;
+- qam16;
+- dp-qam16;
+- qam32;
+- dp-qam32;
+- qam64;
+- dp-qam64;
+- fec-type;
+- g-fec;
+- super-fec;
+- no-fec;
+- sc-fec;
+- o-fec;
+- c-fec;
+- line-coding;
+- nrz-2p5g;
+- nrz-otu1;
+- nrz-10g;
+- nrz-otu2;
+- otl4.4-sc;
+- foic1.4-sc;
+- wavelength-assignment;
+- first-fit-wavelength-assignment;
+- random-wavelength-assignment;
+- least-loaded-wavelength-assignment;
+- lower-first-wavelength-assignment;
+- upper-first-wavelength-assignment;
+- type-power-mode;
+- power-spectral-density;
+- carrier-power;
+- switching-wson-lsc;
+- switching-flexi-grid-lsc.
 
 The following new YANG data types have been added to the 'ietf-layer0-types' module:
 
@@ -674,6 +674,8 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - frequency-range-with-identifier
 - path-constraints
 - path-properties
+
+The default value of the min-slot-width-factor data node within flexi-grid-label-range-info grouping has been removed (bug fixing).
 
 {: numbered="false"}
 
