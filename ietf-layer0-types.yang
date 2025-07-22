@@ -1764,8 +1764,7 @@ module ietf-layer0-types {
       units "ps";
       config false;
       description
-        "Maximum Differential group delay of this mode for this
-         line.";
+        "The maximum Differential Group Delay (DGD)  the receiver can tolerate.";
     }
     leaf max-chromatic-dispersion {
       type decimal-2 {
