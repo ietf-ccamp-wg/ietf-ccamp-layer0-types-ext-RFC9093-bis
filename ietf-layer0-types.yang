@@ -1160,7 +1160,6 @@ module ietf-layer0-types {
         type uint16 {
           range "1..max";
         }
-        default "1";   //Med: make sure the default will be needed for all cases
         description
           "A multiplier of the slot width granularity, indicating
            the minimum slot width supported by an optical port.
@@ -1475,7 +1474,6 @@ module ietf-layer0-types {
         type uint16 {
           range "1..max";
         }
-        default "1";
         description
           "A multiplier of the slot width granularity, indicating
            the minimum slot width supported by an optical port.
