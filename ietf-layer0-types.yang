@@ -63,24 +63,24 @@ module ietf-layer0-types {
 
 // replace the revision date with the module publication date
 // the format is (year-month-day)
-  revision 2025-07-09 {
+  revision 2025-07-22 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
        - flexi-ncfg-type;
        - flexi-ncfg-6p25gh;
        - modulation;
-       - DPSK;
-       - QPSK;
-       - DP-QPSK;
-       - QAM8;
-       - DP-QAM8;
-       - QAM16;
-       - DP-QAM16;
-       - QAM32;
-       - DP-QAM32;
-       - QAM64;
-       - DP-QAM64;
+       - dpsk;
+       - qpsk;
+       - dp-qpsk;
+       - qam8;
+       - dp-qam8;
+       - qam16;
+       - dp-qam16;
+       - qam32;
+       - dp-qam32;
+       - qam64;
+       - dp-qam64;
        - fec-type;
        - g-fec;
        - super-fec;
@@ -89,12 +89,12 @@ module ietf-layer0-types {
        - o-fec;
        - c-fec;
        - line-coding;
-       - line-coding-NRZ-2p5G;
-       - line-coding-NRZ-OTU1;
-       - line-coding-NRZ-10G;
-       - line-coding-NRZ-OTU2;
-       - line-coding-OTL4.4-SC;
-       - line-coding-FOIC1.4-SC;
+       - nrz-2p5g;
+       - nrz-otu1;
+       - nrz-10g;
+       - nrz-otu2;
+       - otl4.4-sc;
+       - foic1.4-sc;
        - wavelength-assignment;
        - first-fit-wavelength-assignment;
        - random-wavelength-assignment;
@@ -151,7 +151,7 @@ module ietf-layer0-types {
        - frequency-range-with-identifier;
        - path-constraints;
        - path-properties.
-      "
+      ";
     reference
       "RFC XXXX: Common YANG Data Types for Layer 0 Networks";
   }
@@ -346,71 +346,71 @@ module ietf-layer0-types {
       "base identity for modulation type.";
   }
 
-    identity DPSK {
+    identity dpsk {
       base modulation;
       description
         "Differential Phase Shift Keying (DPSK) modulation.";
     }
 
-    identity QPSK {
+    identity qpsk {
       base modulation;
       description
         "Quadrature Phase Shift Keying (QPSK) modulation.";
     }
 
-    identity DP-QPSK {
+    identity dp-qpsk {
       base modulation;
       description
         "Dual Polarization Quadrature Phase Shift Keying
          (DP-QPSK) modulation.";
     }
 
-    identity QAM8 {
+    identity qam8 {
       base modulation;
       description
         "8 symbols Quadrature Amplitude Modulation (8QAM).";
     }
 
-    identity DP-QAM8 {
+    identity dp-qam8 {
       base modulation;
       description
         "8 symbols Dual Polarization Quadrature Amplitude
          Modulation (DP-QAM8).";
     }
 
-    identity QAM16 {
+    identity qam16 {
       base modulation;
       description
         "16 symbols Quadrature Amplitude Modulation (QAM16).";
     }
 
-    identity DP-QAM16 {
+    identity dp-qam16 {
       base modulation;
       description
         "16 symbols Dual Polarization Quadrature Amplitude
          Modulation (DP-QAM16).";
     }
 
-    identity QAM32 {
+    identity qam32 {
       base modulation;
       description
         "32 symbols Quadrature Amplitude Modulation (QAM32)";
     }
 
-    identity DP-QAM32 {
+    identity dp-qam32 {
       base modulation;
       description
         "32 symbols Dual Polarization Quadrature Amplitude
          Modulation (DP-QAM32).";
     }
 
-    identity QAM64 {
+    identity qam64 {
       base modulation;
       description
         "64 symbols Quadrature Amplitude Modulation (QAM64).";
     }
 
-    identity DP-QAM64 {
+    identity dp-qam64 {
       base modulation;
       description
         "64 symbols Dual Polarization Quadrature Amplitude
@@ -497,17 +497,17 @@ module ietf-layer0-types {
                     transport network, Clause 7.1.2";
   }
 
-    identity line-coding-NRZ-2p5G {   //Med: use lowercase?
+    identity nrz-2p5g {
       base line-coding;
       description
         "The non return to zero (NRZ) bit rate/line coding used by
          the optical tributary signal class NRZ 2.5G.";
       reference
         "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
-                     physical layer interfaces, Clause 3.2.6";
+                        physical layer interfaces, Clause 3.2.6";
     }
 
-    identity line-coding-NRZ-OTU1 {       //Med: Use lowercase?
+    identity nrz-otu1 {
       base line-coding;
       description
         "The Non-Return to Zero (NRZ) bit rate/line coding used by
@@ -518,7 +518,7 @@ module ietf-layer0-types {
                      physical layer interfaces, Clause 7.2.1.2";
     }
 
-    identity line-coding-NRZ-10G {   //Med: use lowercase?
+    identity nrz-10g {
       description
         "The non return to zero (NRZ) bit rate/line coding used by
          the optical tributary signal class NRZ 10G.";
@@ -527,7 +527,7 @@ module ietf-layer0-types {
                      physical layer interfaces, Clause 3.2.7"; 
     }
 
-    identity line-coding-NRZ-OTU2 {   //Med: use lowercase?
+    identity nrz-otu2 {
       base line-coding;
       description
         "The non return to zero (NRZ) bit rate/line coding used by
@@ -538,7 +538,7 @@ module ietf-layer0-types {
                      physical layer interfaces, Clause 7.2.1.2";
     }
 
-    identity line-coding-OTL4.4-SC {   //Med: use lowercase?
+    identity otl4.4-sc {
       base line-coding;
       description
         "The bit rate/line coding used by optical tributary
@@ -552,7 +552,7 @@ module ietf-layer0-types {
                      transport network, Clause 3.2.1";
     }
 
-    identity line-coding-FOIC1.4-SC { //Med: use lowercase?
+    identity foic1.4-sc {
       base line-coding;
       description
         "The bit rate/line coding used by optical tributary signals

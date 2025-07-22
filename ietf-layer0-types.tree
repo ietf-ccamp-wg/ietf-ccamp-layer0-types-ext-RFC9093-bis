@@ -21,7 +21,7 @@ module: ietf-layer0-types
   grouping wdm-label-hop:
     +-- (grid-type)?
        +--:(fixed-dwdm)
-       |  +-- (fixed-single-or-super-channel)?
+       |  +-- (fixed-single-or-multi-channel)?
        |     +--:(single)
        |     |  +-- dwdm-n?               dwdm-n
        |     +--:(multi)
@@ -35,12 +35,12 @@ module: ietf-layer0-types
              |  +-- flexi-m?              flexi-m
              x--:(super)
              |  x-- subcarrier-flexi-n* [flexi-n]
-             |     +-- flexi-n    flexi-n
+             |     +-- flexi-n?   flexi-n
              |     +-- flexi-m?   flexi-m
              +--:(multi)
                 +-- frequency-slots
                    +-- frequency-slot* [flexi-n]
-                      +-- flexi-n    flexi-n
+                      +-- flexi-n?   flexi-n
                       +-- flexi-m?   flexi-m
   grouping wdm-label-range-info:
     +-- grid-type?    identityref
@@ -86,12 +86,12 @@ module: ietf-layer0-types
        |  +-- flexi-m?              flexi-m
        x--:(super)
        |  x-- subcarrier-flexi-n* [flexi-n]
-       |     +-- flexi-n    flexi-n
+       |     +-- flexi-n?   flexi-n
        |     +-- flexi-m?   flexi-m
        +--:(multi)
           +-- frequency-slots
              +-- frequency-slot* [flexi-n]
-                +-- flexi-n    flexi-n
+                +-- flexi-n?   flexi-n
                 +-- flexi-m?   flexi-m
   grouping flexi-grid-label-range-info:
     +-- grid-type?    identityref
@@ -107,7 +107,7 @@ module: ietf-layer0-types
   grouping transceiver-capabilities:
     +--ro supported-modes!
        +--ro supported-mode* [mode-id]
-          +--ro mode-id                           string
+          +--ro mode-id?                          string
           +--ro (mode)
              +--:(G.698.2)
              |  +--ro standard-mode?              standard-mode
@@ -162,10 +162,10 @@ module: ietf-layer0-types
                       +--ro supported-organizational-mode*
                               -> ../../../../supported-mode/mode-id
   grouping standard-mode:
-    +--ro standard-mode?   standard-mode
+    +-- standard-mode?   standard-mode
   grouping organizational-mode:
-    +--ro operational-mode?          operational-mode
-    +--ro organization-identifier?   organization-identifier
+    +-- operational-mode?          operational-mode
+    +-- organization-identifier?   organization-identifier
   grouping penalty-value:
     +--ro penalty-value    union
   grouping explicit-mode:
