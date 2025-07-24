@@ -167,28 +167,28 @@ module: ietf-layer0-types
     +-- operational-mode?          operational-mode
     +-- organization-identifier?   organization-identifier
   grouping penalty-value:
-    +--ro penalty-value    union
+    +-- penalty-value    union
   grouping explicit-mode:
     +--ro line-coding-bitrate?                identityref
     +--ro bitrate?                            uint16
     +--ro max-diff-group-delay?               decimal-2
     +--ro max-chromatic-dispersion?           decimal-2
     +--ro cd-penalty* [cd-value]
-    |  +--ro cd-value         decimal-2
+    |  +--ro cd-value?        decimal-2
     |  +--ro penalty-value    union
     +--ro max-polarization-mode-dispersion?   decimal-2
     +--ro pmd-penalty* [pmd-value]
-    |  +--ro pmd-value        decimal-2
+    |  +--ro pmd-value?       decimal-2
     |  +--ro penalty-value    union
     +--ro max-polarization-dependent-loss     power-loss-or-null
     +--ro pdl-penalty* [pdl-value]
-    |  +--ro pdl-value        power-loss
+    |  +--ro pdl-value?       power-loss
     |  +--ro penalty-value    union
     +--ro available-modulation-type?          identityref
     +--ro min-OSNR?                           snr
     +--ro rx-ref-channel-power?               power-dbm
     +--ro rx-channel-power-penalty* [rx-channel-power-value]
-    |  +--ro rx-channel-power-value    power-dbm
+    |  +--ro rx-channel-power-value?   power-dbm
     |  +--ro penalty-value             union
     +--ro min-Q-factor?                       decimal-2
     +--ro available-baud-rate?                decimal64

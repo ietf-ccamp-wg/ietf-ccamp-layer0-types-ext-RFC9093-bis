@@ -1737,7 +1737,6 @@ module ietf-layer0-types {
         type empty;
       }
       units "dB";
-      config false;
       mandatory true;
       description
         "The OSNR penalty associated with the related optical
@@ -1817,8 +1816,6 @@ module ietf-layer0-types {
       leaf cd-value {
         type decimal-2;
         units "ps/nm";
-        config false;
-        mandatory true;
         description
           "The Chromatic Dispersion (CD).";
       }
@@ -1869,8 +1866,6 @@ module ietf-layer0-types {
           range "0..max";
         }
         units "ps";
-        config false;
-        mandatory true;
         description
           "The Polarization Mode Dispersion (PMD).";
       }
@@ -1913,8 +1908,6 @@ module ietf-layer0-types {
         sample the function OSNR penalty = f(PDL).";
       leaf pdl-value {
         type power-loss;
-        config false;
-        mandatory true;
         description
           "Maximum acceptable accumulated polarization dependent
           loss (PDL).";
@@ -1967,8 +1960,6 @@ module ietf-layer0-types {
       leaf rx-channel-power-value {
         type power-dbm;
         units "dBm";
-        config false;
-        mandatory true;
         description
           "The Received Power.";
       }
