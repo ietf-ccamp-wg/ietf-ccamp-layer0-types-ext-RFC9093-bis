@@ -287,7 +287,10 @@ technologies (e.g., copper-based, radio-based, or free space optics-based, etc.)
 
 This document defines a YANG module for common Layer 0 types, ietf-layer0-types.
 This module is used for WSON and flexi-grid DWDM networks.
-The "ietf-layer0-types" module contains the following YANG reusable YANG data types, identities and groupings:
+
+## Identities
+
+The "ietf-layer0-types" module contains the following YANG reusable YANG identities:
 
 l0-grid-type:
 : A base YANG identity for the grid type as defined in {{!RFC6205}} and {{!RFC7699}}.
@@ -319,8 +322,33 @@ line-coding:
 wavelength-assignment:
 : A base YANG identity from which specific identities defining the Wavelength selection methods, as defined in {{!RFC7689}}, are derived.
 
+modulation:
+: A base YANG identity to define the different modulation types, as defined in {{ITU-T_G.Sup39}}
+
+switching-wson-lsc:
+: A YANG identity for the Wavelength Switched Optical Network Lambda-Switch Capable (WSON-LSC) interface switching capability as defined in {{!RFC7688}}.
+
+switching-flexi-grid-lsc:
+: A YANG identity for the Flexi-Grid Lambda-Switch Capable (Flexi-Grid-LSC) interface switching capability as defined in {{!RFC8363}}.
+
+It is worth noting that there is an inheritance relationship between the Lambda-Switch Capable (LSC) switching capability, defined in {{!RFC3471}}, and the WSON-LSC and Flexi-Grid-LSC, defined respectively in {{!RFC7688}} and {{!RFC8363}}. As a consequence, the 'switching-wson-lsc' and 'switching-flexi-grid-lsc' YANG identities are defined as derived identities from the 'switching-lsc', defined in {{!I-D.ietf-teas-rfc8776-update}}.
+
+## Data Types
+
+The "ietf-layer0-types" module contains the following YANG reusable YANG data types:
+
 operational-mode:
 : A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
+
+snr:
+: A YANG data type used to represent an (Optical) Signal-to-noise ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
+
+psd:
+: A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
+
+## Groupings
+
+The "ietf-layer0-types" module contains the following YANG reusable YANG groupings:
 
 wson-label-start-end:
 : The WSON label range was defined in {{!RFC6205}}, and the generic
@@ -418,25 +446,8 @@ frequency tuning granularity.
 common-all-modes:
 : A YANG grouping used to define the common attributes used by all transceiver's modes.
 
-modulation:
-: A base YANG identity to define the different modulation types, as defined in {{ITU-T_G.Sup39}}
-
-snr:
-: A YANG data type used to represent an (Optical) Signal-to-noise ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
-
-psd:
-: A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
-
 penalty-value:
 : A YANG grouping to define the penalty value for multiple penalty types, such as Chromatic Dispersion (CD), Polarization Mode Dispersion (PMD), as defined in {{ITU-T_G.666}} or Polarization Dependent Loss(PDL)
-
-switching-wson-lsc:
-: A YANG identity for the Wavelength Switched Optical Network Lambda-Switch Capable (WSON-LSC) interface switching capability as defined in {{!RFC7688}}.
-
-switching-flexi-grid-lsc:
-: A YANG identity for the Flexi-Grid Lambda-Switch Capable (Flexi-Grid-LSC) interface switching capability as defined in {{!RFC8363}}.
-
-It is worth noting that there is an inheritance relationship between the Lambda-Switch Capable (LSC) switching capability, defined in {{!RFC3471}}, and the WSON-LSC and Flexi-Grid-LSC, defined respectively in {{!RFC7688}} and {{!RFC8363}}. As a consequence, the 'switching-wson-lsc' and 'switching-flexi-grid-lsc' YANG identities are defined as derived identities from the 'switching-lsc', defined in {{!I-D.ietf-teas-rfc8776-update}}.
 
 ## WDM Label and Label Range {#label-range}
 
