@@ -675,6 +675,14 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - path-constraints
 - path-properties
 
+The following YANG identities have been obsolted (bug fixing) in the 'ietf-layer0-types' module:
+- flexi-ch-spc-type;
+- flexi-ch-spc-6p25ghz.
+
+The case super within the flexi-grid-label-hop has been obsolted (bug fixing).
+
+The flexi-grid-channel-spacing data node in flexi-grid-label-step grouping has been obsoleted (bug fixing).
+
 The default value of the min-slot-width-factor data node within flexi-grid-label-range-info grouping has been removed (bug fixing).
 
 {: numbered="false"}

@@ -290,14 +290,14 @@ module ietf-layer0-types {
     }
 
   identity flexi-ch-spc-type {
-    status deprecated;
+    status obsolete;
     description
       "Flexi-grid channel-spacing type";
   }
 
     identity flexi-ch-spc-6p25ghz {
       base flexi-ch-spc-type;
-      status deprecated;
+      status obsolete;
       description
         "6.25 GHz channel spacing";
     }
@@ -718,8 +718,7 @@ module ietf-layer0-types {
 
        where 193100.000 GHz (193.100000 THz) is the ITU-T 'anchor
        frequency' for transmission over the DWDM grid, and where
-       NCFG is defined by the flexi-ncfg-type, or by the deprecated
-       flexi-ch-spc-type.";
+       NCFG is defined by the flexi-ncfg-type.";
     reference
       "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
                  Switch Capable (LSC) Label Switching Routers
@@ -1426,12 +1425,12 @@ module ietf-layer0-types {
         uses flexi-grid-frequency-slot;
       }
       case super {
-        status deprecated;
+        status obsolete;
         list subcarrier-flexi-n {
           key "flexi-n";
-          status deprecated;
+          status obsolete;
           uses flexi-grid-frequency-slot {
-            status deprecated;
+            status obsolete;
           }
           description
             "List of subcarrier channels for flexi-grid super
@@ -1530,7 +1529,7 @@ module ietf-layer0-types {
         base flexi-ch-spc-type;
       }
       default "flexi-ch-spc-6p25ghz";
-      status deprecated;
+      status obsolete;
       description
         "Label-step is the nominal central frequency granularity
          (GHz), e.g., 6.25 GHz.";
