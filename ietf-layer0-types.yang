@@ -1525,7 +1525,7 @@ module ietf-layer0-types {
       type identityref {
         base flexi-ch-spc-type;
       }
-      default "flexi-ch-spc-6p25ghz";  //Med: Same comment for the other default values
+      default "flexi-ch-spc-6p25ghz";
       status deprecated;
       description
         "Label-step is the nominal central frequency granularity
