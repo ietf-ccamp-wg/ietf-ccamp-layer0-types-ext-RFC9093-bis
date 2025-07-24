@@ -1680,16 +1680,21 @@ module ietf-layer0-types {
 
   grouping standard-mode {
     description
-      "ITU-T G.698.2 standard mode that guarantees interoperability.
-       It must be a string with the following format:
-       B-DScW-ytz(v) where all these attributes are conformant
-       to the ITU-T recomendation.";
+      "Identifies an ITU-T G.698.2 standard application code.";
 
     leaf standard-mode {
       type standard-mode;
       description
-        "G.698.2 standard mode.";
+        "Identifies an ITU-T G.698.2 standard application code.
+
+        It MUST be a string with a format that follows the
+        nomenclature defined in clause 5.3 of ITU-T G.698.2."; 
     }
+      reference
+          "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
+                      wavelength division multiplexing applications
+                      with single channel optical interfaces Optical
+                      transport network, Clause 5.3";
   }
 
   grouping organizational-mode {
