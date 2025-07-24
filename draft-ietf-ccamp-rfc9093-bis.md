@@ -221,7 +221,7 @@ This document obsoletes RFC 9093 by replacing the YANG module it contained with 
    YANG {{!RFC7950}} is a data modeling language used to model
    configuration data, state data, Remote Procedure Calls, and
    notifications for network management protocols such as the Network
-   Configuration Protocol (NETCONF) {{!RFC6241}}.  The YANG language
+   Configuration Protocol (NETCONF) {{?RFC6241}}.  The YANG language
    supports a small set of built-in data types and provides mechanisms
    to derive other types from the built-in types.
 
@@ -553,7 +553,7 @@ within the "IETF XML Registry" group {{?RFC3688}} to reference this document:
       XML: N/A; the requested URI is an XML namespace.
 ~~~~
 
-IANA is requested to register the following YANG module in the "YANG Module Names" registry {{!RFC6020}}
+IANA is requested to register the following YANG module in the "YANG Module Names" registry {{?RFC6020}}
 within the "YANG Parameters" registry group.
 
 ~~~~

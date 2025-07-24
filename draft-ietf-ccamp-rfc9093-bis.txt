@@ -3514,10 +3514,10 @@ Internet-Draft            L0 Common YANG Types                 July 2025
               (GMPLS)", RFC 4203, DOI 10.17487/RFC4203, October 2005,
               <https://www.rfc-editor.org/rfc/rfc4203>.
 
-   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
-              the Network Configuration Protocol (NETCONF)", RFC 6020,
-              DOI 10.17487/RFC6020, October 2010,
-              <https://www.rfc-editor.org/rfc/rfc6020>.
+   [RFC6205]  Otani, T., Ed. and D. Li, Ed., "Generalized Labels for
+              Lambda-Switch-Capable (LSC) Label Switching Routers",
+              RFC 6205, DOI 10.17487/RFC6205, March 2011,
+              <https://www.rfc-editor.org/rfc/rfc6205>.
 
 
 
@@ -3529,16 +3529,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 63]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
-
-   [RFC6205]  Otani, T., Ed. and D. Li, Ed., "Generalized Labels for
-              Lambda-Switch-Capable (LSC) Label Switching Routers",
-              RFC 6205, DOI 10.17487/RFC6205, March 2011,
-              <https://www.rfc-editor.org/rfc/rfc6205>.
-
-   [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
-              and A. Bierman, Ed., "Network Configuration Protocol
-              (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
-              <https://www.rfc-editor.org/rfc/rfc6241>.
 
    [RFC7688]  Lee, Y., Ed. and G. Bernstein, Ed., "GMPLS OSPF
               Enhancement for Signal and Network Element Compatibility
@@ -3575,17 +3565,6 @@ Internet-Draft            L0 Common YANG Types                 July 2025
               (NMDA)", RFC 8342, DOI 10.17487/RFC8342, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8342>.
 
-
-
-
-
-
-
-Belotti, et al.          Expires 25 January 2026               [Page 64]
-
-Internet-Draft            L0 Common YANG Types                 July 2025
-
-
    [RFC8363]  Zhang, X., Zheng, H., Casellas, R., Gonzalez de Dios, O.,
               and D. Ceccarelli, "GMPLS OSPF-TE Extensions in Support of
               Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
@@ -3597,6 +3576,15 @@ Internet-Draft            L0 Common YANG Types                 July 2025
               Engineering (TE) Topologies", RFC 8795,
               DOI 10.17487/RFC8795, August 2020,
               <https://www.rfc-editor.org/rfc/rfc8795>.
+
+
+
+
+
+Belotti, et al.          Expires 25 January 2026               [Page 64]
+
+Internet-Draft            L0 Common YANG Types                 July 2025
+
 
    [RFC9093]  Zheng, H., Lee, Y., Guo, A., Lopez, V., and D. King, "A
               YANG Data Model for Layer 0 Types", RFC 9093,
@@ -3631,17 +3619,6 @@ Internet-Draft            L0 Common YANG Types                 July 2025
               optical transport networks", ITU-T Supplement G.872,
               Amendment 1 , January 2021.
 
-
-
-
-
-
-
-Belotti, et al.          Expires 25 January 2026               [Page 65]
-
-Internet-Draft            L0 Common YANG Types                 July 2025
-
-
    [ITU-T_G.Sup39]
               International Telecommunication Union, "Optical system
               design and engineering considerations", ITU-T Supplement
@@ -3655,11 +3632,31 @@ Internet-Draft            L0 Common YANG Types                 July 2025
               Authentication Protocol", RFC 4252, DOI 10.17487/RFC4252,
               January 2006, <https://www.rfc-editor.org/rfc/rfc4252>.
 
+
+
+
+
+
+Belotti, et al.          Expires 25 January 2026               [Page 65]
+
+Internet-Draft            L0 Common YANG Types                 July 2025
+
+
+   [RFC6020]  Bjorklund, M., Ed., "YANG - A Data Modeling Language for
+              the Network Configuration Protocol (NETCONF)", RFC 6020,
+              DOI 10.17487/RFC6020, October 2010,
+              <https://www.rfc-editor.org/rfc/rfc6020>.
+
    [RFC6163]  Lee, Y., Ed., Bernstein, G., Ed., and W. Imajuku,
               "Framework for GMPLS and Path Computation Element (PCE)
               Control of Wavelength Switched Optical Networks (WSONs)",
               RFC 6163, DOI 10.17487/RFC6163, April 2011,
               <https://www.rfc-editor.org/rfc/rfc6163>.
+
+   [RFC6241]  Enns, R., Ed., Bjorklund, M., Ed., Schoenwaelder, J., Ed.,
+              and A. Bierman, Ed., "Network Configuration Protocol
+              (NETCONF)", RFC 6241, DOI 10.17487/RFC6241, June 2011,
+              <https://www.rfc-editor.org/rfc/rfc6241>.
 
    [RFC7446]  Lee, Y., Ed., Bernstein, G., Ed., Li, D., and W. Imajuku,
               "Routing and Wavelength Assignment Information Model for
@@ -3688,6 +3685,9 @@ Internet-Draft            L0 Common YANG Types                 July 2025
               BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8340>.
 
+   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
+              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
+              <https://www.rfc-editor.org/rfc/rfc8446>.
 
 
 
@@ -3697,10 +3697,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 66]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
-
-   [RFC8446]  Rescorla, E., "The Transport Layer Security (TLS) Protocol
-              Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
-              <https://www.rfc-editor.org/rfc/rfc8446>.
 
    [RFC9000]  Iyengar, J., Ed. and M. Thomson, Ed., "QUIC: A UDP-Based
               Multiplexed and Secure Transport", RFC 9000,
@@ -3746,6 +3742,10 @@ Appendix A.  The Complete Schema Trees
           |     |  +-- dwdm-n?               dwdm-n
           |     +--:(multi)
           |        +-- subcarrier-dwdm-n*    dwdm-n
+          +--:(cwdm)
+          |  +-- cwdm-n?                     cwdm-n
+          +--:(flexi-grid)
+             +-- (single-or-super-channel)?
 
 
 
@@ -3754,10 +3754,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 67]
 Internet-Draft            L0 Common YANG Types                 July 2025
 
 
-          +--:(cwdm)
-          |  +-- cwdm-n?                     cwdm-n
-          +--:(flexi-grid)
-             +-- (single-or-super-channel)?
                 +--:(single)
                 |  +-- flexi-n?              flexi-n
                 |  +-- flexi-m?              flexi-m
@@ -3802,6 +3798,10 @@ Internet-Draft            L0 Common YANG Types                 July 2025
           |  +-- wson-dwdm-channel-spacing?   identityref
           +--:(cwdm)
              +-- wson-cwdm-channel-spacing?   identityref
+     grouping flexi-grid-label-start-end:
+       +-- flexi-n?   flexi-n
+     grouping flexi-grid-frequency-slot:
+       +-- flexi-n?   flexi-n
 
 
 
@@ -3810,10 +3810,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 68]
 Internet-Draft            L0 Common YANG Types                 July 2025
 
 
-     grouping flexi-grid-label-start-end:
-       +-- flexi-n?   flexi-n
-     grouping flexi-grid-frequency-slot:
-       +-- flexi-n?   flexi-n
        +-- flexi-m?   flexi-m
      grouping flexi-grid-label-hop:
        +-- (single-or-super-channel)?
@@ -3858,6 +3854,10 @@ Internet-Draft            L0 Common YANG Types                 July 2025
                 |  +--ro tx-channel-power-min?       power-dbm
                 |  +--ro tx-channel-power-max?       power-dbm
                 |  +--ro rx-channel-power-min?       power-dbm
+                |  +--ro rx-channel-power-max?       power-dbm
+                |  +--ro rx-total-power-max?         power-dbm
+                +--:(organizational-mode)
+                |  +--ro organizational-mode
 
 
 
@@ -3866,10 +3866,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 69]
 Internet-Draft            L0 Common YANG Types                 July 2025
 
 
-                |  +--ro rx-channel-power-max?       power-dbm
-                |  +--ro rx-total-power-max?         power-dbm
-                +--:(organizational-mode)
-                |  +--ro organizational-mode
                 |     +--ro operational-mode?           operational-mode
                 |     +--ro organization-identifier?
                 |     |       organization-identifier
@@ -3914,6 +3910,10 @@ Internet-Draft            L0 Common YANG Types                 July 2025
        +-- penalty-value    union
      grouping explicit-mode:
        +--ro line-coding-bitrate?                identityref
+       +--ro bitrate?                            uint16
+       +--ro max-diff-group-delay?               decimal-2
+       +--ro max-chromatic-dispersion?           decimal-2
+       +--ro cd-penalty* [cd-value]
 
 
 
@@ -3922,10 +3922,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 70]
 Internet-Draft            L0 Common YANG Types                 July 2025
 
 
-       +--ro bitrate?                            uint16
-       +--ro max-diff-group-delay?               decimal-2
-       +--ro max-chromatic-dispersion?           decimal-2
-       +--ro cd-penalty* [cd-value]
        |  +--ro cd-value?        decimal-2
        |  +--ro penalty-value    union
        +--ro max-polarization-mode-dispersion?   decimal-2
@@ -3970,6 +3966,10 @@ Internet-Draft            L0 Common YANG Types                 July 2025
        +--ro rx-channel-power-max?       power-dbm
        +--ro rx-total-power-max?         power-dbm
      grouping common-transceiver-param:
+       +-- line-coding-bitrate?   identityref
+       +-- tx-channel-power?      power-dbm-or-null
+       +--ro rx-channel-power?      power-dbm-or-null
+       +--ro rx-total-power?        power-dbm-or-null
 
 
 
@@ -3978,10 +3978,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 71]
 Internet-Draft            L0 Common YANG Types                 July 2025
 
 
-       +-- line-coding-bitrate?   identityref
-       +-- tx-channel-power?      power-dbm-or-null
-       +--ro rx-channel-power?      power-dbm-or-null
-       +--ro rx-total-power?        power-dbm-or-null
      grouping common-transceiver-configured-param:
        +-- line-coding-bitrate?   identityref
        +-- tx-channel-power?      power-dbm-or-null
@@ -4026,6 +4022,10 @@ Appendix B.  Changes from RFC 9093
 
    *  dpsk;
 
+   *  qpsk;
+
+   *  dp-qpsk;
+
 
 
 
@@ -4033,10 +4033,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 72]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
-
-   *  qpsk;
-
-   *  dp-qpsk;
 
    *  qam8;
 
@@ -4082,6 +4078,10 @@ Internet-Draft            L0 Common YANG Types                 July 2025
 
    *  foic1.4-sc;
 
+   *  wavelength-assignment;
+
+   *  first-fit-wavelength-assignment;
+
 
 
 
@@ -4089,10 +4089,6 @@ Belotti, et al.          Expires 25 January 2026               [Page 73]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
-
-   *  wavelength-assignment;
-
-   *  first-fit-wavelength-assignment;
 
    *  random-wavelength-assignment;
 
@@ -4139,16 +4135,16 @@ Internet-Draft            L0 Common YANG Types                 July 2025
 
    *  power-loss
 
+   *  power-loss-or-null
+
+   *  power-ratio
+
 
 
 Belotti, et al.          Expires 25 January 2026               [Page 74]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
-
-   *  power-loss-or-null
-
-   *  power-ratio
 
    *  power-ratio-or-null
 
@@ -4195,16 +4191,16 @@ Internet-Draft            L0 Common YANG Types                 July 2025
 
    *  common-transceiver-configured-param
 
+   *  common-transceiver-readonly-param
+
+   *  tunnel-attributes
+
 
 
 Belotti, et al.          Expires 25 January 2026               [Page 75]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
-
-   *  common-transceiver-readonly-param
-
-   *  tunnel-attributes
 
    *  frequency-range
 
@@ -4252,14 +4248,16 @@ Contributors
    Email: gabriele.galimberti@nokia.com
 
 
+   Enrico Griseri
+   Nokia
+
+
 
 Belotti, et al.          Expires 25 January 2026               [Page 76]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
 
 
-   Enrico Griseri
-   Nokia
    Email: Enrico.Griseri@nokia.com
 
 
@@ -4305,18 +4303,15 @@ Authors' Addresses
    Email: sergio.belotti@nokia.com
 
 
-
+   Italo Busi (editor)
+   Huawei
+   Email: italo.busi@huawei.com
 
 
 
 Belotti, et al.          Expires 25 January 2026               [Page 77]
 
 Internet-Draft            L0 Common YANG Types                 July 2025
-
-
-   Italo Busi (editor)
-   Huawei
-   Email: italo.busi@huawei.com
 
 
    Dieter Beller (editor)
@@ -4332,6 +4327,11 @@ Internet-Draft            L0 Common YANG Types                 July 2025
    Aihua Guo
    Futurewei Technologies
    Email: aihuaguo.ietf@gmail.com
+
+
+
+
+
 
 
 
