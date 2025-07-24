@@ -769,6 +769,7 @@ module ietf-layer0-types {
 // RFC Ed.: replace IIII with actual RFC number and remove
 // this note after draft-ietf-ccamp-optical-impairment-topology-yang
 // is published as an RFC
+
   typedef operational-mode {
     type string;
     description
@@ -781,6 +782,10 @@ module ietf-layer0-types {
       "RFC IIII: A YANG Data Model for Optical Impairment-aware
                  Topology, Section 2.5.2";
   }
+
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
 
   typedef frequency-thz {
     type decimal64 {
@@ -1153,8 +1158,7 @@ module ietf-layer0-types {
         }
         default "flexi-swg-12p5ghz";
         description
-          "Minimum space between slot widths. Default is 12.500
-           GHz.";
+          "Minimum space between slot widths.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
                      Grid Dense Wavelength Division Multiplexing (DWDM)
@@ -1579,6 +1583,10 @@ module ietf-layer0-types {
         "RFC IIII: A YANG Data Model for Optical Impairment-aware
                    Topology.";
 
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     container supported-modes {
       presence
         "When present, it indicates that the modes supported by a
@@ -1692,6 +1700,10 @@ module ietf-layer0-types {
       "RFC IIII: A YANG Data Model for Optical Impairment-aware
                   Topology, Section 2.6.2";
 
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     leaf operational-mode {
       type operational-mode;
       description
@@ -1783,6 +1795,10 @@ module ietf-layer0-types {
                    Impairment-aware Topology, Section 2.6.4";
     }
 
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     list cd-penalty {
       key cd-value;
       config false;
@@ -1807,6 +1823,10 @@ module ietf-layer0-types {
                    Impairment-aware Topology, Section 2.6.4";
     }
 
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     leaf max-polarization-mode-dispersion {
       type decimal-2 {
         range "0..max";
@@ -1824,6 +1844,11 @@ module ietf-layer0-types {
          RFC IIII: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
+
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     list pmd-penalty {
       key pmd-value;
       config false;
@@ -1849,6 +1874,11 @@ module ietf-layer0-types {
         "RFC IIII: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
+
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     leaf max-polarization-dependent-loss {
       type power-loss-or-null;
       config false;
@@ -1861,6 +1891,11 @@ module ietf-layer0-types {
         "RFC IIII: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
+
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     list pdl-penalty {
       key pdl-value;
       config false;
@@ -1884,6 +1919,11 @@ module ietf-layer0-types {
         "RFC IIII: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
+
+// RFC Ed.: replace IIII with actual RFC number and remove
+// this note after draft-ietf-ccamp-optical-impairment-topology-yang
+// is published as an RFC
+
     leaf available-modulation-type {
       type identityref {
         base modulation;
