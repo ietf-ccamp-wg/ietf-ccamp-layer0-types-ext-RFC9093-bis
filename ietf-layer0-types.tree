@@ -1,23 +1,15 @@
 module: ietf-layer0-types
 
   grouping wdm-label-start-end:
-    +-- (grid-type)?
-       +--:(fixed-dwdm)
-       |  +-- dwdm-n?    dwdm-n
-       +--:(cwdm)
-       |  +-- cwdm-n?    cwdm-n
-       +--:(flexi-grid)
-          +-- flexi-n?   flexi-n
+    +-- dwdm-n?    dwdm-n
+    +-- cwdm-n?    cwdm-n
+    +-- flexi-n?   flexi-n
   grouping wdm-label-step:
-    +-- (l0-grid-type)?
-       +--:(fixed-dwdm)
-       |  +-- wson-dwdm-channel-spacing?    identityref
-       +--:(cwdm)
-       |  +-- wson-cwdm-channel-spacing?    identityref
-       +--:(flexi-grid)
-          x-- flexi-grid-channel-spacing?   identityref
-          +-- flexi-ncfg?                   identityref
-          +-- flexi-n-step?                 uint8
+    +-- wson-dwdm-channel-spacing?    identityref
+    +-- wson-cwdm-channel-spacing?    identityref
+    o-- flexi-grid-channel-spacing?   identityref
+    +-- flexi-ncfg?                   identityref
+    +-- flexi-n-step?                 uint8
   grouping wdm-label-hop:
     +-- (grid-type)?
        +--:(fixed-dwdm)
@@ -33,8 +25,8 @@ module: ietf-layer0-types
              +--:(single)
              |  +-- flexi-n?              flexi-n
              |  +-- flexi-m?              flexi-m
-             x--:(super)
-             |  x-- subcarrier-flexi-n* [flexi-n]
+             o--:(super)
+             |  o-- subcarrier-flexi-n* [flexi-n]
              |     +-- flexi-n?   flexi-n
              |     +-- flexi-m?   flexi-m
              +--:(multi)
@@ -84,8 +76,8 @@ module: ietf-layer0-types
        +--:(single)
        |  +-- flexi-n?              flexi-n
        |  +-- flexi-m?              flexi-m
-       x--:(super)
-       |  x-- subcarrier-flexi-n* [flexi-n]
+       o--:(super)
+       |  o-- subcarrier-flexi-n* [flexi-n]
        |     +-- flexi-n?   flexi-n
        |     +-- flexi-m?   flexi-m
        +--:(multi)
@@ -101,7 +93,7 @@ module: ietf-layer0-types
        +-- min-slot-width-factor?    uint16
        +-- max-slot-width-factor?    uint16
   grouping flexi-grid-label-step:
-    x-- flexi-grid-channel-spacing?   identityref
+    o-- flexi-grid-channel-spacing?   identityref
     +-- flexi-ncfg?                   identityref
     +-- flexi-n-step?                 uint8
   grouping transceiver-capabilities:

@@ -984,111 +984,105 @@ module ietf-layer0-types {
   grouping wdm-label-start-end {
     description
       "The WDM label-start or label-end used to specify DWDM and
-       CWDM label range.";
-
-    choice grid-type {
+       CWDM label ranges.";
+    leaf dwdm-n {
+      when "derived-from-or-self(../../../grid-type, "
+          + "l0-types:wson-grid-dwdm)" {
+        description
+          "Valid only when grid type is a fixed DWDM grid.";
+      }
+      type dwdm-n;
       description
-        "Label for fixed & flexi-DWDM or CWDM grid";
-      case fixed-dwdm {
-        leaf dwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             + "l0-types:wson-grid-dwdm)" {
-            description
-              "Valid only when grid type is DWDM.";
-          }
-          type dwdm-n;
-          description
-            "The given value 'N' is used to determine the
-             nominal central frequency.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
-        }
-      }
-      case cwdm {
-        leaf cwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             + "l0-types:wson-grid-cwdm)" {
-            description
-              "Valid only when grid type is CWDM.";
-          }
-          type cwdm-n;
-          description
-            "The given value 'N' is used to determine the nominal
-             central wavelength.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
-        }
-      }
-      case flexi-grid {
-        uses flexi-grid-label-start-end;
-      }
+        "The given value 'N' is used to determine the
+         nominal central frequency on a DWDM fixed grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
     }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers";
-  }
-
-  grouping wdm-label-step {
-    description
-      "Label step information for fixed & flexi-DWDM or CWDM grid";
-    choice l0-grid-type {
+    leaf cwdm-n {
+      when "derived-from-or-self(../../../grid-type, "
+          + "l0-types:wson-grid-cwdm)" {
+        description
+          "Valid only when grid type is a CWDM grid.";
+      }
+      type cwdm-n;
       description
-        "Grid type: DWDM, CWDM, etc.";
-      case fixed-dwdm {
-        leaf wson-dwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-              + "l0-types:wson-grid-dwdm)" {
-            description
-              "Valid only when grid type is DWDM.";
-          }
-          type identityref {
-            base dwdm-ch-spc-type;
-          }
-          description
-            "Label-step is the channel spacing (GHz), e.g., 100.000,
-             50.000, 25.000, or 12.500 GHz for DWDM.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                      (LSC) Label Switching Routers";
-        }
-      }
-      case cwdm {
-        leaf wson-cwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-             + "l0-types:wson-grid-cwdm)" {
-            description
-              "Valid only when grid type is CWDM.";
-          }
-          type identityref {
-            base cwdm-ch-spc-type;
-          }
-          description
-            "Label-step is the channel spacing (nm), i.e., 20 nm
-             for CWDM, which is the only value defined for CWDM.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
-        }
-      }
-      case flexi-grid {
-        uses flexi-grid-label-step;
+        "The given value 'N' is used to determine the nominal
+         central wavelength on a CWDM fixed grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    uses flexi-grid-label-start-end {
+      when "derived-from-or-self(../../../grid-type, "
+          + "l0-types:flexi-grid-dwdm)" {
+        description
+          "Valid only when grid type is a flexible DWDM grid.";
       }
     }
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                  Label Switching Routers
-       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-                 CWDM wavelength grid
+       RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers";
+  }
+
+  grouping wdm-label-step {
+    description
+      "The WDM label-step used to specify DWDM and CWDM label
+       ranges.";
+    leaf wson-dwdm-channel-spacing {
+      when "derived-from-or-self(../../grid-type, "
+          + "l0-types:wson-grid-dwdm)" {
+        description
+          "Valid only when grid type is a fixed DWDM grid.";
+      }
+      type identityref {
+        base dwdm-ch-spc-type;
+      }
+      description
+        "The channel spacing (GHz) of a fixed DWDM grid, e.g.,
+         100 GHz, 50 GHz, 25 GHz, or 12.5 GHz.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    leaf wson-cwdm-channel-spacing {
+      when "derived-from-or-self(../../grid-type, "
+          + "l0-types:wson-grid-cwdm)" {
+        description
+          "Valid only when grid type is a CWDM grid.";
+      }
+      type identityref {
+        base cwdm-ch-spc-type;
+      }
+      description
+        "The channel spacing (nm) of a fixed CWDM grid, e.g., 20nm
+         (which is the only standardized value).";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    uses flexi-grid-label-step {
+      when "derived-from-or-self(../../../grid-type, "
+          + "l0-types:flexi-grid-dwdm)" {
+        description
+          "Valid only when grid type is a flexible DWDM grid.";
+      }
+    }
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers
+       RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers
        RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                 Dense Wavelength Division Multiplexing (DWDM) Networks";
+                 Dense Wavelength Division Multiplexing (DWDM)
+                 Networks";
   }
 
   grouping wdm-label-hop {
     description
-      "Generic label-hop information for fixed and flexi-DWDM or
-       CWDM grid";
+      "Generic label-hop information for DWDM and CWDM labels.";
     choice grid-type {
       description
         "Label for DWDM or CWDM grid.";
@@ -1133,10 +1127,10 @@ module ietf-layer0-types {
       case flexi-grid {
         uses flexi-grid-label-hop;
       }
-    }
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                  Label Switching Routers";
+    }
   }
 
   grouping wdm-label-range-info {
@@ -1396,9 +1390,7 @@ module ietf-layer0-types {
     }
     reference
       "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                 Switch Capable (LSC) Label Switching Routers
-      RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                Dense Wavelength Division Multiplexing (DWDM) Networks";
+                 Switch Capable (LSC) Label Switching Routers";
   }
 
   grouping flexi-grid-frequency-slot {
@@ -1454,8 +1446,8 @@ module ietf-layer0-types {
       }
     }
     reference
-      "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                 Dense Wavelength Division Multiplexing (DWDM) Networks";
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers";
   }
 
   grouping flexi-grid-label-range-info {
@@ -1689,11 +1681,11 @@ module ietf-layer0-types {
         It MUST be a string with a format that follows the
         nomenclature defined in clause 5.3 of ITU-T G.698.2."; 
     }
-      reference
-          "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
-                      wavelength division multiplexing applications
-                      with single channel optical interfaces Optical
-                      transport network, Clause 5.3";
+    reference
+        "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
+                   wavelength division multiplexing applications
+                   with single channel optical interfaces Optical
+                   transport network, Clause 5.3";
   }
 
   grouping organizational-mode {
