@@ -8,8 +8,6 @@ module ietf-layer0-types {
     reference
       "RFC YYYY: Common YANG Data Types for Traffic Engineering";
   }
-  // RFC Editor: replace YYYY with actual RFC number assigned to
-  // [I-D.ietf-teas-rfc8776-update] and remove this note
 
   organization
     "IETF CCAMP Working Group";
@@ -58,11 +56,6 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-// RFC Ed.: replace XXXX with actual RFC number and remove
-// this note
-
-// replace the revision date with the module publication date
-// the format is (year-month-day)
   revision 2025-07-31 {
     description
       "This revision adds the following new identities:
@@ -206,7 +199,8 @@ module ietf-layer0-types {
     identity flexi-grid-dwdm {
       base l0-grid-type;
       description
-                "Flexible Dense Wavelength Division Multiplexing (DWDM) grid (flexi-grid).";
+        "Flexible Dense Wavelength Division Multiplexing (DWDM) grid
+         (flexi-grid).";
       reference
         "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
                    Switch Capable (LSC) Label Switching Routers
@@ -492,7 +486,7 @@ module ietf-layer0-types {
 
   identity line-coding {
     description
-      "Base identity to defined the bit rate/line coding of optical
+      "Base identity to define the bit rate/line coding of optical
        tributary signals.";
     reference
       "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
@@ -572,7 +566,7 @@ module ietf-layer0-types {
 
   identity wavelength-assignment {
     description
-      "Wavelength selection base.";
+      "Base identity for Wavelength Assignment (WA) method.";
     reference
       "RFC 7689: Signaling Extensions for Wavelength Switched
                  Optical Networks";
@@ -581,9 +575,9 @@ module ietf-layer0-types {
     identity first-fit-wavelength-assignment {
       base wavelength-assignment;
       description
-        "All the available wavelengths are numbered,
-         and this Wavelength Assignment (WA) method chooses
-         the available wavelength with the lowest index.";
+        "All the available wavelengths are numbered, and this WA
+        method chooses the available wavelength with the lowest
+        index.";
       reference
         "RFC 7689: Signaling Extensions for Wavelength Switched
                    Optical Networks";
@@ -592,8 +586,7 @@ module ietf-layer0-types {
     identity random-wavelength-assignment {
       base wavelength-assignment;
       description
-        "This WA method chooses an available
-         wavelength randomly.";
+        "This WA method chooses an available wavelength randomly.";
       reference
         "RFC 7689: Signaling Extensions for Wavelength Switched
                    Optical Networks";
@@ -614,16 +607,16 @@ module ietf-layer0-types {
       base wavelength-assignment;
       description
         "Allocate wavelengths in ascending order, beginning from the
-         lowest frequency and progressing toward the highest frequency
-         within the permissible frequency range.";
+         lowest frequency and progressing toward the highest
+         frequency within the permissible frequency range.";
     }
 
     identity upper-first-wavelength-assignment {
       base wavelength-assignment;
       description
-        "Allocate wavelengths in decending order, beginning from the
-         highest frequency and progressing toward the lowest frequency
-         within the permissible frequency range.";
+        "Allocate wavelengths in descending order, beginning from the
+         highest frequency and progressing toward the lowest
+         frequency within the permissible frequency range.";
     }
 
   identity type-power-mode {
@@ -650,9 +643,9 @@ module ietf-layer0-types {
       "Wavelength Switched Optical Network Lambda-Switch Capable
        (WSON-LSC).";
     reference
-      "RFC 7688: GMPLS OSPF Enhancement for Signal and
-                 Network Element Compatibility for Wavelength Switched Optical
-                 Networks, Section 3";
+      "RFC 7688: GMPLS OSPF Enhancement for Signal and Network
+                 Element Compatibility for Wavelength Switched
+                 Optical Networks, Section 3";
   }
 
   identity switching-flexi-grid-lsc {
@@ -660,8 +653,8 @@ module ietf-layer0-types {
     description
       "Flexi-grid Lambda-Switch Capable (Flexi-Grid-LSC).";
     reference
-      "RFC 8363: GMPLS OSPF-TE Extensions in Support
-                 of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+      "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
+                 Dense Wavelength Division Multiplexing (DWDM)
                  Networks, Section 4.1";
   }
 
@@ -762,12 +755,9 @@ module ietf-layer0-types {
       "vendor/organization identifier that uses a private mode
        out of already defined in G.698.2 ITU-T application-code";
     reference
-      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                  Topology, Section 2.5.2";
   }
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
 
   typedef operational-mode {
     type string;
@@ -778,13 +768,9 @@ module ietf-layer0-types {
       organization which is responsible for defining the
       corresponding optical interface specification.";
     reference
-      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                  Topology, Section 2.5.2";
   }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
 
   typedef frequency-thz {
     type decimal64 {
@@ -812,8 +798,8 @@ module ietf-layer0-types {
        resolution bandwidth.";
     reference
       "ITU-T G.977.1 (02/2021): Transverse compatible dense
-                 wavelength division multiplexing applications for repeatered
-                 optical fibre submarine cable systems";
+                 wavelength division multiplexing applications for
+                 repeatered optical fibre submarine cable systems";
   }
 
   typedef snr-or-null {
@@ -1036,8 +1022,8 @@ module ietf-layer0-types {
         "Label for DWDM or CWDM grid";
       case dwdm {
         leaf dwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             + "'l0-types:wson-grid-dwdm')" {
+          when 'derived-from-or-self(../../../grid-type, '
+             + '"l0-types:wson-grid-dwdm")' {
             description
               "Valid only when grid type is DWDM.";
           }
@@ -1051,8 +1037,8 @@ module ietf-layer0-types {
       }
       case cwdm {
         leaf cwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             +  "'l0-types:wson-grid-cwdm')" {
+          when 'derived-from-or-self(../../../grid-type, '
+             +  '"l0-types:wson-grid-cwdm")' {
             description
               "Valid only when grid type is CWDM.";
           }
@@ -1087,8 +1073,8 @@ module ietf-layer0-types {
         "Grid type: DWDM, CWDM, etc.";
       case dwdm {
         leaf wson-dwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-             + "'l0-types:wson-grid-dwdm')" {
+          when 'derived-from-or-self(../../grid-type, '
+             + '"l0-types:wson-grid-dwdm")' {
             description
               "Valid only when grid type is DWDM.";
           }
@@ -1105,8 +1091,8 @@ module ietf-layer0-types {
       }
       case cwdm {
         leaf wson-cwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-             + "'l0-types:wson-grid-cwdm')" {
+          when 'derived-from-or-self(../../grid-type, '
+             + '"l0-types:wson-grid-cwdm")' {
             description
               "Valid only when grid type is CWDM.";
           }
@@ -1145,6 +1131,9 @@ module ietf-layer0-types {
               description
                 "The given value 'N' is used to determine the
                  nominal central frequency.";
+              reference
+                "ITU-T G.694.1 (10/2020): Spectral grids for WDM
+                               applications: DWDM frequency grid";
             }
           }
           case super {
@@ -1200,8 +1189,8 @@ module ietf-layer0-types {
           "Minimum space between slot widths.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of
-                     Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
       leaf min-slot-width-factor {
         type uint16 {
@@ -1216,8 +1205,8 @@ module ietf-layer0-types {
                min-slot-width-factor * slot-width-granularity.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
       leaf max-slot-width-factor {
         type uint16 {
@@ -1241,8 +1230,8 @@ module ietf-layer0-types {
            slot width is equal to minimum slot width.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
     }
   }
@@ -1327,7 +1316,8 @@ module ietf-layer0-types {
          granularity.";
       reference
         "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                   Dense Wavelength Division Multiplexing (DWDM) Networks";
+                   Dense Wavelength Division Multiplexing (DWDM)
+                   Networks";
     }
   }
 
@@ -1399,8 +1389,8 @@ module ietf-layer0-types {
        ietf-te-types.";
     uses l0-label-range-info;
     container flexi-grid {
-      when "derived-from-or-self(../grid-type, "
-         + "'l0-types:flexi-grid-dwdm')" {
+      when 'derived-from-or-self(../grid-type, '
+         + '"l0-types:flexi-grid-dwdm")' {
         description
           "Applicable only when the grid type is flexi-grid-dwdm.";
       }
@@ -1415,8 +1405,8 @@ module ietf-layer0-types {
           "Minimum space between slot widths.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                    Networks";
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
       leaf min-slot-width-factor {
         type uint16 {
@@ -1431,8 +1421,8 @@ module ietf-layer0-types {
                min-slot-width-factor * slot-width-granularity.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
       leaf max-slot-width-factor {
         type uint16 {
@@ -1456,8 +1446,8 @@ module ietf-layer0-types {
            slot width is equal to minimum slot width.";
         reference
           "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
     }
   }
@@ -1476,8 +1466,8 @@ module ietf-layer0-types {
        use the label-restriction-info grouping defined in the module
        ietf-te-types.";
     leaf dwdm-n {
-      when "derived-from-or-self(../../../grid-type, "
-          + "'l0-types:wson-grid-dwdm')" {
+      when 'derived-from-or-self(../../../grid-type, '
+          + '"l0-types:wson-grid-dwdm")' {
         description
           "Valid only when grid type is a fixed DWDM grid.";
       }
@@ -1490,8 +1480,8 @@ module ietf-layer0-types {
                    (LSC) Label Switching Routers";
     }
     leaf cwdm-n {
-      when "derived-from-or-self(../../../grid-type, "
-          + "'l0-types:wson-grid-cwdm')" {
+      when 'derived-from-or-self(../../../grid-type, '
+          + '"l0-types:wson-grid-cwdm")' {
         description
           "Valid only when grid type is a CWDM grid.";
       }
@@ -1504,8 +1494,8 @@ module ietf-layer0-types {
                    (LSC) Label Switching Routers";
     }
     uses flexi-grid-label-start-end {
-      when "derived-from-or-self(../../grid-type, "
-          + "'l0-types:flexi-grid-dwdm')" {
+      when 'derived-from-or-self(../../grid-type, '
+          + '"l0-types:flexi-grid-dwdm")' {
         description
           "Valid only when grid type is a flexible DWDM grid.";
       }
@@ -1531,8 +1521,8 @@ module ietf-layer0-types {
        models which use the label-restriction-info grouping defined
        in the module ietf-te-types.";
     leaf wson-dwdm-channel-spacing {
-      when "derived-from-or-self(../../grid-type, "
-          + "'l0-types:wson-grid-dwdm')" {
+      when 'derived-from-or-self(../../grid-type, '
+          + '"l0-types:wson-grid-dwdm")' {
         description
           "Valid only when grid type is a fixed DWDM grid.";
       }
@@ -1547,8 +1537,8 @@ module ietf-layer0-types {
                    (LSC) Label Switching Routers";
     }
     leaf wson-cwdm-channel-spacing {
-      when "derived-from-or-self(../../grid-type, "
-          + "'l0-types:wson-grid-cwdm')" {
+      when 'derived-from-or-self(../../grid-type, '
+          + '"l0-types:wson-grid-cwdm")' {
         description
           "Valid only when grid type is a CWDM grid.";
       }
@@ -1563,8 +1553,8 @@ module ietf-layer0-types {
                    (LSC) Label Switching Routers";
     }
     uses flexi-grid-label-step {
-      when "derived-from-or-self(../grid-type, "
-          + "'l0-types:flexi-grid-dwdm')" {
+      when 'derived-from-or-self(../grid-type, '
+          + '"l0-types:flexi-grid-dwdm")' {
         description
           "Valid only when grid type is a flexible DWDM grid.";
       }
@@ -1588,7 +1578,7 @@ module ietf-layer0-types {
       case fixed-dwdm {
         choice fixed-single-or-multi-channel {
           description
-            "Single channel or multi-channel.";
+            "Single channel or multichannel.";
           case single {
             leaf dwdm-n {
               type dwdm-n;
@@ -1639,15 +1629,11 @@ module ietf-layer0-types {
 
       When this grouping is used, the explicit-mode container shall
       be augmented with a leafref to an explicit mode template with
-      the proper XPath which depends from where this grouping is
+      the proper XPath which depends on where this grouping is
       actually used.";
     reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology.";
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
 
     container supported-modes {
       presence
@@ -1659,7 +1645,6 @@ module ietf-layer0-types {
         transceiver's modes.";
       list supported-mode {
         key "mode-id";
-        config false;
         min-elements 1;
         description
           "The list of supported transceiver's modes.";
@@ -1671,7 +1656,6 @@ module ietf-layer0-types {
             "An identifier for the supported transceiver's mode.";
         }
         choice mode {
-          config false;
           mandatory true;
           description
             "Indicates whether the transceiver's mode is a standard
@@ -1683,7 +1667,6 @@ module ietf-layer0-types {
           }
           case organizational-mode {
             container organizational-mode {
-              config false;
               description
                 "The set of attributes for an organizational mode";
               uses organizational-mode;
@@ -1693,7 +1676,6 @@ module ietf-layer0-types {
           }
           case explicit-mode {
             container explicit-mode {
-              config false;
               description
                 "The set of attributes for an explicit mode.";
               uses common-all-modes;
@@ -1764,13 +1746,8 @@ module ietf-layer0-types {
       "Transponder operational mode supported by organizations or
        vendor";
     reference
-      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                   Topology, Section 2.6.2";
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf operational-mode {
       type operational-mode;
       description
@@ -1813,8 +1790,8 @@ module ietf-layer0-types {
        mode.
 
        This grouping also contains the list of attributes related to
-       optical impairment limits for explicit mode (min OSNR, max PMD,
-       max CD, max PDL, Q-factor limit, etc.).
+       optical impairment limits for explicit mode (min OSNR,
+       max PMD, max CD, max PDL, Q-factor limit, etc.).
 
        In case of standard and operational mode the attributes are
        implicit.";
@@ -1836,15 +1813,16 @@ module ietf-layer0-types {
       units "Gbit/sec";
       config false;
       description
-        "The gross bitrate (e.g., 100 or 200) of the optical tributary
-         signal.";
+        "The gross bitrate (e.g., 100 or 200) of the optical
+         tributary signal.";
     }
     leaf max-diff-group-delay  {
       type decimal-2;
       units "ps";
       config false;
       description
-        "The maximum Differential Group Delay (DGD)  the receiver can tolerate.";
+        "The maximum Differential Group Delay (DGD)  the receiver can
+         tolerate.";
     }
     leaf max-chromatic-dispersion {
       type decimal-2 {
@@ -1857,14 +1835,9 @@ module ietf-layer0-types {
         on the receiver at Rx-power reference point
         (rx-ref-channel-power) and in absence of other impairments.";
       reference
-        "RFC IIII: A YANG Data Model for Optical
+        "RFC ZZZZ: A YANG Data Model for Optical
                    Impairment-aware Topology, Section 2.6.4";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     list cd-penalty {
       key cd-value;
       config false;
@@ -1883,14 +1856,9 @@ module ietf-layer0-types {
       }
       uses penalty-value;
       reference
-        "RFC IIII: A YANG Data Model for Optical
+        "RFC ZZZZ: A YANG Data Model for Optical
                    Impairment-aware Topology, Section 2.6.4";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf max-polarization-mode-dispersion {
       type decimal-2 {
         range "0..max";
@@ -1905,14 +1873,9 @@ module ietf-layer0-types {
         "ITU-T G.666 (02/2011): Characteristics of polarization
                    mode dispersion compensators and of receivers that
                    compensate for polarization mode dispersion
-         RFC IIII: A YANG Data Model for Optical Impairment-aware
+         RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     list pmd-penalty {
       key pmd-value;
       config false;
@@ -1933,14 +1896,9 @@ module ietf-layer0-types {
       }
       uses penalty-value;
       reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf max-polarization-dependent-loss {
       type power-loss-or-null;
       config false;
@@ -1948,16 +1906,12 @@ module ietf-layer0-types {
       description
         "Maximum acceptable accumulated polarization dependent
          loss (PDL) on the receiver at Rx-power reference point
-         (rx-ref-channel-power) and in absence of other impairments.";
+         (rx-ref-channel-power) and in absence of other
+         impairments.";
       reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     list pdl-penalty {
       key pdl-value;
       config false;
@@ -1976,14 +1930,9 @@ module ietf-layer0-types {
       }
       uses penalty-value;
       reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf available-modulation-type {
       type identityref {
         base modulation;
@@ -2204,8 +2153,8 @@ module ietf-layer0-types {
     leaf transceiver-tunability-granularity {
       type frequency-ghz;
       description
-        "This parameter indicates the transceiver frequency fine
-         tuning granularity e.g 3.125GHz or 0.001GHz.";
+        "This parameter indicates the transceiver frequency
+         fine-tuning granularity e.g 3.125GHz or 0.001GHz.";
     }
   }
 
@@ -2250,7 +2199,7 @@ module ietf-layer0-types {
       description
         "Maximum rx optical power for all the channels.
 
-        It is applicable only to multi-channel modes.";
+        It is applicable only to multichannel modes.";
     }
   }
 

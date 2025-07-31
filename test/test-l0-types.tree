@@ -1,0 +1,228 @@
+module: test-l0-types
+  +--rw x
+     +--rw wson-label-range
+     |  +--rw grid-type?         identityref
+     |  +--rw priority?          uint8
+     |  +--rw label-start-end
+     |  |  +--rw te-label
+     |  |     +--rw (grid-type)?
+     |  |        +--:(dwdm)
+     |  |        |  +--rw dwdm-n?   dwdm-n
+     |  |        +--:(cwdm)
+     |  |           +--rw cwdm-n?   cwdm-n
+     |  +--rw label-step
+     |     +--rw (l0-grid-type)?
+     |        +--:(dwdm)
+     |        |  +--rw wson-dwdm-channel-spacing?   identityref
+     |        +--:(cwdm)
+     |           +--rw wson-cwdm-channel-spacing?   identityref
+     +--rw wson-label-hop
+     |  +--rw (grid-type)?
+     |     +--:(dwdm)
+     |     |  +--rw (single-or-super-channel)?
+     |     |     +--:(single)
+     |     |     |  +--rw dwdm-n?              dwdm-n
+     |     |     +--:(super)
+     |     |        +--rw subcarrier-dwdm-n*   dwdm-n
+     |     +--:(cwdm)
+     |        +--rw cwdm-n?                    cwdm-n
+     +--rw flexi-grid-label-range
+     |  +--rw grid-type?    identityref
+     |  +--rw priority?     uint8
+     |  +--rw flexi-grid
+     |     +--rw slot-width-granularity?   identityref
+     |     +--rw min-slot-width-factor?    uint16
+     |     +--rw max-slot-width-factor?    uint16
+     +--rw flexi-grid-label-start-end
+     |  +--rw flexi-n?   flexi-n
+     +--rw label-step
+     |  o--rw flexi-grid-channel-spacing?   identityref
+     |  +--rw flexi-ncfg?                   identityref
+     |  +--rw flexi-n-step?                 uint8
+     +--rw flexi-grid-frequency-slot
+     |  +--rw flexi-n?   flexi-n
+     |  +--rw flexi-m?   flexi-m
+     +--rw flexi-grid-label-hop
+     |  +--rw (single-or-super-channel)?
+     |     +--:(single)
+     |     |  +--rw flexi-n?              flexi-n
+     |     |  +--rw flexi-m?              flexi-m
+     |     o--:(super)
+     |     |  o--rw subcarrier-flexi-n* [flexi-n]
+     |     |     +--rw flexi-n    flexi-n
+     |     |     +--rw flexi-m?   flexi-m
+     |     +--:(multi)
+     |        +--rw frequency-slots
+     |           +--rw frequency-slot* [flexi-n]
+     |              +--rw flexi-n    flexi-n
+     |              +--rw flexi-m?   flexi-m
+     +--rw wdm-label-range
+     |  +--rw grid-type?         identityref
+     |  +--rw priority?          uint8
+     |  +--rw flexi-grid
+     |  |  +--rw slot-width-granularity?   identityref
+     |  |  +--rw min-slot-width-factor?    uint16
+     |  |  +--rw max-slot-width-factor?    uint16
+     |  +--rw label-start-end
+     |  |  +--rw te-label
+     |  |     +--rw dwdm-n?    dwdm-n
+     |  |     +--rw cwdm-n?    cwdm-n
+     |  |     +--rw flexi-n?   flexi-n
+     |  +--rw label-step
+     |     +--rw wson-dwdm-channel-spacing?    identityref
+     |     +--rw wson-cwdm-channel-spacing?    identityref
+     |     o--rw flexi-grid-channel-spacing?   identityref
+     |     +--rw flexi-ncfg?                   identityref
+     |     +--rw flexi-n-step?                 uint8
+     +--rw wdm-label-hop
+     |  +--rw (grid-type)?
+     |     +--:(fixed-dwdm)
+     |     |  +--rw (fixed-single-or-multi-channel)?
+     |     |     +--:(single)
+     |     |     |  +--rw dwdm-n?               dwdm-n
+     |     |     +--:(multi)
+     |     |        +--rw subcarrier-dwdm-n*    dwdm-n
+     |     +--:(cwdm)
+     |     |  +--rw cwdm-n?                     cwdm-n
+     |     +--:(flexi-grid)
+     |        +--rw (single-or-super-channel)?
+     |           +--:(single)
+     |           |  +--rw flexi-n?              flexi-n
+     |           |  +--rw flexi-m?              flexi-m
+     |           o--:(super)
+     |           |  o--rw subcarrier-flexi-n* [flexi-n]
+     |           |     +--rw flexi-n    flexi-n
+     |           |     +--rw flexi-m?   flexi-m
+     |           +--:(multi)
+     |              +--rw frequency-slots
+     |                 +--rw frequency-slot* [flexi-n]
+     |                    +--rw flexi-n    flexi-n
+     |                    +--rw flexi-m?   flexi-m
+     +--rw transceiver-capabilities
+     |  +--ro supported-modes!
+     |     +--ro supported-mode* [mode-id]
+     |        +--ro mode-id                           string
+     |        +--ro (mode)
+     |           +--:(G.698.2)
+     |           |  +--ro standard-mode?              standard-mode
+     |           |  +--ro line-coding-bitrate*        identityref
+     |           |  +--ro transceiver-tuning-range
+     |           |  |  +--ro min-central-frequency?                frequency-thz
+     |           |  |  +--ro max-central-frequency?                frequency-thz
+     |           |  |  +--ro transceiver-tunability-granularity?   frequency-ghz
+     |           |  +--ro tx-channel-power-min?       power-dbm
+     |           |  +--ro tx-channel-power-max?       power-dbm
+     |           |  +--ro rx-channel-power-min?       power-dbm
+     |           |  +--ro rx-channel-power-max?       power-dbm
+     |           |  +--ro rx-total-power-max?         power-dbm
+     |           +--:(organizational-mode)
+     |           |  +--ro organizational-mode
+     |           |     +--ro operational-mode?           operational-mode
+     |           |     +--ro organization-identifier?    organization-identifier
+     |           |     +--ro line-coding-bitrate*        identityref
+     |           |     +--ro transceiver-tuning-range
+     |           |     |  +--ro min-central-frequency?                frequency-thz
+     |           |     |  +--ro max-central-frequency?                frequency-thz
+     |           |     |  +--ro transceiver-tunability-granularity?   frequency-ghz
+     |           |     +--ro tx-channel-power-min?       power-dbm
+     |           |     +--ro tx-channel-power-max?       power-dbm
+     |           |     +--ro rx-channel-power-min?       power-dbm
+     |           |     +--ro rx-channel-power-max?       power-dbm
+     |           |     +--ro rx-total-power-max?         power-dbm
+     |           +--:(explicit-mode)
+     |              +--ro explicit-mode
+     |                 +--ro transceiver-tuning-range
+     |                 |  +--ro min-central-frequency?                frequency-thz
+     |                 |  +--ro max-central-frequency?                frequency-thz
+     |                 |  +--ro transceiver-tunability-granularity?   frequency-ghz
+     |                 +--ro tx-channel-power-min?       power-dbm
+     |                 +--ro tx-channel-power-max?       power-dbm
+     |                 +--ro rx-channel-power-min?       power-dbm
+     |                 +--ro rx-channel-power-max?       power-dbm
+     |                 +--ro rx-total-power-max?         power-dbm
+     |                 +--ro compatible-modes
+     |                    +--ro supported-application-code*      -> ../../../../supported-mode/mode-id
+     |                    +--ro supported-organizational-mode*   -> ../../../../supported-mode/mode-id
+     +--rw standard-mode
+     |  +--rw standard-mode?   standard-mode
+     +--rw organizational-mode
+     |  +--rw operational-mode?          operational-mode
+     |  +--rw organization-identifier?   organization-identifier
+     +--rw penalty-value
+     |  +--rw penalty-value    union
+     +--rw explicit-mode
+     |  +--ro line-coding-bitrate?                identityref
+     |  +--ro bitrate?                            uint16
+     |  +--ro max-diff-group-delay?               decimal-2
+     |  +--ro max-chromatic-dispersion?           decimal-2
+     |  +--ro cd-penalty* [cd-value]
+     |  |  +--ro cd-value         decimal-2
+     |  |  +--ro penalty-value    union
+     |  +--ro max-polarization-mode-dispersion?   decimal-2
+     |  +--ro pmd-penalty* [pmd-value]
+     |  |  +--ro pmd-value        decimal-2
+     |  |  +--ro penalty-value    union
+     |  +--ro max-polarization-dependent-loss     power-loss-or-null
+     |  +--ro pdl-penalty* [pdl-value]
+     |  |  +--ro pdl-value        power-loss
+     |  |  +--ro penalty-value    union
+     |  +--ro available-modulation-type?          identityref
+     |  +--ro min-OSNR?                           snr
+     |  +--ro rx-ref-channel-power?               power-dbm
+     |  +--ro rx-channel-power-penalty* [rx-channel-power-value]
+     |  |  +--ro rx-channel-power-value    power-dbm
+     |  |  +--ro penalty-value             union
+     |  +--ro min-Q-factor?                       decimal-2
+     |  +--ro available-baud-rate?                decimal64
+     |  +--ro roll-off?                           decimal64
+     |  +--ro min-carrier-spacing?                frequency-ghz
+     |  +--ro available-fec-type?                 identityref
+     |  +--ro fec-code-rate?                      decimal64
+     |  +--ro fec-threshold?                      decimal64
+     |  +--ro in-band-osnr?                       snr
+     |  +--ro out-of-band-osnr?                   snr
+     |  +--ro tx-polarization-power-difference?   power-ratio
+     |  +--ro polarization-skew?                  decimal-2
+     +--rw common-standard-organizational-mode
+     |  +--ro line-coding-bitrate*   identityref
+     +--rw transceiver-tuning-range
+     |  +--rw min-central-frequency?                frequency-thz
+     |  +--rw max-central-frequency?                frequency-thz
+     |  +--rw transceiver-tunability-granularity?   frequency-ghz
+     +--rw common-all-modes
+     |  +--ro transceiver-tuning-range
+     |  |  +--ro min-central-frequency?                frequency-thz
+     |  |  +--ro max-central-frequency?                frequency-thz
+     |  |  +--ro transceiver-tunability-granularity?   frequency-ghz
+     |  +--ro tx-channel-power-min?       power-dbm
+     |  +--ro tx-channel-power-max?       power-dbm
+     |  +--ro rx-channel-power-min?       power-dbm
+     |  +--ro rx-channel-power-max?       power-dbm
+     |  +--ro rx-total-power-max?         power-dbm
+     +--rw common-transceiver-param
+     |  +--rw line-coding-bitrate?   identityref
+     |  +--rw tx-channel-power?      power-dbm-or-null
+     |  +--ro rx-channel-power?      power-dbm-or-null
+     |  +--ro rx-total-power?        power-dbm-or-null
+     +--rw common-transceiver-configured-param
+     |  +--rw line-coding-bitrate?   identityref
+     |  +--rw tx-channel-power?      power-dbm-or-null
+     +--rw common-transceiver-readonly-param
+     |  +--ro rx-channel-power?   power-dbm-or-null
+     |  +--ro rx-total-power?     power-dbm-or-null
+     +--rw tunnel-attributes
+     |  +--rw wavelength-assignment?   identityref
+     +--rw frequency-range
+     |  +--rw lower-frequency    frequency-thz
+     |  +--rw upper-frequency    frequency-thz
+     +--rw frequency-range-with-identifier
+     |  +--rw frequency-range-id?   uint16
+     |  +--rw frequency-range
+     |     +--rw lower-frequency    frequency-thz
+     |     +--rw upper-frequency    frequency-thz
+     +--rw path-constraints
+     |  +--rw gsnr-extra-margin?   snr
+     +--rw path-properties
+        +--ro estimated-gsnr?          snr
+        +--ro estimated-eol-gsnr?      snr
+        +--ro estimated-lowest-gsnr?   snr
