@@ -1,0 +1,101 @@
+module test-l0-types {
+  yang-version 1.1;
+  namespace "urn:ietf:params:xml:ns:yang:x";
+  prefix x;
+  import ietf-layer0-types {
+    prefix l0-types;
+  }
+  container x {
+    container wson-label-range {
+      uses l0-types:l0-label-range-info;
+      container label-start-end {
+        container te-label {
+          uses l0-types:wson-label-start-end;
+        }
+      }
+      container label-step {
+        uses l0-types:wson-label-step;
+      }
+    }
+    container wson-label-hop {
+      uses l0-types:wson-label-hop;
+    }
+    container flexi-grid-label-range {
+      uses l0-types:flexi-grid-label-range-info;
+    }
+    container flexi-grid-label-start-end {
+      uses l0-types:flexi-grid-label-start-end;
+    }
+    container label-step {
+      uses l0-types:flexi-grid-label-step;
+    }
+    container flexi-grid-frequency-slot {
+      uses l0-types:flexi-grid-frequency-slot;
+    }
+    container flexi-grid-label-hop {
+      uses l0-types:flexi-grid-label-hop; 
+    }
+    container wdm-label-range {
+      uses l0-types:wdm-label-range-info;
+      container label-start-end {
+        container te-label {
+          uses l0-types:wdm-label-start-end;
+        }
+      }
+      container label-step {
+        uses l0-types:wdm-label-step;
+      }
+    }
+    container wdm-label-hop {
+      uses l0-types:wdm-label-hop;
+    }
+    container transceiver-capabilities {
+      uses l0-types:transceiver-capabilities;
+    }
+    container standard-mode {
+      uses l0-types:standard-mode;
+    }
+    container organizational-mode {
+      uses l0-types:organizational-mode;
+    }
+    container penalty-value {
+      uses l0-types:penalty-value;
+    }
+    container explicit-mode {
+      uses l0-types:explicit-mode;
+    }
+    container common-standard-organizational-mode {
+      uses l0-types:common-standard-organizational-mode;
+    }
+    container transceiver-tuning-range {
+      uses l0-types:transceiver-tuning-range;
+    }
+    container common-all-modes {
+      uses l0-types:common-all-modes;
+    }
+    container common-transceiver-param {
+      uses l0-types:common-transceiver-param;
+    }
+    container common-transceiver-configured-param {
+      uses l0-types:common-transceiver-configured-param;
+    }
+    container common-transceiver-readonly-param {
+      uses l0-types:common-transceiver-readonly-param;
+    }
+    container tunnel-attributes {
+      uses l0-types:tunnel-attributes;
+    }
+    container frequency-range {
+      uses l0-types:frequency-range;
+    }
+    container frequency-range-with-identifier {
+      uses l0-types:frequency-range-with-identifier;
+    }
+    container path-constraints {
+      uses l0-types:path-constraints;
+    }
+    container path-properties {
+      uses l0-types:path-properties;
+    }
+  }
+}
