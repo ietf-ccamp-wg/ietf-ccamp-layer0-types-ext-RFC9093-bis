@@ -56,7 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-  revision 2025-07-31 {
+  revision 2025-08-01 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -1556,12 +1556,17 @@ module ietf-layer0-types {
         "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                    (LSC) Label Switching Routers";
     }
-    uses flexi-grid-label-step {
-      when 'derived-from-or-self(../grid-type, '
+    container flexi-grid-cfg {
+      when 'derived-from-or-self(../../grid-type, '
          + '"l0-types:flexi-grid-dwdm")' {
         description
           "Valid only when grid type is a flexible DWDM grid.";
       }
+      description
+        "The Central Frequency Granularity (CFG) of a flexible DWDM
+         grid (flexi-grid), defined as a multiplier of the Nominal
+         central frequency granularity (NCFG).";
+      uses flexi-grid-label-step;
     }
   }
 

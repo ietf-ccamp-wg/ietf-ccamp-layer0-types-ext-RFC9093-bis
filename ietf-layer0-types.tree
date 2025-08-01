@@ -67,11 +67,12 @@ module: ietf-layer0-types
     +-- cwdm-n?    cwdm-n
     +-- flexi-n?   flexi-n
   grouping wdm-label-step:
-    +-- wson-dwdm-channel-spacing?    identityref
-    +-- wson-cwdm-channel-spacing?    identityref
-    o-- flexi-grid-channel-spacing?   identityref
-    +-- flexi-ncfg?                   identityref
-    +-- flexi-n-step?                 uint8
+    +-- wson-dwdm-channel-spacing?   identityref
+    +-- wson-cwdm-channel-spacing?   identityref
+    +-- flexi-grid-cfg
+       o-- flexi-grid-channel-spacing?   identityref
+       +-- flexi-ncfg?                   identityref
+       +-- flexi-n-step?                 uint8
   grouping wdm-label-hop:
     +-- (grid-type)?
        +--:(fixed-dwdm)

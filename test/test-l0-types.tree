@@ -69,11 +69,12 @@ module: test-l0-types
      |  |     +--rw cwdm-n?    cwdm-n
      |  |     +--rw flexi-n?   flexi-n
      |  +--rw label-step
-     |     +--rw wson-dwdm-channel-spacing?    identityref
-     |     +--rw wson-cwdm-channel-spacing?    identityref
-     |     o--rw flexi-grid-channel-spacing?   identityref
-     |     +--rw flexi-ncfg?                   identityref
-     |     +--rw flexi-n-step?                 uint8
+     |     +--rw wson-dwdm-channel-spacing?   identityref
+     |     +--rw wson-cwdm-channel-spacing?   identityref
+     |     +--rw flexi-grid-cfg
+     |        o--rw flexi-grid-channel-spacing?   identityref
+     |        +--rw flexi-ncfg?                   identityref
+     |        +--rw flexi-n-step?                 uint8
      +--rw wdm-label-hop
      |  +--rw (grid-type)?
      |     +--:(fixed-dwdm)

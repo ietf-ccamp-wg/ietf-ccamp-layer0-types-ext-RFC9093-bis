@@ -527,7 +527,8 @@ This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC8363
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-07-31.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-08-01
+.yang"}
 
 # Security Considerations
 
