@@ -1,7 +1,7 @@
 ---
 coding: utf-8
 
-title: Common YANG Data Types for Layer 0 Networks
+title: Common YANG Data Types for Layer 0 Optical Networks
 
 abbrev: L0 Common YANG Types
 docname: draft-ietf-ccamp-rfc9093-bis-latest
@@ -344,7 +344,7 @@ It is worth noting that there is an inheritance relationship between the Lambda-
 The "ietf-layer0-types" module contains the following YANG reusable YANG data types:
 
 operational-mode:
-: A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in Section 2.5.2 of {{!I-D.ietf-ccamp-optical-impairment-topology-yang}}
+: A YANG data type used to identify an organization (e.g., vendor) specific mode for transceiver capability description, as defined in {{Section 2.6.2 of !I-D.ietf-ccamp-optical-impairment-topology-yang}}
 
 snr:
 : A YANG data type used to represent an (Optical) Signal-to-noise ratio measured over 0.1 nm resolution bandwidth, as defined in {{ITU-T_G.977.1}}
@@ -382,7 +382,7 @@ flexi-grid-label-start-end:
 generic topology model defines the label-start/label-end in
 {{!RFC8795}}.
 : This grouping shows the flexi-grid-specific label-start and label-end information which is used to describe the range of available nominal central frequencies. See {{label-range}} for more details.
-: As described in section 3.1 of {{!RFC8363}}, the range of available nominal central frequencies is advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
+: As described in {{Section 3.1 of !RFC8363}}, the range of available nominal central frequencies is advertised for m=1, which means that for an available central frequency n, the frequency slot from central frequency n-1 to central frequency n+1 is available.
 
 flexi-grid-label-hop:
 : The flexi-grid label range was defined in {{!RFC8363}}, and the
@@ -532,8 +532,8 @@ sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-08-01
 
 # Security Considerations
 
-This section is modeled after the template described in Section 3.7
-of {{?I-D.ietf-netmod-rfc8407bis}}.
+This section is modeled after the template described in {{Section 3.7
+of ?I-D.ietf-netmod-rfc8407bis}}.
 
 The "ietf-layer0-types" YANG module defines a data model that is
 designed to be accessed via YANG-based management protocols, such as
