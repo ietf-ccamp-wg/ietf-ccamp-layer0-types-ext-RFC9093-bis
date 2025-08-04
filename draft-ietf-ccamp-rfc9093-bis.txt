@@ -15,7 +15,7 @@ Expires: 5 February 2026                                  D. Beller, Ed.
                                                            4 August 2025
 
 
-              Common YANG Data Types for Layer 0 Networks
+          Common YANG Data Types for Layer 0 Optical Networks
                   draft-ietf-ccamp-rfc9093-bis-latest
 
 Abstract
@@ -300,7 +300,7 @@ Internet-Draft            L0 Common YANG Types               August 2025
 
    operational-mode:  A YANG data type used to identify an organization
       (e.g., vendor) specific mode for transceiver capability
-      description, as defined in Section 2.5.2 of
+      description, as defined in Section 2.6.2 of
       [I-D.ietf-ccamp-optical-impairment-topology-yang]
 
    snr:  A YANG data type used to represent an (Optical) Signal-to-noise
@@ -352,7 +352,7 @@ Internet-Draft            L0 Common YANG Types               August 2025
       end information which is used to describe the range of available
       nominal central frequencies.  See Section 2.4 for more details.
 
-      As described in section 3.1 of [RFC8363], the range of available
+      As described in Section 3.1 of [RFC8363], the range of available
       nominal central frequencies is advertised for m=1, which means
       that for an available central frequency n, the frequency slot from
       central frequency n-1 to central frequency n+1 is available.
@@ -679,7 +679,7 @@ Internet-Draft            L0 Common YANG Types               August 2025
         described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
         they appear in all capitals, as shown here.";
 
-     revision 2025-08-01 {
+     revision 2025-08-04 {
        description
          "This revision adds the following new identities:
           - cwdm-ch-spc-type;
@@ -788,7 +788,8 @@ Internet-Draft            L0 Common YANG Types               August 2025
 
          ";
        reference
-         "RFC XXXX: Common YANG Data Types for Layer 0 Networks";
+         "RFC XXXX: Common YANG Data Types for Layer 0 Optical
+          Networks";
      }
      revision 2021-08-13 {
        description
@@ -833,7 +834,6 @@ Internet-Draft            L0 Common YANG Types               August 2025
                     DWDM frequency grid, Clause 7.";
      }
 
-     identity flexi-grid-dwdm {
 
 
 
@@ -842,6 +842,7 @@ Belotti, et al.          Expires 5 February 2026               [Page 15]
 Internet-Draft            L0 Common YANG Types               August 2025
 
 
+     identity flexi-grid-dwdm {
        base l0-grid-type;
        description
          "Flexible Dense Wavelength Division Multiplexing (DWDM) grid
@@ -889,7 +890,6 @@ Internet-Draft            L0 Common YANG Types               August 2025
        description
          "100 GHz channel spacing.";
        reference
-         "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
 
 
 
@@ -898,6 +898,7 @@ Belotti, et al.          Expires 5 February 2026               [Page 16]
 Internet-Draft            L0 Common YANG Types               August 2025
 
 
+         "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                     Label Switching Routers, Section 3.2
           ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
                    DWDM frequency grid";
@@ -945,7 +946,6 @@ Internet-Draft            L0 Common YANG Types               August 2025
      identity flexi-ch-spc-6p25ghz {
        base flexi-ch-spc-type;
        status obsolete;
-       description
 
 
 
@@ -954,6 +954,7 @@ Belotti, et al.          Expires 5 February 2026               [Page 17]
 Internet-Draft            L0 Common YANG Types               August 2025
 
 
+       description
          "6.25 GHz channel spacing";
      }
 
@@ -1001,7 +1002,6 @@ Internet-Draft            L0 Common YANG Types               August 2025
      }
 
      identity modulation {
-       description
 
 
 
@@ -1010,6 +1010,7 @@ Belotti, et al.          Expires 5 February 2026               [Page 18]
 Internet-Draft            L0 Common YANG Types               August 2025
 
 
+       description
          "base identity for modulation type.";
      }
 
@@ -1057,7 +1058,6 @@ Internet-Draft            L0 Common YANG Types               August 2025
          "16 symbols Dual Polarization Quadrature Amplitude
           Modulation (DP-QAM16).";
      }
-
 
 
 
