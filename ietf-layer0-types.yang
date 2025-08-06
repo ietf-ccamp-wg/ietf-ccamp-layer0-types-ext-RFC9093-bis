@@ -56,7 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-  revision 2025-08-04 {
+  revision 2025-08-06 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -1181,7 +1181,7 @@ module ietf-layer0-types {
         type identityref {
           base flexi-slot-width-granularity;
         }
-        default "flexi-swg-12p5ghz";
+        default "l0-types:flexi-swg-12p5ghz";
         description
           "Minimum space between slot widths.";
         reference
@@ -1276,7 +1276,7 @@ module ietf-layer0-types {
       type identityref {
         base flexi-ch-spc-type;
       }
-      default "flexi-ch-spc-6p25ghz";
+      default "l0-types:flexi-ch-spc-6p25ghz";
       status obsolete;
       description
         "Label-step is the nominal central frequency granularity
@@ -1289,7 +1289,7 @@ module ietf-layer0-types {
       type identityref {
         base flexi-ncfg-type;
       }
-      default "flexi-ncfg-6p25ghz";
+      default "l0-types:flexi-ncfg-6p25ghz";
       description
         "Label-step is the nominal central frequency granularity
          (GHz), e.g., 6.25 GHz.";
@@ -1397,7 +1397,7 @@ module ietf-layer0-types {
         type identityref {
           base flexi-slot-width-granularity;
         }
-        default "flexi-swg-12p5ghz";
+        default "l0-types:flexi-swg-12p5ghz";
         description
           "Minimum space between slot widths.";
         reference
