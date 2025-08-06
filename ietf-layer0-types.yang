@@ -8,8 +8,6 @@ module ietf-layer0-types {
     reference
       "RFC YYYY: Common YANG Data Types for Traffic Engineering";
   }
-  // RFC Editor: replace YYYY with actual RFC number assigned to
-  // [I-D.ietf-teas-rfc8776-update] and remove this note
 
   organization
     "IETF CCAMP Working Group";
@@ -58,12 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-// RFC Ed.: replace XXXX with actual RFC number and remove
-// this note
-
-// replace the revision date with the module publication date
-// the format is (year-month-day)
-  revision 2025-07-22 {
+  revision 2025-08-04 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -157,9 +150,9 @@ module ietf-layer0-types {
        (bug fixing).
       ";
     reference
-      "RFC XXXX: Common YANG Data Types for Layer 0 Networks";
+      "RFC XXXX: Common YANG Data Types for Layer 0 Optical
+       Networks";
   }
-
   revision 2021-08-13 {
     description
       "Initial version";
@@ -167,9 +160,9 @@ module ietf-layer0-types {
       "RFC 9093: A YANG Data Model for Layer 0 Types";
   }
 
-/*
- * Identities
- */
+  /*
+   * Identities
+   */
 
   identity l0-grid-type {
     description
@@ -181,38 +174,39 @@ module ietf-layer0-types {
                 CWDM wavelength grid";
   }
 
-    identity wson-grid-cwdm {
-      base l0-grid-type;
-      description
-        "Coarse Wavelength Division Multiplexing (CWDM) grid.";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers
-        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-                   CWDM wavelength grid";
-    }
+  identity wson-grid-cwdm {
+    base l0-grid-type;
+    description
+      "Coarse Wavelength Division Multiplexing (CWDM) grid.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers
+       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
+                 CWDM wavelength grid";
+  }
 
-    identity wson-grid-dwdm {
-      base l0-grid-type;
-      description
-        "Fixed Dense Wavelength Division Multiplexing (DWDM) grid.";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                   (LSC), Label Switching Routers
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid, Clause 7.";
-    }
+  identity wson-grid-dwdm {
+    base l0-grid-type;
+    description
+      "Fixed Dense Wavelength Division Multiplexing (DWDM) grid.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                 (LSC), Label Switching Routers
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid, Clause 7.";
+  }
 
-    identity flexi-grid-dwdm {
-      base l0-grid-type;
-      description
-                "Flexible Dense Wavelength Division Multiplexing (DWDM) grid (flexi-grid).";
-      reference
-        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                   Switch Capable (LSC) Label Switching Routers
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                  DWDM frequency grid, Clause 8";
-    }
+  identity flexi-grid-dwdm {
+    base l0-grid-type;
+    description
+      "Flexible Dense Wavelength Division Multiplexing (DWDM) grid
+       (flexi-grid).";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                DWDM frequency grid, Clause 8";
+  }
 
   identity cwdm-ch-spc-type {
     description
@@ -224,16 +218,16 @@ module ietf-layer0-types {
                  CWDM wavelength grid";
   }
 
-    identity cwdm-20nm {
-      base cwdm-ch-spc-type;
-      description
-        "20nm channel spacing";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers, Section 3.3
-        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-                  CWDM wavelength grid";
-    }
+  identity cwdm-20nm {
+    base cwdm-ch-spc-type;
+    description
+      "20nm channel spacing";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers, Section 3.3
+       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
+                CWDM wavelength grid";
+  }
 
   identity dwdm-ch-spc-type {
     description
@@ -245,62 +239,62 @@ module ietf-layer0-types {
                  DWDM frequency grid";
   }
 
-    identity dwdm-100ghz {
-      base dwdm-ch-spc-type;
-      description
-        "100 GHz channel spacing.";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers, Section 3.2
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                  DWDM frequency grid";
-    }
+  identity dwdm-100ghz {
+    base dwdm-ch-spc-type;
+    description
+      "100 GHz channel spacing.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers, Section 3.2
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                DWDM frequency grid";
+  }
 
-    identity dwdm-50ghz {
-      base dwdm-ch-spc-type;
-      description
-        "50 GHz channel spacing.";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers, Section 3.2
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid";
-    }
+  identity dwdm-50ghz {
+    base dwdm-ch-spc-type;
+    description
+      "50 GHz channel spacing.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers, Section 3.2
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid";
+  }
 
-    identity dwdm-25ghz {
-      base dwdm-ch-spc-type;
-      description
-        "25 GHz channel spacing.";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers, Section 3.2
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid";
-    }
+  identity dwdm-25ghz {
+    base dwdm-ch-spc-type;
+    description
+      "25 GHz channel spacing.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers, Section 3.2
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid";
+  }
 
-    identity dwdm-12p5ghz {
-      base dwdm-ch-spc-type;
-      description
-        "12.5 GHz channel spacing."; 
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                   Label Switching Routers, Section 3.2
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid";
-    }
+  identity dwdm-12p5ghz {
+    base dwdm-ch-spc-type;
+    description
+      "12.5 GHz channel spacing.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers, Section 3.2
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid";
+  }
 
   identity flexi-ch-spc-type {
-    status deprecated;
+    status obsolete;
     description
       "Flexi-grid channel-spacing type";
   }
 
-    identity flexi-ch-spc-6p25ghz {
-      base flexi-ch-spc-type;
-      status deprecated;
-      description
-        "6.25 GHz channel spacing";
-    }
+  identity flexi-ch-spc-6p25ghz {
+    base flexi-ch-spc-type;
+    status obsolete;
+    description
+      "6.25 GHz channel spacing";
+  }
 
   identity flexi-ncfg-type {
     description
@@ -308,21 +302,21 @@ module ietf-layer0-types {
        type.";
     reference
       "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                  Switch Capable (LSC) Label Switching Routers
-      ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                  DWDM frequency grid";
+                 Switch Capable (LSC) Label Switching Routers
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid";
   }
 
-    identity flexi-ncfg-6p25ghz {
-      base flexi-ncfg-type;
-      description
-        "6.25 GHz Nominal Central Frequency Granularity (NCFG).";
-      reference
-        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                   Switch Capable (LSC) Label Switching Routers
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid";
-    }
+  identity flexi-ncfg-6p25ghz {
+    base flexi-ncfg-type;
+    description
+      "6.25 GHz Nominal Central Frequency Granularity (NCFG).";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid";
+  }
 
   identity flexi-slot-width-granularity {
     description
@@ -330,96 +324,96 @@ module ietf-layer0-types {
     reference
       "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
                  Switch Capable (LSC) Label Switching Routers
-      ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
                  DWDM frequency grid";
   }
 
-    identity flexi-swg-12p5ghz {
-      base flexi-slot-width-granularity;
-      description
-        "12.5 GHz slot width granularity.";
-      reference
-        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                   Switch Capable (LSC) Label Switching Routers
-        ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
-                   DWDM frequency grid";
-    }
+  identity flexi-swg-12p5ghz {
+    base flexi-slot-width-granularity;
+    description
+      "12.5 GHz slot width granularity.";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers
+       ITU-T G.694.1 (10/2020): Spectral grids for WDM applications:
+                 DWDM frequency grid";
+  }
 
   identity modulation {
     description
       "base identity for modulation type.";
   }
 
-    identity dpsk {
-      base modulation;
-      description
-        "Differential Phase Shift Keying (DPSK) modulation.";
-    }
+  identity dpsk {
+    base modulation;
+    description
+      "Differential Phase Shift Keying (DPSK) modulation.";
+  }
 
-    identity qpsk {
-      base modulation;
-      description
-        "Quadrature Phase Shift Keying (QPSK) modulation.";
-    }
+  identity qpsk {
+    base modulation;
+    description
+      "Quadrature Phase Shift Keying (QPSK) modulation.";
+  }
 
-    identity dp-qpsk {
-      base modulation;
-      description
-        "Dual Polarization Quadrature Phase Shift Keying
-         (DP-QPSK) modulation.";
-    }
+  identity dp-qpsk {
+    base modulation;
+    description
+      "Dual Polarization Quadrature Phase Shift Keying
+       (DP-QPSK) modulation.";
+  }
 
-    identity qam8 {
-      base modulation;
-      description
-        "8 symbols Quadrature Amplitude Modulation (8QAM).";
-    }
+  identity qam8 {
+    base modulation;
+    description
+      "8 symbols Quadrature Amplitude Modulation (8QAM).";
+  }
 
-    identity dp-qam8 {
-      base modulation;
-      description
-        "8 symbols Dual Polarization Quadrature Amplitude
-         Modulation (DP-QAM8).";
-    }
+  identity dp-qam8 {
+    base modulation;
+    description
+      "8 symbols Dual Polarization Quadrature Amplitude
+       Modulation (DP-QAM8).";
+  }
 
-    identity qam16 {
-      base modulation;
-      description
-        "16 symbols Quadrature Amplitude Modulation (QAM16).";
-    }
+  identity qam16 {
+    base modulation;
+    description
+      "16 symbols Quadrature Amplitude Modulation (QAM16).";
+  }
 
-    identity dp-qam16 {
-      base modulation;
-      description
-        "16 symbols Dual Polarization Quadrature Amplitude
-         Modulation (DP-QAM16).";
-    }
+  identity dp-qam16 {
+    base modulation;
+    description
+      "16 symbols Dual Polarization Quadrature Amplitude
+       Modulation (DP-QAM16).";
+  }
 
-    identity qam32 {
-      base modulation;
-      description
-        "32 symbols Quadrature Amplitude Modulation (QAM32)";
-    }
+  identity qam32 {
+    base modulation;
+    description
+      "32 symbols Quadrature Amplitude Modulation (QAM32)";
+  }
 
-    identity dp-qam32 {
-      base modulation;
-      description
-        "32 symbols Dual Polarization Quadrature Amplitude
-         Modulation (DP-QAM32).";
-    }
+  identity dp-qam32 {
+    base modulation;
+    description
+      "32 symbols Dual Polarization Quadrature Amplitude
+       Modulation (DP-QAM32).";
+  }
 
-    identity qam64 {
-      base modulation;
-      description
-        "64 symbols Quadrature Amplitude Modulation (QAM64).";
-    }
+  identity qam64 {
+    base modulation;
+    description
+      "64 symbols Quadrature Amplitude Modulation (QAM64).";
+  }
 
-    identity dp-qam64 {
-      base modulation;
-      description
-        "64 symbols Dual Polarization Quadrature Amplitude
-         Modulation (DP-QAM64).";
-    }
+  identity dp-qam64 {
+    base modulation;
+    description
+      "64 symbols Dual Polarization Quadrature Amplitude
+       Modulation (DP-QAM64).";
+  }
 
   identity fec-type {
     description
@@ -427,72 +421,72 @@ module ietf-layer0-types {
        (FEC) type identities are derived.";
   }
 
-    identity g-fec {
-      base fec-type;
-      description
-        "Generic Forward Error Correction (G-FEC).";
-      reference
-        "ITU-T G.975 v2.0 (10/2000): Forward error correction for
-                     submarine systems.";
-    }
+  identity g-fec {
+    base fec-type;
+    description
+      "Generic Forward Error Correction (G-FEC).";
+    reference
+      "ITU-T G.975 v2.0 (10/2000): Forward error correction for
+                   submarine systems.";
+  }
 
-    identity super-fec {
-      base fec-type;
-      description
-        "Super Forward Error Correction (S-FEC).";
-      reference
-        "ITU-T G.975.1 v1.2 (07/2013): Forward error correction for
-                       high bit-rate DWDM submarine systems.";
-    }
+  identity super-fec {
+    base fec-type;
+    description
+      "Super Forward Error Correction (S-FEC).";
+    reference
+      "ITU-T G.975.1 v1.2 (07/2013): Forward error correction for
+                     high bit-rate DWDM submarine systems.";
+  }
 
-    identity no-fec {
-      base fec-type;
-      description
-        "No FEC.";
-    }
+  identity no-fec {
+    base fec-type;
+    description
+      "No FEC.";
+  }
 
-    identity sc-fec {
-      base fec-type;
-      description
-        "Staircase Forward Error Correction (SC-FEC).";
-      reference
-        "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach
-                        interface.";
-    }
+  identity sc-fec {
+    base fec-type;
+    description
+      "Staircase Forward Error Correction (SC-FEC).";
+    reference
+      "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach
+                      interface.";
+  }
 
-    identity o-fec {
-      base fec-type;
-      description
-        "Open Forward Error Correction (O-FEC) which reuses the
-         Bose, Chaudhuri and Hocquenghem (BCH) FEC.";
-      reference
-        "ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
-                 long-reach interfaces, Clause 16.4.4
-         ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
-                 long-reach interfaces, Annex E";
-    }
+  identity o-fec {
+    base fec-type;
+    description
+      "Open Forward Error Correction (O-FEC) which reuses the
+       Bose, Chaudhuri and Hocquenghem (BCH) FEC.";
+    reference
+      "ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
+               long-reach interfaces, Clause 16.4.4
+       ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
+               long-reach interfaces, Annex E";
+  }
 
-    identity c-fec {
-      base fec-type;
-      description
-        "Concatenated FEC (C-FEC) that combines an outer Staircase
-         Forward Error Correction (SC-FEC) code and an inner
-         double-extended SD-FEC (128,119) Hamming code.
+  identity c-fec {
+    base fec-type;
+    description
+      "Concatenated FEC (C-FEC) that combines an outer Staircase
+       Forward Error Correction (SC-FEC) code and an inner
+       double-extended SD-FEC (128,119) Hamming code.
 
-         More details are provided in clause 15/G.709.3 where it is
-         called DSH instead of concatenated FEC.";
-      reference
-        "ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach
-                     interface, Annex A
-         ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach 
-                     interfaces, Annex D
-         ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach
-                     interfaces, Clause 15";
-    }
+       More details are provided in clause 15/G.709.3 where it is
+       called DSH instead of concatenated FEC.";
+    reference
+      "ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach
+                   interface, Annex A
+       ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach
+                   interfaces, Annex D
+       ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach
+                   interfaces, Clause 15";
+  }
 
   identity line-coding {
     description
-      "Base identity to defined the bit rate/line coding of optical
+      "Base identity to define the bit rate/line coding of optical
        tributary signals.";
     reference
       "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
@@ -501,130 +495,129 @@ module ietf-layer0-types {
                     transport network, Clause 7.1.2";
   }
 
-    identity nrz-2p5g {
-      base line-coding;
-      description
-        "The non return to zero (NRZ) bit rate/line coding used by
-         the optical tributary signal class NRZ 2.5G.";
-      reference
-        "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
-                        physical layer interfaces, Clause 3.2.6";
-    }
+  identity nrz-2p5g {
+    base line-coding;
+    description
+      "The non return to zero (NRZ) bit rate/line coding used by
+       the optical tributary signal class NRZ 2.5G.";
+    reference
+      "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
+                      physical layer interfaces, Clause 3.2.6";
+  }
 
-    identity nrz-otu1 {
-      base line-coding;
-      description
-        "The Non-Return to Zero (NRZ) bit rate/line coding used by
-         the Optical channel Transport Unit order 1 (OTU1) optical
-         tributary signals.";
-      reference
-        "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
-                     physical layer interfaces, Clause 7.2.1.2";
-    }
+  identity nrz-otu1 {
+    base line-coding;
+    description
+      "The Non-Return to Zero (NRZ) bit rate/line coding used by
+       the Optical channel Transport Unit order 1 (OTU1) optical
+       tributary signals.";
+    reference
+      "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
+                   physical layer interfaces, Clause 7.2.1.2";
+  }
 
-    identity nrz-10g {
-      description
-        "The non return to zero (NRZ) bit rate/line coding used by
-         the optical tributary signal class NRZ 10G.";
-      reference
-        "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
-                     physical layer interfaces, Clause 3.2.7"; 
-    }
+  identity nrz-10g {
+    description
+      "The non return to zero (NRZ) bit rate/line coding used by
+       the optical tributary signal class NRZ 10G.";
+    reference
+      "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
+                   physical layer interfaces, Clause 3.2.7";
+  }
 
-    identity nrz-otu2 {
-      base line-coding;
-      description
-        "The non return to zero (NRZ) bit rate/line coding used by
-         the Optical channel Transport Unit order 2 (OTU2) optical
-         tributary signals.";
-      reference
-        "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
-                     physical layer interfaces, Clause 7.2.1.2";
-    }
+  identity nrz-otu2 {
+    base line-coding;
+    description
+      "The non return to zero (NRZ) bit rate/line coding used by
+       the Optical channel Transport Unit order 2 (OTU2) optical
+       tributary signals.";
+    reference
+      "ITU-T G.959.1 v8.0 (07/2018): Optical transport network
+                   physical layer interfaces, Clause 7.2.1.2";
+  }
 
-    identity otl4.4-sc {
-      base line-coding;
-      description
-        "The bit rate/line coding used by optical tributary
-         signals carrying a 100G Optical Transport Unit order 4
-         (OTU4) with Staircase Forward Error Correction (SC FEC)
-         from a group of four Optical Transport Lanes (OTL).";
-      reference
-        "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
-                     wavelength division multiplexing applications
-                     with single channel optical interfaces Optical
-                     transport network, Clause 3.2.1";
-    }
+  identity otl4.4-sc {
+    base line-coding;
+    description
+      "The bit rate/line coding used by optical tributary
+       signals carrying a 100G Optical Transport Unit order 4
+       (OTU4) with Staircase Forward Error Correction (SC FEC)
+       from a group of four Optical Transport Lanes (OTL).";
+    reference
+      "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
+                   wavelength division multiplexing applications
+                   with single channel optical interfaces Optical
+                   transport network, Clause 3.2.1";
+  }
 
-    identity foic1.4-sc {
-      base line-coding;
-      description
-        "The bit rate/line coding used by optical tributary signals
-         carrying a FlexO Interface of order C1 with 4 lanes
-         (FOIC1.1) with Staircase Forward Error Correction
-         (SC FEC).";
-      reference
-        "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
-                     wavelength division multiplexing applications
-                     with single channel optical interfaces Optical
-                     transport network, Clause 3.2.1";
-    }
+  identity foic1.4-sc {
+    base line-coding;
+    description
+      "The bit rate/line coding used by optical tributary signals
+       carrying a FlexO Interface of order C1 with 4 lanes
+       (FOIC1.1) with Staircase Forward Error Correction
+       (SC FEC).";
+    reference
+      "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
+                   wavelength division multiplexing applications
+                   with single channel optical interfaces Optical
+                   transport network, Clause 3.2.1";
+  }
 
   identity wavelength-assignment {
     description
-      "Wavelength selection base.";
+      "Base identity for Wavelength Assignment (WA) method.";
     reference
       "RFC 7689: Signaling Extensions for Wavelength Switched
                  Optical Networks";
   }
 
-    identity first-fit-wavelength-assignment {
-      base wavelength-assignment;
-      description
-        "All the available wavelengths are numbered,
-         and this Wavelength Assignment (WA) method chooses
-         the available wavelength with the lowest index.";
-      reference
-        "RFC 7689: Signaling Extensions for Wavelength Switched
-                   Optical Networks";
-    }
+  identity first-fit-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "All the available wavelengths are numbered, and this WA
+       method chooses the available wavelength with the lowest
+       index.";
+    reference
+      "RFC 7689: Signaling Extensions for Wavelength Switched
+                 Optical Networks";
+  }
 
-    identity random-wavelength-assignment {
-      base wavelength-assignment;
-      description
-        "This WA method chooses an available
-         wavelength randomly.";
-      reference
-        "RFC 7689: Signaling Extensions for Wavelength Switched
-                   Optical Networks";
-    }
+  identity random-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "This WA method chooses an available wavelength randomly.";
+    reference
+      "RFC 7689: Signaling Extensions for Wavelength Switched
+                 Optical Networks";
+  }
 
-    identity least-loaded-wavelength-assignment {
-      base wavelength-assignment;
-      description
-        "This WA method selects the wavelength that
-         has the largest residual capacity on the most loaded
-         link along the route (in multi-fiber networks).";
-      reference
-        "RFC 7689: Signaling Extensions for Wavelength Switched
-                   Optical Networks";
-    }
+  identity least-loaded-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "This WA method selects the wavelength that
+       has the largest residual capacity on the most loaded
+       link along the route (in multi-fiber networks).";
+    reference
+      "RFC 7689: Signaling Extensions for Wavelength Switched
+                 Optical Networks";
+  }
 
-    identity lower-first-wavelength-assignment {
-      base wavelength-assignment;
-      description
-        "Allocate wavelengths in ascending order, beginning from the
-         lowest frequency and progressing toward the highest frequency
-         within the permissible frequency range.";
-    }
+  identity lower-first-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "Allocate wavelengths in ascending order, beginning from the
+       lowest frequency and progressing toward the highest
+       frequency within the permissible frequency range.";
+  }
 
-    identity upper-first-wavelength-assignment {
-      base wavelength-assignment;
-      description
-        "Allocate wavelengths in decending order, beginning from the
-         highest frequency and progressing toward the lowest frequency
-         within the permissible frequency range.";
-    }
+  identity upper-first-wavelength-assignment {
+    base wavelength-assignment;
+    description
+      "Allocate wavelengths in descending order, beginning from the
+       highest frequency and progressing toward the lowest
+       frequency within the permissible frequency range.";
+  }
 
   identity type-power-mode {
     description
@@ -632,17 +625,17 @@ module ietf-layer0-types {
        Optical Multiplex Section (OMS) and its elements.";
   }
 
-    identity power-spectral-density {
-      base type-power-mode;
-      description
-        "All elements must use power spectral density (W/Hz).";
-    }
+  identity power-spectral-density {
+    base type-power-mode;
+    description
+      "All elements must use power spectral density (W/Hz).";
+  }
 
-    identity carrier-power {
-      base type-power-mode;
-      description
-        "All elements must use power (dBm).";
-    }
+  identity carrier-power {
+    base type-power-mode;
+    description
+      "All elements must use power (dBm).";
+  }
 
   identity switching-wson-lsc {
     base te-types:switching-lsc;
@@ -650,9 +643,9 @@ module ietf-layer0-types {
       "Wavelength Switched Optical Network Lambda-Switch Capable
        (WSON-LSC).";
     reference
-      "RFC 7688: GMPLS OSPF Enhancement for Signal and
-                 Network Element Compatibility for Wavelength Switched Optical
-                 Networks, Section 3";
+      "RFC 7688: GMPLS OSPF Enhancement for Signal and Network
+                 Element Compatibility for Wavelength Switched
+                 Optical Networks, Section 3";
   }
 
   identity switching-flexi-grid-lsc {
@@ -660,14 +653,14 @@ module ietf-layer0-types {
     description
       "Flexi-grid Lambda-Switch Capable (Flexi-Grid-LSC).";
     reference
-      "RFC 8363: GMPLS OSPF-TE Extensions in Support
-                 of Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
+      "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
+                 Dense Wavelength Division Multiplexing (DWDM)
                  Networks, Section 4.1";
   }
 
-/*
- * Typedefs
- */
+  /*
+   * Typedefs
+   */
 
   typedef dwdm-n {
     type int16;
@@ -718,8 +711,7 @@ module ietf-layer0-types {
 
        where 193100.000 GHz (193.100000 THz) is the ITU-T 'anchor
        frequency' for transmission over the DWDM grid, and where
-       NCFG is defined by the flexi-ncfg-type, or by the deprecated
-       flexi-ch-spc-type.";
+       NCFG is defined by the flexi-ncfg-type.";
     reference
       "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
                  Switch Capable (LSC) Label Switching Routers
@@ -748,13 +740,13 @@ module ietf-layer0-types {
     description
       "Identifies an ITU-T G.698.2 standard application code.
 
-      It MUST be a string with a format that follows the
-      nomenclature defined in clause 5.3 of ITU-T G.698.2."; 
+       It MUST be a string with a format that follows the
+       nomenclature defined in clause 5.3 of ITU-T G.698.2.";
     reference
-        "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
-                     wavelength division multiplexing applications
-                     with single channel optical interfaces Optical
-                     transport network, Clause 5.3";
+      "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
+                   wavelength division multiplexing applications
+                   with single channel optical interfaces Optical
+                   transport network, Clause 5.3";
   }
 
   typedef organization-identifier {
@@ -763,29 +755,22 @@ module ietf-layer0-types {
       "vendor/organization identifier that uses a private mode
        out of already defined in G.698.2 ITU-T application-code";
     reference
-      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                  Topology, Section 2.5.2";
   }
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
 
   typedef operational-mode {
     type string;
     description
       "Identifies an organization (e.g., vendor) specific mode.
 
-      The format of the string has to be defined by the
-      organization which is responsible for defining the
-      corresponding optical interface specification.";
+       The format of the string has to be defined by the
+       organization which is responsible for defining the
+       corresponding optical interface specification.";
     reference
-      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                  Topology, Section 2.5.2";
   }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
 
   typedef frequency-thz {
     type decimal64 {
@@ -813,8 +798,8 @@ module ietf-layer0-types {
        resolution bandwidth.";
     reference
       "ITU-T G.977.1 (02/2021): Transverse compatible dense
-                 wavelength division multiplexing applications for repeatered
-                 optical fibre submarine cable systems";
+                 wavelength division multiplexing applications for
+                 repeatered optical fibre submarine cable systems";
   }
 
   typedef snr-or-null {
@@ -944,7 +929,7 @@ module ietf-layer0-types {
     description
       "The power spectral density (PSD).
 
-      Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
+       Typical value : 3.9 E-14, resolution 0.1nW/MHz.";
     reference
       "ITU-T G.9700 (07/2019): Fast access to subscriber terminals
                     (G.fast) - Power spectral density specification";
@@ -978,29 +963,73 @@ module ietf-layer0-types {
        known or an empty value when the value is not known.";
   }
 
-/*
- * Groupings
- */
+  /*
+   * Groupings
+   */
 
-  grouping wdm-label-start-end {
+  grouping l0-label-range-info {
     description
-      "The WDM label-start or label-end used to specify DWDM and
-       CWDM label range.";
+      "Common grouping used to define WSON, flexi-grid and WDM label
+       ranges.
 
+       When used to define a WSON label range, this grouping SHOULD
+       be used together with the wson-label-start-end and
+       wson-label-step groupings to provide WSON technology-specific
+       label information to the models which use the
+       label-restriction-info grouping defined in the module
+       ietf-te-types.";
+    leaf grid-type {
+      type identityref {
+        base l0-grid-type;
+      }
+      description
+        "The type of WDM grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC), Label Switching Routers
+         ITU-T G.694.2 (12/2003): Spectral grids for WDM
+                   applications: CWDM wavelength grid";
+    }
+    leaf priority {
+      type uint8;
+      description
+        "Priority in Interface Switching Capability Descriptor
+         (ISCD).";
+      reference
+        "RFC 4203: OSPF Extensions in Support of Generalized
+                   Multi-Protocol Label Switching (GMPLS)";
+    }
+  }
+
+  grouping wson-label-start-end {
+    description
+      "The WSON label-start or label-end used to specify WSON label
+       range.
+
+       This grouping is dependent on the range-type defined in the
+       l0-label-range-info grouping.
+
+       This grouping SHOULD be used together with the
+       l0-label-range-info and wson-label-step groupings to provide
+       WSON technology-specific label information to the models which
+       use the label-restriction-info grouping defined in the module
+       ietf-te-types.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers";
     choice grid-type {
       description
-        "Label for fixed & flexi-DWDM or CWDM grid";
-      case fixed-dwdm {
+        "Label for DWDM or CWDM grid";
+      case dwdm {
         leaf dwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             + "l0-types:wson-grid-dwdm)" {
+          when 'derived-from-or-self(../../../grid-type, '
+             + '"l0-types:wson-grid-dwdm")' {
             description
               "Valid only when grid type is DWDM.";
           }
           type dwdm-n;
           description
-            "The given value 'N' is used to determine the
-             nominal central frequency.";
+            "The central frequency of DWDM.";
           reference
             "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                        (LSC) Label Switching Routers";
@@ -1008,39 +1037,46 @@ module ietf-layer0-types {
       }
       case cwdm {
         leaf cwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             + "l0-types:wson-grid-cwdm)" {
+          when 'derived-from-or-self(../../../grid-type, '
+             + '"l0-types:wson-grid-cwdm")' {
             description
               "Valid only when grid type is CWDM.";
           }
           type cwdm-n;
           description
-            "The given value 'N' is used to determine the nominal
-             central wavelength.";
+            "Channel wavelength computing input.";
           reference
             "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
+                      (LSC) Label Switching Routers";
         }
       }
-      case flexi-grid {
-        uses flexi-grid-label-start-end;
-      }
     }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers";
   }
 
-  grouping wdm-label-step {
+  grouping wson-label-step {
     description
-      "Label step information for fixed & flexi-DWDM or CWDM grid";
+      "Label step information for WSON.
+
+       This grouping is dependent on the range-type defined in the
+       l0-label-range-info grouping.
+
+       This grouping SHOULD be used together with the
+       l0-label-range-info and wson-label-start-end groupings to
+       provide WSON technology-specific label information to the
+       models which use the label-restriction-info grouping defined
+       in the module ietf-te-types.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers
+       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
+                CWDM wavelength grid";
     choice l0-grid-type {
       description
         "Grid type: DWDM, CWDM, etc.";
-      case fixed-dwdm {
+      case dwdm {
         leaf wson-dwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-              + "l0-types:wson-grid-dwdm)" {
+          when 'derived-from-or-self(../../grid-type, '
+             + '"l0-types:wson-grid-dwdm")' {
             description
               "Valid only when grid type is DWDM.";
           }
@@ -1052,13 +1088,13 @@ module ietf-layer0-types {
              50.000, 25.000, or 12.500 GHz for DWDM.";
           reference
             "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                      (LSC) Label Switching Routers";
+                       (LSC) Label Switching Routers";
         }
       }
       case cwdm {
         leaf wson-cwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-             + "l0-types:wson-grid-cwdm)" {
+          when 'derived-from-or-self(../../grid-type, '
+             + '"l0-types:wson-grid-cwdm")' {
             description
               "Valid only when grid type is CWDM.";
           }
@@ -1070,33 +1106,484 @@ module ietf-layer0-types {
              for CWDM, which is the only value defined for CWDM.";
           reference
             "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                      (LSC) Label Switching Routers";
+        }
+      }
+    }
+  }
+
+  grouping wson-label-hop {
+    description
+      "Generic label-hop information for WSON.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers";
+    choice grid-type {
+      description
+        "Label for DWDM or CWDM grid.";
+      case dwdm {
+        choice single-or-super-channel {
+          description
+            "Single or super channel.";
+          case single {
+            leaf dwdm-n {
+              type dwdm-n;
+              description
+                "The given value 'N' is used to determine the
+                 nominal central frequency.";
+              reference
+                "ITU-T G.694.1 (10/2020): Spectral grids for WDM
+                               applications: DWDM frequency grid";
+            }
+          }
+          case super {
+            leaf-list subcarrier-dwdm-n {
+              type dwdm-n;
+              description
+                "The given values 'N' are used to determine the
+                 nominal central frequency for each subcarrier
+                 channel.";
+              reference
+                "ITU-T G.694.1 (10/2020): Spectral grids for WDM
+                               applications: DWDM frequency grid";
+            }
+          }
+        }
+      }
+      case cwdm {
+        leaf cwdm-n {
+          type cwdm-n;
+          description
+            "The given value 'N' is used to determine the nominal
+             central wavelength.";
+          reference
+            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
                        (LSC) Label Switching Routers";
         }
       }
-      case flexi-grid {
-        uses flexi-grid-label-step;
+    }
+  }
+
+  grouping flexi-grid-label-range-info {
+    description
+      "Flexi-grid-specific label range related information.
+
+       This grouping SHOULD be used together with the
+       flexi-grid-label-start-end and flexi-grid-label-step groupings
+       to provide flexi-grid technology-specific label information to
+       the models which use the label-restriction-info grouping
+       defined in the module ietf-te-types.";
+    uses l0-label-range-info;
+    container flexi-grid {
+      description
+        "flexi-grid definition";
+      leaf slot-width-granularity {
+        type identityref {
+          base flexi-slot-width-granularity;
+        }
+        default "flexi-swg-12p5ghz";
+        description
+          "Minimum space between slot widths.";
+        reference
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
+      }
+      leaf min-slot-width-factor {
+        type uint16 {
+          range "1..max";
+        }
+        description
+          "A multiplier of the slot width granularity, indicating
+           the minimum slot width supported by an optical port.
+
+           Minimum slot width is calculated by:
+             Minimum slot width (GHz) =
+               min-slot-width-factor * slot-width-granularity.";
+        reference
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
+      }
+      leaf max-slot-width-factor {
+        type uint16 {
+          range "1..max";
+        }
+        must '. >= ../min-slot-width-factor' {
+          error-message
+            "Maximum slot width must be greater than or equal to
+             minimum slot width.";
+        }
+        description
+          "A multiplier of the slot width granularity, indicating
+           the maximum slot width supported by an optical port.
+
+           Maximum slot width is calculated by:
+             Maximum slot width (GHz) =
+               max-slot-width-factor * slot-width-granularity
+
+           If specified, maximum slot width must be greater than or
+           equal to minimum slot width.  If not specified, maximum
+           slot width is equal to minimum slot width.";
+        reference
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
       }
     }
+  }
+
+  grouping flexi-grid-label-start-end {
+    description
+      "Common grouping used to define the value 'N' which is used to
+       determine the nominal central frequency (e.g., as the
+       flexi-grid label-start or label-end used to specify flexi-grid
+       label range).
+
+       When used to define a flexi-grid label range, this grouping
+       SHOULD be used together with the flexi-grid-label-range-info
+       and flexi-grid-label-step groupings to provide flexi-grid
+       technology-specific label information to the models which use
+       the label-restriction-info grouping defined in the module
+       ietf-te-types.";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers";
+    leaf flexi-n {
+      type flexi-n;
+      description
+        "The given value 'N' is used to determine the nominal
+         central frequency.
+
+         As described in Section 3.1 of RFC 8363, the range of
+         available nominal central frequencies are advertised for
+         m=1, which means that for an available central frequency n,
+         the frequency slot from central frequency n-1 to central
+         frequency n+1 is available.";
+    }
+  }
+
+  grouping flexi-grid-label-step {
+    description
+      "Label step information for flexi-grid label ranges.
+
+       This grouping SHOULD be used together with the
+       flexi-grid-label-range-info and flexi-grid-label-start-end
+       groupings to provide flexi-grid technology-specific label
+       information to the models which use the label-restriction-info
+       grouping defined in the module ietf-te-types.";
+    leaf flexi-grid-channel-spacing {
+      type identityref {
+        base flexi-ch-spc-type;
+      }
+      default "flexi-ch-spc-6p25ghz";
+      status obsolete;
+      description
+        "Label-step is the nominal central frequency granularity
+         (GHz), e.g., 6.25 GHz.";
+      reference
+        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                   Switch Capable (LSC) Label Switching Routers";
+    }
+    leaf flexi-ncfg {
+      type identityref {
+        base flexi-ncfg-type;
+      }
+      default "flexi-ncfg-6p25ghz";
+      description
+        "Label-step is the nominal central frequency granularity
+         (GHz), e.g., 6.25 GHz.";
+      reference
+        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                   Switch Capable (LSC) Label Switching Routers";
+    }
+    leaf flexi-n-step {
+      type uint8;
+      description
+        "This attribute defines the multiplier for the supported
+         values of 'N'.
+
+         For example, given a grid with a nominal central frequency
+         granularity of 6.25 GHz, the granularity of the supported
+         values of the nominal central frequency could be 12.5 GHz.
+         In this case, the values of flexi-n should be even and this
+         constraint is reported by setting the flexi-n-step to 2.
+
+         This attribute is also known as central frequency
+         granularity.";
+      reference
+        "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
+                   Dense Wavelength Division Multiplexing (DWDM)
+                   Networks";
+    }
+  }
+
+  grouping flexi-grid-frequency-slot {
+    description
+      "Flexi-grid frequency slot grouping.";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers";
+    uses flexi-grid-label-start-end;
+    leaf flexi-m {
+      type flexi-m;
+      description
+        "The given value 'M' is used to determine the slot width.";
+    }
+  }
+
+  grouping flexi-grid-label-hop {
+    description
+      "Generic label-hop information for flexi-grid.";
+    reference
+      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers";
+    choice single-or-super-channel {
+      description
+        "single or super channel";
+      case single {
+        uses flexi-grid-frequency-slot;
+      }
+      case super {
+        status obsolete;
+        list subcarrier-flexi-n {
+          key "flexi-n";
+          status obsolete;
+          description
+            "List of subcarrier channels for flexi-grid super
+             channel.";
+          uses flexi-grid-frequency-slot {
+            status obsolete;
+          }
+        }
+      }
+      case multi {
+        container frequency-slots {
+          description
+            "The top level container for the list of frequency
+             slots used for flexi-grid super channel.";
+          list frequency-slot {
+            key "flexi-n";
+            min-elements 2;
+            description
+              "List of frequency slots used for flexi-grid super
+               channel.";
+            uses flexi-grid-frequency-slot;
+          }
+        }
+      }
+    }
+  }
+
+  grouping wdm-label-range-info {
+    description
+      "WDM label range related information.
+
+       This grouping SHOULD be used together with the
+       wdm-label-start-end and wdm-label-step groupings to provide
+       WDM technology-specific label information to the models which
+       use the label-restriction-info grouping defined in the module
+       ietf-te-types.";
+    uses l0-label-range-info;
+    container flexi-grid {
+      when 'derived-from-or-self(../grid-type, '
+         + '"l0-types:flexi-grid-dwdm")' {
+        description
+          "Applicable only when the grid type is flexi-grid-dwdm.";
+      }
+      description
+        "flexi-grid definition.";
+      leaf slot-width-granularity {
+        type identityref {
+          base flexi-slot-width-granularity;
+        }
+        default "flexi-swg-12p5ghz";
+        description
+          "Minimum space between slot widths.";
+        reference
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
+      }
+      leaf min-slot-width-factor {
+        type uint16 {
+          range "1..max";
+        }
+        description
+          "A multiplier of the slot width granularity, indicating
+           the minimum slot width supported by an optical port.
+
+           Minimum slot width is calculated by:
+             Minimum slot width (GHz) =
+               min-slot-width-factor * slot-width-granularity.";
+        reference
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
+      }
+      leaf max-slot-width-factor {
+        type uint16 {
+          range "1..max";
+        }
+        must '. >= ../min-slot-width-factor' {
+          error-message
+            "Maximum slot width must be greater than or equal to
+             minimum slot width.";
+        }
+        description
+          "A multiplier of the slot width granularity, indicating
+           the maximum slot width supported by an optical port.
+
+           Maximum slot width is calculated by:
+             Maximum slot width (GHz) =
+               max-slot-width-factor * slot-width-granularity
+
+           If specified, maximum slot width must be greater than or
+           equal to minimum slot width.  If not specified, maximum
+           slot width is equal to minimum slot width.";
+        reference
+          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
+                     Grid Dense Wavelength Division Multiplexing
+                     (DWDM) Networks";
+      }
+    }
+  }
+
+  grouping wdm-label-start-end {
+    description
+      "The WDM label-start or label-end used to specify DWDM and
+       CWDM label ranges.
+
+       This grouping is dependent on the range-type defined in the
+       wdm-label-range-info grouping.
+
+       This grouping SHOULD be used together with the
+       wdm-label-range-info and wdm-label-step groupings to provide
+       WDM technology-specific label information to the models which
+       use the label-restriction-info grouping defined in the module
+       ietf-te-types.";
     reference
       "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
                  Label Switching Routers
-       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-                 CWDM wavelength grid
+       RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers";
+    leaf dwdm-n {
+      when 'derived-from-or-self(../../../grid-type, '
+         + '"l0-types:wson-grid-dwdm")' {
+        description
+          "Valid only when grid type is a fixed DWDM grid.";
+      }
+      type dwdm-n;
+      description
+        "The given value 'N' is used to determine the
+         nominal central frequency on a DWDM fixed grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    leaf cwdm-n {
+      when 'derived-from-or-self(../../../grid-type, '
+         + '"l0-types:wson-grid-cwdm")' {
+        description
+          "Valid only when grid type is a CWDM grid.";
+      }
+      type cwdm-n;
+      description
+        "The given value 'N' is used to determine the nominal
+         central wavelength on a CWDM fixed grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    uses flexi-grid-label-start-end {
+      when 'derived-from-or-self(../../grid-type, '
+         + '"l0-types:flexi-grid-dwdm")' {
+        description
+          "Valid only when grid type is a flexible DWDM grid.";
+      }
+    }
+  }
+
+  grouping wdm-label-step {
+    description
+      "The WDM label-step used to specify DWDM and CWDM label
+       ranges.
+
+       This grouping is dependent on the range-type defined in the
+       wdm-label-range-info grouping.
+
+       This grouping SHOULD be used together with the
+       wdm-label-range-info and wdm-label-start-end groupings to
+       provide WDM technology-specific label information to the
+       models which use the label-restriction-info grouping defined
+       in the module ietf-te-types.";
+    reference
+      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                 Label Switching Routers
+       RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
+                 Switch Capable (LSC) Label Switching Routers
        RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                 Dense Wavelength Division Multiplexing (DWDM) Networks";
+                 Dense Wavelength Division Multiplexing (DWDM)
+                 Networks";
+    leaf wson-dwdm-channel-spacing {
+      when 'derived-from-or-self(../../grid-type, '
+         + '"l0-types:wson-grid-dwdm")' {
+        description
+          "Valid only when grid type is a fixed DWDM grid.";
+      }
+      type identityref {
+        base dwdm-ch-spc-type;
+      }
+      description
+        "The channel spacing (GHz) of a fixed DWDM grid, e.g.,
+         100 GHz, 50 GHz, 25 GHz, or 12.5 GHz.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    leaf wson-cwdm-channel-spacing {
+      when 'derived-from-or-self(../../grid-type, '
+         + '"l0-types:wson-grid-cwdm")' {
+        description
+          "Valid only when grid type is a CWDM grid.";
+      }
+      type identityref {
+        base cwdm-ch-spc-type;
+      }
+      description
+        "The channel spacing (nm) of a fixed CWDM grid, e.g., 20nm
+         (which is the only standardized value).";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
+                   (LSC) Label Switching Routers";
+    }
+    container flexi-grid-cfg {
+      when 'derived-from-or-self(../../grid-type, '
+         + '"l0-types:flexi-grid-dwdm")' {
+        description
+          "Valid only when grid type is a flexible DWDM grid.";
+      }
+      description
+        "The Central Frequency Granularity (CFG) of a flexible DWDM
+         grid (flexi-grid), defined as a multiplier of the Nominal
+         central frequency granularity (NCFG).";
+      uses flexi-grid-label-step;
+    }
   }
 
   grouping wdm-label-hop {
     description
-      "Generic label-hop information for fixed and flexi-DWDM or
-       CWDM grid";
+      "Generic label-hop information for DWDM and CWDM labels.";
     choice grid-type {
       description
         "Label for DWDM or CWDM grid.";
+      reference
+        "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
+                   Label Switching Routers";
       case fixed-dwdm {
         choice fixed-single-or-multi-channel {
           description
-            "Single channel or multi-channel.";
+            "Single channel or multichannel.";
           case single {
             leaf dwdm-n {
               type dwdm-n;
@@ -1135,469 +1622,30 @@ module ietf-layer0-types {
         uses flexi-grid-label-hop;
       }
     }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers";
-  }
-
-  grouping wdm-label-range-info {
-    description
-      "WDM label range related information";
-    uses l0-label-range-info;
-    container flexi-grid {
-      when "derived-from-or-self(../grid-type, "
-         + "l0-types:flexi-grid-dwdm)" {
-        description
-          "Applicable only when the grid type is flexi-grid-dwdm.";
-      }
-      description
-        "flexi-grid definition.";
-      leaf slot-width-granularity {
-        type identityref {
-          base flexi-slot-width-granularity;
-        }
-        default "flexi-swg-12p5ghz";
-        description
-          "Minimum space between slot widths.";
-        reference
-          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                    Networks";
-      }
-      leaf min-slot-width-factor {
-        type uint16 {
-          range "1..max";
-        }
-        description
-          "A multiplier of the slot width granularity, indicating
-           the minimum slot width supported by an optical port.
-
-           Minimum slot width is calculated by:
-             Minimum slot width (GHz) =
-               min-slot-width-factor * slot-width-granularity.";
-        reference
-          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
-      }
-      leaf max-slot-width-factor {
-        type uint16 {
-          range "1..max";
-        }
-        must '. >= ../min-slot-width-factor' {
-          error-message
-            "Maximum slot width must be greater than or equal to
-             minimum slot width.";
-        }
-        description
-          "A multiplier of the slot width granularity, indicating
-           the maximum slot width supported by an optical port.
-
-           Maximum slot width is calculated by:
-             Maximum slot width (GHz) =
-               max-slot-width-factor * slot-width-granularity
-
-           If specified, maximum slot width must be greater than or
-           equal to minimum slot width.  If not specified, maximum
-           slot width is equal to minimum slot width.";
-        reference
-          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
-      }
-    }
-  }
-
-  grouping wson-label-start-end {
-    description
-      "The WSON label-start or label-end used to specify WSON label
-       range.";
-    choice grid-type {
-      description
-        "Label for DWDM or CWDM grid";
-      case dwdm {
-        leaf dwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             + "l0-types:wson-grid-dwdm)" {
-            description
-              "Valid only when grid type is DWDM.";
-          }
-          type dwdm-n;
-          description
-            "The central frequency of DWDM.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
-        }
-      }
-      case cwdm {
-        leaf cwdm-n {
-          when "derived-from-or-self(../../../grid-type, "
-             +  "l0-types:wson-grid-cwdm)" {
-            description
-              "Valid only when grid type is CWDM.";
-          }
-          type cwdm-n;
-          description
-            "Channel wavelength computing input.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                      (LSC) Label Switching Routers";
-        }
-      }
-    }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers";
-  }
-
-  grouping wson-label-hop {
-    description
-      "Generic label-hop information for WSON.";
-    choice grid-type {
-      description
-        "Label for DWDM or CWDM grid.";
-      case dwdm {
-        choice single-or-super-channel {
-          description
-            "Single or super channel.";
-          case single {
-            leaf dwdm-n {
-              type dwdm-n;
-              description
-                "The given value 'N' is used to determine the
-                 nominal central frequency.";
-            }
-          }
-          case super {
-            leaf-list subcarrier-dwdm-n {
-              type dwdm-n;
-              description
-                "The given values 'N' are used to determine the
-                 nominal central frequency for each subcarrier
-                 channel.";
-              reference
-                "ITU-T G.694.1 (10/2020): Spectral grids for WDM
-                               applications: DWDM frequency grid";
-            }
-          }
-        }
-      }
-      case cwdm {
-        leaf cwdm-n {
-          type cwdm-n;
-          description
-            "The given value 'N' is used to determine the nominal
-             central wavelength.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
-        }
-      }
-    }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers";
-  }
-
-  grouping l0-label-range-info {
-    description
-      "Information about Layer 0 label range.";
-    leaf grid-type {
-      type identityref {
-        base l0-grid-type;
-      }
-      description
-        "The type of WDM grid.";
-      reference
-        "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                  (LSC), Label Switching Routers
-        ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-                  CWDM wavelength grid";
-    }
-    leaf priority {
-      type uint8;
-      description
-        "Priority in Interface Switching Capability Descriptor
-         (ISCD).";
-      reference
-        "RFC 4203: OSPF Extensions in Support of Generalized
-                   Multi-Protocol Label Switching (GMPLS)";
-    }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers";
-  }
-
-  grouping wson-label-step {
-    description
-      "Label step information for WSON";
-    choice l0-grid-type {
-      description
-        "Grid type: DWDM, CWDM, etc.";
-      case dwdm {
-        leaf wson-dwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-             + "l0-types:wson-grid-dwdm)" {
-            description
-              "Valid only when grid type is DWDM.";
-          }
-          type identityref {
-            base dwdm-ch-spc-type;
-          }
-          description
-            "Label-step is the channel spacing (GHz), e.g., 100.000,
-             50.000, 25.000, or 12.500 GHz for DWDM.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                       (LSC) Label Switching Routers";
-        }
-      }
-      case cwdm {
-        leaf wson-cwdm-channel-spacing {
-          when "derived-from-or-self(../../grid-type, "
-             + "l0-types:wson-grid-cwdm)" {
-            description
-              "Valid only when grid type is CWDM.";
-          }
-          type identityref {
-            base cwdm-ch-spc-type;
-          }
-          description
-            "Label-step is the channel spacing (nm), i.e., 20 nm
-             for CWDM, which is the only value defined for CWDM.";
-          reference
-            "RFC 6205: Generalized Labels for Lambda-Switch-Capable
-                      (LSC) Label Switching Routers";
-        }
-      }
-    }
-    reference
-      "RFC 6205: Generalized Labels for Lambda-Switch-Capable (LSC)
-                 Label Switching Routers
-       ITU-T G.694.2 (12/2003): Spectral grids for WDM applications:
-                CWDM wavelength grid";
-  }
-
-  grouping flexi-grid-label-start-end {
-    description
-      "The flexi-grid label-start or label-end used to specify
-       flexi-grid label range.";
-    leaf flexi-n {
-      type flexi-n;
-      description
-        "The given value 'N' is used to determine the nominal
-         central frequency.
-
-         As described in Section 3.1 of RFC 8363, the range of
-         available nominal central frequencies are advertised for
-         m=1, which means that for an available central frequency n,
-         the frequency slot from central frequency n-1 to central
-         frequency n+1 is available.";
-    }
-    reference
-      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                 Switch Capable (LSC) Label Switching Routers
-      RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                Dense Wavelength Division Multiplexing (DWDM) Networks";
-  }
-
-  grouping flexi-grid-frequency-slot {
-    description
-      "Flexi-grid frequency slot grouping.";
-    uses flexi-grid-label-start-end;
-    leaf flexi-m {
-      type flexi-m;
-      description
-        "The given value 'M' is used to determine the slot width.";
-    }
-    reference
-      "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                 Switch Capable (LSC) Label Switching Routers";
-  }
-
-  grouping flexi-grid-label-hop {
-    description
-      "Generic label-hop information for flexi-grid.";
-    choice single-or-super-channel {
-      description
-        "single or super channel";
-      case single {
-        uses flexi-grid-frequency-slot;
-      }
-      case super {
-        status deprecated;
-        list subcarrier-flexi-n {
-          key "flexi-n";
-          status deprecated;
-          uses flexi-grid-frequency-slot {
-            status deprecated;
-          }
-          description
-            "List of subcarrier channels for flexi-grid super
-             channel.";
-        }
-      }
-      case multi {
-        container frequency-slots {
-          description
-            "The top level container for the list of frequency
-             slots used for flexi-grid super channel.";
-          list frequency-slot {
-            key "flexi-n";
-            min-elements 2;
-            uses flexi-grid-frequency-slot;
-            description
-              "List of frequency slots used for flexi-grid super
-               channel.";
-          }
-        }
-      }
-    }
-    reference
-      "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                 Dense Wavelength Division Multiplexing (DWDM) Networks";
-  }
-
-  grouping flexi-grid-label-range-info {
-    description
-      "Flexi-grid-specific label range related information.";
-    uses l0-label-range-info;
-    container flexi-grid {
-      description
-        "flexi-grid definition";
-      leaf slot-width-granularity {
-        type identityref {
-          base flexi-slot-width-granularity;
-        }
-        default "flexi-swg-12p5ghz";
-        description
-          "Minimum space between slot widths.";
-        reference
-          "RFC 8363: GMPLS OSPF-TE Extensions in Support of
-                     Flexi-Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
-      }
-      leaf min-slot-width-factor {
-        type uint16 {
-          range "1..max";
-        }
-        description
-          "A multiplier of the slot width granularity, indicating
-           the minimum slot width supported by an optical port.
-
-           Minimum slot width is calculated by:
-             Minimum slot width (GHz) =
-               min-slot-width-factor * slot-width-granularity.";
-        reference
-          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
-      }
-      leaf max-slot-width-factor {
-        type uint16 {
-          range "1..max";
-        }
-        must '. >= ../min-slot-width-factor' {
-          error-message
-            "Maximum slot width must be greater than or equal to
-             minimum slot width.";
-        }
-        description
-          "A multiplier of the slot width granularity, indicating
-           the maximum slot width supported by an optical port.
-
-           Maximum slot width is calculated by:
-             Maximum slot width (GHz) =
-               max-slot-width-factor * slot-width-granularity
-
-           If specified, maximum slot width must be greater than or
-           equal to minimum slot width.  If not specified, maximum
-           slot width is equal to minimum slot width.";
-        reference
-          "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-
-                     Grid Dense Wavelength Division Multiplexing (DWDM)
-                     Networks";
-      }
-    }
-  }
-
-  grouping flexi-grid-label-step {
-    description
-      "Label step information for flexi-grid.";
-    leaf flexi-grid-channel-spacing {
-      type identityref {
-        base flexi-ch-spc-type;
-      }
-      default "flexi-ch-spc-6p25ghz";
-      status deprecated;
-      description
-        "Label-step is the nominal central frequency granularity
-         (GHz), e.g., 6.25 GHz.";
-      reference
-        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                   Switch Capable (LSC) Label Switching Routers";
-    }
-    leaf flexi-ncfg {
-      type identityref {
-        base flexi-ncfg-type;
-      }
-      default "flexi-ncfg-6p25ghz";
-      description
-        "Label-step is the nominal central frequency granularity
-         (GHz), e.g., 6.25 GHz.";
-      reference
-        "RFC 7699: Generalized Labels for the Flexi-Grid in Lambda
-                   Switch Capable (LSC) Label Switching Routers";
-    }
-    leaf flexi-n-step {
-      type uint8;
-      description
-        "This attribute defines the multiplier for the supported
-         values of 'N'.
-
-         For example, given a grid with a nominal central frequency
-         granularity of 6.25 GHz, the granularity of the supported
-         values of the nominal central frequency could be 12.5 GHz.
-         In this case, the values of flexi-n should be even and this
-         constraint is reported by setting the flexi-n-step to 2.
-
-         This attribute is also known as central frequency
-         granularity.";
-      reference
-        "RFC 8363: GMPLS OSPF-TE Extensions in Support of Flexi-Grid
-                   Dense Wavelength Division Multiplexing (DWDM) Networks";
-    }
   }
 
   grouping transceiver-capabilities {
     description
       "This grouping is intended to be used for reporting the
-      capabilities of a transceiver.
+       capabilities of a transceiver.
 
-      When this grouping is used, the explicit-mode container shall
-      be augmented with a leafref to an explicit mode template with
-      the proper XPath which depends from where this grouping is
-      actually used.";
+       When this grouping is used, the explicit-mode container shall
+       be augmented with a leafref to an explicit mode template with
+       the proper XPath which depends on where this grouping is
+       actually used.";
     reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
-                   Topology.";
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
+                 Topology.";
     container supported-modes {
       presence
         "When present, it indicates that the modes supported by a
-        transceiver are reported.";
+         transceiver are reported.";
       config false;
       description
         "The top level container for the list supported
-        transceiver's modes.";
+         transceiver's modes.";
       list supported-mode {
         key "mode-id";
-        config false;
         min-elements 1;
         description
           "The list of supported transceiver's modes.";
@@ -1609,7 +1657,6 @@ module ietf-layer0-types {
             "An identifier for the supported transceiver's mode.";
         }
         choice mode {
-          config false;
           mandatory true;
           description
             "Indicates whether the transceiver's mode is a standard
@@ -1621,50 +1668,48 @@ module ietf-layer0-types {
           }
           case organizational-mode {
             container organizational-mode {
-              config false;
               description
                 "The set of attributes for an organizational mode";
               uses organizational-mode;
               uses common-standard-organizational-mode;
               uses common-all-modes;
-            } 
+            }
           }
           case explicit-mode {
             container explicit-mode {
-              config false;
               description
                 "The set of attributes for an explicit mode.";
               uses common-all-modes;
               container compatible-modes {
                 description
                   "Container for all the standard and organizational
-                  modes supported by the transceiver's explicit
-                  mode.";
+                   modes supported by the transceiver's explicit
+                   mode.";
                 leaf-list supported-application-code {
                   type leafref {
                     path "../../../../supported-mode/mode-id";
                   }
-                  must "../../../../"
-                      + "supported-mode[mode-id=current()]/"
-                      + "standard-mode" {
+                  must '../../../../'
+                     + 'supported-mode[mode-id=current()]/'
+                     + 'standard-mode' {
                     description
                       "The pointer is only for application codes
-                      supported by transceiver.";
+                       supported by transceiver.";
                   }
                   description
                     "List of pointers to the application codes
-                    supported by the transceiver's explicit mode.";
+                     supported by the transceiver's explicit mode.";
                 }
                 leaf-list supported-organizational-mode {
                   type leafref {
                     path "../../../../supported-mode/mode-id";
                   }
-                  must "../../../../"
-                      + "supported-mode[mode-id=current()]/"
-                      + "organizational-mode" {
+                  must '../../../../'
+                     + 'supported-mode[mode-id=current()]/'
+                     + 'organizational-mode' {
                     description
                       "The pointer is only for organizational modes
-                      supported by transceiver.";
+                       supported by transceiver.";
                   }
                   description
                     "List of pointers to the organizational modes
@@ -1681,20 +1726,19 @@ module ietf-layer0-types {
   grouping standard-mode {
     description
       "Identifies an ITU-T G.698.2 standard application code.";
-
+    reference
+      "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
+                 wavelength division multiplexing applications
+                 with single channel optical interfaces Optical
+                 transport network, Clause 5.3";
     leaf standard-mode {
       type standard-mode;
       description
         "Identifies an ITU-T G.698.2 standard application code.
 
-        It MUST be a string with a format that follows the
-        nomenclature defined in clause 5.3 of ITU-T G.698.2."; 
+         It MUST be a string with a format that follows the
+         nomenclature defined in clause 5.3 of ITU-T G.698.2.";
     }
-      reference
-          "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
-                      wavelength division multiplexing applications
-                      with single channel optical interfaces Optical
-                      transport network, Clause 5.3";
   }
 
   grouping organizational-mode {
@@ -1702,13 +1746,8 @@ module ietf-layer0-types {
       "Transponder operational mode supported by organizations or
        vendor";
     reference
-      "RFC IIII: A YANG Data Model for Optical Impairment-aware
+      "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                   Topology, Section 2.6.2";
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf operational-mode {
       type operational-mode;
       description
@@ -1728,7 +1767,6 @@ module ietf-layer0-types {
       "A common definition of the Optical Signal-to-Noise Ratio
        (OSNR) penalty value used for describing multiple penalty
        types (e.g., CD, PMD, or PDL).";
-
     leaf penalty-value {
       type union {
         type decimal-2 {
@@ -1737,7 +1775,6 @@ module ietf-layer0-types {
         type empty;
       }
       units "dB";
-      config false;
       mandatory true;
       description
         "The OSNR penalty associated with the related optical
@@ -1752,8 +1789,8 @@ module ietf-layer0-types {
        mode.
 
        This grouping also contains the list of attributes related to
-       optical impairment limits for explicit mode (min OSNR, max PMD,
-       max CD, max PDL, Q-factor limit, etc.).
+       optical impairment limits for explicit mode (min OSNR,
+       max PMD, max CD, max PDL, Q-factor limit, etc.).
 
        In case of standard and operational mode the attributes are
        implicit.";
@@ -1775,15 +1812,16 @@ module ietf-layer0-types {
       units "Gbit/sec";
       config false;
       description
-        "The gross bitrate (e.g., 100 or 200) of the optical tributary
-         signal.";
+        "The gross bitrate (e.g., 100 or 200) of the optical
+         tributary signal.";
     }
-    leaf max-diff-group-delay  {
+    leaf max-diff-group-delay {
       type decimal-2;
       units "ps";
       config false;
       description
-        "The maximum Differential Group Delay (DGD)  the receiver can tolerate.";
+        "The maximum Differential Group Delay (DGD)  the receiver can
+         tolerate.";
     }
     leaf max-chromatic-dispersion {
       type decimal-2 {
@@ -1792,20 +1830,16 @@ module ietf-layer0-types {
       units "ps/nm";
       config false;
       description
-        "Maximum acceptable accumulated chromatic dispersion (CD)
-        on the receiver at Rx-power reference point
-        (rx-ref-channel-power) and in absence of other impairments.";
+        "Maximum acceptable accumulated chromatic dispersion (CD) on
+         the receiver at Rx-power reference point
+         (rx-ref-channel-power) and in absence of other
+         impairments.";
       reference
-        "RFC IIII: A YANG Data Model for Optical
+        "RFC ZZZZ: A YANG Data Model for Optical
                    Impairment-aware Topology, Section 2.6.4";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     list cd-penalty {
-      key cd-value;
+      key "cd-value";
       config false;
       description
         "Optional penalty associated with a given accumulated
@@ -1814,24 +1848,17 @@ module ietf-layer0-types {
 
          This list of pair CD and OSNR penalty can be used to
          sample the function OSNR penalty = f(CD).";
+      reference
+        "RFC ZZZZ: A YANG Data Model for Optical
+                   Impairment-aware Topology, Section 2.6.4";
       leaf cd-value {
         type decimal-2;
         units "ps/nm";
-        config false;
-        mandatory true;
         description
           "The Chromatic Dispersion (CD).";
       }
       uses penalty-value;
-      reference
-        "RFC IIII: A YANG Data Model for Optical
-                   Impairment-aware Topology, Section 2.6.4";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf max-polarization-mode-dispersion {
       type decimal-2 {
         range "0..max";
@@ -1846,44 +1873,32 @@ module ietf-layer0-types {
         "ITU-T G.666 (02/2011): Characteristics of polarization
                    mode dispersion compensators and of receivers that
                    compensate for polarization mode dispersion
-         RFC IIII: A YANG Data Model for Optical Impairment-aware
+         RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     list pmd-penalty {
-      key pmd-value;
+      key "pmd-value";
       config false;
       description
         "Optional penalty associated with a given accumulated
-        polarization mode dispersion (PMD) value measured in
-        absence of other impairments.
+         polarization mode dispersion (PMD) value measured in
+         absence of other impairments.
 
-        This list of pair PMD and OSNR penalty can be used to
-        sample the function OSNR penalty = f(PMD).";
+         This list of pair PMD and OSNR penalty can be used to
+         sample the function OSNR penalty = f(PMD).";
+      reference
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
+                   Topology, Section 2.4.6";
       leaf pmd-value {
         type decimal-2 {
           range "0..max";
         }
         units "ps";
-        config false;
-        mandatory true;
         description
           "The Polarization Mode Dispersion (PMD).";
       }
       uses penalty-value;
-      reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
-                   Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf max-polarization-dependent-loss {
       type power-loss-or-null;
       config false;
@@ -1891,44 +1906,33 @@ module ietf-layer0-types {
       description
         "Maximum acceptable accumulated polarization dependent
          loss (PDL) on the receiver at Rx-power reference point
-         (rx-ref-channel-power) and in absence of other impairments.";
+         (rx-ref-channel-power) and in absence of other
+         impairments.";
       reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
                    Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     list pdl-penalty {
-      key pdl-value;
+      key "pdl-value";
       config false;
       description
         "Optional penalty associated with a given accumulated
-        polarization dependent loss (PDL) value, measured in
-        absence of other impairments.
+         polarization dependent loss (PDL) value, measured in
+         absence of other impairments.
 
-        This list of pair PDL and OSNR penalty can be used to
-        sample the function OSNR penalty = f(PDL).";
+         This list of pair PDL and OSNR penalty can be used to
+         sample the function OSNR penalty = f(PDL).";
+      reference
+        "RFC ZZZZ: A YANG Data Model for Optical Impairment-aware
+                   Topology, Section 2.4.6";
       leaf pdl-value {
         type power-loss;
-        config false;
-        mandatory true;
         description
           "Maximum acceptable accumulated polarization dependent
-          loss (PDL).";
+           loss (PDL).";
       }
       uses penalty-value;
-      reference
-        "RFC IIII: A YANG Data Model for Optical Impairment-aware
-                   Topology, Section 2.4.6";
     }
-
-// RFC Ed.: replace IIII with actual RFC number and remove
-// this note after draft-ietf-ccamp-optical-impairment-topology-yang
-// is published as an RFC
-
     leaf available-modulation-type {
       type identityref {
         base modulation;
@@ -1956,7 +1960,7 @@ module ietf-layer0-types {
          and min-OSNR.";
     }
     list rx-channel-power-penalty {
-      key rx-channel-power-value;
+      key "rx-channel-power-value";
       config false;
       description
         "Optional penalty associated with a received power
@@ -1967,8 +1971,6 @@ module ietf-layer0-types {
       leaf rx-channel-power-value {
         type power-dbm;
         units "dBm";
-        config false;
-        mandatory true;
         description
           "The Received Power.";
       }
@@ -2111,7 +2113,6 @@ module ietf-layer0-types {
     description
       "Common attributes used by standard and organizational
        transceiver's modes.";
-
     leaf-list line-coding-bitrate {
       type identityref {
         base line-coding;
@@ -2134,7 +2135,6 @@ module ietf-layer0-types {
   grouping transceiver-tuning-range {
     description
       "Transceiver tuning range (f-min, f-max, f-granularity)";
-
     leaf min-central-frequency {
       type frequency-thz;
       description
@@ -2147,26 +2147,23 @@ module ietf-layer0-types {
         "This parameter indicates the maximum frequency for the
          transceiver tuning range.";
     }
-
     leaf transceiver-tunability-granularity {
       type frequency-ghz;
       description
-        "This parameter indicates the transceiver frequency fine
-         tuning granularity e.g 3.125GHz or 0.001GHz.";
+        "This parameter indicates the transceiver frequency
+         fine-tuning granularity e.g 3.125GHz or 0.001GHz.";
     }
   }
 
   grouping common-all-modes {
     description
       "Common attributes used by all transceiver's modes.";
-
     container transceiver-tuning-range {
       config false;
       description
         "Transceiver tuning range (f-min, f-max, f-granularity)";
       uses transceiver-tuning-range;
     }
-
     leaf tx-channel-power-min {
       type power-dbm;
       config false;
@@ -2197,15 +2194,14 @@ module ietf-layer0-types {
       description
         "Maximum rx optical power for all the channels.
 
-        It is applicable only to multi-channel modes.";
+         It is applicable only to multichannel modes.";
     }
   }
 
   grouping common-transceiver-param {
     description
       "The common parameters of an optical transceiver,
-      that supplement the configured mode.";
-
+       that supplement the configured mode.";
     uses common-transceiver-configured-param;
     uses common-transceiver-readonly-param;
   }
@@ -2213,8 +2209,7 @@ module ietf-layer0-types {
   grouping common-transceiver-configured-param {
     description
       "The configured parameters of an optical transceiver,
-      that supplement the configured mode.";
-
+       that supplement the configured mode.";
     leaf line-coding-bitrate {
       type identityref {
         base line-coding;
@@ -2222,8 +2217,8 @@ module ietf-layer0-types {
       description
         "Bit rate/line coding of the optical tributary signal.
 
-        Support of this attribute is optional when the configured
-        mode supports only one bit rate/line coding.";
+         Support of this attribute is optional when the configured
+         mode supports only one bit rate/line coding.";
       reference
         "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel dense
                      wavelength division multiplexing applications
@@ -2234,10 +2229,10 @@ module ietf-layer0-types {
       type power-dbm-or-null;
       description
         "The current channel transmit power, when the value is
-        known or an empty value when the value is not known.
+         known or an empty value when the value is not known.
 
-        The empty value MUST NOT be used when this attribute is
-        configured.";
+         The empty value MUST NOT be used when this attribute is
+         configured.";
     }
   }
 
@@ -2245,7 +2240,6 @@ module ietf-layer0-types {
     description
       "The common read-only parameters of an optical transceiver,
        that supplement the configured mode.";
-
     leaf rx-channel-power {
       type power-dbm-or-null;
       config false;
@@ -2265,7 +2259,6 @@ module ietf-layer0-types {
   grouping tunnel-attributes {
     description
       "Parameters for Layer0 (WSON or Flexi-Grid) Tunnels.";
-
     leaf wavelength-assignment {
       type identityref {
         base wavelength-assignment;
@@ -2307,7 +2300,7 @@ module ietf-layer0-types {
     description
       "This grouping extends the frequency-range with an identifier,
        which used as a key when it is needed to define different
-       properties (e.g., optical impairments) for different 
+       properties (e.g., optical impairments) for different
        frequency ranges.";
     leaf frequency-range-id {
       type uint16;
@@ -2325,12 +2318,12 @@ module ietf-layer0-types {
   grouping path-constraints {
     description
       "Common attribute for Layer 0 path constraints to be used by
-      Layer 0 computation.";
+       Layer 0 computation.";
     leaf gsnr-extra-margin {
       type snr {
-        range 0..max;
+        range "0..max";
       }
-      default 0;
+      default "0";
       description
         "An additional margin to be added to the OSNR-min of the
          transceiver when checking the estimated received Generalized
@@ -2341,7 +2334,7 @@ module ietf-layer0-types {
   grouping path-properties {
     description
       "Common attribute for reporting the Layer 0 computed path
-      properties.";
+       properties.";
     leaf estimated-gsnr {
       type snr;
       config false;
