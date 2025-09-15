@@ -527,8 +527,7 @@ This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC8363
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-08-01
-.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-08-06.yang"}
 
 # Security Considerations
 
@@ -686,6 +685,7 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - path-properties
 
 The following YANG identities have been obsolted (bug fixing) in the 'ietf-layer0-types' module:
+
 - flexi-ch-spc-type;
 - flexi-ch-spc-6p25ghz.
 

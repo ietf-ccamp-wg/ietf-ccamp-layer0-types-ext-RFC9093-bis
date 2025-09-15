@@ -604,7 +604,7 @@ Internet-Draft            L0 Common YANG Types               August 2025
    [ITU-T_G.709.3], [ITU-T_G.959.1] [ITU-T_G.975], [ITU-T_G.975.1],
    [ITU-T_G.977.1], [ITU-T_G.9700] and [OIF_400ZR].
 
-   <CODE BEGINS> file "ietf-layer0-types@2025-08-01 .yang"
+   <CODE BEGINS> file "ietf-layer0-types@2025-08-06.yang"
    module ietf-layer0-types {
      yang-version 1.1;
      namespace "urn:ietf:params:xml:ns:yang:ietf-layer0-types";
@@ -4277,8 +4277,11 @@ Internet-Draft            L0 Common YANG Types               August 2025
    *  path-properties
 
    The following YANG identities have been obsolted (bug fixing) in the
-   'ietf-layer0-types' module: - flexi-ch-spc-type; - flexi-ch-spc-
-   6p25ghz.
+   'ietf-layer0-types' module:
+
+   *  flexi-ch-spc-type;
+
+   *  flexi-ch-spc-6p25ghz.
 
    The case super within the flexi-grid-label-hop has been obsolted (bug
    fixing).
@@ -4304,9 +4307,6 @@ Contributors
    Email: zhenghaomian@huawei.com
 
 
-   Daniel King
-   University of Lancaster
-
 
 
 Belotti, et al.          Expires 8 February 2026               [Page 77]
@@ -4314,6 +4314,8 @@ Belotti, et al.          Expires 8 February 2026               [Page 77]
 Internet-Draft            L0 Common YANG Types               August 2025
 
 
+   Daniel King
+   University of Lancaster
    Email: d.king@lancaster.ac.uk
 
 
@@ -4360,8 +4362,6 @@ Internet-Draft            L0 Common YANG Types               August 2025
    Gert Grammel
    Juniper
    Email: ggrammel@juniper.net
-
-
 
 
 
