@@ -352,6 +352,16 @@ snr:
 psd:
 : A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
 
+### Reporting unknown values
+
+Some data types, whose identifiers are suffixed as "-or-null", are defined as a union with an empty type (e.g., snr-or-null).
+
+The empty data type is added to allow reporting the cases where the value is unknown and differentiating the case where an attribute is unknown from the case where an attribute is not applicable:
+
+- if the value of a mandatory attribute is unknown, it MUST be reported using the empty type;
+- if an optional attribute is applicable but its value is unknown, it MUST be reported using the empty type;
+- if an optional attribute is not applicable to an entity, it MUST be omitted (not be present in the datastore).
+
 ## Groupings
 
 The "ietf-layer0-types" module contains the following YANG reusable YANG groupings:
