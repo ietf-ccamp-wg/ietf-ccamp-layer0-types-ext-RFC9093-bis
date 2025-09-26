@@ -352,6 +352,16 @@ snr:
 psd:
 : A YANG data type used to represent a Power Spectral Density (PSD), as defined in {{ITU-T_G.9700}}
 
+### Reporting unknown values
+
+Some data types, whose identifiers are suffixed as "-or-null", are defined as a union with an empty type (e.g., snr-or-null).
+
+The empty data type is added to allow reporting the cases where the value is unknown and differentiating the case where an attribute is unknown from the case where an attribute is not applicable:
+
+- if the value of a mandatory attribute is unknown, it MUST be reported using the empty type;
+- if an optional attribute is applicable but its value is unknown, it MUST be reported using the empty type;
+- if an optional attribute is not applicable to an entity, it MUST be omitted (not be present in the datastore).
+
 ## Groupings
 
 The "ietf-layer0-types" module contains the following YANG reusable YANG groupings:
@@ -527,8 +537,7 @@ This YANG module references {{!RFC6205}}, {{!RFC7689}}, {{!RFC7699}}, {{!RFC8363
 {::include ./ietf-layer0-types.yang}
 ~~~~
 {: #fig-yang-code title="Layer 0 Types YANG module"
-sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-08-01
-.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-layer0-types@2025-08-06.yang"}
 
 # Security Considerations
 
@@ -686,6 +695,7 @@ The following new YANG groupings have been added to the 'ietf-layer0-types' modu
 - path-properties
 
 The following YANG identities have been obsolted (bug fixing) in the 'ietf-layer0-types' module:
+
 - flexi-ch-spc-type;
 - flexi-ch-spc-6p25ghz.
 

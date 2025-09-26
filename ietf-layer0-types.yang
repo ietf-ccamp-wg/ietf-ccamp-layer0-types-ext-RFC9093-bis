@@ -56,7 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-  revision 2025-08-06 {
+  revision 2025-09-15 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -818,7 +818,7 @@ module ietf-layer0-types {
       fraction-digits 2;
     }
     description
-      "A decimal64 value with two digits.";
+      "A decimal64 value with two fractional digits.";
   }
 
   typedef decimal-2-or-null {
@@ -908,7 +908,7 @@ module ietf-layer0-types {
       fraction-digits 5;
     }
     description
-      "A decimal64 value with five digits.";
+      "A decimal64 value with five fractional digits.";
   }
 
   typedef decimal-5-or-null {
@@ -950,7 +950,7 @@ module ietf-layer0-types {
       fraction-digits 18;
     }
     description
-      "A decimal64 value with eighteen digits.";
+      "A decimal64 value with fractional eighteen digits.";
   }
 
   typedef decimal-18-or-null {
@@ -1685,16 +1685,37 @@ module ietf-layer0-types {
           description
             "Indicates whether the transceiver's mode is a standard
              mode, an organizational mode or an explicit mode.";
-          case G.698.2 {
-            uses standard-mode;
-            uses common-standard-organizational-mode;
-            uses common-all-modes;
+          case g.698.2 {
+            container g.698.2 {
+              description
+                "The set of attributes for a standard mode defined
+                 in ITU-T G.698.2.";
+              reference
+                "ITU-T G.698.2 v3.0 (11/2018): Amplified multichannel
+                        dense wavelength division multiplexing
+                        applications with single channel optical
+                        interfaces Optical transport network";
+              uses standard-mode {
+                refine "standard-mode" {
+                  mandatory true;
+                }
+              }
+              uses common-standard-organizational-mode;
+              uses common-all-modes;
+            }
           }
           case organizational-mode {
             container organizational-mode {
               description
-                "The set of attributes for an organizational mode";
-              uses organizational-mode;
+                "The set of attributes for an organizational mode.";
+              uses organizational-mode {
+                refine "operational-mode" {
+                  mandatory true;
+                }
+                refine "organization-identifier" {
+                  mandatory true;
+                }
+              }
               uses common-standard-organizational-mode;
               uses common-all-modes;
             }
@@ -1715,7 +1736,7 @@ module ietf-layer0-types {
                   }
                   must '../../../../'
                      + 'supported-mode[mode-id=current()]/'
-                     + 'standard-mode' {
+                     + 'g.698.2' {
                     description
                       "The pointer is only for application codes
                        supported by transceiver.";
