@@ -56,7 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-  revision 2025-09-15 {
+  revision 2025-10-02 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -1830,8 +1830,8 @@ module ietf-layer0-types {
 
   grouping explicit-mode {
     description
-      "Attributes capabilities related to explicit transceiver's
-       mode.
+      "The attributes describing capabilities of an explicit
+       transceiver's mode.
 
        This grouping also contains the list of attributes related to
        optical impairment limits for explicit mode (min OSNR,
@@ -2156,8 +2156,8 @@ module ietf-layer0-types {
 
   grouping common-standard-organizational-mode {
     description
-      "Common attributes used by standard and organizational
-       transceiver's modes.";
+      "The attributes describing the capabilities for a standard or
+       an organizational transceiver's mode.";
     leaf-list line-coding-bitrate {
       type identityref {
         base line-coding;
@@ -2202,7 +2202,8 @@ module ietf-layer0-types {
 
   grouping common-all-modes {
     description
-      "Common attributes used by all transceiver's modes.";
+      "The attributes describing the capabilities for any type of
+       transceiver's mode.";
     container transceiver-tuning-range {
       config false;
       description
