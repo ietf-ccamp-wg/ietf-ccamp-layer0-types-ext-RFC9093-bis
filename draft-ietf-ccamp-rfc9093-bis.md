@@ -354,12 +354,12 @@ psd:
 
 ### Reporting unknown values
 
-Some data types, whose identifiers are suffixed as "-or-null", are defined as a union with an empty type (e.g., snr-or-null).
+Some data types, whose identifiers are suffixed as "-or-unknown", are defined as a union with the data type 'unknown-value' (e.g., snr-or-unknown), which is defined as an enumeration having only one assigned name (i.e., 'unknown').
 
-The empty data type is added to allow reporting the cases where the value is unknown and differentiating the case where an attribute is unknown from the case where an attribute is not applicable:
+The unknown-value data type is used to report when the value is unknown in order to differentiate the case where an attribute is unknown from the case where an attribute is not applicable:
 
-- if the value of a mandatory attribute is unknown, it MUST be reported using the empty type;
-- if an optional attribute is applicable but its value is unknown, it MUST be reported using the empty type;
+- if the value of a mandatory attribute is unknown, it MUST be reported using the unknown-value type;
+- if an optional attribute is applicable but its value is unknown, it MUST be reported using the unknown-value type;
 - if an optional attribute is not applicable to an entity, it MUST be omitted (not be present in the datastore).
 
 ## Groupings
@@ -654,22 +654,23 @@ The following new YANG data types have been added to the 'ietf-layer0-types' mod
 - operational-mode
 - frequency-thz
 - frequency-ghz
+- unknown-value
 - snr
-- snr-or-null
+- snr-or-unknown
 - decimal-2
-- decimal-2-or-null
+- decimal-2-or-unknown
 - power-gain
-- power-gain-or-null
+- power-gain-or-unknown
 - power-loss
-- power-loss-or-null
+- power-loss-or-unknown
 - power-ratio
-- power-ratio-or-null
+- power-ratio-or-unknown
 - power-dbm
-- power-dbm-or-null
+- power-dbm-or-unknown
 - decimal-5
-- decimal-5-or-null
+- decimal-5-or-unknown
 - psd
-- psd-or-null
+- psd-or-unknown
 
 The following new YANG groupings have been added to the 'ietf-layer0-types' module:
 

@@ -178,7 +178,7 @@ module: ietf-layer0-types
     +--ro pmd-penalty* [pmd-value]
     |  +--ro pmd-value?       decimal-2
     |  +--ro penalty-value    union
-    +--ro max-polarization-dependent-loss     power-loss-or-null
+    +--ro max-polarization-dependent-loss     power-loss-or-unknown
     +--ro pdl-penalty* [pdl-value]
     |  +--ro pdl-value?       power-loss
     |  +--ro penalty-value    union
@@ -217,15 +217,15 @@ module: ietf-layer0-types
     +--ro rx-total-power-max?         power-dbm
   grouping common-transceiver-param:
     +-- line-coding-bitrate?   identityref
-    +-- tx-channel-power?      power-dbm-or-null
-    +--ro rx-channel-power?      power-dbm-or-null
-    +--ro rx-total-power?        power-dbm-or-null
+    +-- tx-channel-power?      power-dbm-or-unknown
+    +--ro rx-channel-power?      power-dbm-or-unknown
+    +--ro rx-total-power?        power-dbm-or-unknown
   grouping common-transceiver-configured-param:
     +-- line-coding-bitrate?   identityref
-    +-- tx-channel-power?      power-dbm-or-null
+    +-- tx-channel-power?      power-dbm-or-unknown
   grouping common-transceiver-readonly-param:
-    +--ro rx-channel-power?   power-dbm-or-null
-    +--ro rx-total-power?     power-dbm-or-null
+    +--ro rx-channel-power?   power-dbm-or-unknown
+    +--ro rx-total-power?     power-dbm-or-unknown
   grouping tunnel-attributes:
     +-- wavelength-assignment?   identityref
   grouping frequency-range:
