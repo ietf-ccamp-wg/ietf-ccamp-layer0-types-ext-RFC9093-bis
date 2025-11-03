@@ -56,7 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-  revision 2025-10-10 {
+  revision 2025-11-03 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -2004,14 +2004,14 @@ module ietf-layer0-types {
         "Modulation type the specific transceiver in the list
          can support.";
     }
-    leaf min-OSNR {
+    leaf min-osnr {
       type snr;
       units "dBm";
       config false;
       description
         "Minimum OSNR measured over 0.1 nm resolution bandwidth:
          if received OSNR at Rx-power reference point
-         (rx-ref-channel-power) is lower than MIN-OSNR, an increased
+         (rx-ref-channel-power) is lower than min-osnr, an increased
          level of bit-errors post-FEC needs to be expected.";
     }
     leaf rx-ref-channel-power {
@@ -2019,7 +2019,7 @@ module ietf-layer0-types {
       config false;
       description
         "The channel power used as reference for defining penalties
-         and min-OSNR.";
+         and min-osnr.";
     }
     list rx-channel-power-penalty {
       key "rx-channel-power-value";
@@ -2038,7 +2038,7 @@ module ietf-layer0-types {
       }
       uses penalty-value;
     }
-    leaf min-Q-factor {
+    leaf min-q-factor {
       type decimal-2;
       units "dB";
       config false;
