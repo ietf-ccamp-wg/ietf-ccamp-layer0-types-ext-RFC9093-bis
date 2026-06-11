@@ -84,7 +84,7 @@ contributor:
   -
     name: Gert Grammel
     org: Juniper
-    email: ggrammel@juniper.net
+    email: gert.grammel@hpe.com
 
 normative:
   ITU-T_G.666:
@@ -240,8 +240,6 @@ and retains the data types previously defined, but also adds new type
 definitions to the YANG module.
 For further details, see {{changes-bis}}.
 
-   The YANG data model in this document conforms to the Network
-   Management Datastore Architecture defined in {{!RFC8342}}.
 
 ## Editorial Note (To be removed by RFC Editor)
 
