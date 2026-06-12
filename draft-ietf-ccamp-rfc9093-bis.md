@@ -89,25 +89,29 @@ contributor:
 normative:
   ITU-T_G.666:
     title: >
-      Characteristics of polarization mode dispersion compensators and of receivers that compensate for polarization mode dispersion"
+      Characteristics of polarization mode dispersion compensators and of receivers
+      that compensate for polarization mode dispersion
     author:
       org: International Telecommunication Union
-    date: February 2011
-    seriesinfo: ITU-T Recommendation G.666
+    date: 2011-02
+    seriesinfo:
+      ITU-T: G.666 (2011)
     target: https://www.itu.int/rec/T-REC-G.666
   ITU-T_G.694.1:
     title: "Spectral grids for WDM applications: DWDM frequency grid"
     author:
       org: International Telecommunication Union
-    date: October 2020
-    seriesinfo: ITU-T Recommendation G.694.1
+    date: 2020-10
+    seriesinfo:
+      ITU-T: G.694.1 (2020)
     target: https://www.itu.int/rec/T-REC-G.694.1
   ITU-T_G.694.2:
     title: "Spectral grids for WDM applications: CWDM wavelength grid"
     author:
       org: International Telecommunication Union
-    date: December 2003
-    seriesinfo: ITU-T Recommendation G.694.2
+    date: 2003-12
+    seriesinfo:
+      ITU-T: G.694.2 (2003)
     target: https://www.itu.int/rec/T-REC-G.694.2
   ITU-T_G.698.2:
     title: >
@@ -116,92 +120,108 @@ normative:
       interfaces
     author:
       org: International Telecommunication Union
-    date: November 2018
-    seriesinfo: ITU-T Recommendation G.698.2
+    date: 2018-11
+    seriesinfo:
+      ITU-T: G.698.2 (2018)
     target: https://www.itu.int/rec/T-REC-G.698.2
   ITU-T_G.709:
     title: Interfaces for the optical transport network
     author:
       org: International Telecommunication Union
-    date: June 2020
-    seriesinfo: ITU-T Recommendation G.709
+    date: 2020-06
+    seriesinfo:
+      ITU-T: G.709/Y.1331 (2020)
     target: https://www.itu.int/rec/T-REC-G.709
   ITU-T_G.709.2:
     title: OTU4 long-reach interface
     author:
       org: International Telecommunication Union
-    date: September 2020
-    seriesinfo: ITU-T Recommendation G.709.2, Corrigendum 1
+    date: 2018-07
+    seriesinfo:
+      ITU-T: G.709.2/Y.1331.2 (2018)
     target: https://www.itu.int/rec/T-REC-G.709.2
   ITU-T_G.709.3:
     title: Flexible OTN B100G long-reach interfaces
     author:
       org: International Telecommunication Union
-    date: November 2022
-    seriesinfo: ITU-T Recommendation G.709.3, Amendment 1
+    date: 2024-03
+    seriesinfo:
+      ITU-T: G.709.3 (2024)
     target: https://www.itu.int/rec/T-REC-G.709.3
   ITU-T_G.959.1:
     title: Optical transport network physical layer interfaces
     author:
       org: International Telecommunication Union
-    date: July 2018
-    seriesinfo: ITU-T Recommendation G.959.1
+    date: 2018-07
+    seriesinfo:
+      ITU-T: G.959.1 (2018)
     target: https://www.itu.int/rec/T-REC-G.959.1
   ITU-T_G.975:
     title: Forward error correction for submarine systems
     author:
       org: International Telecommunication Union
-    date: October 2000
-    seriesinfo: ITU-T Recommendation G.975
+    date: 2000-10
+    seriesinfo:
+      ITU-T: G.975 (2000)
     target: https://www.itu.int/rec/T-REC-G.975
   ITU-T_G.975.1:
     title: Forward error correction for high bit-rate DWDM submarine systems
     author:
       org: International Telecommunication Union
-    date: July 2013
-    seriesinfo: ITU-T Recommendation G.975.1, Corrigendum 2
+    date: 2004-02
+    seriesinfo:
+      ITU-T: G.975.1 (2004)
     target: https://www.itu.int/rec/T-REC-G.975.1
   ITU-T_G.977.1:
-    title: "Transverse compatible dense wavelength division multiplexing applications for repeatered optical fibre submarine cable systems"
+    title: Transverse compatible dense wavelength division multiplexing applications for repeatered optical fibre submarine cable systems
     author:
       org: International Telecommunication Union
-    date: February 2021
-    seriesinfo: ITU-T Recommendation G.977.1
+    date: 2020-10
+    seriesinfo:
+      ITU-T: G.977.1 (2020)
     target: https://www.itu.int/rec/T-REC-G.977.1
   ITU-T_G.9700:
-    title: "Fast access to subscriber terminals (G.fast) - Power spectral density specification"
+    title: Fast access to subscriber terminals (G.fast) - Power spectral density specification
     author:
       org: International Telecommunication Union
-    date: July 2019
-    seriesinfo: ITU-T Recommendation G.9700
+    date: 2019-07
+    seriesinfo:
+      ITU-T: G.9700 (2019)
     target: https://www.itu.int/rec/T-REC-G.9700
   OIF_400ZR:
     title: Implementation Agreement 400ZR
     author:
-      org:  Optical Internetworking Forum
-    date: March 2020
-    seriesinfo: OIF-400ZR-01.0 Implementation Agreement
+      org: Optical Internetworking Forum
+    date: 2020-03
+    seriesinfo:
+      OIF: OIF-400ZR-01.0
     target: https://www.oiforum.com/wp-content/uploads/OIF-400ZR-01.0_reduced2.pdf
 
 informative:
   ITU-T_G.807:
-    title: "Generic functional architecture of the optical media network"
+    title: Generic functional architecture of the optical media network
     author:
       org: International Telecommunication Union
-    date: January 2021
-    seriesinfo: ITU-T Supplement G.807, Amendment 1
+    date: 2021-01
+    seriesinfo:
+      ITU-T: G.807 (2020) Amd. 1
+    target: https://www.itu.int/rec/T-REC-G.807
   ITU-T_G.872:
-    title: "Architecture of optical transport networks"
+    title: Architecture of the optical transport network
     author:
       org: International Telecommunication Union
-    date: January 2021
-    seriesinfo: ITU-T Supplement G.872, Amendment 1
+    date: 2021-01
+    seriesinfo:
+      ITU-T: G.872 (2019) Amd. 1
+    target: https://www.itu.int/rec/T-REC-G.872
   ITU-T_G.Sup39:
-    title: "Optical system design and engineering considerations"
+    title: Optical system design and engineering considerations
     author:
       org: International Telecommunication Union
-    date: February 2016
-    seriesinfo: ITU-T Supplement G.Sup39
+    date: 2025-10
+    seriesinfo:
+      ITU-T: G.Sup39 (2025)
+    target: https://www.itu.int/rec/T-REC-G.Sup39
 
 --- abstract
 
