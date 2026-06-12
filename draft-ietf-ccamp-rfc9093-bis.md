@@ -83,7 +83,7 @@ contributor:
     email: rmanzott@cisco.com
   -
     name: Gert Grammel
-    org: Juniper
+    org: HPE
     email: gert.grammel@hpe.com
 
 normative:
