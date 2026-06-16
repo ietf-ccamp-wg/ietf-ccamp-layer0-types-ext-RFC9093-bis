@@ -71,7 +71,7 @@ contributor:
     email: ricard.vilalta@cttc.es
   -
     name: Young Lee
-    org: Samsung
+    org: CRU
     email: younglee.tx@gmail.com
   -
     name: Victor Lopez
