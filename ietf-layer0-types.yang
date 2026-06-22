@@ -33,7 +33,7 @@ module ietf-layer0-types {
      Division Multiplexing) and DWDM (Dense Wavelength Division
      Multiplexing)) and flexi-grid optical networks.
 
-     Copyright (c) 2025 IETF Trust and the persons identified
+     Copyright (c) 2026 IETF Trust and the persons identified
      as authors of the code.  All rights reserved.
 
      Redistribution and use in source and binary forms, with
@@ -56,7 +56,7 @@ module ietf-layer0-types {
      described in BCP 14 (RFC 2119) (RFC 8174) when, and only when,
      they appear in all capitals, as shown here.";
 
-  revision 2025-11-03 {
+  revision 2026-06-12 {
     description
       "This revision adds the following new identities:
        - cwdm-ch-spc-type;
@@ -436,7 +436,7 @@ module ietf-layer0-types {
     description
       "Super Forward Error Correction (S-FEC).";
     reference
-      "ITU-T G.975.1 v1.2 (07/2013): Forward error correction for
+      "ITU-T G.975.1 v1.0 (02/2024): Forward error correction for
                      high bit-rate DWDM submarine systems.";
   }
 
@@ -451,7 +451,7 @@ module ietf-layer0-types {
     description
       "Staircase Forward Error Correction (SC-FEC).";
     reference
-      "Annex A of ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach
+      "Annex A of ITU-T G.709.2 v1.0 (07/2018):OTU4 long-reach
                       interface.";
   }
 
@@ -461,10 +461,10 @@ module ietf-layer0-types {
       "Open Forward Error Correction (O-FEC) which reuses the
        Bose, Chaudhuri and Hocquenghem (BCH) FEC.";
     reference
-      "ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
-               long-reach interfaces, Clause 16.4.4
-       ITU-T G.709.3 v2.1 (11/2022): Flexible OTN
-               long-reach interfaces, Annex E";
+      "ITU-T G.709.3 v3.0 (03/2024): Flexible OTN B100G long-reach
+               interfaces, Clause 16.4.4
+       ITU-T G.709.3 v3.0 (03/2024): Flexible OTN B100G long-reach
+               interfaces, Annex E";
   }
 
   identity c-fec {
@@ -474,14 +474,14 @@ module ietf-layer0-types {
        Forward Error Correction (SC-FEC) code and an inner
        double-extended SD-FEC (128,119) Hamming code.
 
-       More details are provided in clause 15/G.709.3 where it is
+       More details are provided in G.709.3 where it is
        called DSH instead of concatenated FEC.";
     reference
-      "ITU-T G.709.2 v1.1 (09/2020):OTU4 long-reach
+      "ITU-T G.709.2 v1.0 (07/2018):OTU4 long-reach
                    interface, Annex A
-       ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach
+       ITU-T G.709.3 v3.0 (03/2024): Flexible OTN B100G long-reach
                    interfaces, Annex D
-       ITU-T G.709.3 v2.1 (11/2022): Flexible OTN long-reach
+       ITU-T G.709.3 v3.0 (03/2024): Flexible OTN B100G long-reach
                    interfaces, Clause 15";
   }
 
@@ -814,7 +814,7 @@ module ietf-layer0-types {
       "(Optical) Signal to Noise Ratio measured over 0.1 nm
        resolution bandwidth.";
     reference
-      "ITU-T G.977.1 (02/2021): Transverse compatible dense
+      "ITU-T G.977.1 (10/2020): Transverse compatible dense
                  wavelength division multiplexing applications for
                  repeatered optical fibre submarine cable systems";
   }
