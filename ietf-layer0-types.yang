@@ -1900,6 +1900,22 @@ module ietf-layer0-types {
         "RFC ZZZZ: A YANG Data Model for Optical
                    Impairment-aware Topology, Section 2.6.4";
     }
+    leaf min-chromatic-dispersion {
+      type decimal-2 {
+        range "min..0";
+      }
+      units "ps/nm";
+      config false;
+      description
+        "Minimum acceptable accumulated chromatic dispersion (CD) on
+         the receiver at Rx-power reference point
+         (rx-ref-channel-power) and in absence of other
+         impairments.";
+      reference
+        "RFC ZZZZ: A YANG Data Model for Optical
+                   Impairment-aware Topology, Section 2.6.4";
+        // TODO: double check description and reference - from POI google sheet
+    }
     list cd-penalty {
       key "cd-value";
       config false;
@@ -2149,6 +2165,20 @@ module ietf-layer0-types {
       reference
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
     }
+    leaf min-tx-osnr {
+      type snr;
+      config false;
+      description
+        "The minimum Optical Signal-to-Noise Ratio (OSNR) that the
+         transmitter interface is capable of generating. It defines
+         the guaranteed quality of the optical signal launched from
+         interface.
+
+         The OSNR is referenced to an optical bandwidth of 0.1nm";
+      reference
+        "OpenConfig";
+        // TODO: check definition and reference - From POI google sheet as tx-osnr-min
+    }
     leaf tx-polarization-power-difference {
       type power-ratio;
       config false;
@@ -2168,6 +2198,318 @@ module ietf-layer0-types {
          polarization mode dispersion (PMD) tolerance limits.";
       reference
         "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+    }
+    leaf max-tolerable-ripple {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "The peak-to-peak maximum insertion loss difference within
+         the filter clear bandwidth that the interface can tolerate.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check definition and reference - From POI google sheet - Issue #25
+    }
+    leaf max-polarization-rotation-speed {
+      type decimal-5;
+      units "rad/s";
+      config false;
+      description
+        "The maximum rate at which a coherent optical receiver can
+         track and compensate for changes in the polarization state
+         of the incoming optical signal.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check definition and reference - from POI google sheet
+    }
+    leaf pulse-shaping-type {
+      type string;
+      config false;
+      description
+        "The digital filtering technique applied to the electrical
+         signal before it modulates the optical carrier. This process
+         controls the spectral characteristics of the transmitted
+         signal, optimizing spectral efficiency and minimizing
+         inter-symbol interference.";
+      reference
+        "OpenConfig";
+        // TODO: check definition and reference - From POI google sheet
+        // TODO: Verify if it may required an identityref definition instead string
+    }
+    leaf grid-type {
+      type string;
+      config false;
+      description
+        "This attribute specifies the frequency grid specification
+         according to ITU-T G.694.1 (10/2020).";
+      reference
+        "OpenConfig terminal-device-properties";
+        // TODO: check definition and reference - From POI google sheet
+        // TODO: Verify if it may required an identityref definition instead string
+    }
+    leaf max-laser-temperature {
+      type decimal-2;
+      units "Degree Celsius";
+      config false;
+      description
+        "The maximum temperatore that hte interface laser can tollerare
+         without permant demage or failure";
+      reference
+        "TODO";
+        // TODO: check definition and reference - from POI google sheet
+    }
+    leaf max-spectral-excursion {
+      type frequency-ghz;
+      config false;
+      description
+        "Maximum Spectral Excursion is a parameter that measures
+         the maximum acceptable difference between the nominal
+         central frequency of an optical channel and the points
+         where the signal power drops to a certain level (e.g.,
+         -15 dB) in the transmitter spectrum.";
+      reference
+        "ITU-T G.698.2";
+        // TODO: check definition and reference - from POI google sheet
+    }
+    leaf min-side-mode-suppression-ratio {
+      type power-ratio;
+      config false;
+      description
+        "The Minimum Side Mode Suppression Ratio (SMSR) is a measure
+         of how much the power of the main mode in a laser exceeds
+         that of its side modes. It is crucial for ensuring high
+         spectral purity and stability in optical communications.
+         For example, a laser with an SMSR of 30 dB means that the
+         main mode's power is 1000 times greater than the combined power
+         of its nearest side modes.";
+      reference
+        "ITU-T G.698.2";
+        // TODO: check definition and reference - from POI google sheet
+    }
+    leaf max-duty-cycle {
+      type decimal-2;
+      config false;
+      description
+        "The max-duty-cycle attribute in ITU-T G959.1 refers to the
+         maximum percentage of time that a signal or a component can
+         be in an active or 'ON' state within a given period. This
+         concept is crucial in optical networks to ensure that components
+         do not overheat or degrade due to excessive usage.";
+      reference
+        "ITU-T G.959.1";
+        // TODO: check definition and reference - from POI google sheet - Issue #27
+    }
+    leaf max-offset-between-carrier-and-nominal-central-frequency {
+      type frequency-ghz;
+      config false;
+      description
+        "Define the maximum allowed deviation between the actual carrier
+         frequency of an optical signal and its nominal central frequency.";
+      reference
+        "ITU-T G.698.2";
+        // TODO: check definition and reference - from POI google sheet
+    }
+    leaf max-spectral-power-density {
+      type decimal-2;
+      units "dB/GHz";
+      config false;
+      description
+        "Maximum spectral power density refers to the maximum allowable
+         optical power per unit frequency or wavelength interval in a system,
+         ensuring compliance with spectral efficiency and interference limits.";
+      reference
+        "ITU-T G.959.1";
+        // TODO: check definition and reference - from POI google sheet - Issue #28
+    }
+    leaf max-i-q-offset {
+      type power-ratio;
+      config false;
+      description
+        "The Maximum I-Q offset attribute is related to the phase difference
+         between the in-phase (I) and quadrature (Q) components of a modulated
+         optical signal. This offset can affect the signal quality and performance
+         in coherent optical systems.";
+      reference
+        "ITU-T G.698.2";
+        // TODO: check definition and reference - from POI google sheet - Issue #29
+    }
+    leaf transmit-output-power-control-absolute-accuracy {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "Transmit output power control absolute accuracy refers to how
+         closely the actual output power matches the desired or configured
+         output power level. It represents the precision with which the
+         transmitter can set and maintain its output power.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check definition and reference - from POI google sheet
+    }
+    leaf transmitter-polarization-dependent-power {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "Transmitter Polarization Dependent Power refers to the
+         variation in the optical power emitted by a transmitter
+         (specifically a coherent optical transmitter in this context)
+         depending on the polarization state of the light.
+         It's a measure of how much the transmitted power changes as
+         the polarization of the light is rotated.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check definition and reference - from POI google sheet - Issue #31
+    }
+    leaf dc-i-q-offset {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "DC I-Q offset (mean per polarization) refers to the average
+         DC offset in the In-phase (I) and Quadrature (Q) components
+         of the received signal for each polarization. This offset
+         can arise due to imperfections in the analog components of
+         the coherent receiver (e.g., mismatches in the mixers or ADCs).
+         It's measured and compensated for by the DSP to ensure accurate
+         signal demodulation.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet
+    }
+    leaf i-q-instantaneous-offset {
+      type power-ratio;
+      config false;
+      description
+        "I-Q instantaneous offset refers to the time-varying or dynamic
+         offset between the In-phase (I) and Quadrature (Q) components
+         of the received signal. Unlike the mean DC offset, this offset
+         varies over time, often due to impairments like laser phase
+         noise or other dynamic distortions in the optical channel.
+         It is tracked and compensated for by the DSP in real-time.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet
+    }
+    leaf mean-i-q-amplitude-imbalance {
+      type power-ratio;
+      config false;
+      description
+        "Mean I-Q amplitude imbalance refers to the average difference
+         in amplitude between the In-phase (I) and Quadrature (Q)
+         components of the received signal. Ideally, the I and Q
+         components should have equal amplitudes. An imbalance can be
+         caused by imperfections in the analog front-end of the receiver,
+         such as gain mismatches in the I and Q channels. The DSP in the
+         receiver estimates and compensates for this imbalance.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet
+    }
+    leaf i-q-phase-error {
+      type decimal-5;
+      units "rad";
+      config false;
+      description
+        "I-Q phase error refers to the deviation from the ideal 90-degree
+         phase relationship between the In-phase (I) and Quadrature (Q)
+         components of the received signal. In a perfectly modulated signal,
+         the I and Q components are orthogonal (90 degrees apart).
+         Phase errors can arise due to various impairments in the transmitter
+         or channel, such as frequency offsets, phase noise, or non-linearities.
+         The DSP in the receiver estimates and compensates for this phase error.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet
+    }
+    leaf i-q-skew {
+      type decimal-5;
+      units "ps";
+      config false;
+      description
+        " I-Q Skew refers to the time delay or misalignment between the
+         In-phase (I) and Quadrature (Q) components of a signal. Ideally,
+         the I and Q components are perfectly aligned in time. However,
+         due to imperfections in the transmitter or receiver hardware,
+         or distortions in the transmission channel, a time skew can occur
+         between them. This skew can degrade signal quality and is usually
+         compensated for in coherent optical communication systems by the
+         DSP in the receiver.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet
+    }
+    leaf frequency-offset-between-received-carrier-and-lo {
+      type frequency-ghz;
+      config false;
+      description
+        "Frequency offset between received carrier and LO refers to the
+         difference between the frequency of the incoming optical signal
+         (received carrier) and the local oscillator (LO) frequency used
+         in coherent detection.";
+      reference
+        "ITU-T G.698.2";
+        // TODO: check definition and reference - from POI google sheet - Issue #32
+    }
+    leaf optical-return-loss {
+      type power-ratio;
+      config false;
+      description
+        "Optical return loss (ORL) measures the total reflected light caused
+         by discontinuities in an optical path, expressed as the ratio of
+         incident to reflected power in dB.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet - Issue #33
+    }
+    leaf optical-input-power-transient-tolerance {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "Optical Input Power Transient Tolerance refers to the ability of
+         an optical receiver to maintain acceptable performance (e.g.,
+         target BER) when subjected to sudden changes (transients) in
+         the received optical power level. These transients can occur due
+         to various reasons, such as switching events in the network,
+         amplifier gain changes, or fiber cuts/repairs.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet - Issue #34
+    }
+    leaf adjacent-channel-crosstalk-osnr-tolerance-penalty {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "Adjacent Channel Crosstalk OSNR Tolerance Penalty refers to
+         the increase in required OSNR (Optical Signal-to-Noise Ratio)
+         to maintain a specific BER (Bit Error Rate) target due to the
+         interference caused by neighboring optical channels. Crosstalk
+         occurs when signal energy from one channel leaks into adjacent
+         channels, degrading the signal quality and requiring a higher
+         OSNR to compensate.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet - Issue #35
+    }
+    leaf intra-channel-filtering-penalty {
+      type decimal-2;
+      units "dB";
+      config false;
+      description
+        "Intra-Channel Filtering Penalty refers to the degradation in signal
+         quality, measured as an increase in required OSNR (Optical
+         Signal-to-Noise Ratio) to achieve a target BER (Bit Error Rate),
+         caused by optical filtering within the same channel. This filtering,
+         often unintentional, can occur due to the cascaded effects of optical
+         components like ROADMs, mux/demux filters, and other network elements
+         along the optical path. The filtering effect becomes more pronounced when
+         the optical signal's spectral width approaches the filter's bandwidth,
+         leading to signal distortion.";
+      reference
+        "OIF-400ZR-01.0: Implementation Agreement 400ZR";
+        // TODO: check units definition and reference - from POI google sheet - Issue #36
     }
   }
 

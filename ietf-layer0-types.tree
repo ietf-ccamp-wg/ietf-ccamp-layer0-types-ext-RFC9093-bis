@@ -111,12 +111,9 @@ module: ietf-layer0-types
              |     +--ro standard-mode               standard-mode
              |     +--ro line-coding-bitrate*        identityref
              |     +--ro transceiver-tuning-range
-             |     |  +--ro min-central-frequency?
-             |     |  |       frequency-thz
-             |     |  +--ro max-central-frequency?
-             |     |  |       frequency-thz
-             |     |  +--ro transceiver-tunability-granularity?
-             |     |          frequency-ghz
+             |     |  +--ro min-central-frequency?                frequency-thz
+             |     |  +--ro max-central-frequency?                frequency-thz
+             |     |  +--ro transceiver-tunability-granularity?   frequency-ghz
              |     +--ro tx-channel-power-min?       power-dbm
              |     +--ro tx-channel-power-max?       power-dbm
              |     +--ro rx-channel-power-min?       power-dbm
@@ -125,16 +122,12 @@ module: ietf-layer0-types
              +--:(organizational-mode)
              |  +--ro organizational-mode
              |     +--ro operational-mode            operational-mode
-             |     +--ro organization-identifier
-             |     |       organization-identifier
+             |     +--ro organization-identifier     organization-identifier
              |     +--ro line-coding-bitrate*        identityref
              |     +--ro transceiver-tuning-range
-             |     |  +--ro min-central-frequency?
-             |     |  |       frequency-thz
-             |     |  +--ro max-central-frequency?
-             |     |  |       frequency-thz
-             |     |  +--ro transceiver-tunability-granularity?
-             |     |          frequency-ghz
+             |     |  +--ro min-central-frequency?                frequency-thz
+             |     |  +--ro max-central-frequency?                frequency-thz
+             |     |  +--ro transceiver-tunability-granularity?   frequency-ghz
              |     +--ro tx-channel-power-min?       power-dbm
              |     +--ro tx-channel-power-max?       power-dbm
              |     +--ro rx-channel-power-min?       power-dbm
@@ -143,22 +136,17 @@ module: ietf-layer0-types
              +--:(explicit-mode)
                 +--ro explicit-mode
                    +--ro transceiver-tuning-range
-                   |  +--ro min-central-frequency?
-                   |  |       frequency-thz
-                   |  +--ro max-central-frequency?
-                   |  |       frequency-thz
-                   |  +--ro transceiver-tunability-granularity?
-                   |          frequency-ghz
+                   |  +--ro min-central-frequency?                frequency-thz
+                   |  +--ro max-central-frequency?                frequency-thz
+                   |  +--ro transceiver-tunability-granularity?   frequency-ghz
                    +--ro tx-channel-power-min?       power-dbm
                    +--ro tx-channel-power-max?       power-dbm
                    +--ro rx-channel-power-min?       power-dbm
                    +--ro rx-channel-power-max?       power-dbm
                    +--ro rx-total-power-max?         power-dbm
                    +--ro compatible-modes
-                      +--ro supported-application-code*
-                      |       -> ../../../../supported-mode/mode-id
-                      +--ro supported-organizational-mode*
-                              -> ../../../../supported-mode/mode-id
+                      +--ro supported-application-code*      -> ../../../../supported-mode/mode-id
+                      +--ro supported-organizational-mode*   -> ../../../../supported-mode/mode-id
   grouping standard-mode:
     +-- standard-mode?   standard-mode
   grouping organizational-mode:
@@ -167,38 +155,63 @@ module: ietf-layer0-types
   grouping penalty-value:
     +-- penalty-value    union
   grouping explicit-mode:
-    +--ro line-coding-bitrate?                identityref
-    +--ro bitrate?                            uint16
-    +--ro max-diff-group-delay?               decimal-2
-    +--ro max-chromatic-dispersion?           decimal-2
+    +--ro line-coding-bitrate?                                        identityref
+    +--ro bitrate?                                                    uint16
+    +--ro max-diff-group-delay?                                       decimal-2
+    +--ro max-chromatic-dispersion?                                   decimal-2
+    +--ro min-chromatic-dispersion?                                   decimal-2
     +--ro cd-penalty* [cd-value]
     |  +--ro cd-value?        decimal-2
     |  +--ro penalty-value    union
-    +--ro max-polarization-mode-dispersion?   decimal-2
+    +--ro max-polarization-mode-dispersion?                           decimal-2
     +--ro pmd-penalty* [pmd-value]
     |  +--ro pmd-value?       decimal-2
     |  +--ro penalty-value    union
-    +--ro max-polarization-dependent-loss     power-loss-or-unknown
+    +--ro max-polarization-dependent-loss                             power-loss-or-unknown
     +--ro pdl-penalty* [pdl-value]
     |  +--ro pdl-value?       power-loss
     |  +--ro penalty-value    union
-    +--ro available-modulation-type?          identityref
-    +--ro min-osnr?                           snr
-    +--ro rx-ref-channel-power?               power-dbm
+    +--ro available-modulation-type?                                  identityref
+    +--ro min-osnr?                                                   snr
+    +--ro rx-ref-channel-power?                                       power-dbm
     +--ro rx-channel-power-penalty* [rx-channel-power-value]
     |  +--ro rx-channel-power-value?   power-dbm
     |  +--ro penalty-value             union
-    +--ro min-q-factor?                       decimal-2
-    +--ro available-baud-rate?                decimal64
-    +--ro roll-off?                           decimal64
-    +--ro min-carrier-spacing?                frequency-ghz
-    +--ro available-fec-type?                 identityref
-    +--ro fec-code-rate?                      decimal64
-    +--ro fec-threshold?                      decimal64
-    +--ro in-band-osnr?                       snr
-    +--ro out-of-band-osnr?                   snr
-    +--ro tx-polarization-power-difference?   power-ratio
-    +--ro polarization-skew?                  decimal-2
+    +--ro min-q-factor?                                               decimal-2
+    +--ro available-baud-rate?                                        decimal64
+    +--ro roll-off?                                                   decimal64
+    +--ro min-carrier-spacing?                                        frequency-ghz
+    +--ro available-fec-type?                                         identityref
+    +--ro fec-code-rate?                                              decimal64
+    +--ro fec-threshold?                                              decimal64
+    +--ro in-band-osnr?                                               snr
+    +--ro out-of-band-osnr?                                           snr
+    +--ro min-tx-osnr?                                                snr
+    +--ro tx-polarization-power-difference?                           power-ratio
+    +--ro polarization-skew?                                          decimal-2
+    +--ro max-tolerable-ripple?                                       decimal-2
+    +--ro max-polarization-rotation-speed?                            decimal-5
+    +--ro pulse-shaping-type?                                         string
+    +--ro grid-type?                                                  string
+    +--ro max-laser-temperature?                                      decimal-2
+    +--ro max-spectral-excursion?                                     frequency-ghz
+    +--ro min-side-mode-suppression-ratio?                            power-ratio
+    +--ro max-duty-cycle?                                             decimal-2
+    +--ro max-offset-between-carrier-and-nominal-central-frequency?   frequency-ghz
+    +--ro max-spectral-power-density?                                 decimal-2
+    +--ro max-i-q-offset?                                             power-ratio
+    +--ro transmit-output-power-control-absolute-accuracy?            decimal-2
+    +--ro transmitter-polarization-dependent-power?                   decimal-2
+    +--ro dc-i-q-offset?                                              decimal-2
+    +--ro i-q-instantaneous-offset?                                   power-ratio
+    +--ro mean-i-q-amplitude-imbalance?                               power-ratio
+    +--ro i-q-phase-error?                                            decimal-5
+    +--ro i-q-skew?                                                   decimal-5
+    +--ro frequency-offset-between-received-carrier-and-lo?           frequency-ghz
+    +--ro optical-return-loss?                                        power-ratio
+    +--ro optical-input-power-transient-tolerance?                    decimal-2
+    +--ro adjacent-channel-crosstalk-osnr-tolerance-penalty?          decimal-2
+    +--ro intra-channel-filtering-penalty?                            decimal-2
   grouping common-standard-organizational-mode:
     +--ro line-coding-bitrate*   identityref
   grouping transceiver-tuning-range:
