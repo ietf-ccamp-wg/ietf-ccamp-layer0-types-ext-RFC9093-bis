@@ -193,7 +193,6 @@ module: ietf-layer0-types
     +--ro max-polarization-rotation-speed?                            decimal-5
     +--ro pulse-shaping-type?                                         string
     +--ro grid-type?                                                  string
-    +--ro max-laser-temperature?                                      decimal-2
     +--ro max-spectral-excursion?                                     frequency-ghz
     +--ro min-side-mode-suppression-ratio?                            power-ratio
     +--ro max-duty-cycle?                                             decimal-2

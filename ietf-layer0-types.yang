@@ -2236,17 +2236,6 @@ module ietf-layer0-types {
         // TODO: check definition and reference - From POI google sheet
         // TODO: Verify if it may required an identityref definition instead string
     }
-    leaf grid-type {
-      type string;
-      config false;
-      description
-        "This attribute specifies the frequency grid specification
-         according to ITU-T G.694.1 (10/2020).";
-      reference
-        "OpenConfig terminal-device-properties";
-        // TODO: check definition and reference - From POI google sheet
-        // TODO: Verify if it may required an identityref definition instead string
-    }
     leaf max-laser-temperature {
       type decimal-2;
       units "Degree Celsius";
